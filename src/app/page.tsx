@@ -27,6 +27,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { SERVICES, PROJECTS, TESTIMONIALS } from '@/lib/constants';
 import AnimatedCounter from '@/components/animated-counter';
+import HeroHeadline from '@/components/hero-headline';
 
 const stats = [
   { value: 15, label: 'Years of Experience', icon: BarChart },
@@ -55,9 +56,7 @@ export default function Home() {
           <div className="container px-4 pt-20 pb-16 md:pt-32 md:pb-24 text-left">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl">
-                  Your Digital Transformation Catalyst
-                </h1>
+                <HeroHeadline />
                 <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
                   A professional approach to business results through systems integration.
                 </p>
