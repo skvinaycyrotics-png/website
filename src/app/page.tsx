@@ -240,29 +240,24 @@ export default function Home() {
       </section>
 
       <section
-        id="newsletter"
+        id="cta"
         className="bg-primary/10 py-12 sm:py-16 lg:py-20"
       >
         <div className="container px-4">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
-              Stay Ahead with CYROTICS Insights
+              Ready to Build Your Future?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Subscribe to our newsletter for the latest in technology trends,
-              security updates, and company news.
+              Let's discuss how CYROTICS can tailor a solution to meet your exact needs. Contact us for a consultation.
             </p>
-            <form className="mt-8 flex flex-col items-center gap-4 sm:flex-row">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full flex-grow text-base"
-                required
-              />
-              <Button type="submit" size="lg" className="w-full sm:w-auto">
-                Subscribe
+            <div className="mt-8">
+              <Button asChild size="lg">
+                <Link href="/contact">
+                  Start a Project <ArrowRight />
+                </Link>
               </Button>
-            </form>
+            </div>
           </div>
         </div>
       </section>
