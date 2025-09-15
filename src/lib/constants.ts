@@ -341,7 +341,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      'The security system installed by CyroSecure is world-class. Their integrated approach gave us a level of control and visibility we never thought possible. Their team is knowledgeable and responsive.',
+      'The security system installed by CYROTICS is world-class. Their integrated approach gave us a level of control and visibility we never thought possible. Their team is knowledgeable and responsive.',
     name: 'Priya Sharma',
     title: 'Head of Operations',
     company: 'Innovate Tech Park',
@@ -349,7 +349,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      'Our new smart building is a marvel of efficiency, thanks to the CyroSecure team. They are true experts in IoT and building automation. The energy savings have been substantial.',
+      'Our new smart building is a marvel of efficiency, thanks to the CYROTICS team. They are true experts in IoT and building automation. The energy savings have been substantial.',
     name: 'Anil Mehta',
     title: 'CEO',
     company: 'Future Group',
@@ -362,7 +362,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'Arjun Desai',
     role: 'Founder & CEO',
     imageUrl: 'https://picsum.photos/seed/arjun/400/400',
-    bio: 'With over 20 years in the technology sector, Arjun drives the company’s vision for innovation and excellence. His leadership is pivotal in establishing CyroSecure as a leader in technology solutions.',
+    bio: 'With over 20 years in the technology sector, Arjun drives the company’s vision for innovation and excellence. His leadership is pivotal in establishing CYROTICS as a leader in technology solutions.',
   },
   {
     name: 'Meera Iyer',

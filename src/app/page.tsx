@@ -246,7 +246,7 @@ export default function Home() {
         <div className="container px-4">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
-              Stay Ahead with CyroSecure Insights
+              Stay Ahead with CYROTICS Insights
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Subscribe to our newsletter for the latest in technology trends,

@@ -17,7 +17,7 @@ export default function BlogPage() {
       <section className="bg-primary text-primary-foreground py-20 text-center">
         <div className="container">
           <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            CyroSecure Insights
+            CYROTICS Insights
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
             Expert analysis on technology infrastructure, security, and the future of enterprise IT.

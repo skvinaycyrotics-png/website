@@ -5,7 +5,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-  title: 'CyroSecure by CYROTICS TECHNOLOGIES',
+  title: 'CYROTICS TECHNOLOGIES',
   description:
     'Leading provider of Technology Infrastructure & Security Solutions for enterprises in India and emerging markets.',
 };

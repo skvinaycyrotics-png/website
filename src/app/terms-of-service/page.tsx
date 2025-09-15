@@ -17,7 +17,7 @@ export default function TermsOfServicePage() {
 
         <p>
           Please read these Terms of Service ("Terms", "Terms of Service")
-          carefully before using the CyroSecure website (the "Service") operated
+          carefully before using the CYROTICS website (the "Service") operated
           by CYROTICS TECHNOLOGIES OPC PVT LTD ("us", "we", or "our").
         </p>
 

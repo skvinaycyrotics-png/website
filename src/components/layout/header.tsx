@@ -25,7 +25,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm">
-      <div className="container flex h-16 items-center">
+      <div className="container flex h-20 items-center">
         <Logo />
         <nav className="ml-auto hidden items-center gap-6 md:flex">
           {NAV_LINKS.map((link) => (

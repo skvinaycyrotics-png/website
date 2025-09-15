@@ -140,7 +140,7 @@ export default function AboutPage() {
             Ready to build the future with us?
           </h2>
           <p className="mt-4 text-lg max-w-xl mx-auto">
-            Explore career opportunities at CyroSecure or get in touch to discuss your next project.
+            Explore career opportunities at CYROTICS or get in touch to discuss your next project.
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <Button asChild size="lg" variant="secondary">
