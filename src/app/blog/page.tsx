@@ -11,6 +11,12 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { format, parseISO } from 'date-fns';
 
+export const metadata = {
+  title: 'CYROTICS Insights | Blog',
+  description: 'Expert analysis on technology infrastructure, cybersecurity, cloud computing, and the future of enterprise IT. Stay informed with insights from our technology leaders.',
+};
+
+
 export default function BlogPage() {
   return (
     <>

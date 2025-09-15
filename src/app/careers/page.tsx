@@ -10,6 +10,12 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 
+export const metadata = {
+  title: 'Careers | CYROTICS TECHNOLOGIES',
+  description: 'Join our team of passionate engineers and innovators. Explore career opportunities at CYROTICS and help us shape the future of technology infrastructure and security.',
+};
+
+
 export default function CareersPage() {
   return (
     <>

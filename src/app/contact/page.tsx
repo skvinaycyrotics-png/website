@@ -2,6 +2,11 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import ContactForms from './contact-forms';
 import ExpertMatchForm from './expert-match-form';
 
+export const metadata = {
+  title: 'Contact Us | CYROTICS TECHNOLOGIES',
+  description: 'Get in touch with our team of experts. Whether you have a question, need a quote, or want to start a project, we are here to help you find the right technology solution.',
+};
+
 export default function ContactPage() {
   return (
     <>

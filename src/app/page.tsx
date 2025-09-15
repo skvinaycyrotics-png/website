@@ -38,36 +38,77 @@ const stats = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative h-[60vh] min-h-[500px] w-full bg-primary/10">
-        <Image
-          src="https://picsum.photos/seed/hero/1920/1080"
-          alt="Modern data center"
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint="data center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/50 to-transparent" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-primary-foreground">
-          <div className="container px-4">
-            <h1 className="font-headline text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
-              Building Tomorrow's Infrastructure, Securing Today's World
-            </h1>
-            <p className="mt-4 max-w-3xl text-lg md:text-xl">
-              CYROTICS TECHNOLOGIES: Your trusted partner for integrated
-              infrastructure, security, and smart technology solutions.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="font-semibold">
-                <Link href="/services">
-                  Explore Our Services <ArrowRight />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="secondary">
-                <Link href="/contact">Request a Consultation</Link>
-              </Button>
+      <section className="relative w-full bg-primary/5">
+        <div className="absolute inset-0">
+          <Image
+            src="https://picsum.photos/seed/hero-bg/1920/1080"
+            alt="Abstract background with geometric shapes"
+            fill
+            className="object-cover"
+            priority
+            data-ai-hint="abstract background"
+          />
+          <div className="absolute inset-0 bg-slate-100/80" />
+        </div>
+
+        <div className="relative z-10">
+          <div className="container px-4 pt-20 pb-16 md:pt-32 md:pb-24 text-left">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl">
+                  Your Digital Transformation Catalyst
+                </h1>
+                <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
+                  A professional approach to business results through systems integration.
+                </p>
+                <div className="mt-8 flex flex-wrap justify-start gap-4">
+                  <Button asChild size="lg" className="font-semibold">
+                    <Link href="/services">
+                      Our Solutions <ArrowRight />
+                    </Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline">
+                    <Link href="/contact">Request a Consultation</Link>
+                  </Button>
+                   <Button asChild size="lg" variant="secondary">
+                    <Link href="/about">Learn More</Link>
+                  </Button>
+                </div>
+              </div>
+              <div className="hidden md:flex justify-center">
+                <div className="bg-white p-2 rounded-lg shadow-lg w-48 text-center">
+                   <h3 className="font-bold text-red-600 text-lg">Great Place To Work.</h3>
+                   <p className="font-semibold text-sm">Certified</p>
+                   <p className="text-xs text-muted-foreground">OCT 2024 - OCT 2025</p>
+                   <p className="font-bold text-sm mt-1">INDIA</p>
+                </div>
+              </div>
             </div>
           </div>
+          
+          <div className="bg-white/80 backdrop-blur-sm shadow-md">
+            <div className="container px-4">
+              <div className="grid grid-cols-2 md:grid-cols-6 divide-x">
+                {SERVICES.map((service) => (
+                  <Link 
+                    key={service.slug}
+                    href={`/services/${service.slug}`} 
+                    className="group text-center p-4 transition-colors hover:bg-primary/10"
+                  >
+                    <div className="flex justify-center mb-2">
+                       <div className="bg-primary text-primary-foreground rounded-lg p-3 w-14 h-14 flex items-center justify-center transition-transform group-hover:scale-110">
+                         <service.icon className="h-8 w-8" />
+                       </div>
+                    </div>
+                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
+                      {service.title}
+                    </h3>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -87,51 +128,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="py-12 sm:py-16 lg:py-20">
-        <div className="container px-4 text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
-            Our Comprehensive Service Portfolio
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Delivering excellence across the full spectrum of technology
-            solutions.
-          </p>
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {SERVICES.map((service) => (
-              <Card
-                key={service.slug}
-                className="transform text-left transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl"
-              >
-                <CardHeader>
-                  <div className="flex items-center gap-4">
-                    <div className="flex-shrink-0">
-                      <service.icon className="h-10 w-10 text-primary" />
-                    </div>
-                    <div>
-                      <CardTitle className="font-headline text-xl">
-                        {service.title}
-                      </CardTitle>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{service.shortDescription}</CardDescription>
-                  <Button asChild variant="link" className="px-0 pt-4">
-                    <Link href={`/services/${service.slug}`}>
-                      Learn More <ArrowRight />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="projects"
-        className="bg-primary/5 py-12 sm:py-16 lg:py-20"
-      >
+      <section id="projects" className="bg-primary/5 py-12 sm:py-16 lg:py-20">
         <div className="container px-4 text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
             Proven Success in Action
@@ -142,10 +139,7 @@ export default function Home() {
           </p>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {PROJECTS.slice(0, 3).map((project) => (
-              <Card
-                key={project.id}
-                className="group overflow-hidden text-left"
-              >
+              <Card key={project.id} className="group overflow-hidden text-left">
                 <div className="overflow-hidden">
                   <Image
                     src={project.imageUrl}
@@ -187,10 +181,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="testimonials"
-        className="relative py-12 sm:py-16 lg:py-20"
-      >
+      <section id="testimonials" className="relative py-12 sm:py-16 lg:py-20">
         <div className="container px-4">
           <h2 className="text-center font-headline text-3xl font-bold tracking-tight md:text-4xl">
             What Our Clients Say
@@ -222,9 +213,7 @@ export default function Home() {
                       <blockquote className="mt-6 border-none p-0 text-lg font-medium">
                         <p>"{testimonial.quote}"</p>
                       </blockquote>
-                      <div className="mt-4 font-semibold">
-                        {testimonial.name}
-                      </div>
+                      <div className="mt-4 font-semibold">{testimonial.name}</div>
                       <div className="text-sm text-muted-foreground">
                         {testimonial.title}, {testimonial.company}
                       </div>
@@ -239,10 +228,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="cta"
-        className="bg-primary/10 py-12 sm:py-16 lg:py-20"
-      >
+      <section id="cta" className="bg-primary/10 py-12 sm:py-16 lg:py-20">
         <div className="container px-4">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">

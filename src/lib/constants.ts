@@ -6,6 +6,7 @@ import type {
   TeamMember,
   JobOpening,
   BlogPost,
+  FAQ,
 } from './types';
 import {
   Server,
@@ -39,11 +40,28 @@ import {
 
 export const NAV_LINKS: NavLink[] = [
   { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
+  {
+    href: '/services',
+    label: 'Services',
+    subLinks: [
+      { href: '/services/infrastructure-solutions', label: 'Infrastructure Solutions' },
+      { href: '/services/security-surveillance', label: 'Security & Surveillance' },
+      { href: '/services/audio-visual-communication', label: 'Audio-Visual & Communication' },
+      { href: '/services/smart-building-solutions', label: 'Smart Building Solutions' },
+      { href: '/services/software-development', label: 'Software Development' },
+      { href: '/services/renewable-energy', label: 'Renewable Energy' },
+    ],
+  },
   { href: '/projects', label: 'Projects' },
   { href: '/blog', label: 'Blog' },
-  { href: '/about', label: 'About Us' },
-  { href: '/careers', label: 'Careers' },
+  {
+    href: '/about',
+    label: 'About',
+    subLinks: [
+      { href: '/about', label: 'About Us' },
+      { href: '/careers', label: 'Careers' },
+    ],
+  },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -52,7 +70,7 @@ export const SERVICES: Service[] = [
     slug: 'infrastructure-solutions',
     title: 'Infrastructure Solutions',
     shortDescription:
-      'Robust data center, network, and IT infrastructure management.',
+      'We architect and manage resilient IT infrastructures that power enterprise success. From modernizing data centers to transforming networks, our solutions ensure high availability, performance, and scalability.',
     description:
       'We architect and manage resilient IT infrastructures that power enterprise success. From modernizing data centers to transforming networks, our solutions ensure high availability, performance, and scalability.',
     icon: Server,
@@ -85,7 +103,7 @@ export const SERVICES: Service[] = [
     slug: 'security-surveillance',
     title: 'Security & Surveillance',
     shortDescription:
-      'Integrated electronic security, surveillance, and fire safety systems.',
+      'Protect your assets, people, and operations with our comprehensive security solutions. We design and deploy integrated systems for surveillance, access control, and fire detection, providing a unified security posture.',
     description:
       'Protect your assets, people, and operations with our comprehensive security solutions. We design and deploy integrated systems for surveillance, access control, and fire detection, providing a unified security posture.',
     icon: ShieldCheck,
@@ -123,7 +141,7 @@ export const SERVICES: Service[] = [
     slug: 'audio-visual-communication',
     title: 'Audio-Visual & Communication',
     shortDescription:
-      'Advanced AV, conferencing, and digital signage solutions.',
+      'Enhance communication and collaboration with our state-of-the-art audio-visual solutions. We create immersive experiences for boardrooms, auditoriums, and public spaces.',
     description:
       'Enhance communication and collaboration with our state-of-the-art audio-visual solutions. We create immersive experiences for boardrooms, auditoriums, and public spaces.',
     icon: MonitorSpeaker,
@@ -160,7 +178,8 @@ export const SERVICES: Service[] = [
   {
     slug: 'smart-building-solutions',
     title: 'Smart Building Solutions',
-    shortDescription: 'IoT and BMS for intelligent and efficient buildings.',
+    shortDescription:
+      'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
     description:
       'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
     icon: Building,
@@ -197,7 +216,8 @@ export const SERVICES: Service[] = [
   {
     slug: 'software-development',
     title: 'Software Development',
-    shortDescription: 'Custom enterprise software, cloud, and mobile apps.',
+    shortDescription:
+      'From enterprise applications to cloud-native solutions, our software development services are tailored to your unique business needs, driving innovation and efficiency.',
     description:
       'From enterprise applications to cloud-native solutions, our software development services are tailored to your unique business needs, driving innovation and efficiency.',
     icon: Code,
@@ -229,7 +249,8 @@ export const SERVICES: Service[] = [
   {
     slug: 'renewable-energy',
     title: 'Renewable Energy',
-    shortDescription: 'Solar power and energy storage solutions for enterprises.',
+    shortDescription:
+      'Harness the power of the sun with our end-to-end solar energy solutions. We help businesses reduce their carbon footprint and energy costs with reliable and efficient solar power systems.',
     description:
       'Harness the power of the sun with our end-to-end solar energy solutions. We help businesses reduce their carbon footprint and energy costs with reliable and efficient solar power systems.',
     icon: Sun,
@@ -268,51 +289,50 @@ export const SERVICES: Service[] = [
 export const PROJECTS: Project[] = [
   {
     id: 'proj-1',
-    title: 'Enterprise Network Overhaul for a Financial Giant',
-    client: 'Global Finance Corp',
+    title: 'Data Center Modernization for a Leading Bank',
+    client: 'Apex Financial',
     shortDescription:
-      'Complete network transformation for 50+ branches, enhancing speed and security.',
+      'Executed a complete overhaul of a Tier-3 data center, resulting in a 35% increase in power efficiency and a 50% reduction in cooling costs.',
     longDescription:
-      'We executed a full-scale network migration for Global Finance Corp, replacing legacy systems with a modern SD-WAN architecture. The project involved zero-downtime migration, enhanced security protocols, and centralized management, resulting in a 40% reduction in operational costs.',
+      "We partnered with Apex Financial to modernize their aging data center infrastructure. The project involved upgrading power distribution units (PDUs), implementing a state-of-the-art hot-aisle containment system, and deploying a DCIM solution for real-time monitoring. The successful migration, achieved with zero downtime, has equipped Apex Financial with a scalable, resilient, and highly efficient data center poised for future growth.",
     imageUrl: 'https://picsum.photos/seed/proj1/600/400',
     imageHint: 'network servers',
-    tags: ['Network Transformation', 'SD-WAN', 'Cybersecurity', 'Cisco'],
-    timeline: '6 Months',
-    results:
-      '40% reduction in network operational costs and 3x increase in bandwidth.',
+    tags: ['Data Center', 'Energy Efficiency', 'DCIM', 'HPE'],
+    timeline: '8 Months',
+    results: 'Achieved a 35% improvement in Power Usage Effectiveness (PUE) and a 50% reduction in annual cooling costs.',
   },
   {
     id: 'proj-2',
-    title: 'Integrated Security for a Tech Park',
-    client: 'Innovate Tech Park',
+    title: 'Integrated Security for a Pharmaceutical Campus',
+    client: 'Nova Labs',
     shortDescription:
-      'Deployed a unified security platform including 1000+ cameras and biometric access.',
+      'Deployed a unified security platform across a 50-acre campus, improving incident response time by 60% and ensuring regulatory compliance.',
     longDescription:
-      'For Innovate Tech Park, we designed and deployed a state-of-the-art integrated security system. This included IP CCTV, facial recognition access control, and an automated visitor management system, all controlled from a central command center. The solution improved security response times by 70%.',
+      "Nova Labs required a sophisticated security solution to protect its high-value R&D facilities. We designed and implemented an integrated system combining IP-based surveillance with advanced video analytics, multi-factor access control at all lab entrances, and a centralized command center. The platform automates security protocols, provides real-time alerts, and generates detailed audit trails, crucial for industry regulations.",
     imageUrl: 'https://picsum.photos/seed/proj2/600/400',
     imageHint: 'modern office lobby',
     tags: [
       'Security & Surveillance',
       'Access Control',
       'CCTV',
-      'Axis Communications',
+      'Compliance',
     ],
-    timeline: '9 Months',
-    results: '70% faster security incident response time.',
+    timeline: '12 Months',
+    results: 'Reduced security incident response time by 60% and automated 90% of compliance reporting.',
   },
   {
     id: 'proj-3',
-    title: 'Smart Building Automation for a Corporate HQ',
-    client: 'Future Group',
+    title: 'Smart Building Transformation for a Tech Hub',
+    client: 'Innovate Towers',
     shortDescription:
-      'Implemented a comprehensive BMS, reducing energy consumption by 25%.',
+      'Converted a multi-tenant office building into a fully integrated smart environment, leading to a 25% reduction in energy costs and a 15% increase in tenant satisfaction.',
     longDescription:
-      "Future Group's new headquarters was outfitted with our complete smart building solution. We integrated HVAC, lighting, and occupancy sensors into a unified Building Management System (BMS). The system uses machine learning to optimize energy usage in real-time.",
+      "Our team retrofitted Innovate Towers with a comprehensive Building Management System (BMS) that unified HVAC, lighting, and security systems. By deploying IoT sensors, we enabled predictive maintenance and real-time energy optimization. A tenant-facing mobile app allows for personalized climate and lighting control, significantly enhancing occupant comfort and boosting the property's appeal in a competitive market.",
     imageUrl: 'https://picsum.photos/seed/proj3/600/400',
     imageHint: 'futuristic building',
     tags: ['Smart Building', 'BMS', 'IoT', 'Energy Management'],
-    timeline: '12 Months',
-    results: '25% reduction in annual energy consumption.',
+    timeline: '18 Months',
+    results: 'Cut energy consumption by 25% and improved operational efficiency by 40% through predictive maintenance.',
   },
   {
     id: 'proj-4',
@@ -333,27 +353,43 @@ export const PROJECTS: Project[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      'CYROTICS TECHNOLOGIES transformed our IT infrastructure. Their professionalism and technical expertise are second to none. The project was delivered on time and exceeded our expectations.',
-    name: 'Rajesh Kumar',
-    title: 'CIO',
-    company: 'Global Finance Corp',
-    imageUrl: 'https://picsum.photos/seed/rajesh/100/100',
-  },
-  {
-    quote:
-      'The security system installed by CYROTICS is world-class. Their integrated approach gave us a level of control and visibility we never thought possible. Their team is knowledgeable and responsive.',
-    name: 'Priya Sharma',
-    title: 'Head of Operations',
-    company: 'Innovate Tech Park',
+      'The CYROTICS team are true professionals. Their data center modernization project was a game-changer for our operations. Their expertise and meticulous execution resulted in significant cost savings and a far more resilient system. We saw a 35% increase in power efficiency almost immediately.',
+    name: 'Priya Mehta',
+    title: 'CTO',
+    company: 'Apex Financial',
     imageUrl: 'https://picsum.photos/seed/priya/100/100',
   },
   {
     quote:
-      'Our new smart building is a marvel of efficiency, thanks to the CYROTICS team. They are true experts in IoT and building automation. The energy savings have been substantial.',
-    name: 'Anil Mehta',
-    title: 'CEO',
-    company: 'Future Group',
-    imageUrl: 'https://picsum.photos/seed/anil/100/100',
+      'Security and compliance are paramount in our industry. CYROTICS delivered an integrated security solution that exceeded our expectations. The platform is robust, intuitive, and has streamlined our operations, improving our incident response time by over 60%.',
+    name: 'Dr. Alok Sharma',
+    title: 'Director of Facilities',
+    company: 'Nova Labs',
+    imageUrl: 'https://picsum.photos/seed/alok/100/100',
+  },
+  {
+    quote:
+      'Transforming our building with CYROTICS was a fantastic investment. The energy savings were immediate, and our tenants love the new smart features. Their team managed the entire process flawlessly, from design to implementation. Tenant satisfaction is up 15%!',
+    name: 'Sameer Verma',
+    title: 'Property Manager',
+    company: 'Innovate Towers',
+    imageUrl: 'https://picsum.photos/seed/sameer/100/100',
+  },
+    {
+    quote:
+      'The custom ERP system CYROTICS built for us has revolutionized our workflow. Production efficiency is up by 30%, and we have real-time visibility into our entire process. Their developers understood our unique needs and delivered a perfect solution.',
+    name: 'Kiran Desai',
+    title: 'COO',
+    company: 'Precision Parts Inc.',
+    imageUrl: 'https://picsum.photos/seed/kiran/100/100',
+  },
+    {
+    quote:
+      'From network design to implementation, CYROTICS has been an invaluable partner. Their SD-WAN solution has increased our branch agility and significantly lowered our connectivity costs. Their technical support is always responsive and knowledgeable.',
+    name: 'Amit Patel',
+    title: 'IT Director',
+    company: 'Retail Chain Corp',
+    imageUrl: 'https://picsum.photos/seed/amit/100/100',
   },
 ];
 
@@ -422,80 +458,116 @@ export const JOB_OPENINGS: JobOpening[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    slug: 'the-future-of-enterprise-security-is-integrated',
-    title: 'The Future of Enterprise Security is Integrated',
+    slug: 'navigating-the-maze-of-data-center-modernization',
+    title: 'Navigating the Maze of Data Center Modernization',
     author: 'Meera Iyer',
     authorImage: 'https://picsum.photos/seed/meera/100/100',
-    date: '2024-07-15',
-    excerpt: 'Moving beyond siloed security systems is no longer an option, it\'s a necessity. Discover how integrated platforms are revolutionizing corporate safety and operational efficiency.',
+    date: '2024-07-20',
+    excerpt: 'Is your data center an asset or a liability? In the age of cloud and edge computing, modernizing your data center isn\'t just an upgrade—it\'s a strategic necessity for survival and growth. This post explores the key drivers, challenges, and pathways to a successful data center transformation.',
     imageUrl: 'https://picsum.photos/seed/blog1/800/450',
-    imageHint: 'security command center',
-    tags: ['Security', 'Integration', 'Technology Trends'],
+    imageHint: 'data center aisle',
+    tags: ['Data Center', 'Infrastructure', 'Modernization'],
     content: `
-      <p>In today's complex threat landscape, relying on disparate, non-communicating security systems is a recipe for disaster. A fire alarm that doesn't automatically unlock emergency exits, or a CCTV system that can't share data with access control, creates critical vulnerabilities. The future, and indeed the present, of effective enterprise security lies in integration.</p>
-      <h3>What is Integrated Security?</h3>
-      <p>Integrated security means unifying various security components—such as video surveillance (CCTV), access control, intrusion detection, and fire safety systems—into a single, cohesive platform. This creates a "system of systems" where data is shared, actions are automated, and operators have a holistic view of the entire premises from a single pane of glass.</p>
-      <blockquote>"An integrated system turns reactive security measures into a proactive, intelligent defense mechanism."</blockquote>
-      <h3>Key Benefits of Integration</h3>
-      <ul>
-        <li><strong>Improved Situational Awareness:</strong> Operators can see an access-denied event on a map, pull up the nearest camera feed, and communicate via an integrated intercom instantly.</li>
-        <li><strong>Automated, Faster Responses:</strong> A fire alarm can automatically trigger all doors to unlock, broadcast evacuation messages, and send a building layout to first responders.</li>
-        <li><strong>Enhanced Investigations:</strong> Security teams can search for an individual across all camera feeds based on an access card swipe, streamlining forensic analysis from hours to minutes.</li>
-        <li><strong>Reduced Operational Costs:</strong> A single platform reduces training requirements, streamlines maintenance, and provides data-driven insights for optimizing guard patrols and resource allocation.</li>
-      </ul>
-      <p>At CYROTICS, we specialize in designing and deploying these unified security platforms. We leverage open-architecture systems to ensure that your security infrastructure is not only robust today but also scalable and future-proof for the challenges of tomorrow.</p>
+      <p>In today's digital-first economy, the data center remains the heart of the enterprise. However, many legacy data centers are struggling to keep pace with the demands of modern workloads, from AI and machine learning to hybrid cloud environments. This operational friction can stifle innovation and inflate costs. Data center modernization is the process of updating and optimizing your infrastructure to create a more agile, efficient, and resilient foundation for your business.</p>
+      <p>It goes beyond simply replacing old servers. True modernization involves a holistic approach, re-evaluating everything from power and cooling to network architecture and management software. Key technologies like hyper-converged infrastructure (HCI), software-defined networking (SDN), and advanced data center infrastructure management (DCIM) tools are central to this transformation. The goal is to create a software-defined, automated environment that can dynamically allocate resources, predict failures before they happen, and provide deep visibility into performance and costs. At CYROTICS, we guide organizations through this complex journey, ensuring their data center evolves from a cost center into a powerful engine for business innovation.</p>
     `
   },
-  {
-    slug: 'demystifying-sd-wan-for-the-modern-enterprise',
-    title: 'Demystifying SD-WAN for the Modern Enterprise',
+    {
+    slug: 'zero-trust-architecture-a-paradigm-shift-in-cybersecurity',
+    title: 'Zero Trust Architecture: A Paradigm Shift in Cybersecurity',
     author: 'Arjun Desai',
     authorImage: 'https://picsum.photos/seed/arjun/100/100',
-    date: '2024-06-28',
-    excerpt: 'Software-Defined Wide Area Networking (SD-WAN) is a transformative technology, but what does it actually mean for your business? We break down the essentials.',
+    date: '2024-07-18',
+    excerpt: 'The old castle-and-moat approach to security is broken. With perimeters dissolving and threats lurking inside and out, it\'s time for a new model: "Never trust, always verify." This introduction to Zero Trust Architecture (ZTA) explains why it\'s the future of enterprise security.',
     imageUrl: 'https://picsum.photos/seed/blog2/800/450',
-    imageHint: 'cloud network diagram',
-    tags: ['Networking', 'SD-WAN', 'Infrastructure'],
+    imageHint: 'digital security lock',
+    tags: ['Cybersecurity', 'Zero Trust', 'Networking'],
     content: `
-      <p>The term SD-WAN is everywhere, but what does it really mean for your business? In essence, Software-Defined Wide Area Networking (SD-WAN) is a virtualized network architecture that allows enterprises to leverage any combination of transport services – including MPLS, LTE, and broadband internet services – to securely connect users to applications.</p>
-      <h3>Traditional WAN vs. SD-WAN</h3>
-      <p>Traditional WANs were built for an era where applications resided in the corporate data center. Today, with the rise of cloud applications (SaaS & IaaS), this model creates a traffic "trombone" effect, backhauling cloud-destined traffic through the data center, which adds latency and degrades application performance.</p>
-      <p>SD-WAN intelligently routes traffic to the cloud directly over the most efficient path, without sacrificing security. It simplifies management through a centralized controller, providing visibility and control over the entire network.</p>
-      <h3>Core Advantages of SD-WAN</h3>
-      <ul>
-        <li><strong>Cost Savings:</strong> Reduce reliance on expensive MPLS circuits by augmenting with more affordable broadband and LTE.</li>
-        <li><strong>Improved Performance:</strong> Dynamic path selection ensures applications use the best-performing link, improving user experience for services like Office 365 or Salesforce.</li>
-        <li><strong>Simplified Management:</strong> Zero-touch provisioning and a centralized control plane drastically reduce the time and complexity of deploying and managing branch offices.</li>
-        <li><strong>Enhanced Security:</strong> Integrated security features like next-gen firewalls, secure web gateways, and sandboxing are built-in, not bolted on.</li>
-      </ul>
-      <p>Migrating to SD-WAN is a strategic move that aligns your network with the realities of a cloud-first world. It's not just an IT upgrade; it's a business enabler that fosters agility and innovation. Our network transformation services can help you design and implement an SD-WAN strategy that is right for your organization.</p>
+      <p>For decades, network security was built on a simple premise: trust anyone and anything inside the network, and be suspicious of everything outside. This "castle-and-moat" model is fundamentally broken in a world of cloud applications, remote work, and sophisticated insider threats. Zero Trust Architecture (ZTA) flips this model on its head with a simple but powerful principle: never trust, always verify. It assumes that threats exist both outside and inside the traditional network perimeter.</p>
+      <p>In a Zero Trust model, every request for access—regardless of its origin—must be rigorously authenticated, authorized, and encrypted before access is granted. This is not a single product, but a strategic approach to security that leverages technologies like multi-factor authentication (MFA), identity and access management (IAM), and micro-segmentation. Micro-segmentation is key, as it involves dividing the network into small, isolated zones to limit the lateral movement of attackers. If one segment is compromised, the breach is contained and cannot spread across the entire network. Implementing ZTA is a journey that enhances security posture, simplifies compliance, and provides the agility businesses need to operate securely in a perimeter-less world.</p>
     `
   },
   {
-    slug: 'roi-of-smart-building-technology',
-    title: 'Calculating the ROI of Smart Building Technology',
+    slug: 'the-roi-of-sustainability-how-solar-powers-your-bottom-line',
+    title: 'The ROI of Sustainability: How Solar Powers Your Bottom Line',
     author: 'Vikram Singh',
     authorImage: 'https://picsum.photos/seed/vikram/100/100',
-    date: '2024-05-19',
-    excerpt: 'Investing in Building Management Systems (BMS) and IoT is not just about being modern; it\'s about tangible financial returns. Let\'s explore the ROI.',
+    date: '2024-06-25',
+    excerpt: 'Adopting solar energy is more than an environmental statement—it\'s a powerful financial strategy. From immediate operational savings to long-term brand enhancement, we explore how investing in renewable energy delivers a compelling return on investment that goes far beyond just the balance sheet.',
     imageUrl: 'https://picsum.photos/seed/blog3/800/450',
-    imageHint: 'energy saving lightbulb',
-    tags: ['Smart Building', 'ROI', 'IoT'],
+    imageHint: 'solar panels factory',
+    tags: ['Renewable Energy', 'Solar', 'ROI'],
     content: `
-      <p>When considering an investment in smart building technology, the conversation inevitably turns to Return on Investment (ROI). While the upfront cost can seem significant, the long-term financial benefits are compelling and multifaceted. It's not just about saving on the electricity bill; it's about fundamentally enhancing the value and efficiency of the asset.</p>
-      <h3>Direct Cost Savings</h3>
-      <p>The most immediate returns come from energy efficiency. An intelligent Building Management System (BMS) can:</p>
-      <ul>
-        <li>Optimize HVAC systems based on occupancy, time of day, and weather forecasts, reducing energy consumption by up to 30%.</li>
-        <li>Implement smart lighting schedules and use daylight harvesting to minimize electricity usage.</li>
-        <li>Detect water leaks early, preventing costly damage and water waste.</li>
-      </ul>
-      <h3>Operational Efficiency</h3>
-      <p>A smart building streamlines facility management. Predictive maintenance, enabled by IoT sensors on equipment like elevators and HVAC units, allows for repairs before a critical failure occurs. This reduces downtime, lowers repair costs, and extends equipment lifespan.</p>
-      <h3>Increased Asset Value & Occupant Well-being</h3>
-      <blockquote>"A smart building is a more desirable building."</blockquote>
-      <p>Properties with modern, efficient systems command higher rental and resale values. Furthermore, the ability to control temperature and lighting improves occupant comfort and productivity, making the space more attractive to premium tenants. Enhanced indoor air quality, monitored by IoT sensors, also contributes to a healthier and more productive workforce.</p>
-      <p>Calculating the precise ROI involves analyzing your current operational costs against the potential savings and value-add from a new system. Our team can help you build a detailed business case for your specific property. Try our <a href="/roi-calculator">online ROI calculator</a> for a preliminary estimate.</p>
+      <p>While corporate sustainability goals are a major driver for adopting solar energy, the financial business case is often what seals the deal. Investing in a commercial solar power system is a strategic move that delivers tangible returns, making it one of the smartest capital investments a business can make today. The most direct benefit is a significant reduction in electricity bills. By generating your own clean power on-site, you reduce your reliance on the grid and hedge against volatile utility rate hikes, leading to predictable, lower operational costs for decades.</p>
+      <p>Beyond the immediate savings, solar assets increase your property value and offer attractive tax incentives and accelerated depreciation benefits that can shorten the payback period significantly. Furthermore, a commitment to sustainability enhances your brand image, attracting environmentally conscious customers and talent. In a competitive market, being a green leader is a powerful differentiator. When you combine the operational savings, financial incentives, and brand enhancement, the return on investment for solar energy becomes undeniable. It's a strategic investment in a more profitable and sustainable future.</p>
     `
+  },
+  {
+    slug: 'beyond-the-video-call-crafting-the-modern-conference-room',
+    title: 'Beyond the Video Call: Crafting the Modern Conference Room',
+    author: 'Meera Iyer',
+    authorImage: 'https://picsum.photos/seed/meera/100/100',
+    date: '2024-06-10',
+    excerpt: 'In the era of hybrid work, the conference room is no longer just a table with a speakerphone. It\'s a critical hub for collaboration between in-office and remote teams. This post dives into the key AV technologies and design principles for creating seamless, equitable, and productive meeting experiences.',
+    imageUrl: 'https://picsum.photos/seed/blog4/800/450',
+    imageHint: 'modern conference room',
+    tags: ['Audio-Visual', 'Hybrid Work', 'Collaboration'],
+    content: `
+      <p>The rise of hybrid work has transformed the purpose of the office. It's no longer just a place to work, but a hub for collaboration. At the heart of this collaborative hub is the conference room, and the old setup of a long table and a speakerphone in the middle simply won't cut it. A modern conference room must provide an equitable experience for all participants, whether they are in the room or joining remotely. This requires a thoughtful integration of audio-visual technology.</p>
+      <p>Key elements include intelligent cameras that can automatically frame the active speaker, ensuring remote participants feel engaged. High-quality microphone arrays and soundbars are essential to capture clear audio from everyone in the room without anyone needing to shout. Wireless presentation systems eliminate the frustrating hunt for the right dongle, allowing anyone to share their screen with a single click. And it all needs to be tied together with an intuitive control system that makes starting a meeting effortless. Investing in these technologies transforms your meeting rooms from sources of frustration into powerful engines of productivity and collaboration.</p>
+    `
+  },
+   {
+    slug: 'the-hidden-genius-of-your-building-an-intro-to-bms',
+    title: 'The Hidden Genius of Your Building: An Intro to BMS',
+    author: 'Arjun Desai',
+    authorImage: 'https://picsum.photos/seed/arjun/100/100',
+    date: '2024-05-22',
+    excerpt: 'What if your building could think? A Building Management System (BMS) is the brain that does just that, quietly optimizing everything from temperature to security. Discover how this hidden genius works to make buildings more efficient, comfortable, and sustainable.',
+    imageUrl: 'https://picsum.photos/seed/blog5/800/450',
+    imageHint: 'building blueprint',
+    tags: ['Smart Building', 'BMS', 'IoT'],
+    content: `
+      <p>Every large commercial building has a nervous system—a complex web of HVAC, lighting, and security systems. But without a brain to control it, this system is inefficient and chaotic. A Building Management System (BMS), also known as a Building Automation System (BAS), is the central intelligence that orchestrates these disparate components, turning a simple structure into a smart, responsive environment.</p>
+      <p>At its core, a BMS is a computer-based system that monitors and controls a building's mechanical and electrical equipment. It gathers data from sensors throughout the facility—measuring temperature, occupancy, light levels, and more—and uses that data to make intelligent decisions. For example, if it detects that a meeting room is empty, it can automatically dim the lights and adjust the thermostat, saving energy. If a fire alarm is triggered, it can instantly unlock emergency exits and shut down ventilation fans to prevent smoke from spreading. By providing centralized control and automation, a BMS not only creates significant energy and operational savings but also ensures a safer, more comfortable environment for occupants. It's the unseen intelligence that makes modern buildings work.</p>
+    `
+  },
+  {
+    slug: 'from-idea-to-app-the-journey-of-custom-software-development',
+    title: 'From Idea to App: The Journey of Custom Software Development',
+    author: 'Vikram Singh',
+    authorImage: 'https://picsum.photos/seed/vikram/100/100',
+    date: '2024-05-05',
+    excerpt: 'Off-the-shelf software can only take you so far. When your business processes are unique, a custom-built application is the key to unlocking true efficiency. This post outlines the typical lifecycle of a custom software project, from initial discovery and design to deployment and beyond.',
+    imageUrl: 'https://picsum.photos/seed/blog6/800/450',
+    imageHint: 'ui design wireframe',
+    tags: ['Software Development', 'Agile', 'Cloud'],
+    content: `
+      <p>Every business has unique challenges and workflows that generic, off-the-shelf software can't effectively address. This is where custom software development comes in—creating a solution perfectly tailored to your specific needs. But how does an idea become a fully functional application? The journey typically follows a structured, agile process to ensure the final product meets and exceeds expectations.</p>
+      <p>It begins with a Discovery phase, where we immerse ourselves in your business to understand your goals, challenges, and user needs. This leads to the Design phase, where we create wireframes and prototypes to map out the user experience and interface. Once the blueprint is approved, we move into Development, writing the code and building the application in iterative cycles or "sprints." Each sprint ends with a functional piece of the application that you can test and provide feedback on. This agile approach ensures the project stays on track and aligned with your vision. After rigorous testing and quality assurance, the application is deployed. But the journey doesn't end there; we provide ongoing support and maintenance to ensure your software continues to evolve with your business.</p>
+    `
+  }
+];
+
+export const FAQS: FAQ[] = [
+  {
+    question: "What industries do you specialize in?",
+    answer: "We work with a wide range of industries, but we have deep expertise in Finance, Healthcare, Manufacturing, Real Estate, and Education. Our solutions are adaptable and can be tailored to meet the specific compliance and operational needs of any sector."
+  },
+  {
+    question: "How do you begin a new project with a client?",
+    answer: "Every project starts with a detailed consultation and discovery phase. Our primary goal is to understand your business, challenges, and objectives. We then conduct a thorough assessment of your existing systems before designing a solution and presenting a detailed proposal with a clear scope, timeline, and budget."
+  },
+  {
+    question: "Do you provide ongoing support and maintenance after a project is completed?",
+    answer: "Yes, absolutely. We view our clients as long-term partners. We offer a range of customizable support and maintenance packages, including 24/7 monitoring, preventive maintenance, and on-demand technical support to ensure your systems operate at peak performance."
+  },
+  {
+    question: "How does CYROTICS ensure the security of the solutions you implement?",
+    answer: "Security is at the core of everything we do. We follow a 'security-by-design' methodology, integrating best practices and robust security controls from the very beginning of a project. This includes risk assessments, secure coding practices, and adhering to industry standards like ISO 27001 and Zero Trust principles."
+  },
+  {
+    question: "Can you integrate your solutions with our existing legacy systems?",
+    answer: "Yes. We understand that a complete rip-and-replace is not always feasible. Our engineers are highly experienced in system integration and can develop custom APIs and middleware to ensure our modern solutions communicate seamlessly with your existing legacy applications and infrastructure, allowing for a phased and cost-effective modernization approach."
   }
 ];

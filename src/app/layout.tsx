@@ -5,9 +5,9 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-  title: 'CYROTICS TECHNOLOGIES',
+  title: 'CYROTICS TECHNOLOGIES | Technology Infrastructure & Security',
   description:
-    'Leading provider of Technology Infrastructure & Security Solutions for enterprises in India and emerging markets.',
+    'Your trusted partner for integrated infrastructure, security, and smart technology solutions. We specialize in data centers, cybersecurity, and cloud transformation.',
 };
 
 export default function RootLayout({

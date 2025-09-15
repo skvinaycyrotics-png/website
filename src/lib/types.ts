@@ -74,3 +74,8 @@ export interface BlogPost {
   tags: string[];
   content: string;
 }
+
+export interface FAQ {
+  question: string;
+  answer: string;
+}

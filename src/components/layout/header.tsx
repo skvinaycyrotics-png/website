@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -16,6 +16,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -28,33 +34,55 @@ export function Header() {
       <div className="container flex h-20 items-center">
         <Logo />
         <nav className="ml-auto hidden items-center gap-6 md:flex">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                'text-sm font-medium transition-colors hover:text-primary',
-                pathname === link.href
-                  ? 'text-primary'
-                  : 'text-muted-foreground'
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.subLinks ? (
+              <DropdownMenu key={link.href}>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    className={cn(
+                      'flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary',
+                      pathname.startsWith(link.href)
+                        ? 'text-primary'
+                        : 'text-muted-foreground'
+                    )}
+                  >
+                    {link.label}
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  {link.subLinks.map((subLink) => (
+                    <DropdownMenuItem key={subLink.href} asChild>
+                      <Link href={subLink.href}>{subLink.label}</Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  'text-sm font-medium transition-colors hover:text-primary',
+                  pathname === link.href
+                    ? 'text-primary'
+                    : 'text-muted-foreground'
+                )}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
         <div className="ml-4 hidden md:flex">
           <Button asChild>
-            <Link href="/contact">
-              Get a Quote <ArrowRight />
-            </Link>
+            <a href="tel:+917899900121">
+              <Phone className="mr-2 h-4 w-4" /> +91 78999 00121
+            </a>
           </Button>
         </div>
         <div className="ml-auto flex items-center md:hidden">
-          <Sheet
-            open={isMobileMenuOpen}
-            onOpenChange={setIsMobileMenuOpen}
-          >
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu />
@@ -73,25 +101,50 @@ export function Header() {
                   </SheetTrigger>
                 </div>
                 <nav className="flex flex-1 flex-col justify-between">
-                  <div className="flex flex-col gap-4">
-                  {NAV_LINKS.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={closeMobileMenu}
-                      className={cn(
-                        'text-lg font-medium transition-colors hover:text-primary',
-                        pathname === link.href
-                          ? 'text-primary'
-                          : 'text-foreground'
-                      )}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                  </div>
+                  <Accordion type="multiple" className="flex flex-col gap-4">
+                    {NAV_LINKS.map((link) =>
+                      link.subLinks ? (
+                        <AccordionItem value={link.label} key={link.label} className="border-b-0">
+                          <AccordionTrigger className="py-0 text-lg font-medium hover:no-underline">
+                            {link.label}
+                          </AccordionTrigger>
+                          <AccordionContent className="pl-4">
+                            <ul>
+                              {link.subLinks.map((subLink) => (
+                                <li key={subLink.href} className="py-2">
+                                  <Link
+                                    href={subLink.href}
+                                    onClick={closeMobileMenu}
+                                    className="text-muted-foreground hover:text-primary"
+                                  >
+                                    {subLink.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </AccordionContent>
+                        </AccordionItem>
+                      ) : (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          onClick={closeMobileMenu}
+                          className={cn(
+                            'text-lg font-medium transition-colors hover:text-primary',
+                            pathname === link.href
+                              ? 'text-primary'
+                              : 'text-foreground'
+                          )}
+                        >
+                          {link.label}
+                        </Link>
+                      )
+                    )}
+                  </Accordion>
                   <Button asChild size="lg" onClick={closeMobileMenu}>
-                    <Link href="/contact">Get a Quote</Link>
+                    <a href="tel:+917899900121">
+                      <Phone className="mr-2 h-4 w-4" /> Call Us
+                    </a>
                   </Button>
                 </nav>
               </div>

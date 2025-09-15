@@ -11,6 +11,11 @@ import { TEAM_MEMBERS } from '@/lib/constants';
 import { Target, Eye, Handshake } from 'lucide-react';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'About CYROTICS TECHNOLOGIES',
+  description: 'Learn about our mission to empower businesses with robust technology solutions. Meet the leadership team driving our commitment to innovation, reliability, and customer success.',
+};
+
 const values = [
   {
     icon: Target,

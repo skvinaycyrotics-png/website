@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, HelpCircle } from 'lucide-react';
 import {
   Card,
   CardContent,
@@ -8,7 +8,19 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { SERVICES } from '@/lib/constants';
+import { SERVICES, FAQS } from '@/lib/constants';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+
+export const metadata = {
+  title: 'Our Services | CYROTICS TECHNOLOGIES',
+  description:
+    'Explore our comprehensive technology solutions including Infrastructure, Security, AV, Smart Buildings, Software, and Renewable Energy. End-to-end services for your enterprise.',
+};
 
 export default function ServicesPage() {
   return (
@@ -49,7 +61,11 @@ export default function ServicesPage() {
                   <CardDescription className="flex-grow">
                     {service.shortDescription}
                   </CardDescription>
-                  <Button asChild variant="link" className="px-0 pt-4 self-start">
+                  <Button
+                    asChild
+                    variant="link"
+                    className="px-0 pt-4 self-start"
+                  >
                     <Link href={`/services/${service.slug}`}>
                       Learn More <ArrowRight />
                     </Link>
@@ -58,6 +74,27 @@ export default function ServicesPage() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+      
+      <section className="py-16">
+        <div className="container max-w-4xl">
+           <h2 className="text-center font-headline text-3xl font-bold flex items-center justify-center gap-3">
+             <HelpCircle className="h-8 w-8 text-primary" />
+            Frequently Asked Questions
+          </h2>
+          <Accordion type="single" collapsible className="w-full mt-8">
+            {FAQS.map((faq, index) => (
+              <AccordionItem value={`item-${index}`} key={index}>
+                <AccordionTrigger className="text-left hover:no-underline text-lg font-semibold">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="pt-2 text-base text-muted-foreground">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 

@@ -11,6 +11,11 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
+export const metadata = {
+  title: 'Our Projects | CYROTICS TECHNOLOGIES',
+  description: 'Explore our portfolio of successful projects. See how we have delivered innovative and reliable technology solutions for clients in finance, healthcare, manufacturing, and more.',
+};
+
 export default function ProjectsPage() {
   return (
     <>
