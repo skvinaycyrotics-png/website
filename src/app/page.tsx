@@ -51,7 +51,7 @@ export default function Home() {
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-primary-foreground">
           <div className="container px-4">
             <h1 className="font-headline text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
-              Engineering a Secure & Connected Future
+              Building Tomorrow's Infrastructure, Securing Today's World
             </h1>
             <p className="mt-4 max-w-3xl text-lg md:text-xl">
               CYROTICS TECHNOLOGIES: Your trusted partner for integrated
