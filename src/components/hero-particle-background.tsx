@@ -7,6 +7,8 @@ type ParticleStyle = React.CSSProperties & {
   '--particle-duration': string;
   '--particle-delay': string;
   '--particle-scale': string;
+  top: string;
+  left: string;
 };
 
 const HeroParticleBackground = () => {
@@ -16,14 +18,18 @@ const HeroParticleBackground = () => {
     const numParticles = 50;
     const generatedStyles = Array.from({ length: numParticles }).map(() => {
       const size = Math.random() * 3 + 1; // 1px to 4px
-      const duration = Math.random() * 4 + 2; // 2s to 6s
+      const duration = Math.random() * 10 + 5; // 5s to 15s
       const delay = Math.random() * duration;
-      const scale = Math.random() * 20 + 10; // final scale
+      const scale = Math.random() * 5 + 2; // final scale
+      const top = `${Math.random() * 100}%`;
+      const left = `${Math.random() * 100}%`;
       return {
         '--particle-size': `${size}px`,
         '--particle-duration': `${duration}s`,
         '--particle-delay': `-${delay}s`,
         '--particle-scale': `${scale}`,
+        top,
+        left,
       };
     });
     setStyles(generatedStyles);

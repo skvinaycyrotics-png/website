@@ -60,22 +60,21 @@
 /* Hero Particle Animation */
 @keyframes particle-animation {
   0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
+    transform: scale(1) translate(0, 0);
+    opacity: 0.7;
   }
   100% {
-    transform: translate(-50%, -50%) scale(var(--particle-scale));
+    transform: scale(var(--particle-scale)) translate(5px, -10px);
     opacity: 0;
   }
 }
 
 .particle {
   position: absolute;
-  top: 50%;
-  left: 50%;
   width: var(--particle-size);
   height: var(--particle-size);
   background: hsl(var(--primary) / 0.5);
   border-radius: 50%;
   animation: particle-animation var(--particle-duration) var(--particle-delay) linear infinite;
+  will-change: transform, opacity;
 }
