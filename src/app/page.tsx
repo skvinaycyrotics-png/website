@@ -28,7 +28,6 @@ import { Input } from '@/components/ui/input';
 import { SERVICES, PROJECTS, TESTIMONIALS } from '@/lib/constants';
 import AnimatedCounter from '@/components/animated-counter';
 import HeroHeadline from '@/components/hero-headline';
-import HeroParticleBackground from '@/components/hero-particle-background';
 
 const stats = [
   { value: 15, label: 'Years of Experience', icon: BarChart },
@@ -40,11 +39,11 @@ const stats = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative w-full pb-24">
-        <div className="absolute inset-0 overflow-hidden">
-          <HeroParticleBackground />
+      <section className="relative w-full pb-24 bg-primary/5">
+        <div className="absolute inset-0 z-0">
+          <div className="stars"></div>
+          <div className="twinkling"></div>
         </div>
-
         <div className="relative z-10">
           <div className="container px-4 pt-20 pb-32 md:pt-32 md:pb-48 text-left">
             <div className="max-w-3xl">

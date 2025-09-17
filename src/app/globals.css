@@ -57,24 +57,30 @@
   }
 }
 
-/* Hero Particle Animation */
-@keyframes particle-animation {
-  0% {
-    transform: scale(1) translate(0, 0);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(var(--particle-scale)) translate(5px, -10px);
-    opacity: 0;
-  }
+/* New Starfield Animation */
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
 }
 
-.particle {
-  position: absolute;
-  width: var(--particle-size);
-  height: var(--particle-size);
-  background: hsl(var(--primary) / 0.5);
-  border-radius: 50%;
-  animation: particle-animation var(--particle-duration) var(--particle-delay) linear infinite;
-  will-change: transform, opacity;
+.stars, .twinkling {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.stars {
+  background:#0C2C59 url(https://www.transparenttextures.com/patterns/stardust.png) repeat top center;
+  z-index:0;
+}
+
+.twinkling{
+  background:transparent url(https://www.transparenttextures.com/patterns/inflicted.png) repeat top center;
+  z-index:1;
+  animation:move-twink-back 200s linear infinite;
 }
