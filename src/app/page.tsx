@@ -28,6 +28,7 @@ import { Input } from '@/components/ui/input';
 import { SERVICES, PROJECTS, TESTIMONIALS } from '@/lib/constants';
 import AnimatedCounter from '@/components/animated-counter';
 import HeroHeadline from '@/components/hero-headline';
+import HeroBackground from '@/components/hero-background';
 
 const stats = [
   { value: 15, label: 'Years of Experience', icon: BarChart },
@@ -40,16 +41,8 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <section className="relative w-full bg-primary/5 pb-24">
-        <div className="absolute inset-0">
-          <Image
-            src="https://picsum.photos/seed/tech-abstract/1920/1080"
-            alt="Abstract technology background"
-            fill
-            className="object-cover"
-            priority
-            data-ai-hint="abstract technology"
-          />
-          <div className="absolute inset-0 bg-slate-100/80" />
+        <div className="absolute inset-0 overflow-hidden">
+          <HeroBackground />
         </div>
 
         <div className="relative z-10">

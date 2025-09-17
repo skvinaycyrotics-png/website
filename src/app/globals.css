@@ -56,3 +56,26 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+/* Hero Background Animation */
+@keyframes moveUp {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+.animated-line {
+  position: absolute;
+  bottom: 0;
+  left: var(--left);
+  width: var(--size);
+  height: var(--height);
+  background: linear-gradient(to top, hsl(var(--primary) / 0), hsl(var(--primary) / var(--opacity)), hsl(var(--primary) / 0));
+  border-radius: 50%;
+  animation: moveUp var(--duration) var(--delay) linear infinite;
+  will-change: transform;
+}
