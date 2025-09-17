@@ -40,7 +40,7 @@ const stats = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative w-full bg-primary/5 pb-24">
+      <section className="relative w-full pb-24">
         <div className="absolute inset-0 overflow-hidden">
           <HeroParticleBackground />
         </div>
