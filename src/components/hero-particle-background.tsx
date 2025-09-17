@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-type ParticleStyle = {
+type ParticleStyle = React.CSSProperties & {
   '--particle-size': string;
   '--particle-duration': string;
   '--particle-delay': string;
@@ -13,7 +13,6 @@ const HeroParticleBackground = () => {
   const [styles, setStyles] = useState<ParticleStyle[]>([]);
 
   useEffect(() => {
-    // Generate styles only on the client-side to prevent hydration mismatch
     const numParticles = 50;
     const generatedStyles = Array.from({ length: numParticles }).map(() => {
       const size = Math.random() * 3 + 1; // 1px to 4px
@@ -37,7 +36,7 @@ const HeroParticleBackground = () => {
           <div
             key={i}
             className="particle"
-            style={style as React.CSSProperties}
+            style={style}
           ></div>
         ))}
       </div>
