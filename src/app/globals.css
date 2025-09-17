@@ -57,25 +57,25 @@
   }
 }
 
-
-/* Hero Background Animation */
-@keyframes moveUp {
+/* Hero Particle Animation */
+@keyframes particle-animation {
   0% {
-    transform: translateY(100vh);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
   100% {
-    transform: translateY(-200px);
+    transform: translate(-50%, -50%) scale(var(--particle-scale));
+    opacity: 0;
   }
 }
 
-.animated-line {
+.particle {
   position: absolute;
-  bottom: 0;
-  left: var(--left);
-  width: var(--size);
-  height: var(--height);
-  background: linear-gradient(to top, hsl(var(--primary) / 0), hsl(var(--primary) / var(--opacity)), hsl(var(--primary) / 0));
+  top: 50%;
+  left: 50%;
+  width: var(--particle-size);
+  height: var(--particle-size);
+  background-color: hsla(var(--primary), 0.5);
   border-radius: 50%;
-  animation: moveUp var(--duration) var(--delay) linear infinite;
-  will-change: transform;
+  animation: particle-animation var(--particle-duration) var(--particle-delay) linear infinite;
 }

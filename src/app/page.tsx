@@ -28,7 +28,7 @@ import { Input } from '@/components/ui/input';
 import { SERVICES, PROJECTS, TESTIMONIALS } from '@/lib/constants';
 import AnimatedCounter from '@/components/animated-counter';
 import HeroHeadline from '@/components/hero-headline';
-import HeroBackground from '@/components/hero-background';
+import HeroParticleBackground from '@/components/hero-particle-background';
 
 const stats = [
   { value: 15, label: 'Years of Experience', icon: BarChart },
@@ -42,7 +42,7 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="relative w-full bg-primary/5 pb-24">
         <div className="absolute inset-0 overflow-hidden">
-          <HeroBackground />
+          <HeroParticleBackground />
         </div>
 
         <div className="relative z-10">
@@ -66,33 +66,38 @@ export default function Home() {
             </div>
           </div>
 
-           <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[80%]">
+          <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[80%]">
             <div className="bg-white/90 backdrop-blur-sm shadow-lg rounded-lg">
-                <div className="grid grid-cols-2 md:grid-cols-6">
-                  {SERVICES.map((service, index) => (
-                    <Link
-                      key={service.slug}
-                      href={`/services/${service.slug}`}
-                      className="group text-center pt-12 pb-4 px-4 relative transition-colors hover:bg-primary/10 rounded-lg"
-                    >
-                       {index > 0 && <div className="absolute left-0 top-1/2 -translate-y-1/2 h-1/2 w-px bg-border" />}
-                       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                          <div className="bg-primary text-primary-foreground rounded-lg p-3 w-16 h-16 flex items-center justify-center transition-transform group-hover:scale-110 border-4 border-white shadow-md">
-                            <service.icon className="h-8 w-8" />
-                          </div>
-                        </div>
-                      <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
-                        {service.title}
-                      </h3>
-                    </Link>
-                  ))}
-                </div>
+              <div className="grid grid-cols-2 md:grid-cols-6">
+                {SERVICES.map((service, index) => (
+                  <Link
+                    key={service.slug}
+                    href={`/services/${service.slug}`}
+                    className="group text-center pt-12 pb-4 px-4 relative transition-colors hover:bg-primary/10 rounded-lg"
+                  >
+                    {index > 0 && (
+                      <div className="absolute left-0 top-1/2 -translate-y-1/2 h-1/2 w-px bg-border" />
+                    )}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                      <div className="bg-primary text-primary-foreground rounded-lg p-3 w-16 h-16 flex items-center justify-center transition-transform group-hover:scale-110 border-4 border-white shadow-md">
+                        <service.icon className="h-8 w-8" />
+                      </div>
+                    </div>
+                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
+                      {service.title}
+                    </h3>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="stats" className="bg-background pt-32 pb-12 sm:pt-32 lg:pb-20">
+      <section
+        id="stats"
+        className="bg-background pt-32 pb-12 sm:pt-32 lg:pb-20"
+      >
         <div className="container px-4">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((stat, index) => (
@@ -119,7 +124,10 @@ export default function Home() {
           </p>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {PROJECTS.slice(0, 3).map((project) => (
-              <Card key={project.id} className="group overflow-hidden text-left">
+              <Card
+                key={project.id}
+                className="group overflow-hidden text-left"
+              >
                 <div className="overflow-hidden">
                   <Image
                     src={project.imageUrl}
@@ -193,7 +201,9 @@ export default function Home() {
                       <blockquote className="mt-6 border-none p-0 text-lg font-medium">
                         <p>"{testimonial.quote}"</p>
                       </blockquote>
-                      <div className="mt-4 font-semibold">{testimonial.name}</div>
+                      <div className="mt-4 font-semibold">
+                        {testimonial.name}
+                      </div>
                       <div className="text-sm text-muted-foreground">
                         {testimonial.title}, {testimonial.company}
                       </div>
@@ -215,7 +225,8 @@ export default function Home() {
               Ready to Build Your Future?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Let's discuss how CYROTICS can tailor a solution to meet your exact needs. Contact us for a consultation.
+              Let's discuss how CYROTICS can tailor a solution to meet your
+              exact needs. Contact us for a consultation.
             </p>
             <div className="mt-8">
               <Button asChild size="lg">
