@@ -42,76 +42,63 @@ export default function Home() {
       <section className="relative w-full bg-primary/5">
         <div className="absolute inset-0">
           <Image
-            src="https://picsum.photos/seed/hero-bg/1920/1080"
-            alt="Abstract background with geometric shapes"
+            src="https://picsum.photos/seed/tech-abstract/1920/1080"
+            alt="Abstract technology background"
             fill
             className="object-cover"
             priority
-            data-ai-hint="abstract background"
+            data-ai-hint="abstract technology"
           />
           <div className="absolute inset-0 bg-slate-100/80" />
         </div>
 
         <div className="relative z-10">
-          <div className="container px-4 pt-20 pb-16 md:pt-32 md:pb-24 text-left">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <HeroHeadline />
-                <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-                  A professional approach to business results through systems integration.
-                </p>
-                <div className="mt-8 flex flex-wrap justify-start gap-4">
-                  <Button asChild size="lg" className="font-semibold">
-                    <Link href="/services">
-                      Our Solutions <ArrowRight />
-                    </Link>
-                  </Button>
-                  <Button asChild size="lg" variant="outline">
-                    <Link href="/contact">Request a Consultation</Link>
-                  </Button>
-                   <Button asChild size="lg" variant="secondary">
-                    <Link href="/about">Learn More</Link>
-                  </Button>
-                </div>
-              </div>
-              <div className="hidden md:flex justify-center">
-                <div className="bg-white p-2 rounded-lg shadow-lg w-48 text-center">
-                   <h3 className="font-bold text-red-600 text-lg">Great Place To Work.</h3>
-                   <p className="font-semibold text-sm">Certified</p>
-                   <p className="text-xs text-muted-foreground">OCT 2024 - OCT 2025</p>
-                   <p className="font-bold text-sm mt-1">INDIA</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="bg-white/80 backdrop-blur-sm shadow-md">
-            <div className="container px-4">
-              <div className="grid grid-cols-2 md:grid-cols-6 divide-x">
-                {SERVICES.map((service) => (
-                  <Link 
-                    key={service.slug}
-                    href={`/services/${service.slug}`} 
-                    className="group text-center p-4 transition-colors hover:bg-primary/10"
-                  >
-                    <div className="flex justify-center mb-2">
-                       <div className="bg-primary text-primary-foreground rounded-lg p-3 w-14 h-14 flex items-center justify-center transition-transform group-hover:scale-110">
-                         <service.icon className="h-8 w-8" />
-                       </div>
-                    </div>
-                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
-                      {service.title}
-                    </h3>
+          <div className="container px-4 pt-20 pb-32 md:pt-32 md:pb-48 text-left">
+            <div className="max-w-3xl">
+              <HeroHeadline />
+              <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
+                A professional approach to business results through systems
+                integration.
+              </p>
+              <div className="mt-8 flex flex-wrap justify-start gap-4">
+                <Button asChild size="lg" className="font-semibold">
+                  <Link href="/services">
+                    Our Solutions <ArrowRight />
                   </Link>
-                ))}
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link href="/contact">Request a Consultation</Link>
+                </Button>
               </div>
             </div>
           </div>
 
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[80%]">
+            <div className="bg-white/80 backdrop-blur-sm shadow-md rounded-lg overflow-hidden">
+                <div className="grid grid-cols-2 md:grid-cols-6">
+                  {SERVICES.map((service) => (
+                    <Link
+                      key={service.slug}
+                      href={`/services/${service.slug}`}
+                      className="group text-center p-4 transition-colors hover:bg-primary/10"
+                    >
+                      <div className="flex justify-center mb-2">
+                        <div className="bg-primary text-primary-foreground rounded-lg p-3 w-14 h-14 flex items-center justify-center transition-transform group-hover:scale-110">
+                          <service.icon className="h-8 w-8" />
+                        </div>
+                      </div>
+                      <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
+                        {service.title}
+                      </h3>
+                    </Link>
+                  ))}
+                </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="stats" className="bg-background py-12 sm:py-16 lg:py-20">
+      <section id="stats" className="bg-background pt-32 pb-12 sm:pt-32 lg:pb-20">
         <div className="container px-4">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((stat, index) => (
