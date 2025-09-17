@@ -39,7 +39,7 @@ const stats = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative w-full bg-primary/5">
+      <section className="relative w-full bg-primary/5 pb-24">
         <div className="absolute inset-0">
           <Image
             src="https://picsum.photos/seed/tech-abstract/1920/1080"
@@ -73,20 +73,21 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[80%]">
-            <div className="bg-white/80 backdrop-blur-sm shadow-md rounded-lg overflow-hidden">
+           <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[80%]">
+            <div className="bg-white/90 backdrop-blur-sm shadow-lg rounded-lg">
                 <div className="grid grid-cols-2 md:grid-cols-6">
-                  {SERVICES.map((service) => (
+                  {SERVICES.map((service, index) => (
                     <Link
                       key={service.slug}
                       href={`/services/${service.slug}`}
-                      className="group text-center p-4 transition-colors hover:bg-primary/10"
+                      className="group text-center pt-12 pb-4 px-4 relative transition-colors hover:bg-primary/10 rounded-lg"
                     >
-                      <div className="flex justify-center mb-2">
-                        <div className="bg-primary text-primary-foreground rounded-lg p-3 w-14 h-14 flex items-center justify-center transition-transform group-hover:scale-110">
-                          <service.icon className="h-8 w-8" />
+                       {index > 0 && <div className="absolute left-0 top-1/2 -translate-y-1/2 h-1/2 w-px bg-border" />}
+                       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                          <div className="bg-primary text-primary-foreground rounded-lg p-3 w-16 h-16 flex items-center justify-center transition-transform group-hover:scale-110 border-4 border-white shadow-md">
+                            <service.icon className="h-8 w-8" />
+                          </div>
                         </div>
-                      </div>
                       <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
                         {service.title}
                       </h3>
