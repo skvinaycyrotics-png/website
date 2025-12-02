@@ -1,7 +1,7 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
-import { useEffect, useRef } from 'react';
+import { useFormStatus } from 'react-dom';
+import { useActionState, useEffect, useRef } from 'react';
 
 import {
   Card,
@@ -40,7 +40,7 @@ function ContactForm({
   inquiryType: 'General' | 'Sales' | 'Support';
 }) {
   const initialState = { message: null, errors: {}, type: '' };
-  const [state, dispatch] = useFormState(submitContactForm, initialState);
+  const [state, dispatch] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 

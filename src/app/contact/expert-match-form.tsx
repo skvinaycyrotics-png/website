@@ -1,6 +1,6 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState, useFormStatus } from 'react-dom';
 
 import {
   Card,
@@ -28,7 +28,7 @@ function SubmitButton() {
 
 export default function ExpertMatchForm() {
   const initialState = { message: null, errors: {}, type: '', data: null };
-  const [state, dispatch] = useFormState(findExpert, initialState);
+  const [state, dispatch] = useActionState(findExpert, initialState);
 
   return (
     <Card className="bg-primary/5 border-primary/20">
