@@ -29,21 +29,21 @@ export default function ContactPage() {
               <MapPin className="h-10 w-10 text-primary" />
               <h3 className="mt-4 text-xl font-semibold">Our Office</h3>
               <p className="text-muted-foreground">
-                123 Tech Park, Bangalore, 560100, India
+                86/2, Street No.-54/V/3, Ist 60 Feet Road, Molarband Extension, Badarpur Bordar, New Delhi-110044, India
               </p>
             </div>
             <div className="flex flex-col items-center">
               <Phone className="h-10 w-10 text-primary" />
               <h3 className="mt-4 text-xl font-semibold">Phone</h3>
-              <a href="tel:+918012345678" className="text-muted-foreground hover:text-primary">
-                +91 80 1234 5678
+              <a href="tel:+919999295636" className="text-muted-foreground hover:text-primary">
+                +91-9999295636
               </a>
             </div>
             <div className="flex flex-col items-center">
               <Mail className="h-10 w-10 text-primary" />
               <h3 className="mt-4 text-xl font-semibold">Email</h3>
-              <a href="mailto:info@cyrotics.com" className="text-muted-foreground hover:text-primary">
-                info@cyrotics.com
+              <a href="mailto:info@cyrotics.in" className="text-muted-foreground hover:text-primary">
+                info@cyrotics.in
               </a>
             </div>
           </div>

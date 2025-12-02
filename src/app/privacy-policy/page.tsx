@@ -90,7 +90,7 @@ export default function PrivacyPolicyPage() {
           us:
         </p>
         <ul className="list-disc pl-6 space-y-2 my-4">
-          <li>By email: privacy@cyrotics.com</li>
+          <li>By email: privacy@cyrotics.in</li>
         </ul>
       </div>
     </div>

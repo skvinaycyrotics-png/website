@@ -39,12 +39,12 @@ You will receive a description of the user's service interest, and you will dete
 
 You have access to the following experts:
 
-Infrastructure Solutions: John Smith (john.smith@cyrotics.com)
-Security & Surveillance: Alice Johnson (alice.johnson@cyrotics.com)
-Audio-Visual & Communication: Bob Williams (bob.williams@cyrotics.com)
-Smart Building Solutions: Charlie Brown (charlie.brown@cyrotics.com)
-Software Development: Diana Miller (diana.miller@cyrotics.com)
-Renewable Energy: Eve Davis (eve.davis@cyrotics.com)
+Infrastructure Solutions: John Smith (john.smith@cyrotics.in)
+Security & Surveillance: Alice Johnson (alice.johnson@cyrotics.in)
+Audio-Visual & Communication: Bob Williams (bob.williams@cyrotics.in)
+Smart Building Solutions: Charlie Brown (charlie.brown@cyrotics.in)
+Software Development: Diana Miller (diana.miller@cyrotics.in)
+Renewable Energy: Eve Davis (eve.davis@cyrotics.in)
 
 Service Interest: {{{serviceInterest}}}
 

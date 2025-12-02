@@ -66,7 +66,7 @@ export default function CareersPage() {
                     </ul>
                     <Button asChild className="mt-6">
                       {/* In a real app, this would link to an application form or ATS */}
-                      <Link href={`mailto:careers@cyrotics.com?subject=Application for ${job.title}`}>
+                      <Link href={`mailto:careers@cyrotics.in?subject=Application for ${job.title}`}>
                         Apply Now
                       </Link>
                     </Button>

@@ -78,7 +78,7 @@ export default function TermsOfServicePage() {
           If you have any questions about these Terms, please contact us:
         </p>
         <ul className="list-disc pl-6 space-y-2 my-4">
-          <li>By email: legal@cyrotics.com</li>
+          <li>By email: legal@cyrotics.in</li>
         </ul>
       </div>
     </div>
