@@ -6,15 +6,18 @@ export function Logo({ className }: { className?: string }) {
   return (
     <Link
       href="/"
-      className={cn('flex items-center gap-3 text-xl font-bold', className)}
+      className={cn('flex items-center text-xl font-bold', className)}
     >
-      <Image 
-        src="/Cyrotics-Logo.png"
-        alt="CYROTICS TECHNOLOGIES Logo"
-        width={180}
-        height={40}
-        priority
-      />
+      <div style={{ width: '180px' }}>
+        <Image
+          src="/Cyrotics-Logo.png"
+          alt="CYROTICS TECHNOLOGIES Logo"
+          width={180}
+          height={40}
+          priority
+          layout="responsive"
+        />
+      </div>
     </Link>
   );
 }
