@@ -41,6 +41,14 @@ import {
 export const NAV_LINKS: NavLink[] = [
   { href: '/', label: 'Home' },
   {
+    href: '/about',
+    label: 'About',
+    subLinks: [
+      { href: '/about', label: 'About Us' },
+      { href: '/careers', label: 'Careers' },
+    ],
+  },
+  {
     href: '/services',
     label: 'Services',
     subLinks: [
@@ -54,14 +62,6 @@ export const NAV_LINKS: NavLink[] = [
   },
   { href: '/projects', label: 'Projects' },
   { href: '/blog', label: 'Blog' },
-  {
-    href: '/about',
-    label: 'About',
-    subLinks: [
-      { href: '/about', label: 'About Us' },
-      { href: '/careers', label: 'Careers' },
-    ],
-  },
   { href: '/contact', label: 'Contact' },
 ];
 
