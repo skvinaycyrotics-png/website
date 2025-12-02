@@ -3,10 +3,10 @@ import Link from 'next/link';
 import {
   ArrowRight,
   ShieldCheck,
-  Server,
   Users,
-  BarChart,
-  Lightbulb,
+  GanttChartSquare,
+  Calendar,
+  HeartHandshake,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -31,10 +31,10 @@ import HeroHeadline from '@/components/hero-headline';
 import PlexusBackground from '@/components/plexus-background';
 
 const stats = [
-  { value: 15, label: 'Years of Experience', icon: BarChart },
-  { value: 500, label: 'Projects Completed', icon: Server },
-  { value: 250, label: 'Satisfied Clients', icon: Users },
-  { value: 10, label: 'Industry Awards', icon: Lightbulb },
+  { value: 4, label: 'Years of Experience', icon: Calendar },
+  { value: 50, label: 'Projects Completed', icon: GanttChartSquare },
+  { value: 45, label: 'Satisfied Clients', icon: HeartHandshake },
+  { value: 100, label: 'Team Size', icon: Users },
 ];
 
 export default function Home() {
