@@ -76,8 +76,8 @@ export function Header() {
         </nav>
         <div className="ml-4 hidden md:flex">
           <Button asChild>
-            <a href="tel:+917899900121">
-              <Phone className="mr-2 h-4 w-4" /> +91 78999 00121
+            <a href="tel:+919999295636">
+              <Phone className="mr-2 h-4 w-4" /> +91-9999295636
             </a>
           </Button>
         </div>
@@ -142,7 +142,7 @@ export function Header() {
                     )}
                   </Accordion>
                   <Button asChild size="lg" onClick={closeMobileMenu}>
-                    <a href="tel:+917899900121">
+                    <a href="tel:+919999295636">
                       <Phone className="mr-2 h-4 w-4" /> Call Us
                     </a>
                   </Button>
