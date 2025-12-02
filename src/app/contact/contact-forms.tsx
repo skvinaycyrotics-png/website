@@ -1,7 +1,7 @@
 'use client';
 
 import { useFormStatus } from 'react-dom';
-import { useActionState, useEffect, useRef } from 'react';
+import { useActionState, useEffect, useRef, useState } from 'react';
 
 import {
   Card,
@@ -23,7 +23,7 @@ import { Label } from '@/components/ui/label';
 import { submitContactForm } from '@/app/actions';
 import { useToast } from '@/hooks/use-toast';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Terminal } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -39,17 +39,19 @@ function ContactForm({
 }: {
   inquiryType: 'General' | 'Sales' | 'Support';
 }) {
-  const initialState = { message: null, errors: {}, type: '' };
+  const initialState = { message: null, errors: {}, type: '', mailto: null };
   const [state, dispatch] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
+  const [showMailto, setShowMailto] = useState(false);
 
   useEffect(() => {
-    if (state.type === 'success') {
+    if (state.type === 'success' && state.mailto) {
       toast({
-        title: 'Success!',
+        title: 'Ready to Send!',
         description: state.message,
       });
+      setShowMailto(true);
       formRef.current?.reset();
     } else if (state.type === 'error' && state.message && !state.errors) {
        toast({
@@ -57,6 +59,9 @@ function ContactForm({
         title: 'Error',
         description: state.message,
       });
+      setShowMailto(false);
+    } else {
+      setShowMailto(false);
     }
   }, [state, toast]);
 
@@ -75,16 +80,40 @@ function ContactForm({
            {state.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
         </div>
       </div>
-      <div className="space-y-2">
-        <Label htmlFor={`company-${inquiryType}`}>Company (Optional)</Label>
-        <Input id={`company-${inquiryType}`} name="company" />
+       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="space-y-2">
+          <Label htmlFor={`mobile-${inquiryType}`}>Mobile No.</Label>
+          <Input id={`mobile-${inquiryType}`} name="mobile" required />
+          {state.errors?.mobile && <p className="text-sm text-destructive">{state.errors.mobile[0]}</p>}
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor={`company-${inquiryType}`}>Company (Optional)</Label>
+          <Input id={`company-${inquiryType}`} name="company" />
+        </div>
       </div>
       <div className="space-y-2">
         <Label htmlFor={`message-${inquiryType}`}>Message</Label>
         <Textarea id={`message-${inquiryType}`} name="message" required />
          {state.errors?.message && <p className="text-sm text-destructive">{state.errors.message[0]}</p>}
       </div>
-      <SubmitButton />
+       <div className="space-y-2">
+        <Label htmlFor={`attachment-${inquiryType}`}>Please upload your requirement</Label>
+        <Input id={`attachment-${inquiryType}`} name="attachment" type="file" multiple />
+      </div>
+      
+      {showMailto && state.mailto ? (
+         <Alert className="mt-6 border-green-500 bg-green-50">
+           <Mail className="h-4 w-4 !text-green-600" />
+          <AlertTitle className="text-green-800">Click to Send Email</AlertTitle>
+          <AlertDescription className="text-green-700">
+             <a href={state.mailto} className="font-semibold underline">
+              Open your email client to send the message.
+            </a>
+          </AlertDescription>
+        </Alert>
+      ) : (
+         <SubmitButton />
+      )}
     </form>
   );
 }

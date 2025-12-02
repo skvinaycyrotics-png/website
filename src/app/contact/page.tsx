@@ -1,6 +1,5 @@
 import { Phone, Mail, MapPin } from 'lucide-react';
 import ContactForms from './contact-forms';
-import ExpertMatchForm from './expert-match-form';
 
 export const metadata = {
   title: 'Contact Us | CYROTICS TECHNOLOGIES',
@@ -56,7 +55,17 @@ export default function ContactPage() {
               <ContactForms />
             </div>
             <div className="lg:col-span-2">
-              <ExpertMatchForm />
+              <div className="w-full h-full min-h-[400px] rounded-lg overflow-hidden shadow-md">
+                 <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.079944686414!2d77.30256887529402!3d28.5062534888258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce6c981254339%3A0x8979a143890f8981!2sCyrotics%20Technologies!5e0!3m2!1sen!2sin!4v1700033083559!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+              </div>
             </div>
         </div>
       </div>
