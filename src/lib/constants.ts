@@ -1,3 +1,4 @@
+
 import type {
   NavLink,
   Service,
@@ -36,6 +37,10 @@ import {
   Video,
   Fan,
   PlugZap,
+  Calendar,
+  GanttChartSquare,
+  HeartHandshake,
+  Users,
 } from 'lucide-react';
 
 export const NAV_LINKS: NavLink[] = [
@@ -288,18 +293,18 @@ export const SERVICES: Service[] = [
 
 export const PROJECTS: Project[] = [
   {
-    id: 'proj-1',
-    title: 'Data Center Modernization for a Leading Bank',
-    client: 'Apex Financial',
+    id: 'proj-cims',
+    title: 'Chhindwara Institute of Medical Science – Madhya Pradesh',
+    client: 'CPWD',
     shortDescription:
-      'Executed a complete overhaul of a Tier-3 data center, resulting in a 35% increase in power efficiency and a 50% reduction in cooling costs.',
+      'Complete IT infrastructure development, including data center migration, network setup, CCTV, and wireless infrastructure.',
     longDescription:
-      "We partnered with Apex Financial to modernize their aging data center infrastructure. The project involved upgrading power distribution units (PDUs), implementing a state-of-the-art hot-aisle containment system, and deploying a DCIM solution for real-time monitoring. The successful migration, achieved with zero downtime, has equipped Apex Financial with a scalable, resilient, and highly efficient data center poised for future growth.",
-    imageUrl: 'https://picsum.photos/seed/proj1/600/400',
-    imageHint: 'network servers',
-    tags: ['Data Center', 'Energy Efficiency', 'DCIM', 'HPE'],
-    timeline: '8 Months',
-    results: 'Achieved a 35% improvement in Power Usage Effectiveness (PUE) and a 50% reduction in annual cooling costs.',
+      "For the Chhindwara Institute of Medical Science in Madhya Pradesh, we executed a comprehensive IT infrastructure project for our client, CPWD. The scope included the full development of the IT infrastructure, migration and commissioning of the data center, setup of the network core and access layers, installation of CCTV and surveillance server infrastructure, and implementation of wireless infrastructure, passive cabling, and server management. The result is a state-of-the-art smart medical campus providing seamless connectivity, high-availability systems, and secure data accessibility to staff and students.",
+    imageUrl: 'https://picsum.photos/seed/projcims/600/400',
+    imageHint: 'hospital building',
+    tags: ['IT Infrastructure', 'Data Center', 'Networking', 'CCTV', 'Smart Campus'],
+    timeline: 'Ongoing',
+    results: 'A state-of-the-art smart medical campus providing seamless connectivity, high-availability systems, and secure data accessibility to staff and students.',
   },
   {
     id: 'proj-2',
@@ -571,3 +576,5 @@ export const FAQS: FAQ[] = [
     answer: "Yes. We understand that a complete rip-and-replace is not always feasible. Our engineers are highly experienced in system integration and can develop custom APIs and middleware to ensure our modern solutions communicate seamlessly with your existing legacy applications and infrastructure, allowing for a phased and cost-effective modernization approach."
   }
 ];
+
+    
