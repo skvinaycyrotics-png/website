@@ -355,7 +355,7 @@ export const PROJECTS: Project[] = [
     results: 'Created a modern, secure, and fully connected campus environment.',
   },
   {
-    id: 'proj-bpgmc',
+    id: 'bpgmc',
     title: 'Bhagwan Parshuram Government Medical College – Kaithal, Haryana',
     client: 'Bridge and Roof Company (India) Limited',
     shortDescription: 'Comprehensive IT & ELV infrastructure for a new medical college, including smart lecture halls, campus-wide networking, and integrated security systems.',
@@ -601,9 +601,9 @@ export const BLOG_POSTS: BlogPost[] = [
   },
     {
     slug: 'zero-trust-architecture-a-paradigm-shift-in-cybersecurity',
-    title: 'Zero Trust Architecture: A Paradigm Shift in Cybersecurity',
-    author: 'Arjun Desai',
-    authorImage: 'https://picsum.photos/seed/arjun/100/100',
+    title: 'Zero Trust Architecture: A Paradigm Shift in Modern Cybersecurity',
+    author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
+    authorImage: 'https://picsum.photos/seed/logo/100/100',
     date: '2024-07-18',
     excerpt: 'The old castle-and-moat approach to security is broken. With perimeters dissolving and threats lurking inside and out, it\'s time for a new model: "Never trust, always verify." This introduction to Zero Trust Architecture (ZTA) explains why it\'s the future of enterprise security.',
     imageUrl: 'https://picsum.photos/seed/blog2/800/450',
