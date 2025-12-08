@@ -297,9 +297,9 @@ export const PROJECTS: Project[] = [
     title: 'Chhindwara Institute of Medical Science – Madhya Pradesh',
     client: 'PWD',
     shortDescription:
-      'Complete IT infrastructure development, including data center migration, network setup, CCTV, and wireless infrastructure.',
+      'Complete IT infrastructure development, including data center, networking, CCTV, and wireless infrastructure.',
     longDescription:
-      "For the Chhindwara Institute of Medical Science in Madhya Pradesh, we executed a comprehensive IT infrastructure project for our client, PWD. The scope included the full development of the IT infrastructure, migration and commissioning of the data center, setup of the network core and access layers, installation of CCTV and surveillance server infrastructure, and implementation of wireless infrastructure, passive cabling, and server management. The result is a state-of-the-art smart medical campus providing seamless connectivity, high-availability systems, and secure data accessibility to staff and students.",
+      "For the Chhindwara Institute of Medical Science in Madhya Pradesh, we executed a comprehensive IT infrastructure project. The scope included the full development of the IT infrastructure, migration and commissioning of the data center, setup of the network core and access layers, installation of CCTV and surveillance server infrastructure, and implementation of wireless infrastructure, passive cabling, and server management.",
     imageUrl: 'https://picsum.photos/seed/projcims/600/400',
     imageHint: 'hospital building',
     tags: ['IT Infrastructure', 'Data Center', 'Networking', 'CCTV', 'Smart Campus'],
@@ -313,7 +313,7 @@ export const PROJECTS: Project[] = [
     shortDescription:
       'End-to-end IT & ELV infrastructure, Wi-Fi campus, network security, and IP CCTV with a monitoring command centre.',
     longDescription:
-      'For the Government Medical College in Chandrapur, we provided a comprehensive turnkey solution for our client, HSCC. Our scope covered end-to-end IT and ELV infrastructure, including a campus-wide Wi-Fi deployment, robust network security and firewall setup, and an advanced IP CCTV system complete with a central monitoring command centre. This project ensures the new medical college has a secure, scalable, and high-performance technology backbone.',
+      'For the Government Medical College in Chandrapur, we provided a comprehensive turnkey solution. Our scope covered end-to-end IT and ELV infrastructure, including a campus-wide Wi-Fi deployment, robust network security and firewall setup, and an advanced IP CCTV system complete with a central monitoring command centre. This project ensures the new medical college has a secure, scalable, and high-performance technology backbone.',
     imageUrl: 'https://picsum.photos/seed/gmc-chandrapur/600/400',
     imageHint: 'modern university campus',
     tags: [
@@ -333,7 +333,7 @@ export const PROJECTS: Project[] = [
     shortDescription:
       'Comprehensive fire safety and smart security solutions, including fire alarms, public address systems, surveillance, and access control.',
     longDescription:
-      "For the prestigious Mahindra Enclave in Mumbai, we provided an integrated safety and security solution for our client, Mahindra & Mahindra. The project involved deploying a sophisticated Fire Alarm System coupled with a Public Address System for emergency coordination. We also installed a smart surveillance network and advanced access control systems to ensure the security and safety of the residents.",
+      "For the prestigious Mahindra Enclave in Mumbai, we provided an integrated safety and security solution. The project involved deploying a sophisticated Fire Alarm System coupled with a Public Address System for emergency coordination. We also installed a smart surveillance network and advanced access control systems to ensure the security and safety of the residents.",
     imageUrl: 'https://picsum.photos/seed/proj3/600/400',
     imageHint: 'modern apartment building',
     tags: ['Fire Safety', 'Surveillance', 'Access Control', 'Smart Building'],
@@ -345,12 +345,12 @@ export const PROJECTS: Project[] = [
     title: 'Bihar Animal Sciences University – Patna',
     client: 'ACIL',
     shortDescription:
-      'Complete campus networking, data center cabling, server setup, CCTV, Wi-Fi, and access control.',
+      'Full campus technology deployment including networking, data center, fire alarm, PA system, access control, CCTV, and Wi-Fi.',
     longDescription:
-      'We delivered a comprehensive technology overhaul for the Bihar Animal Sciences University campus. The project included end-to-end campus networking, data center cabling and server setup, and the deployment of integrated CCTV, Wi-Fi, and access control systems to create a modern, secure, and connected learning environment.',
+      'We delivered a comprehensive technology overhaul for the Bihar Animal Sciences University campus. The project included complete campus networking, data center cabling & server setup, a fire alarm and public address system, access control, and the deployment of integrated CCTV and Wi-Fi systems to create a modern, secure, and connected learning environment.',
     imageUrl: 'https://picsum.photos/seed/proj4/600/400',
     imageHint: 'university campus',
-    tags: ['Campus Networking', 'Data Center', 'CCTV', 'Wi-Fi', 'Access Control'],
+    tags: ['Campus Networking', 'Data Center', 'Fire Safety', 'Access Control', 'CCTV', 'Wi-Fi'],
     timeline: '10 Months',
     results: 'Created a modern, secure, and fully connected campus environment.',
   },
@@ -474,7 +474,7 @@ export const BLOG_POSTS: BlogPost[] = [
     imageHint: 'data center aisle',
     tags: ['Data Center', 'Infrastructure', 'Modernization'],
     content: `
-      <p>In today's digital-first economy, the data center remains the heart of the enterprise. However, many legacy data centers are struggling to keep pace with the demands of modern workloads, from AI and machine learning to hybrid cloud environments. This operational friction can stifle innovation and inflate costs. Data center modernization is the process of updating and optimizing your infrastructure to create a more agile, efficient, and resilient foundation for your business.</p>
+      <p>In today\'s digital-first economy, the data center remains the heart of the enterprise. However, many legacy data centers are struggling to keep pace with the demands of modern workloads, from AI and machine learning to hybrid cloud environments. This operational friction can stifle innovation and inflate costs. Data center modernization is the process of updating and optimizing your infrastructure to create a more agile, efficient, and resilient foundation for your business.</p>
       <p>It goes beyond simply replacing old servers. True modernization involves a holistic approach, re-evaluating everything from power and cooling to network architecture and management software. Key technologies like hyper-converged infrastructure (HCI), software-defined networking (SDN), and advanced data center infrastructure management (DCIM) tools are central to this transformation. The goal is to create a software-defined, automated environment that can dynamically allocate resources, predict failures before they happen, and provide deep visibility into performance and costs. At CYROTICS, we guide organizations through this complex journey, ensuring their data center evolves from a cost center into a powerful engine for business innovation.</p>
     `
   },
@@ -519,7 +519,7 @@ export const BLOG_POSTS: BlogPost[] = [
     imageHint: 'modern conference room',
     tags: ['Audio-Visual', 'Hybrid Work', 'Collaboration'],
     content: `
-      <p>The rise of hybrid work has transformed the purpose of the office. It's no longer just a place to work, but a hub for collaboration. At the heart of this collaborative hub is the conference room, and the old setup of a long table and a speakerphone in the middle simply won't cut it. A modern conference room must provide an equitable experience for all participants, whether they are in the room or joining remotely. This requires a thoughtful integration of audio-visual technology.</p>
+      <p>The rise of hybrid work has transformed the purpose of the office. It\'s no longer just a place to work, but a hub for collaboration. At the heart of this collaborative hub is the conference room, and the old setup of a long table and a speakerphone in the middle simply won\'t cut it. A modern conference room must provide an equitable experience for all participants, whether they are in the room or joining remotely. This requires a thoughtful integration of audio-visual technology.</p>
       <p>Key elements include intelligent cameras that can automatically frame the active speaker, ensuring remote participants feel engaged. High-quality microphone arrays and soundbars are essential to capture clear audio from everyone in the room without anyone needing to shout. Wireless presentation systems eliminate the frustrating hunt for the right dongle, allowing anyone to share their screen with a single click. And it all needs to be tied together with an intuitive control system that makes starting a meeting effortless. Investing in these technologies transforms your meeting rooms from sources of frustration into powerful engines of productivity and collaboration.</p>
     `
   },
@@ -535,7 +535,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Smart Building', 'BMS', 'IoT'],
     content: `
       <p>Every large commercial building has a nervous system—a complex web of HVAC, lighting, and security systems. But without a brain to control it, this system is inefficient and chaotic. A Building Management System (BMS), also known as a Building Automation System (BAS), is the central intelligence that orchestrates these disparate components, turning a simple structure into a smart, responsive environment.</p>
-      <p>At its core, a BMS is a computer-based system that monitors and controls a building's mechanical and electrical equipment. It gathers data from sensors throughout the facility—measuring temperature, occupancy, light levels, and more—and uses that data to make intelligent decisions. For example, if it detects that a meeting room is empty, it can automatically dim the lights and adjust the thermostat, saving energy. If a fire alarm is triggered, it can instantly unlock emergency exits and shut down ventilation fans to prevent smoke from spreading. By providing centralized control and automation, a BMS not only creates significant energy and operational savings but also ensures a safer, more comfortable environment for occupants. It's the unseen intelligence that makes modern buildings work.</p>
+      <p>At its core, a BMS is a computer-based system that monitors and controls a building\'s mechanical and electrical equipment. It gathers data from sensors throughout the facility—measuring temperature, occupancy, light levels, and more—and uses that data to make intelligent decisions. For example, if it detects that a meeting room is empty, it can automatically dim the lights and adjust the thermostat, saving energy. If a fire alarm is triggered, it can instantly unlock emergency exits and shut down ventilation fans to prevent smoke from spreading. By providing centralized control and automation, a BMS not only creates significant energy and operational savings but also ensures a safer, more comfortable environment for occupants. It\'s the unseen intelligence that makes modern buildings work.</p>
     `
   },
   {
@@ -549,8 +549,8 @@ export const BLOG_POSTS: BlogPost[] = [
     imageHint: 'ui design wireframe',
     tags: ['Software Development', 'Agile', 'Cloud'],
     content: `
-      <p>Every business has unique challenges and workflows that generic, off-the-shelf software can't effectively address. This is where custom software development comes in—creating a solution perfectly tailored to your specific needs. But how does an idea become a fully functional application? The journey typically follows a structured, agile process to ensure the final product meets and exceeds expectations.</p>
-      <p>It begins with a Discovery phase, where we immerse ourselves in your business to understand your goals, challenges, and user needs. This leads to the Design phase, where we create wireframes and prototypes to map out the user experience and interface. Once the blueprint is approved, we move into Development, writing the code and building the application in iterative cycles or "sprints." Each sprint ends with a functional piece of the application that you can test and provide feedback on. This agile approach ensures the project stays on track and aligned with your vision. After rigorous testing and quality assurance, the application is deployed. But the journey doesn't end there; we provide ongoing support and maintenance to ensure your software continues to evolve with your business.</p>
+      <p>Every business has unique challenges and workflows that generic, off-the-shelf software can\'t effectively address. This is where custom software development comes in—creating a solution perfectly tailored to your specific needs. But how does an idea become a fully functional application? The journey typically follows a structured, agile process to ensure the final product meets and exceeds expectations.</p>
+      <p>It begins with a Discovery phase, where we immerse ourselves in your business to understand your goals, challenges, and user needs. This leads to the Design phase, where we create wireframes and prototypes to map out the user experience and interface. Once the blueprint is approved, we move into Development, writing the code and building the application in iterative cycles or "sprints." Each sprint ends with a functional piece of the application that you can test and provide feedback on. This agile approach ensures the project stays on track and aligned with your vision. After rigorous testing and quality assurance, the application is deployed. But the journey doesn\'t end there; we provide ongoing support and maintenance to ensure your software continues to evolve with your business.</p>
     `
   }
 ];
@@ -581,4 +581,5 @@ export const FAQS: FAQ[] = [
     
 
     
+
 
