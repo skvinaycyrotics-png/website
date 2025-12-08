@@ -38,7 +38,7 @@ export function Header() {
             link.subLinks ? (
               <DropdownMenu key={link.href}>
                 <DropdownMenuTrigger asChild>
-                  <button
+                  <a
                     className={cn(
                       'flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary',
                       pathname.startsWith(link.href)
@@ -48,7 +48,7 @@ export function Header() {
                   >
                     {link.label}
                     <ChevronDown className="h-4 w-4" />
-                  </button>
+                  </a>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   {link.subLinks.map((subLink) => (
