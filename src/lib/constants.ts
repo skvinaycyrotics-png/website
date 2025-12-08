@@ -354,6 +354,28 @@ export const PROJECTS: Project[] = [
     timeline: '10 Months',
     results: 'Created a modern, secure, and fully connected campus environment.',
   },
+  {
+    id: 'proj-bpgmc',
+    title: 'Bhagwan Parshuram Government Medical College – Kaithal, Haryana',
+    client: 'Bridge and Roof Company (India) Limited',
+    shortDescription: 'Comprehensive IT & ELV infrastructure for a new medical college, including smart lecture halls, campus-wide networking, and integrated security systems.',
+    longDescription: 'We provided a full turnkey solution for the Bhagwan Parshuram Government Medical College in Haryana. The project encompassed the entire IT and Extra-Low Voltage (ELV) infrastructure. This included smart lecture hall solutions, a high-speed fiber backbone, enterprise networking, data center setup, fire and safety systems (Fire Alarm, Public Address), robust access control, and comprehensive CCTV, Wi-Fi, and access control coverage across the campus.',
+    imageUrl: 'https://picsum.photos/seed/bpgmc/600/400',
+    imageHint: 'medical college building',
+    tags: [
+        'IT Infrastructure', 
+        'ELV', 
+        'Smart Lecture Hall', 
+        'Networking', 
+        'Data Center', 
+        'Fire Safety', 
+        'Access Control', 
+        'CCTV', 
+        'Wi-Fi'
+    ],
+    timeline: 'Ongoing',
+    results: 'Delivering a cutting-edge, fully integrated technology backbone for a new government medical college, ensuring a secure, connected, and future-ready environment for learning and healthcare.',
+  },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
@@ -584,5 +606,7 @@ export const FAQS: FAQ[] = [
 
 
 
+
+    
 
     
