@@ -295,11 +295,11 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-cims',
     title: 'Chhindwara Institute of Medical Science – Madhya Pradesh',
-    client: 'CPWD',
+    client: 'PWD',
     shortDescription:
       'Complete IT infrastructure development, including data center migration, network setup, CCTV, and wireless infrastructure.',
     longDescription:
-      "For the Chhindwara Institute of Medical Science in Madhya Pradesh, we executed a comprehensive IT infrastructure project for our client, CPWD. The scope included the full development of the IT infrastructure, migration and commissioning of the data center, setup of the network core and access layers, installation of CCTV and surveillance server infrastructure, and implementation of wireless infrastructure, passive cabling, and server management. The result is a state-of-the-art smart medical campus providing seamless connectivity, high-availability systems, and secure data accessibility to staff and students.",
+      "For the Chhindwara Institute of Medical Science in Madhya Pradesh, we executed a comprehensive IT infrastructure project for our client, PWD. The scope included the full development of the IT infrastructure, migration and commissioning of the data center, setup of the network core and access layers, installation of CCTV and surveillance server infrastructure, and implementation of wireless infrastructure, passive cabling, and server management. The result is a state-of-the-art smart medical campus providing seamless connectivity, high-availability systems, and secure data accessibility to staff and students.",
     imageUrl: 'https://picsum.photos/seed/projcims/600/400',
     imageHint: 'hospital building',
     tags: ['IT Infrastructure', 'Data Center', 'Networking', 'CCTV', 'Smart Campus'],
