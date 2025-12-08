@@ -342,17 +342,17 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'proj-4',
-    title: 'Custom ERP Software for Manufacturing',
-    client: 'Precision Parts Inc.',
+    title: 'Bihar Animal Sciences University – Patna',
+    client: 'ACIL',
     shortDescription:
-      'Developed a bespoke ERP to digitize their entire production workflow.',
+      'Complete campus networking, data center cabling, server setup, CCTV, Wi-Fi, and access control.',
     longDescription:
-      'We built a custom enterprise resource planning (ERP) system for Precision Parts Inc. that replaced their manual, paper-based processes. The new system manages inventory, production scheduling, quality control, and shipping, providing end-to-end visibility and improving production efficiency by 30%.',
+      'We delivered a comprehensive technology overhaul for the Bihar Animal Sciences University campus. The project included end-to-end campus networking, data center cabling and server setup, and the deployment of integrated CCTV, Wi-Fi, and access control systems to create a modern, secure, and connected learning environment.',
     imageUrl: 'https://picsum.photos/seed/proj4/600/400',
-    imageHint: 'factory automation',
-    tags: ['Software Development', 'ERP', 'Cloud Solutions', 'React'],
-    timeline: '8 Months',
-    results: '30% improvement in production efficiency.',
+    imageHint: 'university campus',
+    tags: ['Campus Networking', 'Data Center', 'CCTV', 'Wi-Fi', 'Access Control'],
+    timeline: '10 Months',
+    results: 'Created a modern, secure, and fully connected campus environment.',
   },
 ];
 
@@ -505,7 +505,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Renewable Energy', 'Solar', 'ROI'],
     content: `
       <p>While corporate sustainability goals are a major driver for adopting solar energy, the financial business case is often what seals the deal. Investing in a commercial solar power system is a strategic move that delivers tangible returns, making it one of the smartest capital investments a business can make today. The most direct benefit is a significant reduction in electricity bills. By generating your own clean power on-site, you reduce your reliance on the grid and hedge against volatile utility rate hikes, leading to predictable, lower operational costs for decades.</p>
-      <p>Beyond the immediate savings, solar assets increase your property value and offer attractive tax incentives and accelerated depreciation benefits that can shorten the payback period significantly. Furthermore, a commitment to sustainability enhances your brand image, attracting environmentally conscious customers and talent. In a competitive market, being a green leader is a powerful differentiator. When you combine the operational savings, financial incentives, and brand enhancement, the return on investment for solar energy becomes undeniable. It's a strategic investment in a more profitable and sustainable future.</p>
+      <p>Beyond the immediate savings, solar assets increase your property value and offer attractive tax incentives and accelerated depreciation benefits that can shorten the payback period significantly. Furthermore, a commitment to sustainability enhances your brand image, attracting environmentally conscious customers and talent. In a competitive market, being a green leader is a powerful differentiator. When you combine the operational savings, financial incentives, and brand enhancement, the return on investment for solar energy becomes undeniable. It\'s a strategic investment in a more profitable and sustainable future.</p>
     `
   },
   {
@@ -581,3 +581,4 @@ export const FAQS: FAQ[] = [
     
 
     
+
