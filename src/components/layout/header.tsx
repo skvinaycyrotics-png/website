@@ -39,6 +39,7 @@ export function Header() {
               <DropdownMenu key={link.href}>
                 <DropdownMenuTrigger asChild>
                   <a
+                    href={link.href}
                     className={cn(
                       'flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary',
                       pathname.startsWith(link.href)
@@ -112,7 +113,7 @@ export function Header() {
                             <AccordionContent className="pl-4">
                               <ul>
                                 {link.subLinks.map((subLink) => (
-                                  <li key={subLink.href} className="py-2">
+                                  <li key={subLink.href}>
                                     <Link
                                       href={subLink.href}
                                       onClick={closeMobileMenu}
