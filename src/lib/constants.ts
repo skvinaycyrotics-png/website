@@ -328,17 +328,17 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'proj-3',
-    title: 'Smart Building Transformation for a Tech Hub',
-    client: 'Innovate Towers',
+    title: 'Mahindra Enclave – Mumbai',
+    client: 'Mahindra & Mahindra',
     shortDescription:
-      'Converted a multi-tenant office building into a fully integrated smart environment, leading to a 25% reduction in energy costs and a 15% increase in tenant satisfaction.',
+      'Comprehensive fire safety and smart security solutions, including fire alarms, public address systems, surveillance, and access control.',
     longDescription:
-      "Our team retrofitted Innovate Towers with a comprehensive Building Management System (BMS) that unified HVAC, lighting, and security systems. By deploying IoT sensors, we enabled predictive maintenance and real-time energy optimization. A tenant-facing mobile app allows for personalized climate and lighting control, significantly enhancing occupant comfort and boosting the property's appeal in a competitive market.",
+      "For the prestigious Mahindra Enclave in Mumbai, we provided an integrated safety and security solution for our client, Mahindra & Mahindra. The project involved deploying a sophisticated Fire Alarm System coupled with a Public Address System for emergency coordination. We also installed a smart surveillance network and advanced access control systems to ensure the security and safety of the residents.",
     imageUrl: 'https://picsum.photos/seed/proj3/600/400',
-    imageHint: 'futuristic building',
-    tags: ['Smart Building', 'BMS', 'IoT', 'Energy Management'],
+    imageHint: 'modern apartment building',
+    tags: ['Fire Safety', 'Surveillance', 'Access Control', 'Smart Building'],
     timeline: '18 Months',
-    results: 'Cut energy consumption by 25% and improved operational efficiency by 40% through predictive maintenance.',
+    results: 'Enhanced resident safety and security with a unified, state-of-the-art system for fire detection, emergency communication, and premises monitoring.',
   },
   {
     id: 'proj-4',
