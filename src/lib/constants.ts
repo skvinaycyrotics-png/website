@@ -307,23 +307,24 @@ export const PROJECTS: Project[] = [
     results: 'A state-of-the-art smart medical campus providing seamless connectivity, high-availability systems, and secure data accessibility to staff and students.',
   },
   {
-    id: 'proj-2',
-    title: 'Integrated Security for a Pharmaceutical Campus',
-    client: 'Nova Labs',
+    id: 'proj-gmc-chandrapur',
+    title: 'Government Medical College – Chandrapur, Maharashtra',
+    client: 'HSCC',
     shortDescription:
-      'Deployed a unified security platform across a 50-acre campus, improving incident response time by 60% and ensuring regulatory compliance.',
+      'End-to-end IT & ELV infrastructure, Wi-Fi campus, network security, and IP CCTV with a monitoring command centre.',
     longDescription:
-      "Nova Labs required a sophisticated security solution to protect its high-value R&D facilities. We designed and implemented an integrated system combining IP-based surveillance with advanced video analytics, multi-factor access control at all lab entrances, and a centralized command center. The platform automates security protocols, provides real-time alerts, and generates detailed audit trails, crucial for industry regulations.",
-    imageUrl: 'https://picsum.photos/seed/proj2/600/400',
-    imageHint: 'modern office lobby',
+      'For the Government Medical College in Chandrapur, we provided a comprehensive turnkey solution for our client, HSCC. Our scope covered end-to-end IT and ELV infrastructure, including a campus-wide Wi-Fi deployment, robust network security and firewall setup, and an advanced IP CCTV system complete with a central monitoring command centre. This project ensures the new medical college has a secure, scalable, and high-performance technology backbone.',
+    imageUrl: 'https://picsum.photos/seed/gmc-chandrapur/600/400',
+    imageHint: 'modern university campus',
     tags: [
-      'Security & Surveillance',
-      'Access Control',
+      'IT Infrastructure',
+      'Wi-Fi',
+      'Network Security',
       'CCTV',
-      'Compliance',
+      'Smart Campus',
     ],
     timeline: '12 Months',
-    results: 'Reduced security incident response time by 60% and automated 90% of compliance reporting.',
+    results: 'Delivered a turnkey technology infrastructure solution for a new-build medical college, ensuring campus-wide connectivity and security from day one.',
   },
   {
     id: 'proj-3',
@@ -576,5 +577,7 @@ export const FAQS: FAQ[] = [
     answer: "Yes. We understand that a complete rip-and-replace is not always feasible. Our engineers are highly experienced in system integration and can develop custom APIs and middleware to ensure our modern solutions communicate seamlessly with your existing legacy applications and infrastructure, allowing for a phased and cost-effective modernization approach."
   }
 ];
+
+    
 
     
