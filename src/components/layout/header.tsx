@@ -101,29 +101,31 @@ export function Header() {
                   </SheetTrigger>
                 </div>
                 <nav className="flex flex-1 flex-col justify-between">
-                  <Accordion type="multiple" className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-4">
                     {NAV_LINKS.map((link) =>
                       link.subLinks ? (
-                        <AccordionItem value={link.label} key={link.label} className="border-b-0">
-                          <AccordionTrigger className="py-0 text-lg font-medium hover:no-underline">
-                            {link.label}
-                          </AccordionTrigger>
-                          <AccordionContent className="pl-4">
-                            <ul>
-                              {link.subLinks.map((subLink) => (
-                                <li key={subLink.href} className="py-2">
-                                  <Link
-                                    href={subLink.href}
-                                    onClick={closeMobileMenu}
-                                    className="text-muted-foreground hover:text-primary"
-                                  >
-                                    {subLink.label}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </AccordionContent>
-                        </AccordionItem>
+                        <Accordion type="single" collapsible key={link.label}>
+                          <AccordionItem value={link.label} className="border-b-0">
+                            <AccordionTrigger className="py-0 text-lg font-medium hover:no-underline">
+                              {link.label}
+                            </AccordionTrigger>
+                            <AccordionContent className="pl-4">
+                              <ul>
+                                {link.subLinks.map((subLink) => (
+                                  <li key={subLink.href} className="py-2">
+                                    <Link
+                                      href={subLink.href}
+                                      onClick={closeMobileMenu}
+                                      className="text-muted-foreground hover:text-primary"
+                                    >
+                                      {subLink.label}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </AccordionContent>
+                          </AccordionItem>
+                        </Accordion>
                       ) : (
                         <Link
                           key={link.href}
@@ -140,7 +142,7 @@ export function Header() {
                         </Link>
                       )
                     )}
-                  </Accordion>
+                  </div>
                   <Button asChild size="lg" onClick={closeMobileMenu}>
                     <a href="tel:+919999295636">
                       <Phone className="mr-2 h-4 w-4" /> Call Us
