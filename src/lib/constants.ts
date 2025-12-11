@@ -1099,7 +1099,8 @@ export const BLOG_POSTS: BlogPost[] = [
       </ul>
       <p>When an incident occurs, the BMS responds instantly — far faster than any manual intervention.</p>
       <h4>4. Improved Comfort & Workplace Experience</h4>
-      <p>Modern occupants expect smart, comfortable, and personalized spaces. BMS takes care of this by regulating:</p>
+      <p>Modern occupants expect smart, comfortable, and personalized spaces.
+BMS takes care of this by regulating:</p>
       <ul>
         <li>Temperature</li>
         <li>Ventilation</li>
@@ -1190,16 +1191,120 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'from-idea-to-app-the-journey-of-custom-software-development',
     title: 'From Idea to App: The Journey of Custom Software Development',
-    author: 'Vikram Singh',
-    authorImage: 'https://picsum.photos/seed/vikram/100/100',
+    author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
+    authorImage: 'https://picsum.photos/seed/logo/100/100',
     date: '2024-05-05',
     excerpt: 'Off-the-shelf software can only take you so far. When your business processes are unique, a custom-built application is the key to unlocking true efficiency. This post outlines the typical lifecycle of a custom software project, from initial discovery and design to deployment and beyond.',
     imageUrl: 'https://picsum.photos/seed/blog6/800/450',
     imageHint: 'ui design wireframe',
     tags: ['Software Development', 'Agile', 'Cloud'],
     content: `
-      <p>Every business has unique challenges and workflows that generic, off-the-shelf software can\'t effectively address. This is where custom software development comes in—creating a solution perfectly tailored to your specific needs. But how does an idea become a fully functional application? The journey typically follows a structured, agile process to ensure the final product meets and exceeds expectations.</p>
-      <p>It begins with a Discovery phase, where we immerse ourselves in your business to understand your goals, challenges, and user needs. This leads to the Design phase, where we create wireframes and prototypes to map out the user experience and interface. Once the blueprint is approved, we move into Development, writing the code and building the application in iterative cycles or "sprints." Each sprint ends with a functional piece of the application that you can test and provide feedback on. This agile approach ensures the project stays on track and aligned with your vision. After rigorous testing and quality assurance, the application is deployed. But the journey doesn\'t end there; we provide ongoing support and maintenance to ensure your software continues to evolve with your business.</p>
+      <p>In today’s digital era, businesses are no longer asking whether they need digital solutions — they are asking how fast they can build them. Whether it’s a mobile app, a web platform, a mission-critical enterprise tool, or an automation system, the journey from concept to deployment requires expertise, strategy, and innovation.</p>
+      <p>At Cyrotics Technologies, we specialize in transforming ideas into fully functional, scalable, and secure applications. This blog walks you through the complete journey of custom software development — from the very first spark of an idea to delivering a production-ready application.</p>
+      <h3>1. Ideation & Requirement Discovery</h3>
+      <p>Every great app begins with a clear vision. During this phase, we work closely with the client to understand:</p>
+      <ul>
+        <li>The business problem</li>
+        <li>Target users</li>
+        <li>Key functional requirements</li>
+        <li>Expected outcomes</li>
+        <li>Technical feasibility</li>
+        <li>Budget and timelines</li>
+      </ul>
+      <p>Through structured discovery workshops, brainstorming sessions, and competitor analysis, we convert ideas into a defined project scope. This forms the foundation of all future development activities.</p>
+      <h3>2. Planning, Documentation & Architecture Design</h3>
+      <p>Once the idea is validated, our team creates a detailed blueprint of the solution, which includes:</p>
+      <ul>
+        <li><strong>✔ Technical Architecture:</strong> Defines system components, databases, APIs, and integrations.</li>
+        <li><strong>✔ UI/UX Wireframes:</strong> Visual outlines of how users will interact with the application.</li>
+        <li><strong>✔ Project Plan & Milestones:</strong> Agile sprint planning, deliverable timelines, resource allocation.</li>
+        <li><strong>✔ Technology Stack Selection:</strong> Choosing the most suitable tools (React, Node.js, Python, Flutter, AWS, etc.) based on performance, scalability, and cost.</li>
+      </ul>
+      <p>This phase ensures clarity, transparency, and predictable project execution.</p>
+      <h3>3. UI/UX Design: Crafting a Seamless User Experience</h3>
+      <p>A successful app is not just functional — it must be intuitive and delightful. Our UI/UX designers build:</p>
+      <ul>
+        <li>High-fidelity screens</li>
+        <li>Interactive prototypes</li>
+        <li>Responsive layouts</li>
+        <li>User journey maps</li>
+        <li>Brand-aligned theme guides</li>
+      </ul>
+      <p>The goal is to create a design that is modern, user-friendly, and aligned with the brand identity of our client.</p>
+      <h3>4. Development: Where the Code Comes to Life</h3>
+      <p>This is the phase where the real engineering begins. Using Agile methodology, our development cycles include:</p>
+      <h4>🔹 Front-end Development</h4>
+      <p>Crafting user interfaces using modern frameworks like React, Angular, or Flutter.</p>
+      <h4>🔹 Back-end Development</h4>
+      <p>Developing secure, high-performance APIs, databases, and business logic using:</p>
+      <ul>
+        <li>Node.js</li>
+        <li>Python Django / Flask</li>
+        <li>Java / .NET</li>
+        <li>PHP Laravel</li>
+      </ul>
+      <h4>🔹 Database & Cloud Deployment</h4>
+      <p>Designing scalable data structures on platforms like:</p>
+      <ul>
+        <li>AWS</li>
+        <li>Google Cloud</li>
+        <li>Azure</li>
+      </ul>
+      <p>We ensure every feature is built modularly, tested thoroughly, and optimized for speed.</p>
+      <h3>5. Testing & Quality Assurance</h3>
+      <p>Quality is non-negotiable in custom software development. Our QA engineers perform:</p>
+      <ul>
+        <li>Functional testing</li>
+        <li>Performance testing</li>
+        <li>UI/UX testing</li>
+        <li>Security testing</li>
+        <li>API testing</li>
+        <li>Cross-platform and cross-device testing</li>
+      </ul>
+      <p>Our objective: zero bugs and maximum reliability. Every feature undergoes rigorous validation before moving to production.</p>
+      <h3>6. Deployment & Go-Live</h3>
+      <p>Once the application passes all quality checkpoints, we prepare for deployment. This includes:</p>
+      <ul>
+        <li>Server setup and cloud configuration</li>
+        <li>CI/CD pipeline execution</li>
+        <li>Database migration</li>
+        <li>Load testing</li>
+        <li>Go-live readiness checks</li>
+      </ul>
+      <p>After deployment, we monitor the application to ensure smooth performance and immediate issue resolution if needed.</p>
+      <h3>7. Post-Launch Support, Upgrades & Scaling</h3>
+      <p>Software development does not end at launch — it evolves. We offer long-term support through:</p>
+      <ul>
+        <li>Continuous monitoring</li>
+        <li>Security patches</li>
+        <li>Performance enhancements</li>
+        <li>New feature releases</li>
+        <li>Scalability upgrades</li>
+      </ul>
+      <p>This ensures your app remains secure, relevant, and future-ready.</p>
+      <h3>Why Businesses Choose Custom Software Development</h3>
+      <p>Custom-built applications offer unmatched benefits:</p>
+      <ul>
+        <li>✔ Tailored to your business needs</li>
+        <li>✔ More secure than off-the-shelf solutions</li>
+        <li>✔ Scalable for future growth</li>
+        <li>✔ Integrated with your existing systems</li>
+        <li>✔ Competitive advantage in your industry</li>
+      </ul>
+      <p>Whether you're building an operational automation tool, a mobile app for customers, or a complete enterprise system — custom software gives you full control and long-term value.</p>
+      <h3>Cyrotics Technologies: Your Partner in Custom Software Excellence</h3>
+      <p>With experience across healthcare, aviation, education, corporate, and government sectors, we deliver solutions that are:</p>
+      <ul>
+        <li>Robust</li>
+        <li>Scalable</li>
+        <li>Secure</li>
+        <li>User-centric</li>
+        <li>Cost-efficient</li>
+      </ul>
+      <p>Our team excels in end-to-end IT and software development — from concept consulting to long-term maintenance.</p>
+      <h3>Final Thoughts</h3>
+      <p>Turning an idea into a powerful application is a journey that requires creativity, engineering expertise, and a clear strategy. At Cyrotics Technologies, we take pride in converting concepts into digital products that drive business success.</p>
+      <p>If you’re planning to develop a custom app or software platform, our team is ready to help you bring your vision to life.</p>
     `
   }
 ];
@@ -1241,6 +1346,7 @@ export const FAQS: FAQ[] = [
 
 
     
+
 
 
 
