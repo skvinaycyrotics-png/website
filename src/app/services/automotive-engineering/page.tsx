@@ -9,7 +9,7 @@ import {
   TestTube2,
   Wind,
   BatteryCharging,
-  ChargingStation,
+  PlugZap,
   Construction,
   Bot,
   Warehouse,
@@ -47,7 +47,7 @@ const simulationServices = [
 const evServices = [
     { title: 'Battery System Engineering', description: 'Battery pack design, cell selection & balancing, thermal simulation, and BMS development.', icon: BatteryCharging },
     { title: 'EV Powertrain Development', description: 'Motor control engineering, inverter & converter design, and regenerative braking optimization.', icon: Zap },
-    { title: 'Charging Infrastructure', description: 'Public charging station setup, AC/DC solutions, and charger communication (OCPP, ISO 15118).', icon: ChargingStation },
+    { title: 'Charging Infrastructure', description: 'Public charging station setup, AC/DC solutions, and charger communication (OCPP, ISO 15118).', icon: PlugZap },
 ];
 
 const automationServices = [
