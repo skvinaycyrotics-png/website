@@ -414,7 +414,7 @@ export const PROJECTS: Project[] = [
     imageHint: 'data center servers',
     tags: ['Data Center', 'Network Security', 'IT Infrastructure', 'CCTV', 'Wireless', 'Access Control'],
     timeline: 'Completed',
-    results: "The project  designed to ensure seamless connectivity, high system availability, and secure access to digital resources. By integrating advanced IT  infrastructure, the benefits from:\n\nUninterrupted network performance \n\nSecure and centralized data accessibility \n\nEnhanced digital learning experiences through reliable communication systems\n\nImproved operational efficiency driven by automation and modern network design",
+    results: "The project designed to ensure seamless connectivity, high system availability, and secure access to digital resources. By integrating advanced IT infrastructure, the benefits from:\n\nUninterrupted network performance \n\nSecure and centralized data accessibility \n\nEnhanced digital learning experiences through reliable communication systems\n\nImproved operational efficiency driven by automation and modern network design",
   },
   {
     id: 'aiims-rajkot',
@@ -427,6 +427,26 @@ export const PROJECTS: Project[] = [
     tags: ['Smart Hospital', 'IT Infrastructure', 'Data Center', 'Network Security', 'Smart Campus', 'ELV', 'CCTV'],
     timeline: 'Ongoing',
     results: 'The project delivers a state-of-the-art smart medical campus, designed to ensure seamless connectivity, high system availability, and secure access to digital resources. By integrating advanced IT and ELV infrastructure, the institution now benefits from:\n\n- Uninterrupted network performance for academic, administrative, and clinical operations\n\n- Secure and centralized data accessibility for staff, students, and medical professionals\n\n- Enhanced digital learning experiences through reliable communication systems\n\n- Improved operational efficiency driven by automation and modern network design\n\nThis transformation empowers the medical campus to operate as a modern, technology-enabled institution capable of supporting future growth and innovation.',
+  },
+  {
+    id: 'iim-bodh-gaya',
+    title: 'IIM Bodh Gaya – Bihar',
+    client: 'Indian Institute of Management Bodh Gaya',
+    shortDescription: 'Comprehensive smart campus solution for IIM Bodh Gaya, integrating IT, security, and data center infrastructure.',
+    longDescription: 'For IIM Bodh Gaya, we are providing an end-to-end technology infrastructure solution. The scope includes Network & Security Infrastructure, CCTV & Video Surveillance, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, a Fiber Backbone & Enterprise Network, Campus-wide Wi-Fi, a Fire Alarm & Public Address System, and a comprehensive Access Control System.',
+    imageUrl: 'https://picsum.photos/seed/iim-gaya/600/400',
+    imageHint: 'university campus building',
+    tags: [
+        'Smart Campus',
+        'IT Infrastructure',
+        'Data Center',
+        'Network Security',
+        'ELV',
+        'CCTV',
+        'Wi-Fi'
+    ],
+    timeline: 'Ongoing',
+    results: "The project delivers a state-of-the-art smart campus, designed to ensure seamless connectivity, high system availability, and secure access to digital resources for students and faculty. By integrating advanced IT and ELV infrastructure, the institution benefits from:\n\n- Uninterrupted network performance for academic and administrative operations.\n- Secure and centralized data accessibility for all stakeholders.\n- Enhanced digital learning experiences through reliable communication and smart classroom systems.\n- Improved operational efficiency driven by automation and modern network design.\n\nThis transformation empowers the campus to operate as a modern, technology-enabled institution capable of supporting future growth and innovation.",
   },
 ];
 
