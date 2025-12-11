@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from 'lucide-react';
 
 export type NavLink = {
@@ -68,6 +69,7 @@ export interface BlogPost {
   author: string;
   authorImage: string;
   date: string;
+  category: string;
   excerpt: string;
   imageUrl: string;
   imageHint: string;
@@ -79,3 +81,5 @@ export interface FAQ {
   question: string;
   answer: string;
 }
+
+  
