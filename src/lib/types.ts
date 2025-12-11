@@ -57,11 +57,17 @@ export interface TeamMember {
 }
 
 export interface JobOpening {
+  id: string;
   title: string;
   location: string;
-  type: 'Full-time' | 'Part-time' | 'Contract';
+  department: string;
+  type: 'Full-time' | 'Part-time' | 'Contract' | 'Internship' | 'Apprenticeship' | 'Training Integrated Studies';
   description: string;
   requirements: string[];
+  careerLevel: 'Apprenticeship' | 'Graduates' | 'Internship / Working Students' | 'Manager' | 'Professionals';
+  occupation: string;
+  segment: string;
+  experienceLevel: 'Executive' | 'Senior Level' | 'Mid-Senior Level' | 'Associate Level' | 'Entry Level' | 'Internship' | 'Apprenticeship';
 }
 
 export interface BlogPost {
@@ -81,4 +87,17 @@ export interface BlogPost {
 export interface FAQ {
   question: string;
   answer: string;
+}
+
+export interface LocationFilter {
+  name: string;
+  states: {
+    name: string;
+    cities: string[];
+  }[];
+}
+
+export interface OccupationFilter {
+  level: string;
+  roles: string[];
 }

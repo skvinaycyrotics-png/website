@@ -8,6 +8,8 @@ import type {
   JobOpening,
   BlogPost,
   FAQ,
+  LocationFilter,
+  OccupationFilter,
 } from './types';
 import {
   Server,
@@ -469,7 +471,7 @@ export const PROJECTS: Project[] = [
     title: 'Shri Guru Tegh Bahadur Sahib Government Medical College – Yamuna Nagar, Haryana',
     client: 'Government of Haryana',
     shortDescription: 'End-to-end smart campus solution, integrating IT, ELV, security, and data center infrastructure for a new government medical college.',
-    longDescription: 'This project involves the delivery of a comprehensive technology infrastructure for a new medical college. The scope includes Network & Security Infrastructure, CCTV & Video Surveillance System, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone & Enterprise Network, Smart Hospital IT Infrastructure, Campus Wi-Fi & Secure Network Backbone, CCTV Surveillance & Data Center Deployment, Complete Campus Networking, Data Center Cabling & Server Setup, Fire Alarm & Public Address System Solutions, Access Control System, CCTV, Wi-Fi & Access Control.',
+    longDescription: 'This project involves the delivery of a comprehensive technology infrastructure for a new medical college. The scope includes Network & Security Infrastructure, CCTV & Video Surveillance System, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone & Enterprise Network, Smart Hospital IT Infrastructure, Campus Wi-Fi & Secure Network Backbone, CCTV Surveillance & Data Center Deployment, Complete Campus Networking, Data Center Cabling & Server Setup, Fire Alarm & Public Address System Solutions, and an integrated Access Control System.',
     imageUrl: 'https://picsum.photos/seed/sgtb/600/400',
     imageHint: 'modern medical college',
     tags: [
@@ -619,47 +621,301 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
 ];
 
+export const CAREER_LEVELS = [
+  'Apprenticeship',
+  'Graduates',
+  'Internship / Working Students',
+  'Manager',
+  'Professionals',
+];
+
+export const JOB_TYPES = [
+  'Full-time',
+  'Remote',
+  'Hybrid',
+  'Part-time',
+  'Contract',
+];
+
+export const SPECIAL_JOB_TYPES: { [key: string]: string[] } = {
+  Apprenticeship: ['Apprenticeship', 'Training Integrated Studies'],
+  'Internship / Working Students': [
+    'Internship (Students)',
+    'Working Student',
+    'Part-time',
+  ],
+};
+
+export const OCCUPATIONS: OccupationFilter[] = [
+  {
+    level: 'Executive Level',
+    roles: [
+      'Chief Executive Officer (CEO)',
+      'Chief Information Security Officer (CISO)',
+      'Chief Operations Officer (COO)',
+      'Chief Technology Officer (CTO)',
+      'Vice President – Operations',
+      'Vice President – Projects',
+    ],
+  },
+  {
+    level: 'Senior Level',
+    roles: [
+      'AV Solutions Architect',
+      'Business Development Manager',
+      'ELV Project Manager',
+      'HR Manager',
+      'IoT Solutions Architect',
+      'Network Architect',
+      'Procurement Manager',
+      'Project Director',
+      'Security Architect',
+      'Senior AV Engineer',
+      'Senior ELV Engineer',
+      'Senior Network Engineer',
+      'SOC Manager',
+      'Technical Lead',
+    ],
+  },
+  {
+    level: 'Mid-Senior Level',
+    roles: [
+      'AV Engineer',
+      'ELV Engineer',
+      'Embedded Systems Engineer',
+      'Firewall Engineer',
+      'HR Executive',
+      'Network Engineer',
+      'NOC Engineer',
+      'Project Coordinator',
+      'Project Manager',
+      'Purchase Executive',
+      'Sales Executive',
+      'SOC Analyst L2/L3',
+      'Software Developer',
+    ],
+  },
+  {
+    level: 'Associate Level',
+    roles: [
+      'AV Associate',
+      'ELV Associate',
+      'Embedded Systems Associate',
+      'Firewall Associate',
+      'HR Associate',
+      'Inventory Assistant',
+      'Network Associate',
+      'NOC Associate',
+      'Project Associate',
+      'Purchase Associate',
+      'Sales Associate',
+      'SOC Analyst L2',
+      'Software Developer – Associate',
+    ],
+  },
+  {
+    level: 'Entry Level',
+    roles: [
+      'AV Technician',
+      'CCTV Technician',
+      'IoT Technician',
+      'Marketing Intern',
+      'Network Technician',
+      'Office Assistant',
+      'Security Analyst L1',
+      'Site Supervisor',
+      'Web Developer Intern',
+    ],
+  },
+  {
+    level: 'Apprenticeship',
+    roles: ['Apprenticeship'],
+  },
+  {
+    level: 'Internship',
+    roles: ['Internship (Students)'],
+  },
+];
+
+export const SEGMENTS = [
+  'Executive',
+  'Networking',
+  'Cybersecurity',
+  'AV & Smart Solutions',
+  'ELV',
+  'IoT & Automation',
+  'Software Development',
+  'Project Management',
+  'Sales & Marketing',
+  'HR & Admin',
+  'Procurement & Logistics',
+  'Apprenticeship',
+  'Internship (Students)',
+];
+
+export const EXPERIENCE_LEVELS = [
+  'Executive',
+  'Senior Level',
+  'Mid-Senior Level',
+  'Associate Level',
+  'Entry Level',
+  'Internship',
+  'Apprenticeship',
+];
+
+export const LOCATIONS: LocationFilter[] = [
+  {
+    name: 'India',
+    states: [
+      { name: 'Delhi', cities: ['New Delhi'] },
+      { name: 'Maharashtra', cities: ['Mumbai', 'Pune', 'Nagpur'] },
+      { name: 'Karnataka', cities: ['Bangalore'] },
+      { name: 'Tamil Nadu', cities: ['Chennai'] },
+      { name: 'Telangana', cities: ['Hyderabad'] },
+      { name: 'Bihar', cities: ['Patna'] },
+    ],
+  },
+  {
+    name: 'UAE',
+    states: [{ name: 'Dubai', cities: ['Dubai'] }, { name: 'Abu Dhabi', cities: ['Abu Dhabi'] }],
+  },
+  {
+    name: 'Germany',
+    states: [
+      { name: 'Berlin', cities: ['Berlin'] },
+      { name: 'Bavaria', cities: ['Munich'] },
+      { name: 'Baden-Württemberg', cities: ['Stuttgart'] },
+    ],
+  },
+  {
+    name: 'USA',
+    states: [
+      { name: 'New York', cities: ['New York City'] },
+      { name: 'Texas', cities: ['Houston', 'Dallas'] },
+      { name: 'California', cities: ['Los Angeles', 'San Francisco'] },
+    ],
+  },
+  {
+    name: 'UK',
+    states: [{ name: 'England', cities: ['London', 'Birmingham'] }],
+  },
+  { name: 'Singapore', states: [{ name: 'Singapore', cities: ['Singapore'] }] },
+  { name: 'Canada', states: [{ name: 'Ontario', cities: ['Toronto'] }] },
+  { name: 'Australia', states: [{ name: 'New South Wales', cities: ['Sydney'] }] },
+];
+
+
 export const JOB_OPENINGS: JobOpening[] = [
   {
+    id: 'sn-eng-01',
     title: 'Senior Network Engineer',
     location: 'Bangalore, India',
+    department: 'Networking',
     type: 'Full-time',
-    description:
-      'We are seeking an experienced Network Engineer to design, implement, and manage complex network solutions for our enterprise clients.',
+    description: 'Design, implement, and manage complex network solutions for our enterprise clients.',
     requirements: [
       '5+ years of experience with Cisco and Juniper technologies.',
       'CCNP or equivalent certification required.',
       'Strong knowledge of SD-WAN, BGP, and OSPF.',
       'Experience with network security and firewalls.',
     ],
+    careerLevel: 'Professionals',
+    occupation: 'Senior Network Engineer',
+    segment: 'Networking',
+    experienceLevel: 'Senior Level',
   },
   {
+    id: 'fs-dev-01',
     title: 'Full-Stack Developer (React & Node.js)',
     location: 'Remote',
+    department: 'Software Development',
     type: 'Full-time',
-    description:
-      'Join our software development team to build cutting-edge web and cloud applications for our diverse client base.',
+    description: 'Join our software development team to build cutting-edge web and cloud applications for our diverse client base.',
     requirements: [
       '3+ years of professional experience with React and Node.js.',
       'Proficiency in TypeScript and GraphQL.',
       'Experience with Docker and AWS/GCP.',
       'Strong understanding of software design principles.',
     ],
+    careerLevel: 'Professionals',
+    occupation: 'Software Developer',
+    segment: 'Software Development',
+    experienceLevel: 'Mid-Senior Level',
   },
   {
+    id: 'sec-tech-01',
     title: 'Security Systems Technician',
     location: 'Mumbai, India',
+    department: 'ELV',
     type: 'Full-time',
-    description:
-      'Install, configure, and maintain CCTV, access control, and fire alarm systems at client sites.',
+    description: 'Install, configure, and maintain CCTV, access control, and fire alarm systems at client sites.',
     requirements: [
       '2+ years of hands-on experience with electronic security systems.',
       'Familiarity with brands like Hikvision, Bosch, Honeywell.',
       'Strong troubleshooting and problem-solving skills.',
       'Excellent communication and customer service skills.',
     ],
+    careerLevel: 'Professionals',
+    occupation: 'CCTV Technician',
+    segment: 'ELV',
+    experienceLevel: 'Entry Level',
+  },
+  {
+    id: 'iot-sa-01',
+    title: 'IoT Solutions Architect',
+    location: 'Dubai, UAE',
+    department: 'IoT & Automation',
+    type: 'Full-time',
+    description: 'Design and lead the implementation of large-scale IoT solutions for smart buildings and smart cities.',
+    requirements: [
+        '7+ years in IoT architecture.',
+        'Expertise in LoRaWAN, MQTT, and cloud IoT platforms (AWS IoT, Azure IoT Hub).',
+        'Strong understanding of sensor technology and edge computing.',
+        'Proven track record of delivering complex IoT projects.',
+    ],
+    careerLevel: 'Professionals',
+    occupation: 'IoT Solutions Architect',
+    segment: 'IoT & Automation',
+    experienceLevel: 'Senior Level',
+  },
+  {
+    id: 'pm-01',
+    title: 'Project Manager',
+    location: 'New Delhi, India',
+    department: 'Project Management',
+    type: 'Full-time',
+    description: 'Lead the planning, execution, and delivery of IT infrastructure projects, ensuring they are on time and within budget.',
+    requirements: [
+        '5+ years of project management experience in the IT sector.',
+        'PMP or similar certification is highly desirable.',
+        'Excellent leadership, communication, and stakeholder management skills.',
+        'Experience with large-scale ELV, networking, or data center projects.',
+    ],
+    careerLevel: 'Manager',
+    occupation: 'Project Manager',
+    segment: 'Project Management',
+    experienceLevel: 'Mid-Senior Level',
+  },
+  {
+    id: 'intern-wd-01',
+    title: 'Web Developer Intern',
+    location: 'Patna, India',
+    department: 'Software Development',
+    type: 'Internship',
+    description: 'Assist the development team in creating and maintaining web applications. A great opportunity to learn and grow.',
+    requirements: [
+      'Basic understanding of HTML, CSS, and JavaScript.',
+      'Familiarity with a modern framework like React is a plus.',
+      'Eagerness to learn and a strong work ethic.',
+      'Currently pursuing a degree in Computer Science or related field.',
+    ],
+    careerLevel: 'Internship / Working Students',
+    occupation: 'Web Developer Intern',
+    segment: 'Internship (Students)',
+    experienceLevel: 'Internship',
   },
 ];
+
 
 export const BLOG_POSTS: BlogPost[] = [
   {
