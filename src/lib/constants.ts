@@ -61,7 +61,9 @@ import {
   Shuffle,
   CloudCog,
   FileCheck2,
-  Car
+  Car,
+  CircuitBoard,
+  Factory
 } from 'lucide-react';
 
 export const NAV_LINKS: NavLink[] = [
@@ -88,11 +90,17 @@ export const NAV_LINKS: NavLink[] = [
     label: 'Business Sector',
     subLinks: [
       { href: '/business-sector/overview', label: 'Overview' },
-      { href: '/business-sector/urban-development', label: 'Urban Development' },
+       {
+        href: '#',
+        label: 'Industry Solution',
+        subLinks: [
+          { href: '/business-sector/urban-development', label: 'Urban Development' },
+          { href: '/business-sector/telecom', label: 'Telecom' },
+          { href: '/business-sector/logistics', label: 'Logistics' },
+          { href: '/business-sector/health-pharmacy', label: 'Health & Pharmacy' },
+        ],
+      },
       { href: '/business-sector/public-sector-undertakings', label: 'Public Sector Undertakings' },
-      { href: '/business-sector/telecom', label: 'Telecom' },
-      { href: '/business-sector/logistics', label: 'Logistics' },
-      { href: '/business-sector/health-pharmacy', label: 'Health & Pharmacy' },
       { href: '/business-sector/education', label: 'Education' },
       { href: '/business-sector/energy', label: 'Energy' },
       { href: '/business-sector/mobility-automotive-engineering', label: 'Mobility & Automotive' },
@@ -4282,7 +4290,14 @@ A secure network offers:</p>
         <li>📉 Minimization of resource wastage</li>
       </ul>
       <h4>6. Better Coordination Between Facility Teams</h4>
-      <p>Traditionally, departments work in silos: Security team, IT team, Facility team, Electrical & maintenance team, Fire safety team.</p>
+      <p>Traditionally, departments work in silos:</p>
+      <ul>
+        <li>Security team</li>
+        <li>IT team</li>
+        <li>Facility team</li>
+        <li>Electrical & maintenance team</li>
+        <li>Fire safety team</li>
+      </ul>
       <p>A C3R enables all teams to work on a single platform, improving collaboration and reducing operational friction.</p>
       <h4>7. Improved Compliance & Reporting</h4>
       <p>Industries like healthcare, airports, IT parks, and government institutions require strict compliance:</p>
@@ -5082,6 +5097,7 @@ export const FAQS: FAQ[] = [
     answer: "Yes. We understand that a complete rip-and-replace is not always feasible. Our engineers are highly experienced in system integration and can develop custom APIs and middleware to ensure our modern solutions communicate seamlessly with your existing legacy applications and infrastructure, allowing for a phased and cost-effective modernization approach."
   }
 ];
+
 
 
 
