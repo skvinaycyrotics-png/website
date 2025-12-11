@@ -41,6 +41,9 @@ import {
   GanttChartSquare,
   HeartHandshake,
   Users,
+  Globe,
+  GraduationCap,
+  PackageCheck,
 } from 'lucide-react';
 
 export const NAV_LINKS: NavLink[] = [
@@ -307,7 +310,7 @@ export const PROJECTS: Project[] = [
     shortDescription:
       'End-to-end IT & ELV infrastructure, Wi-Fi campus, network security, and IP CCTV with a monitoring command centre.',
     longDescription:
-      'For the Government Medical College in Chandrapur, we provided a comprehensive turnkey solution. Our scope covered end-to-end IT and ELV infrastructure, including a campus-wide Wi-Fi deployment, robust network security and firewall setup, and an advanced IP CCTV system complete with a central monitoring command centre. This project ensures the new medical college has a secure, scalable, and high-performance technology backbone.',
+      'For the Government Medical College in Chandrapur, we provided a comprehensive turnkey solution. Our scope covered end-to-end IT and ELV infrastructure, including a campus-wide Wi-Fi deployment, a robust network security and firewall setup, and an advanced IP CCTV system complete with a central monitoring command centre. This project ensures the new medical college has a secure, scalable, and high-performance technology backbone.',
     imageUrl: 'https://picsum.photos/seed/gmc-chandrapur/600/400',
     imageHint: 'modern medical college',
     tags: [
@@ -571,8 +574,8 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'navigating-the-maze-of-data-center-modernization',
     title: 'Why Data Center Migration Is Critical for Modern Enterprises – Challenges, Strategy & Best Practices',
-    author: 'Meera Iyer',
-    authorImage: 'https://picsum.photos/seed/meera/100/100',
+    author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
+    authorImage: 'https://picsum.photos/seed/logo/100/100',
     date: '2024-07-20',
     excerpt: 'In the rapidly evolving digital landscape, organizations are under constant pressure to modernize their IT infrastructure. Data Center Migration has emerged as a strategic necessity for businesses aiming to improve performance, security, and scalability.',
     imageUrl: 'https://picsum.photos/seed/blog1/800/450',
@@ -580,7 +583,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Data Center', 'Infrastructure', 'Migration'],
     content: `
       <p>In the rapidly evolving digital landscape, organizations are under constant pressure to modernize their IT infrastructure. As applications grow, security threats intensify, and compliance standards become more stringent, enterprises can no longer rely on outdated on-premises infrastructure. Data Center Migration has emerged as a strategic necessity for businesses aiming to improve performance, security, and scalability.</p>
-      <p>Cyrotics Technologies, having successfully delivered multiple large-scale national projects—including Chhindwara Institute of Medical Science (MP), AIIMS Rajkot, Government Medical Colleges, Techno Data Center Chennai, and major airport and university infrastructures—brings deep expertise in executing complex migration projects with precision.</p>
+      <p>Cyrotics Technologies, having successfully delivered multiple large-scale national projects—including Multiple All India Govt Medical Hospital & college Projects, government institutions, Data Center Projects , and major airport and university infrastructures—brings deep expertise in executing complex migration projects with precision.</p>
       <p>This blog explores why data center migration is important, the risks involved, and the best practices for a smooth and secure transition.</p>
       <h3>⭐ What Is Data Center Migration?</h3>
       <p>Data center migration refers to the process of transferring digital assets—applications, databases, workloads, storage, network components, and entire servers—from one environment to another. This could be:</p>
@@ -785,7 +788,7 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>Large projects can eliminate up to 80–90% of electricity expenditure.</li>
         <li>Savings grow over time as utility tariffs increase.</li>
       </ul>
-      <p><b>Result?</b><br/>Lower operating expenses and higher profitability.</p>
+      <p><strong>Result?</strong><br/>Lower operating expenses and higher profitability.</p>
       <h3>✔ 2. High & Stable Long-Term ROI</h3>
       <p>Solar systems deliver ROI in two ways:</p>
       <ul>
@@ -880,23 +883,156 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>✔ Sustainability and ESG alignment</li>
         <li>✔ Competitive advantage</li>
       </ul>
-      <p>In other words:</p>
       <blockquote><b>Solar doesn’t just power your building...<br/><br/>It powers your profitability.</b></blockquote>
     `
   },
   {
     slug: 'beyond-the-video-call-crafting-the-modern-conference-room',
     title: 'Beyond the Video Call: Crafting the Modern Conference Room',
-    author: 'Meera Iyer',
-    authorImage: 'https://picsum.photos/seed/meera/100/100',
+    author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
+    authorImage: 'https://picsum.photos/seed/logo/100/100',
     date: '2024-06-10',
     excerpt: 'In the era of hybrid work, the conference room is no longer just a table with a speakerphone. It\'s a critical hub for collaboration between in-office and remote teams. This post dives into the key AV technologies and design principles for creating seamless, equitable, and productive meeting experiences.',
     imageUrl: 'https://picsum.photos/seed/blog4/800/450',
     imageHint: 'modern conference room',
     tags: ['Audio-Visual', 'Hybrid Work', 'Collaboration'],
     content: `
-      <p>The rise of hybrid work has transformed the purpose of the office. It\'s no longer just a place to work, but a hub for collaboration. At the heart of this collaborative hub is the conference room, and the old setup of a long table and a speakerphone in the middle simply won\'t cut it. A modern conference room must provide an equitable experience for all participants, whether they are in the room or joining remotely. This requires a thoughtful integration of audio-visual technology.</p>
-      <p>Key elements include intelligent cameras that can automatically frame the active speaker, ensuring remote participants feel engaged. High-quality microphone arrays and soundbars are essential to capture clear audio from everyone in the room without anyone needing to shout. Wireless presentation systems eliminate the frustrating hunt for the right dongle, allowing anyone to share their screen with a single click. And it all needs to be tied together with an intuitive control system that makes starting a meeting effortless. Investing in these technologies transforms your meeting rooms from sources of frustration into powerful engines of productivity and collaboration.</p>
+      <p>The workplace has changed — and with it, the expectations from a conference room. What was once a simple space with a table, chairs, and a projector is now the nerve center of collaboration, decision-making, client engagement, and global communication. The modern conference room is no longer “just a room.” It is a high-performance digital environment designed to enhance productivity, improve communication, and bring people together — whether they’re across the table or across the world.</p>
+      <p>This blog explores how organizations can elevate ordinary meeting spaces into smart, seamless, future-ready conference rooms that go far beyond the traditional video call.</p>
+      <h3>🎯 Why Modern Conference Rooms Matter More Than Ever</h3>
+      <p>The shift to hybrid work models has created a unique challenge: How do we make remote and in-office participants feel equally connected and engaged?</p>
+      <p>The answer lies in designing conference rooms that combine:</p>
+      <ul>
+        <li>Smart audio-visual systems</li>
+        <li>Intelligent collaboration tools</li>
+        <li>High-speed, secure networking</li>
+        <li>Automated controls</li>
+        <li>Unified communication platforms</li>
+      </ul>
+      <p>A well-designed conference room doesn’t just support meetings — it makes them smarter, faster, and more effective.</p>
+      <h3>🛠️ The Core Elements of a Modern Conference Room</h3>
+      <p>Transforming a traditional room into a smart collaboration space requires a strategic blend of technology, design, and user experience. Here are the essential components:</p>
+      <h4>1. Intelligent Video Conferencing Systems</h4>
+      <p>Today’s video conferencing goes beyond a simple camera and microphone. A modern room leverages:</p>
+      <ul>
+        <li>AI-powered cameras that auto-track speakers</li>
+        <li>4K/Full HD video systems for crystal-clear communication</li>
+        <li>Smart framing & noise cancellation</li>
+        <li>Real-time meeting analytics</li>
+      </ul>
+      <p>Platforms like Zoom Rooms, Microsoft Teams Rooms, and Google Meet Rooms are redefining meeting productivity.</p>
+      <h4>2. Acoustic Engineering and Professional Audio</h4>
+      <p>Clear audio is non-negotiable. This includes:</p>
+      <ul>
+        <li>Ceiling array microphones</li>
+        <li>Beamforming mic technology</li>
+        <li>DSP processors</li>
+        <li>Acoustic panels for echo and noise control</li>
+        <li>High-fidelity speakers for immersive audio</li>
+      </ul>
+      <p>With the right design, every participant — remote or present — hears every voice with precision.</p>
+      <h4>3. Collaborative Interactive Displays</h4>
+      <p>Traditional projectors are being replaced with:</p>
+      <ul>
+        <li>Interactive 4K touch displays</li>
+        <li>Wireless content sharing</li>
+        <li>Digital whiteboarding</li>
+        <li>Multi-user annotation</li>
+        <li>Smart screen mirroring for all devices</li>
+      </ul>
+      <p>This fosters real-time brainstorming and dynamic team interaction.</p>
+      <h4>4. Seamless Room Automation</h4>
+      <p>Smart conference rooms simplify operations with:</p>
+      <ul>
+        <li>One-touch meeting start</li>
+        <li>Automated lighting and blinds</li>
+        <li>Environmental sensors</li>
+        <li>Centralized AV & room control panels</li>
+        <li>Voice-based control integration</li>
+      </ul>
+      <p>Automation ensures a frictionless meeting experience every time.</p>
+      <h4>5. Secure & High-Speed Network Infrastructure</h4>
+      <p>Behind every modern meeting room is a powerful IT backbone:</p>
+      <ul>
+        <li>Enterprise-grade Wi-Fi</li>
+        <li>High-throughput switching</li>
+        <li>Dedicated conferencing bandwidth</li>
+        <li>VLAN network segmentation</li>
+        <li>QoS for voice & video traffic</li>
+      </ul>
+      <p>Reliable connectivity ensures that meetings stay smooth and uninterrupted.</p>
+      <h4>6. Integration With Unified Communication Platforms</h4>
+      <p>Modern conference rooms integrate deeply with platforms like:</p>
+      <ul>
+        <li>Microsoft Teams</li>
+        <li>Zoom</li>
+        <li>Cisco Webex</li>
+        <li>Google Workspace</li>
+      </ul>
+      <p>This ensures seamless scheduling, real-time collaboration, and cross-device consistency.</p>
+      <h3>🌐 Types of Modern Conference Rooms</h3>
+      <p>Organizations now demand multiple types of meeting environments:</p>
+      <ul>
+        <li>🔹 Huddle Rooms: Small spaces designed for 2–5 people; ideal for quick collaborations.</li>
+        <li>🔹 Medium Meeting Rooms: Flexible spaces equipped with mid-range AV and collaboration tools.</li>
+        <li>🔹 Boardrooms: Premium spaces with high-end video walls, advanced automation, and executive-level AV.</li>
+        <li>🔹 Experience Centers & Training Rooms: Large-scale interactive environments for workshops, presentations, and virtual demonstrations.</li>
+      </ul>
+      <h3>💡 Benefits of Modern Conference Room Infrastructure</h3>
+      <p>Upgrading your meeting spaces delivers long-term value:</p>
+      <ul>
+        <li>✔ Improved Communication & Engagement: Eliminates communication barriers for hybrid teams.</li>
+        <li>✔ Enhanced Productivity: Meetings start faster, run smoother, and drive decisions quicker.</li>
+        <li>✔ Professional Brand Image: High-quality AV systems create an impressive environment for clients.</li>
+        <li>✔ Reduced Operational Cost: Automated systems and energy-efficient designs ensure long-term savings.</li>
+        <li>✔ Future-Ready Collaboration: Supports AI tools, cloud conferencing, and emerging work models.</li>
+      </ul>
+      <h3>🏢 Industries Transforming Their Meeting Spaces</h3>
+      <p>Conference room modernization is rapidly advancing across sectors:</p>
+      <ul>
+        <li>Corporate Offices</li>
+        <li>Hospitals & Medical Colleges</li>
+        <li>Data Centers</li>
+        <li>Government Institutions</li>
+        <li>Universities & Educational Campuses</li>
+        <li>Hotels & Hospitality</li>
+        <li>Manufacturing & Automotive</li>
+        <li>Airports & Aviation</li>
+        <li>Real Estate & Commercial Spaces</li>
+      </ul>
+      <p>Every industry needs smarter collaboration — and modern conference rooms deliver exactly that.</p>
+      <h3>🚀 Why Cyrotics Technologies Leads in Modern Conference Room Solutions</h3>
+      <p>At Cyrotics Technologies (OPC) Pvt. Ltd., we specialize in designing high-performance, integrated conference rooms that meet global standards.</p>
+      <p>Our services include:</p>
+      <ul>
+        <li>AV design & engineering</li>
+        <li>Boardroom and training room setup</li>
+        <li>Video conferencing solutions</li>
+        <li>Acoustic treatment</li>
+        <li>Digital signage</li>
+        <li>Structured cabling</li>
+        <li>Networking & automation integration</li>
+        <li>End-to-end project execution</li>
+      </ul>
+      <p>Our approach ensures:</p>
+      <ul>
+        <li>Aesthetically pleasing design</li>
+        <li>User-friendly experience</li>
+        <li>Scalable architecture</li>
+        <li>Long-term support & maintenance</li>
+      </ul>
+      <p>From top medical institutes to corporate offices and government organizations across India, we have delivered smart, future-ready conferencing ecosystems.</p>
+      <h3>📌 Conclusion: The Future of Meetings Is Hybrid, Smart, and Fully Connected</h3>
+      <p>The era of simple video conferencing is over. Modern businesses need technologically advanced conference rooms that provide:</p>
+      <ul>
+        <li>✔ Intelligent collaboration</li>
+        <li>✔ High-quality audio and video</li>
+        <li>✔ Secure connectivity</li>
+        <li>✔ Powerful automation</li>
+        <li>✔ Seamless hybrid engagement</li>
+      </ul>
+      <blockquote>A well-designed conference room doesn’t just improve meetings —<br/>it transforms the way teams work, communicate, and innovate.</blockquote>
+      <p>If your organization is ready to elevate its meeting spaces, Cyrotics Technologies is here to build the perfect modern conference room for you.</p>
     `
   },
    {
@@ -968,5 +1104,6 @@ export const FAQS: FAQ[] = [
 
 
     
+
 
 
