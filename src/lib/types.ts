@@ -61,7 +61,7 @@ export interface JobOpening {
   title: string;
   location: string;
   department: string;
-  type: 'Full-time' | 'Part-time' | 'Contract' | 'Internship' | 'Apprenticeship' | 'Training Integrated Studies';
+  type: 'Full-time' | 'Part-time' | 'Contract' | 'Internship' | 'Apprenticeship' | 'Training Integrated Studies' | 'Remote' | 'Hybrid';
   description: string;
   requirements: string[];
   careerLevel: 'Apprenticeship' | 'Graduates' | 'Internship / Working Students' | 'Manager' | 'Professionals';
