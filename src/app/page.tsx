@@ -7,6 +7,11 @@ import {
   GanttChartSquare,
   Calendar,
   HeartHandshake,
+  Globe,
+  Building,
+  GraduationCap,
+  HardHat,
+  PackageCheck,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -35,6 +40,29 @@ const stats = [
   { value: 50, label: 'Projects Completed', icon: GanttChartSquare },
   { value: 45, label: 'Satisfied Clients', icon: HeartHandshake },
   { value: 100, label: 'Team Size', icon: Users },
+];
+
+const whyChooseUs = [
+  {
+    icon: Globe,
+    title: 'Pan-India Project Delivery',
+    description: 'We successfully execute complex IT & ELV infrastructure projects across India, from major cities to remote locations, ensuring consistent quality and on-time delivery.'
+  },
+    {
+    icon: Building,
+    title: 'Multi-Sector Expertise',
+    description: 'Our team has proven experience delivering mission-critical infrastructure for government, medical, aviation, data centers, and university projects.'
+  },
+  {
+    icon: GraduationCap,
+    title: 'Certified Professionals',
+    description: 'Our engineers hold industry-recognized certifications in networking, data centers, security, and cloud technologies, partnering with leading OEMs.'
+  },
+    {
+    icon: PackageCheck,
+    title: 'Turnkey Project Execution',
+    description: 'From design to deployment, we offer end-to-end solutions, taking full ownership to provide a seamless, hassle-free experience for our clients.'
+  },
 ];
 
 export default function Home() {
@@ -112,6 +140,32 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="why-choose-us" className="bg-background py-12 sm:py-16 lg:py-20">
+        <div className="container px-4 text-center">
+          <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
+            Why Clients Trust Cyrotics Technologies
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+             Our commitment to quality, expertise, and nationwide execution.
+          </p>
+          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {whyChooseUs.map((item) => (
+              <Card key={item.title} className="text-center">
+                <CardHeader>
+                  <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit">
+                    <item.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle className="font-headline text-xl pt-4">{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+      
       <section id="projects" className="bg-primary/5 py-12 sm:py-16 lg:py-20">
         <div className="container px-4 text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
