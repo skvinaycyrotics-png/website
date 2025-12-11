@@ -60,7 +60,8 @@ import {
   Clock,
   Shuffle,
   CloudCog,
-  FileCheck2
+  FileCheck2,
+  Car
 } from 'lucide-react';
 
 export const NAV_LINKS: NavLink[] = [
@@ -70,7 +71,7 @@ export const NAV_LINKS: NavLink[] = [
     href: '/services',
     label: 'Services',
     subLinks: [
-      { href: '/services/data-center-cloud-infrastructure-solutions', label: 'Data Center & Cloud Infrastructure Solutions' },
+      { href: '/services/data-center-cloud-infrastructure-solutions', label: 'Data Center & Cloud Infrastructure' },
       { href: '/services/scalable-storage-architecture', label: 'Scalable Storage Architecture' },
       { href: '/services/next-gen-cyber-security-solutions', label: 'Next Gen Cyber Security' },
       { href: '/services/security-surveillance', label: 'Security & Surveillance' },
@@ -79,6 +80,7 @@ export const NAV_LINKS: NavLink[] = [
       { href: '/services/smart-city-solutions', label: 'Smart City Solutions' },
       { href: '/services/software-development', label: 'Software Development' },
       { href: '/services/renewable-energy', label: 'Renewable Energy' },
+      { href: '/services/automotive-engineering', label: 'Automotive Engineering' },
     ],
   },
    {
@@ -467,6 +469,24 @@ export const SERVICES: Service[] = [
       },
     ],
     techStack: ['Trina Solar', 'SMA', 'Enphase', 'Tesla Powerwall'],
+    caseStudies: [],
+  },
+  {
+    slug: 'automotive-engineering',
+    title: 'Automotive Engineering',
+    category: 'Automotive Engineering',
+    shortDescription: 'End-to-end automotive engineering, simulation, EV, and robotics solutions to accelerate innovation in the mobility sector.',
+    description: 'Cyrotics Technologies delivers end-to-end automotive engineering solutions designed to enhance safety, improve vehicle performance, and accelerate digital transformation across the mobility sector. From mechanical design to embedded systems, we help OEMs, Tier-1 suppliers, and manufacturing units innovate with confidence.',
+    icon: Car,
+    imageUrl: 'https://picsum.photos/seed/auto-eng/1200/800',
+    imageHint: 'automotive engineering design',
+    features: [
+      { title: 'Vehicle Design & Engineering', description: 'CAD modeling (BIW, Interiors, Chassis), GD&T, and structural optimization.', icon: Car },
+      { title: 'CAE/Virtual Validation', description: 'Crashworthiness simulation, NVH analysis, and thermal simulation.', icon: Cpu },
+      { title: 'Embedded & Automotive Electronics', description: 'ECU hardware design, AUTOSAR architecture support, and CAN/LIN/FlexRay integration.', icon: CircuitBoard },
+      { title: 'Robotics & Industrial Automation', description: 'Industrial robotics, smart factory solutions, and PLC/SCADA control systems for manufacturing.', icon: Factory }
+    ],
+    techStack: ['ANSYS', 'HyperMesh', 'CATIA', 'Simulink', 'CANoe'],
     caseStudies: [],
   },
 ];
@@ -885,10 +905,7 @@ export const LOCATIONS: LocationFilter[] = [
       { name: 'California', cities: ['Los Angeles', 'San Francisco'] },
     ],
   },
-  {
-    name: 'UK',
-    states: [{ name: 'England', cities: ['London', 'Birmingham'] }],
-  },
+  { name: 'UK', states: [{ name: 'England', cities: ['London', 'Birmingham'] }] },
   { name: 'Singapore', states: [{ name: 'Singapore', cities: ['Singapore'] }] },
   { name: 'Canada', states: [{ name: 'Ontario', cities: ['Toronto'] }] },
   { name: 'Australia', states: [{ name: 'New South Wales', cities: ['Sydney'] }] },
@@ -2283,7 +2300,7 @@ BMS takes care of this by regulating:</p>
       <p>A smart PA system is essential for emergency alerts and routine announcements.</p>
       <h4>Capabilities:</h4>
       <ul>
-        <li>✔ Zone-wise paging</li>
+        <li>✔ Zonal announcements</li>
         <li>✔ Fire alarm integration</li>
         <li>✔ Automated scheduled announcements</li>
         <li>✔ Centralized control</li>
@@ -2382,7 +2399,7 @@ BMS takes care of this by regulating:</p>
     `
   },
   {
-    slug: 'the-importance-of-data-center-migration-modernization',
+    slug: 'importance-of-data-center-migration-and-modernization',
     title: 'The Importance of Data Center Migration & Modernization for Future-Ready Businesses',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
@@ -2390,7 +2407,7 @@ BMS takes care of this by regulating:</p>
     category: 'Data Center Migration & Cloud Infrastructure Solutions',
     excerpt: 'In today’s digital-first era, businesses cannot afford downtime, legacy systems, or inefficient computing environments. Data Center Migration and Modernization has become a necessity.',
     imageUrl: 'https://picsum.photos/seed/blog11/800/450',
-    imageHint: 'cloud data center',
+    imageHint: 'modern data center',
     tags: ['Data Center', 'Modernization', 'Cloud'],
     content: `
       <p>In today’s digital-first era, businesses cannot afford downtime, legacy systems, or inefficient computing environments. As technology evolves, organizations need faster, more scalable, and resilient infrastructure. This is where Data Center Migration and Modernization becomes not just an option—but a necessity.</p>
@@ -2487,7 +2504,7 @@ BMS takes care of this by regulating:</p>
     `
   },
   {
-    slug: 'top-10-benefits-strong-network-infrastructure-in-hospitals',
+    slug: 'top-10-benefits-modern-it-elv-infrastructure-in-hospitals',
     title: 'Top 10 Benefits of Implementing a Strong Network Infrastructure in Hospitals & Medical Institutions',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
@@ -3346,9 +3363,9 @@ A secure network offers:</p>
         <li><strong>Update Signatures Regularly:</strong> IPS, antivirus, anti-bot, and DNS updates are mandatory.</li>
       </ol>
       <h3>7. So, Which Firewall Should You Choose?</h3>
-      <p>Choose Palo Alto if you need deep application visibility, a strong Zero Trust framework, the best threat intelligence, and enterprise-grade cloud security. Best for large enterprises, data centers, BFSI, government.</p>
-      <p>Choose FortiGate if you need high performance + best pricing, easy management, secure SD-WAN + NGFW, and high throughput for branches or hospitals. Best for hospitals, universities, SMBs, multi-site networks.</p>
-      <p>Choose Cisco Firepower if you need strong IPS performance, deep integration with Cisco switching & routing, and enterprise-scale environments. Best for government, large corporate networks, Cisco-heavy infrastructure.</p>
+      <p>Choose Palo Alto if you need: Deep application visibility, a strong Zero Trust framework, the best threat intelligence, and enterprise-grade cloud security. Best for large enterprises, data centers, BFSI, government.</p>
+      <p>Choose FortiGate if you need: High performance + best pricing, easy management, secure SD-WAN + NGFW, and high throughput for branches or hospitals. Best for hospitals, universities, SMBs, multi-site networks.</p>
+      <p>Choose Cisco Firepower if you need: Strong IPS performance, deep integration with Cisco switching & routing, and enterprise-scale environments. Best for government, large corporate networks, Cisco-heavy infrastructure.</p>
       <h3>Conclusion</h3>
       <p>Every organization’s security requirement is unique. Palo Alto, FortiGate, and Cisco Firepower are all excellent choices — but choosing the right firewall depends on your budget, network size, application behavior, industry compliance needs, cloud or on-prem infrastructure, and in-house IT skill set.</p>
       <p>For healthcare, education, manufacturing, and multi-location organizations in India, FortiGate often delivers the best balance of performance and cost.</p>
@@ -5065,5 +5082,6 @@ export const FAQS: FAQ[] = [
     answer: "Yes. We understand that a complete rip-and-replace is not always feasible. Our engineers are highly experienced in system integration and can develop custom APIs and middleware to ensure our modern solutions communicate seamlessly with your existing legacy applications and infrastructure, allowing for a phased and cost-effective modernization approach."
   }
 ];
+
 
 
