@@ -370,6 +370,28 @@ export const PROJECTS: Project[] = [
     timeline: 'Ongoing',
     results: 'Delivering a cutting-edge, fully integrated technology backbone for a new government medical college, ensuring a secure, connected, and future-ready environment for learning and healthcare.',
   },
+  {
+    id: 'sgtb',
+    title: 'Shri Guru Tegh Bahadur Sahib Government Medical College – Yamuna Nagar, Haryana',
+    client: 'Government of Haryana',
+    shortDescription: 'End-to-end smart campus solution, integrating IT, ELV, security, and data center infrastructure for a new government medical college.',
+    longDescription: 'This project involves the delivery of a comprehensive technology infrastructure for a new medical college. The scope includes Network & Security Infrastructure, CCTV & Video Surveillance System, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone & Enterprise Network, Complete Campus Networking, Data Center Cabling & Server Setup, Fire Alarm & Public Address System Solutions, Access Control System, CCTV, Wi-Fi & Access Control.',
+    imageUrl: 'https://picsum.photos/seed/sgtb/600/400',
+    imageHint: 'modern medical college',
+    tags: [
+        'IT Infrastructure',
+        'ELV',
+        'Smart Campus',
+        'Data Center',
+        'Network Security',
+        'CCTV',
+        'Fire Safety',
+        'Access Control',
+        'Wi-Fi'
+    ],
+    timeline: 'Ongoing',
+    results: "The project delivers a state-of-the-art smart medical campus, designed to ensure seamless connectivity, high system availability, and secure access to digital resources. By integrating advanced IT and ELV infrastructure, the institution now benefits from:\n\n- Uninterrupted network performance for academic, administrative, and clinical operations\n- Secure and centralized data accessibility for staff, students, and medical professionals\n- Enhanced digital learning experiences through reliable communication systems\n- Improved operational efficiency driven by automation and modern network design\n\nThis transformation empowers the medical campus to operate as a modern, technology-enabled institution capable of supporting future growth and innovation.",
+  },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
@@ -491,7 +513,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Data Center', 'Infrastructure', 'Migration'],
     content: `
       <p>In the rapidly evolving digital landscape, organizations are under constant pressure to modernize their IT infrastructure. As applications grow, security threats intensify, and compliance standards become more stringent, enterprises can no longer rely on outdated on-premises infrastructure. Data Center Migration has emerged as a strategic necessity for businesses aiming to improve performance, security, and scalability.</p>
-      <p>Cyrotics Technologies, having successfully delivered multiple large-scale national projects—including Chhindwara Institute of Medical Science (MP), AIIMS Rajkot, Government Medical Colleges, Techno Data Center Chennai, and major airport and university infrastructures—brings deep expertise in executing complex migration projects with precision.</p>
+      <p>Cyrotics Technologies, having successfully delivered multiple large-scale national projects—including Multiple All India Govt Medical Hospital & college Projects, government institutions, Data Center Projects , and major airport and university infrastructures—brings deep expertise in executing complex migration projects with precision.</p>
       <p>This blog explores why data center migration is important, the risks involved, and the best practices for a smooth and secure transition.</p>
 
       <h3>⭐ What Is Data Center Migration?</h3>
