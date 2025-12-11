@@ -10,6 +10,7 @@ export type NavLink = {
 export interface Service {
   slug: string;
   title: string;
+  category: string;
   shortDescription: string;
   description: string;
   icon: LucideIcon;
@@ -81,5 +82,3 @@ export interface FAQ {
   question: string;
   answer: string;
 }
-
-  

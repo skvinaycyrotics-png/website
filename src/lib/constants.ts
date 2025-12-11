@@ -44,6 +44,10 @@ import {
   Globe,
   GraduationCap,
   PackageCheck,
+  Bot,
+  BrainCircuit,
+  TrafficCone,
+  Map,
 } from 'lucide-react';
 
 export const NAV_LINKS: NavLink[] = [
@@ -54,9 +58,11 @@ export const NAV_LINKS: NavLink[] = [
     label: 'Services',
     subLinks: [
       { href: '/services/infrastructure-solutions', label: 'Infrastructure Solutions' },
+      { href: '/services/next-gen-cyber-security-solutions', label: 'Next Gen Cyber Security' },
       { href: '/services/security-surveillance', label: 'Security & Surveillance' },
       { href: '/services/audio-visual-communication', label: 'Audio-Visual & Communication' },
-      { href: '/services/smart-building-solutions', label: 'Smart Factory & Building Solutions' },
+      { href: '/services/smart-factory-building-solutions', label: 'Smart Factory & Building' },
+      { href: '/services/smart-city-solutions', label: 'Smart City Solutions' },
       { href: '/services/software-development', label: 'Software Development' },
       { href: '/services/renewable-energy', label: 'Renewable Energy' },
     ],
@@ -71,6 +77,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'infrastructure-solutions',
     title: 'Infrastructure Solutions',
+    category: 'Networking Solutions',
     shortDescription:
       'We architect and manage resilient IT infrastructures that power enterprise success. From modernizing data centers to transforming networks, our solutions ensure high availability, performance, and scalability.',
     description:
@@ -101,14 +108,45 @@ export const SERVICES: Service[] = [
     techStack: ['Cisco', 'HPE', 'Dell EMC', 'VMware', 'Microsoft Azure'],
     caseStudies: [{ title: 'Enterprise Network Overhaul', slug: 'proj-1' }],
   },
+    {
+    slug: 'next-gen-cyber-security-solutions',
+    title: 'Next Gen Cyber Security Solutions',
+    category: 'Network Security & Cyber Security',
+    shortDescription: 'Defend your digital assets with our advanced, multi-layered cybersecurity services, powered by AI and a Zero Trust framework to protect against evolving threats.',
+    description:
+      'Defend your digital assets with our advanced, multi-layered cybersecurity services. We leverage AI-driven threat intelligence, proactive monitoring, and a Zero Trust framework to protect your infrastructure, data, and users against evolving cyber threats.',
+    icon: ShieldCheck,
+    imageUrl: 'https://picsum.photos/seed/cybersec/1200/800',
+    imageHint: 'cyber security',
+    features: [
+      {
+        title: 'Zero Trust Architecture',
+        description: 'Implement a "never trust, always verify" model to secure your network, applications, and data by eliminating implicit trust and continuously validating every access request.',
+        icon: Fingerprint,
+      },
+      {
+        title: 'AI-Powered Threat Detection',
+        description: 'Utilize machine learning and AI to proactively detect, analyze, and respond to threats in real-time, moving from a reactive to a predictive security posture.',
+        icon: Bot,
+      },
+      {
+        title: 'Managed Security Operations (SOC)',
+        description: 'Our 24/7 Security Operations Center provides continuous monitoring, threat hunting, and incident response to safeguard your organization around the clock.',
+        icon: BrainCircuit,
+      },
+    ],
+    techStack: ['Palo Alto Networks', 'Fortinet', 'CrowdStrike', 'SIEM', 'SOAR'],
+    caseStudies: [],
+  },
   {
     slug: 'security-surveillance',
     title: 'Security & Surveillance',
+    category: 'CCTV & ELV Systems',
     shortDescription:
       'Protect your assets, people, and operations with our comprehensive security solutions. We design and deploy integrated systems for surveillance, access control, and fire detection, providing a unified security posture.',
     description:
       'Protect your assets, people, and operations with our comprehensive security solutions. We design and deploy integrated systems for surveillance, access control, and fire detection, providing a unified security posture.',
-    icon: ShieldCheck,
+    icon: Cctv,
     imageUrl: 'https://picsum.photos/seed/security/1200/800',
     imageHint: 'security camera',
     features: [
@@ -142,6 +180,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'audio-visual-communication',
     title: 'Audio-Visual & Communication',
+    category: 'Audio-Visual & Communication',
     shortDescription:
       'Enhance communication and collaboration with our state-of-the-art audio-visual solutions. We create immersive experiences for boardrooms, auditoriums, and public spaces.',
     description:
@@ -178,8 +217,9 @@ export const SERVICES: Service[] = [
     caseStudies: [],
   },
   {
-    slug: 'smart-building-solutions',
+    slug: 'smart-factory-building-solutions',
     title: 'Smart Factory & Building Solutions',
+    category: 'Smart Factory & Building Solutions',
     shortDescription:
       'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
     description:
@@ -215,9 +255,40 @@ export const SERVICES: Service[] = [
     techStack: ['Schneider Electric', 'Siemens', 'Johnson Controls', 'LoRaWAN'],
     caseStudies: [],
   },
+    {
+    slug: 'smart-city-solutions',
+    title: 'Smart City Solutions',
+    category: 'Smart City Solutions',
+    shortDescription: 'Empower urban environments with our integrated smart city solutions, enhancing public safety, traffic management, and resource efficiency through IoT and data analytics.',
+    description:
+      'We empower urban environments by designing and deploying integrated smart city solutions. From intelligent traffic management to city-wide surveillance and smart lighting, we use IoT, data analytics, and robust network infrastructure to create safer, more efficient, and sustainable cities.',
+    icon: Building2,
+    imageUrl: 'https://picsum.photos/seed/city/1200/800',
+    imageHint: 'smart city',
+    features: [
+      {
+        title: 'Intelligent Traffic Management',
+        description: 'Deploy smart traffic signals, vehicle detection sensors, and centralized management platforms to reduce congestion and improve traffic flow.',
+        icon: TrafficCone,
+      },
+      {
+        title: 'City-Wide Surveillance',
+        description: 'Implement a network of AI-powered cameras for public safety, incident detection, and crowd management with a central command and control center.',
+        icon: Cctv,
+      },
+      {
+        title: 'Smart Utilities & IoT',
+        description: 'Integrate IoT sensors for smart lighting, waste management, and environmental monitoring to optimize resource usage and reduce operational costs.',
+        icon: Map,
+      },
+    ],
+    techStack: ['LoRaWAN', '5G', 'IoT Platforms', 'GIS', 'Video Analytics'],
+    caseStudies: [],
+  },
   {
     slug: 'software-development',
     title: 'Software Development',
+    category: 'Software Development',
     shortDescription:
       'From enterprise applications to cloud-native solutions, our software development services are tailored to your unique business needs, driving innovation and efficiency.',
     description:
@@ -251,6 +322,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'renewable-energy',
     title: 'Renewable Energy',
+    category: 'Renewable Energy',
     shortDescription:
       'Harness the power of the sun with our end-to-end solar energy solutions. We help businesses reduce their carbon footprint and energy costs with reliable and efficient solar power systems.',
     description:
@@ -2425,7 +2497,7 @@ If it slows down or fails, the entire ecosystem suffers.</p>
     content: `
       <p>As organizations modernize and shift toward digital-first operations, data center migration has become a critical step for ensuring performance, scalability, and security. However, migrating a data center—whether to a new physical location, a private cloud, or a hybrid environment—is a highly complex process that demands precision, planning, and expertise.</p>
       <p>At Cyrotics Technologies, we have successfully executed large-scale data center migrations across India, including in healthcare institutions, universities, airports, and enterprise environments. This blog highlights the top challenges organizations face during data center migration and how we address them with proven strategies.</p>
-      <h3>⚠️ Challenge 1: Maintaining 24×7 Availability (Zero Downtime)</h3>
+      <h3>⚠️ Challenge 1: Downtime During Migration</h3>
       <p>Even a few minutes of downtime can disrupt business operations, especially for hospitals, airports, and critical government systems.</p>
       <h4>✔ Our Solution</h4>
       <ul>
@@ -2435,9 +2507,9 @@ If it slows down or fails, the entire ecosystem suffers.</p>
         <li>Use phased cut-over instead of big-bang migration</li>
       </ul>
       <p>This ensures near-zero downtime and a smooth transition.</p>
-      <h3>⚠️ Challenge 2: Safely Moving Critical Data Without Corruption</h3>
-      <p>Data corruption or loss is the biggest risk during migration.</p>
-      <h4>Our Approach:</h4>
+      <h3>⚠️ Challenge 2: Data Loss & Integrity Risks</h3>
+      <p>Migrations involve moving massive volumes of sensitive data, increasing the risk of corruption or loss.</p>
+      <h4>✔ Our Solution</h4>
       <ul>
         <li>End-to-end data backups</li>
         <li>Real-time replication tools</li>
@@ -2482,7 +2554,7 @@ If it slows down or fails, the entire ecosystem suffers.</p>
         <li>Professional labeling and dismantling</li>
         <li>Anti-static and shock-proof handling</li>
         <li>Certified transport logistics</li>
-        <li>Re-rack and re-cable with original topology</li>
+        <li>Re-rack and re-cable with professional documentation</li>
       </ul>
       <p>We guarantee safe transport and accurate re-assembly.</p>
       <h3>⚠️ Challenge 7: Lack of Proper Documentation</h3>
@@ -3615,11 +3687,26 @@ Government services must run 24×7.</p>
     imageHint: 'network server room vulnerability',
     tags: ['Cybersecurity', 'Healthcare', 'Government', 'Networking'],
     content: `
-      <p>India’s Government Medical Colleges (GMCs) are critical institutions that handle enormous volumes of sensitive data—patient records, research information, diagnostic images, lab reports, administrative databases, and more. As healthcare systems become increasingly digital, GMCs rely heavily on Hospital Information Management Systems (HIMS/HMIS), CCTV & surveillance networks, data centers, Wi-Fi infrastructure, IoT-based medical devices, smart classroom & campus networks, and telemedicine platforms.</p>
+      <p>India’s Government Medical Colleges (GMCs) are critical institutions that handle enormous volumes of sensitive data—patient records, research information, diagnostic images, lab reports, administrative databases, and more. As healthcare systems become increasingly digital, GMCs rely heavily on:</p>
+      <ul>
+      <li>Hospital Information Management Systems (HIMS/HMIS)</li>
+      <li>CCTV & surveillance networks</li>
+      <li>Data centers</li>
+      <li>Wi-Fi infrastructure</li>
+      <li>IoT-based medical devices</li>
+      <li>Smart classroom & campus networks</li>
+      <li>Telemedicine platforms</li>
+      </ul>
       <p>However, many government medical colleges operate with aging infrastructure, minimal cybersecurity budgets, and limited IT staff, making them frequent targets of cyber threats.</p>
       <p>This blog highlights the most common network vulnerabilities found in Government Medical Colleges across India — based on real deployments, audits, and large-scale IT infra projects.</p>
       <h3>1. Outdated Network Devices & Legacy Systems</h3>
-      <p>Many GMCs continue to rely on 8–12 year old switches, End-of-Life firewalls, unsupported operating systems, and old medical equipment connected over LAN/Wi-Fi.</p>
+      <p>Many GMCs continue to rely on:</p>
+      <ul>
+      <li>8–12 year old switches</li>
+      <li>End-of-Life firewalls</li>
+      <li>Unsupported operating systems</li>
+      <li>Old medical equipment connected over LAN/Wi-Fi</li>
+      </ul>
       <p><strong>Risks:</strong> No security patches or firmware updates, vulnerable to known exploits, and performance issues impacting clinical operations. For example, an old unmanaged switch at a radiology department can be easily compromised, exposing PACS/X-Ray reports.</p>
       <h3>2. Lack of Proper Network Segmentation</h3>
       <p>One of the most critical vulnerabilities is “flat networks.” In many government hospitals, all systems run on a single VLAN. Any malware can spread across the entire hospital, and ransomware can bring the whole HMIS down. Unmanaged IoT devices act as entry points.</p>
