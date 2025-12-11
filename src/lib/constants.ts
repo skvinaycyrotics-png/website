@@ -48,6 +48,7 @@ import {
   BrainCircuit,
   TrafficCone,
   Map,
+  HardHat,
 } from 'lucide-react';
 
 export const NAV_LINKS: NavLink[] = [
@@ -61,7 +62,7 @@ export const NAV_LINKS: NavLink[] = [
       { href: '/services/next-gen-cyber-security-solutions', label: 'Next Gen Cyber Security' },
       { href: '/services/security-surveillance', label: 'Security & Surveillance' },
       { href: '/services/audio-visual-communication', label: 'Audio-Visual & Communication' },
-      { href: '/services/smart-factory-building-solutions', label: 'Smart Factory & Building' },
+      { href: '/services/smart-factory-building-solutions', label: 'Smart Factory & Building Solutions' },
       { href: '/services/smart-city-solutions', label: 'Smart City Solutions' },
       { href: '/services/software-development', label: 'Software Development' },
       { href: '/services/renewable-energy', label: 'Renewable Energy' },
@@ -87,6 +88,24 @@ export const SERVICES: Service[] = [
     imageHint: 'data center servers',
     features: [
       {
+        title: 'End-to-End Data Center Build',
+        description:
+          'We provide complete turnkey data center construction, from initial design and civil work to electrical, cooling, and fire safety systems. Our service includes deploying all IT hardware, delivering a production-ready facility.',
+        icon: HardHat,
+      },
+      {
+        title: 'AI-Enabled Next-Gen Data Center',
+        description:
+          'Transform your data center into an intelligent, self-optimizing environment. We integrate AI for predictive analytics, automated workload balancing, and enhanced energy efficiency to ensure peak performance.',
+        icon: BrainCircuit,
+      },
+      {
+        title: 'Cloud Infrastructure Solutions',
+        description:
+          'Leverage the power of the cloud with our expert services in public, private, and hybrid cloud deployments. We design secure, scalable, and cost-effective cloud architectures on platforms like AWS, Azure, and GCP.',
+        icon: Cloud,
+      },
+      {
         title: 'Data Center Modernization',
         description:
           'Optimize your data center for efficiency, cooling, and power with our modification and optimization services.',
@@ -105,7 +124,7 @@ export const SERVICES: Service[] = [
         icon: DatabaseZap,
       },
     ],
-    techStack: ['Cisco', 'HPE', 'Dell EMC', 'VMware', 'Microsoft Azure'],
+    techStack: ['Cisco', 'HPE', 'Dell EMC', 'VMware', 'Microsoft Azure', 'AWS', 'GCP'],
     caseStudies: [{ title: 'Enterprise Network Overhaul', slug: 'proj-1' }],
   },
     {
@@ -450,7 +469,7 @@ export const PROJECTS: Project[] = [
     title: 'Shri Guru Tegh Bahadur Sahib Government Medical College – Yamuna Nagar, Haryana',
     client: 'Government of Haryana',
     shortDescription: 'End-to-end smart campus solution, integrating IT, ELV, security, and data center infrastructure for a new government medical college.',
-    longDescription: 'This project involves the delivery of a comprehensive technology infrastructure for a new medical college. The scope includes Network & Security Infrastructure, CCTV & Video Surveillance System, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone & Enterprise Network, Complete Campus Networking, Data Center Cabling & Server Setup, Fire Alarm & Public Address System Solutions, Access Control System, CCTV, Wi-Fi & Access Control.',
+    longDescription: 'This project involves the delivery of a comprehensive technology infrastructure for a new medical college. The scope includes Network & Security Infrastructure, CCTV & Video Surveillance System, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone & Enterprise Network, Smart Hospital IT Infrastructure, Campus Wi-Fi & Secure Network Backbone, CCTV Surveillance & Data Center Deployment, Complete Campus Networking, Data Center Cabling & Server Setup, Fire Alarm & Public Address System Solutions, Access Control System, CCTV, Wi-Fi & Access Control.',
     imageUrl: 'https://picsum.photos/seed/sgtb/600/400',
     imageHint: 'modern medical college',
     tags: [
@@ -465,7 +484,7 @@ export const PROJECTS: Project[] = [
         'Wi-Fi'
     ],
     timeline: 'Ongoing',
-    results: "The project delivers a state-of-the-art smart medical campus, designed to ensure seamless connectivity, high system availability, and secure access to digital resources. By integrating advanced IT and ELV infrastructure, the institution now benefits from:\n\n- Uninterrupted network performance for academic, administrative, and clinical operations\n- Secure and centralized data accessibility for staff, students, and medical professionals\n- Enhanced digital learning experiences through reliable communication systems\n- Improved operational efficiency driven by automation and modern network design\n\nThis transformation empowers the medical campus to operate as a modern, technology-enabled institution capable of supporting future growth and innovation.",
+    results: "The project delivers a state-of-the-art smart medical campus, designed to ensure seamless connectivity, high system availability, and secure access to digital resources. By integrating advanced IT and ELV infrastructure, the institution now benefits from:\n\n- Uninterrupted network performance for academic, administrative, and clinical operations\n\n- Secure and centralized data accessibility for staff, students, and medical professionals\n\n- Enhanced digital learning experiences through reliable communication systems\n\n- Improved operational efficiency driven by automation and modern network design\n\nThis transformation empowers the medical campus to operate as a modern, technology-enabled institution capable of supporting future growth and innovation.",
   },
   {
     id: 'nial-jewar',
@@ -496,7 +515,7 @@ export const PROJECTS: Project[] = [
     title: 'All India Institute of Medical Sciences – Rajkot, Gujarat',
     client: 'AIIMS Rajkot',
     shortDescription: 'End-to-end smart hospital and campus infrastructure, including data center, networking, security, and smart classroom solutions.',
-    longDescription: 'For AIIMS Rajkot, we are delivering a comprehensive, turnkey technology solution for the entire campus and hospital. The scope of work includes: Network & Security Infrastructure, CCTV & Video Surveillance System, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone & Enterprise Network, Smart Hospital IT Infrastructure, Campus Wi-Fi & Secure Network Backbone, CCTV Surveillance & Data Center Deployment, Complete Campus Networking, Data Center Cabling & Server Setup, Fire Alarm System & Public Address System Solutions, and an integrated Access Control System.',
+    longDescription: 'We are delivering a comprehensive, turnkey technology solution for the entire campus and hospital. The scope of work includes: Network & Security Infrastructure, CCTV & Video Surveillance System, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone & Enterprise Network, Smart Hospital IT Infrastructure, Campus Wi-Fi & Secure Network Backbone, CCTV Surveillance & Data Center Deployment, Complete Campus Networking, Data Center Cabling & Server Setup, Fire Alarm System & Public Address System Solutions, and an integrated Access Control System.',
     imageUrl: 'https://picsum.photos/seed/aiimsrajkot/600/400',
     imageHint: 'modern hospital building',
     tags: ['Smart Hospital', 'IT Infrastructure', 'Data Center', 'Network Security', 'Smart Campus', 'ELV', 'CCTV'],
