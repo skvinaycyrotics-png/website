@@ -120,7 +120,7 @@ export const NAV_LINKS: NavLink[] = [
   { href: '/projects', label: 'Projects' },
   { href: '/blog', label: 'Blog' },
   { href: '/careers', label: 'Careers' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/contact', label: 'Contact Us' },
 ];
 
 export const SERVICES: Service[] = [
@@ -600,7 +600,7 @@ export const PROJECTS: Project[] = [
     title: 'Shri Guru Tegh Bahadur Sahib Government Medical College – Yamuna Nagar, Haryana',
     client: 'Government of Haryana',
     shortDescription: 'End-to-end smart campus solution, integrating IT, ELV, security, and data center infrastructure for a new government medical college.',
-    longDescription: 'This project involves the delivery of a comprehensive technology infrastructure for a new medical college. The scope includes Network & Security Infrastructure, CCTV & Video Surveillance System, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone & Enterprise Network, Smart Hospital IT Infrastructure, Campus Wi-Fi & Secure Network Backbone, CCTV Surveillance & Data Center Deployment, Complete Campus Networking, Data Center Cabling & Server Setup, Fire Alarm & Public Address System Solutions, and an integrated Access Control System.',
+    longDescription: 'This project involves the delivery of a comprehensive technology infrastructure for a new medical college. The scope includes Network & Security Infrastructure, CCTV & Video Surveillance System, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone & Enterprise Network, Smart Hospital IT Infrastructure, Campus Wi-Fi & Secure Network Backbone, CCTV Surveillance & Data Center Deployment, Complete Campus Networking, Data Center Cabling & Server Setup, Fire Alarm System & Public Address System Solutions, and an integrated Access Control System.',
     imageUrl: 'https://picsum.photos/seed/sgtb/600/400',
     imageHint: 'modern medical college',
     tags: [
@@ -2156,3 +2156,66 @@ export const FAQS: FAQ[] = [
   }
 ];
 
+
+export const SALUTATIONS = ['Mr', 'Ms', 'Mx', 'Dr', 'Er', 'Prof'];
+
+export const CONTACT_SUBJECTS = [
+  'General Inquiry',
+  'Sales / New Project',
+  'Technical Support',
+  'Billing & Accounts',
+  'Vendor Registration',
+  'Partnership / Collaboration',
+  'Feedback / Complaint',
+  'Order Issues',
+  'Others',
+];
+
+export const DEPARTMENTS = [
+  'Sales Team',
+  'Support Team',
+  'Project Execution Team',
+  'Finance / Billing',
+  'HR / Recruitment',
+  'Procurement / Vendor Management',
+];
+
+export const PROJECT_TYPES = [
+  'IT Networking',
+  'Data Center',
+  'Audio-Visual / Smart Classroom',
+  'CCTV & Surveillance',
+  'Smart Building Solutions',
+  'Smart City Solutions',
+  'Software Development',
+  'Mobile App Development',
+  'AI / Automation',
+  'Cloud / Cybersecurity',
+  'Renewable Energy / Solar',
+  'Annual Maintenance Contract (AMC)',
+];
+
+export const BUDGET_RANGES = [
+  '< ₹1 Lakh',
+  '₹1–10 Lakh',
+  '₹10–50 Lakh',
+  '₹50 Lakh–1 Cr',
+  '₹1 Cr - 50 Cr',
+  '₹50 Cr - 150 Cr',
+];
+
+export const PRIORITY_LEVELS = ['Normal', 'High', 'Critical'];
+
+export const CONTACT_METHODS = ['Email', 'Phone Call', 'WhatsApp', 'Google Meet', 'Zoom'];
+
+export const CONTACT_TIMES = ['Morning (9 AM – 12 PM)', 'Afternoon (12 PM – 5 PM)', 'Evening (5 PM – 8 PM)', 'Anytime'];
+
+export const HEAR_ABOUT_US_OPTIONS = [
+  'Google Search',
+  'LinkedIn',
+  'Referral',
+  'Existing Client',
+  'Exhibition/Event',
+  'Email Campaign',
+  'Other',
+];
