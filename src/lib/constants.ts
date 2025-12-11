@@ -87,11 +87,11 @@ export const NAV_LINKS: NavLink[] = [
   },
    {
     href: '/business-sector/overview',
-    label: 'Business Sector',
+    label: 'Business Sectors',
     subLinks: [
       { href: '/business-sector/overview', label: 'Overview' },
        {
-        href: '#industry-solution',
+        href: 'industry-solution-trigger',
         label: 'Industry Solution',
         subLinks: [
           { href: '/business-sector/urban-development', label: 'Urban Development' },
@@ -102,10 +102,11 @@ export const NAV_LINKS: NavLink[] = [
           { href: '/business-sector/processing-units', label: 'Processing Units' },
           { href: '/business-sector/manufacturing-units', label: 'Manufacturing Units' },
           { href: '/business-sector/mobility-automotive-engineering', label: 'Mobility & Automotive' },
+          { href: '/business-sector/energy', label: 'Energy' },
         ],
       },
       {
-        href: '#public-solution',
+        href: 'public-solution-trigger',
         label: 'Public Solution',
         subLinks: [
           { href: '/business-sector/defence', label: 'Defence' },
@@ -114,7 +115,6 @@ export const NAV_LINKS: NavLink[] = [
           { href: '/business-sector/public-sector-undertakings', label: 'Public Sector Undertakings' },
         ],
       },
-      { href: '/business-sector/energy', label: 'Energy' },
     ],
   },
   { href: '/projects', label: 'Projects' },
@@ -2187,7 +2187,7 @@ BMS takes care of this by regulating:</p>
       <p><strong>Real Example:</strong> At Shri Guru Tegh Bahadur Govt. Medical College Yamunanagar, we deployed:</p>
       <ul>
         <li>800+ CCTV cameras</li>
-        <li>Server-based surveillance with long-duration storage</li>
+        <li>Server-based surveillance with long-term storage</li>
         <li>Complete access control & fire alarm integration</li>
       </ul>
       <p>This ensured a fully-secure medical campus with 24×7 monitoring.</p>
@@ -2470,6 +2470,7 @@ export const FAQS: FAQ[] = [
     answer: "Yes. We understand that a complete rip-and-replace is not always feasible. Our engineers are highly experienced in system integration and can develop custom APIs and middleware to ensure our modern solutions communicate seamlessly with your existing legacy applications and infrastructure, allowing for a phased and cost-effective modernization approach."
   }
 ];
+
 
 
 
