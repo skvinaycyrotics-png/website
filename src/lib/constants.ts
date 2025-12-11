@@ -433,7 +433,7 @@ export const PROJECTS: Project[] = [
     title: 'IIM Bodh Gaya – Bihar',
     client: 'Indian Institute of Management Bodh Gaya',
     shortDescription: 'Comprehensive smart campus solution for IIM Bodh Gaya, integrating IT, security, and data center infrastructure.',
-    longDescription: 'For IIM Bodh Gaya, we are providing an end-to-end technology infrastructure solution. The scope includes Network & Security Infrastructure, CCTV & Video Surveillance, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, a Fiber Backbone & Enterprise Network, Campus-wide Wi-Fi, a Fire Alarm & Public Address System, and a comprehensive Access Control System.',
+    longDescription: "For IIM Bodh Gaya, we are providing an end-to-end technology infrastructure solution. The scope includes Network & Security Infrastructure, CCTV & Video Surveillance, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, a Fiber Backbone & Enterprise Network, and a comprehensive Access Control System. This creates a fully integrated and modern campus environment fit for a premier management institute.",
     imageUrl: 'https://picsum.photos/seed/iim-gaya/600/400',
     imageHint: 'university campus building',
     tags: [
@@ -442,11 +442,22 @@ export const PROJECTS: Project[] = [
         'Data Center',
         'Network Security',
         'ELV',
-        'CCTV',
-        'Wi-Fi'
+        'CCTV'
     ],
     timeline: 'Ongoing',
     results: "The project delivers a state-of-the-art smart campus, designed to ensure seamless connectivity, high system availability, and secure access to digital resources for students and faculty. By integrating advanced IT and ELV infrastructure, the institution benefits from:\n\n- Uninterrupted network performance for academic and administrative operations.\n- Secure and centralized data accessibility for all stakeholders.\n- Enhanced digital learning experiences through reliable communication and smart classroom systems.\n- Improved operational efficiency driven by automation and modern network design.\n\nThis transformation empowers the campus to operate as a modern, technology-enabled institution capable of supporting future growth and innovation.",
+  },
+  {
+    id: 'dlf-mall-goa',
+    title: 'DLF Mall – Goa',
+    client: 'DLF Limited',
+    shortDescription: 'State-of-the-art Audio-Visual (AV) infrastructure for a seamless and immersive visitor experience.',
+    longDescription: `Cyrotics Technologies successfully delivered a state-of-the-art Audio-Visual (AV) infrastructure for the prestigious DLF Mall – Goa, ensuring a seamless and immersive visitor experience. Our scope included the design, integration, testing, and commissioning of a complete smart AV ecosystem. This involved a centralized AV distribution system for multi-screen content routing, deployment of 4K digital signage and video walls, and a comprehensive Public Address & Background Music system with zonal controls. We also equipped the conference and control rooms with modern AV solutions, including wireless presentation and video conferencing capabilities, to streamline mall operations.`,
+    imageUrl: 'https://picsum.photos/seed/dlf-goa/600/400',
+    imageHint: 'shopping mall interior',
+    tags: ['Smart AV', 'Digital Signage', 'Video Wall', 'Public Address System', 'Smart Building'],
+    timeline: 'Completed',
+    results: 'Delivered a fully integrated, centrally managed smart AV solution that enhances the visitor experience, improves operational efficiency, and provides a powerful platform for retail promotions and mall-wide communications.',
   },
 ];
 
@@ -852,3 +863,4 @@ export const FAQS: FAQ[] = [
 
 
     
+
