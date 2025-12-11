@@ -56,7 +56,7 @@ export const NAV_LINKS: NavLink[] = [
       { href: '/services/infrastructure-solutions', label: 'Infrastructure Solutions' },
       { href: '/services/security-surveillance', label: 'Security & Surveillance' },
       { href: '/services/audio-visual-communication', label: 'Audio-Visual & Communication' },
-      { href: '/services/smart-building-solutions', label: 'Smart Building Solutions' },
+      { href: '/services/smart-building-solutions', label: 'Smart Factory & Building Solutions' },
       { href: '/services/software-development', label: 'Software Development' },
       { href: '/services/renewable-energy', label: 'Renewable Energy' },
     ],
@@ -179,7 +179,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'smart-building-solutions',
-    title: 'Smart Building Solutions',
+    title: 'Smart Factory & Building Solutions',
     shortDescription:
       'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
     description:
@@ -2282,7 +2282,7 @@ A secure network offers:</p>
         <li>Secure network & cybersecurity frameworks</li>
       </ul>
       <p>Our team has successfully deployed these systems at several government and private medical institutions across India.</p>
-      <h3>💡 Final Words</h3>
+      <h3>💡 Final Thoughts</h3>
       <p>AI and IoT are no longer “future technologies”; they are now essential building blocks of modern hospitals. Smart infrastructure not only enhances medical operations but also saves lives by enabling timely, data-driven decisions.</p>
       <p>As healthcare continues to evolve, Cyrotics Technologies remains committed to building intelligent, secure, and efficient ecosystems for the hospitals of tomorrow.</p>
     `
@@ -2425,7 +2425,7 @@ If it slows down or fails, the entire ecosystem suffers.</p>
     content: `
       <p>As organizations modernize and shift toward digital-first operations, data center migration has become a critical step for ensuring performance, scalability, and security. However, migrating a data center—whether to a new physical location, a private cloud, or a hybrid environment—is a highly complex process that demands precision, planning, and expertise.</p>
       <p>At Cyrotics Technologies, we have successfully executed large-scale data center migrations across India, including in healthcare institutions, universities, airports, and enterprise environments. This blog highlights the top challenges organizations face during data center migration and how we address them with proven strategies.</p>
-      <h3>⚠️ Challenge 1: Downtime During Migration</h3>
+      <h3>⚠️ Challenge 1: Maintaining 24×7 Availability (Zero Downtime)</h3>
       <p>Even a few minutes of downtime can disrupt business operations, especially for hospitals, airports, and critical government systems.</p>
       <h4>✔ Our Solution</h4>
       <ul>
@@ -2435,9 +2435,9 @@ If it slows down or fails, the entire ecosystem suffers.</p>
         <li>Use phased cut-over instead of big-bang migration</li>
       </ul>
       <p>This ensures near-zero downtime and a smooth transition.</p>
-      <h3>⚠️ Challenge 2: Data Loss & Integrity Risks</h3>
-      <p>Migrations involve moving massive volumes of sensitive data, increasing the risk of corruption or loss.</p>
-      <h4>✔ Our Solution</h4>
+      <h3>⚠️ Challenge 2: Safely Moving Critical Data Without Corruption</h3>
+      <p>Data corruption or loss is the biggest risk during migration.</p>
+      <h4>Our Approach:</h4>
       <ul>
         <li>End-to-end data backups</li>
         <li>Real-time replication tools</li>
@@ -2482,7 +2482,7 @@ If it slows down or fails, the entire ecosystem suffers.</p>
         <li>Professional labeling and dismantling</li>
         <li>Anti-static and shock-proof handling</li>
         <li>Certified transport logistics</li>
-        <li>Re-rack and re-cable with professional documentation</li>
+        <li>Re-rack and re-cable with original topology</li>
       </ul>
       <p>We guarantee safe transport and accurate re-assembly.</p>
       <h3>⚠️ Challenge 7: Lack of Proper Documentation</h3>
@@ -2736,11 +2736,11 @@ Techno Data Center Chennai, AIIMS Rajkot, Bihar Animal Science University, NIAPL
       <p>Data center relocation is a mission-critical operation that requires precision planning, strong project management, skilled technical expertise, and end-to-end risk management.</p>
       <p>By avoiding these top 10 mistakes, organizations can ensure:</p>
       <ul>
-        <li>Smooth migration</li>
-        <li>Zero data loss</li>
-        <li>Minimum downtime</li>
-        <li>Better performance and scalability</li>
-        <li>Stronger business continuity</li>
+        <li>✔ Smooth migration</li>
+        <li>✔ Zero data loss</li>
+        <li>✔ Minimum downtime</li>
+        <li>✔ Better performance and scalability</li>
+        <li>✔ Stronger business continuity</li>
       </ul>
       <p>At Cyrotics Technologies (OPC) Pvt. Ltd., we specialize in end-to-end data center relocation, including assessment, planning, hardware movement, network reconfiguration, testing, and post-migration support. We have successfully executed major projects for hospitals, government institutions, airports, and corporate enterprises across India.</p>
     `
@@ -3411,7 +3411,7 @@ Government services must run 24×7.</p>
       <p>Hospitals must follow DISHA, HIPAA-equivalent standards, and NABH guidelines. Government must follow CERT-In guidelines, IT Act 2000, MeitY cyber policies, and state data protection rules.</p>
       <p>Meeting compliance is challenging due to lack of documentation, weak processes, distributed teams, and legacy systems. Non-compliance can lead to large legal and operational risks.</p>
       <h3>11. Lack of Zero Trust Architecture</h3>
-      <p>Traditional perimeter security is no longer enough. Modern cyber threats require continuous verification, micro-segmentation, identity-first access, and real-time monitoring. Most hospitals and government bodies still rely on outdated "trust by default" models, making them vulnerable to internal threats.</p>
+      <p>Most institutions still operate under the outdated assumption that internal traffic is safe. Zero-Trust is essential for protecting sensitive data, remote users, and medical IoT devices. Modern cyber threats require continuous verification, micro-segmentation, identity-first access, and real-time monitoring.</p>
       <h3>Conclusion</h3>
       <p>Cybersecurity in hospitals and government institutions is no longer optional — it is a critical requirement for national security, public safety, and data protection.</p>
       <p>Key priorities for these sectors should include:</p>
@@ -4856,31 +4856,3 @@ export const FAQS: FAQ[] = [
     answer: "Yes. We understand that a complete rip-and-replace is not always feasible. Our engineers are highly experienced in system integration and can develop custom APIs and middleware to ensure our modern solutions communicate seamlessly with your existing legacy applications and infrastructure, allowing for a phased and cost-effective modernization approach."
   }
 ];
-
-    
-
-    
-
-
-
-
-    
-
-    
-
-
-
-    
-
-
-
-
-
-
-
-
-
-    
-
-
-  
