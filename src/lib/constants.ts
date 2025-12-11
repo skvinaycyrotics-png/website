@@ -682,7 +682,6 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Cybersecurity', 'Zero Trust', 'Networking'],
     content: `
       <h3>Zero Trust Architecture: A Paradigm Shift in Modern Cybersecurity</h3>
-      <p><em>By Cyrotics Technologies (OPC) Pvt. Ltd.</em></p>
       <p>In an era where digital transformation is accelerating at an unprecedented rate, traditional security frameworks are struggling to keep pace. The rapid adoption of cloud infrastructure, the rise of remote and hybrid workforces, the proliferation of IoT devices, and increasingly sophisticated cyberattacks have forced organizations to rethink their approach to cybersecurity.</p>
       <p>Zero Trust Architecture (ZTA) has emerged as the leading modern security framework — not as an industry buzzword, but as a strategic shift in how enterprises safeguard their digital ecosystems. It moves the industry away from implicit trust models and toward a more resilient, identity-centric approach.</p>
       <h3>What Is Zero Trust Architecture?</h3>
@@ -1037,17 +1036,155 @@ export const BLOG_POSTS: BlogPost[] = [
   },
    {
     slug: 'the-hidden-genius-of-your-building-an-intro-to-bms',
-    title: 'The Hidden Genius of Your Building: An Intro to BMS',
-    author: 'Arjun Desai',
-    authorImage: 'https://picsum.photos/seed/arjun/100/100',
+    title: 'The Hidden Genius of Your Building: An Introduction to BMS (Building Management System)',
+    author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
+    authorImage: 'https://picsum.photos/seed/logo/100/100',
     date: '2024-05-22',
     excerpt: 'What if your building could think? A Building Management System (BMS) is the brain that does just that, quietly optimizing everything from temperature to security. Discover how this hidden genius works to make buildings more efficient, comfortable, and sustainable.',
     imageUrl: 'https://picsum.photos/seed/blog5/800/450',
     imageHint: 'building blueprint',
     tags: ['Smart Building', 'BMS', 'IoT'],
     content: `
-      <p>Every large commercial building has a nervous system—a complex web of HVAC, lighting, and security systems. But without a brain to control it, this system is inefficient and chaotic. A Building Management System (BMS), also known as a Building Automation System (BAS), is the central intelligence that orchestrates these disparate components, turning a simple structure into a smart, responsive environment.</p>
-      <p>At its core, a BMS is a computer-based system that monitors and controls a building\'s mechanical and electrical equipment. It gathers data from sensors throughout the facility—measuring temperature, occupancy, light levels, and more—and uses that data to make intelligent decisions. For example, if it detects that a meeting room is empty, it can automatically dim the lights and adjust the thermostat, saving energy. If a fire alarm is triggered, it can instantly unlock emergency exits and shut down ventilation fans to prevent smoke from spreading. By providing centralized control and automation, a BMS not only creates significant energy and operational savings but also ensures a safer, more comfortable environment for occupants. It\'s the unseen intelligence that makes modern buildings work.</p>
+      <p>Modern buildings are no longer just four walls and a roof — they are intelligent, responsive, and interconnected ecosystems. Behind every efficient, safe, and comfortable space lies an invisible layer of intelligence that keeps everything functioning seamlessly. This silent technological backbone is known as the Building Management System (BMS).</p>
+      <p>Whether it’s a hospital, data center, airport, school, corporate office, or industrial plant, BMS plays a critical role in ensuring operational excellence. In this blog, we unravel the fundamentals of BMS — the hidden genius that quietly runs your building.</p>
+      <h3>🌐 What Is a Building Management System (BMS)?</h3>
+      <p>A Building Management System is an integrated software and hardware platform that centrally monitors, controls, and automates the essential functions of a building. Think of BMS as the brain of the building — making decisions, analyzing data, responding to environmental changes, and ensuring safety and efficiency.</p>
+      <p>A BMS typically manages:</p>
+      <ul>
+        <li>HVAC (Heating, Ventilation, Air Conditioning)</li>
+        <li>Lighting automation</li>
+        <li>Power & energy systems</li>
+        <li>Elevators & movement control</li>
+        <li>Fire alarm & life safety systems</li>
+        <li>Water pumping & plumbing</li>
+        <li>CCTV & access control integration (in advanced setups)</li>
+        <li>Environmental quality sensors (CO₂, temperature, humidity)</li>
+      </ul>
+      <p>By connecting thousands of sensors and devices, a BMS brings everything together on a single, intelligent dashboard.</p>
+      <h3>🎯 Why BMS is the Hidden Genius of Modern Infrastructure</h3>
+      <p>A well-implemented BMS transforms a building from a passive structure to a smart, dynamic environment that responds in real time.</p>
+      <p>Here’s how:</p>
+      <h4>1. Centralized Control for Total Visibility</h4>
+      <p>Imagine monitoring:</p>
+      <ul>
+        <li>Room temperatures</li>
+        <li>Power consumption</li>
+        <li>Fire alarms</li>
+        <li>Water leak alerts</li>
+        <li>Access logs</li>
+        <li>Generator performance</li>
+        <li>Battery backup status</li>
+      </ul>
+      <p>—all from one screen.</p>
+      <p>BMS acts as a centralized command center that gives facility managers complete visibility and control over every system.</p>
+      <h4>2. Energy Savings & Sustainability</h4>
+      <p>Energy is often the biggest operational cost of any building.</p>
+      <p>A smart BMS helps reduce this by:</p>
+      <ul>
+        <li>Adjusting HVAC based on occupancy</li>
+        <li>Automating lighting</li>
+        <li>Optimizing load distribution</li>
+        <li>Reducing wastage during non-peak hours</li>
+        <li>Predicting energy demand trends</li>
+      </ul>
+      <p>Buildings with BMS experience up to 30–40% energy savings, contributing directly to cost reduction and environmental sustainability.</p>
+      <h4>3. Enhanced Safety & Risk Prevention</h4>
+      <p>A BMS strengthens building safety through:</p>
+      <ul>
+        <li>Real-time fire alarm monitoring</li>
+        <li>Emergency evacuation workflows</li>
+        <li>Gas leak detection</li>
+        <li>Fault prediction in electrical systems</li>
+        <li>Intelligent lockdown controls</li>
+      </ul>
+      <p>When an incident occurs, the BMS responds instantly — far faster than any manual intervention.</p>
+      <h4>4. Improved Comfort & Workplace Experience</h4>
+      <p>Modern occupants expect smart, comfortable, and personalized spaces. BMS takes care of this by regulating:</p>
+      <ul>
+        <li>Temperature</li>
+        <li>Ventilation</li>
+        <li>Air quality</li>
+        <li>Lighting</li>
+      </ul>
+      <p>The result? Improved productivity, satisfaction, and overall environmental experience.</p>
+      <h4>5. Predictive Maintenance — The Future of Facility Management</h4>
+      <p>Instead of waiting for a fault to occur, BMS uses real-time analytics to:</p>
+      <ul>
+        <li>Predict equipment failure</li>
+        <li>Monitor asset health</li>
+        <li>Schedule maintenance activities</li>
+        <li>Reduce downtime</li>
+      </ul>
+      <p>This proactive approach reduces repair costs and extends the lifespan of the infrastructure.</p>
+      <h3>🧠 How a BMS Actually Works</h3>
+      <p>A Building Management System uses a 4-layer architecture:</p>
+      <ol>
+        <li><strong>Sensors & Field Devices:</strong> Temperature sensors, smoke detectors, motion sensors, flow meters, etc.</li>
+        <li><strong>Controllers:</strong> Programmable Logic Controllers (PLCs) and DDCs (Direct Digital Controllers) that interpret signals.</li>
+        <li><strong>Communication Network:</strong> Protocols like BACnet, Modbus, KNX, LonWorks, IP networks.</li>
+        <li><strong>Central Management Software:</strong> Dashboards, alerts, analytics, automation rules, reporting.</li>
+      </ol>
+      <p>These layers work together seamlessly to create an intelligent building ecosystem.</p>
+      <h3>🏢 Where Is BMS Used?</h3>
+      <p>BMS is essential in:</p>
+      <ul>
+        <li>Hospitals & Medical Colleges</li>
+        <li>Corporate Offices & IT Parks</li>
+        <li>Data Centers</li>
+        <li>Airports & Metro Stations</li>
+        <li>Smart Buildings & Shopping Malls</li>
+        <li>Universities & Schools</li>
+        <li>Hotels & Hospitality</li>
+        <li>Manufacturing Plants</li>
+        <li>Government Institutions</li>
+      </ul>
+      <p>Any facility with electrical, mechanical, or safety systems benefits from a smart BMS layer.</p>
+      <h3>🚀 The Rise of iBMS: The Future of Smart Buildings</h3>
+      <p>The next generation of BMS is iBMS (Integrated Building Management System) — which combines:</p>
+      <ul>
+        <li>IoT devices</li>
+        <li>Cloud analytics</li>
+        <li>AI-driven automation</li>
+        <li>Cybersecurity protection</li>
+        <li>Energy optimization</li>
+        <li>Integrated ELV (CCTV, Access Control, PA)</li>
+      </ul>
+      <p>This delivers a holistic smart building environment capable of learning, predicting, and automatically improving operations.</p>
+      <h3>💼 Why Choose Cyrotics Technologies for BMS Solutions?</h3>
+      <p>At Cyrotics Technologies, we specialize in designing, integrating, and delivering advanced BMS and smart infrastructure solutions across India.</p>
+      <p>Our expertise includes:</p>
+      <ul>
+        <li>Full-scale BMS consulting & design</li>
+        <li>HVAC automation</li>
+        <li>Lighting & energy optimization</li>
+        <li>Access control & security integration</li>
+        <li>Fire & safety system integration</li>
+        <li>IoT-based smart building solutions</li>
+        <li>Command center and monitoring setup</li>
+        <li>End-to-end project execution</li>
+      </ul>
+      <p>Our team has successfully executed BMS and IT infrastructure at major institutions including:</p>
+      <ul>
+        <li>Chhindwara Institute of Medical Science</li>
+        <li>Government Medical College Chandrapur</li>
+        <li>Noida International Airport Limited</li>
+        <li>AIIMS Rajkot</li>
+        <li>Bihar Animal Science University Patna</li>
+        <li>And multiple private & public sector clients</li>
+      </ul>
+      <p>We ensure every project is future-ready, scalable, efficient, and compliant with global standards.</p>
+      <h3>📌 Conclusion: The Building of the Future Is Smart, Responsive & Efficient</h3>
+      <p>A Building Management System is not a luxury — it’s a strategic investment.</p>
+      <p>It enhances:</p>
+      <ul>
+        <li>✔ Operational efficiency</li>
+        <li>✔ Energy savings</li>
+        <li>✔ Security & safety</li>
+        <li>✔ Comfort & user experience</li>
+        <li>✔ Predictive building intelligence</li>
+      </ul>
+      <p>The hidden genius of your building is already here — and with the right implementation, it can transform how your infrastructure performs for decades.</p>
+      <p>If you're ready to build a smarter, safer, more efficient facility, Cyrotics Technologies is here to help you unlock the full power of BMS.</p>
     `
   },
   {
@@ -1104,6 +1241,7 @@ export const FAQS: FAQ[] = [
 
 
     
+
 
 
 
