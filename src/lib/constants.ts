@@ -580,7 +580,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Data Center', 'Infrastructure', 'Migration'],
     content: `
       <p>In the rapidly evolving digital landscape, organizations are under constant pressure to modernize their IT infrastructure. As applications grow, security threats intensify, and compliance standards become more stringent, enterprises can no longer rely on outdated on-premises infrastructure. Data Center Migration has emerged as a strategic necessity for businesses aiming to improve performance, security, and scalability.</p>
-      <p>Cyrotics Technologies, having successfully delivered multiple large-scale national projects—including Multiple All India Govt Medical Hospital & college Projects, government institutions, Data Center Projects , and major airport and university infrastructures—brings deep expertise in executing complex migration projects with precision.</p>
+      <p>Cyrotics Technologies, having successfully delivered multiple large-scale national projects—including Chhindwara Institute of Medical Science (MP), AIIMS Rajkot, Government Medical Colleges, Techno Data Center Chennai, and major airport and university infrastructures—brings deep expertise in executing complex migration projects with precision.</p>
       <p>This blog explores why data center migration is important, the risks involved, and the best practices for a smooth and secure transition.</p>
       <h3>⭐ What Is Data Center Migration?</h3>
       <p>Data center migration refers to the process of transferring digital assets—applications, databases, workloads, storage, network components, and entire servers—from one environment to another. This could be:</p>
@@ -696,14 +696,10 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>This approach ensures that access is only granted when required and only to the extent needed.</p>
       <h3>Why Zero Trust Has Become Essential</h3>
       <p>The shift toward Zero Trust is driven by modern IT challenges:</p>
-      <h4>Remote & Hybrid Workforce</h4>
-      <p>Employees now access corporate applications from home networks, airports, cafés, and mobile devices. This dramatically expands the attack surface.</p>
-      <h4>Cloud Adoption</h4>
-      <p>Cloud environments eliminate the concept of a fixed perimeter. Traditional firewalls alone can no longer secure modern environments.</p>
-      <h4>Increasing Cyberattacks</h4>
-      <p>Ransomware, insider threats, phishing, and advanced persistent threats (APTs) now target every layer of an organization.</p>
-      <h4>Device Explosion (IoT, BYOD, OT)</h4>
-      <p>Organizations manage thousands of diverse and unmanaged devices. Each device becomes a potential entry point for attackers.</p>
+      <h4>Remote & Hybrid Workforce</h4><p>Employees now access corporate applications from home networks, airports, cafés, and mobile devices. This dramatically expands the attack surface.</p>
+      <h4>Cloud Adoption</h4><p>Cloud environments eliminate the concept of a fixed perimeter. Traditional firewalls alone can no longer secure modern environments.</p>
+      <h4>Increasing Cyberattacks</h4><p>Ransomware, insider threats, phishing, and advanced persistent threats (APTs) now target every layer of an organization.</p>
+      <h4>Device Explosion (IoT, BYOD, OT)</h4><p>Organizations manage thousands of diverse and unmanaged devices. Each device becomes a potential entry point for attackers.</p>
       <p>Traditional security models cannot support this level of scale and complexity. Zero Trust can.</p>
       <h3>Core Principles of Zero Trust Architecture</h3>
       <p>🔐 1. Continuous Verification: Access is always treated as untrusted, regardless of user location or previous approvals.</p>
@@ -767,16 +763,125 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'the-roi-of-sustainability-how-solar-powers-your-bottom-line',
     title: 'The ROI of Sustainability: How Solar Powers Your Bottom Line',
-    author: 'Vikram Singh',
-    authorImage: 'https://picsum.photos/seed/vikram/100/100',
+    author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
+    authorImage: 'https://picsum.photos/seed/logo/100/100',
     date: '2024-06-25',
     excerpt: 'Adopting solar energy is more than an environmental statement—it\'s a powerful financial strategy. From immediate operational savings to long-term brand enhancement, we explore how investing in renewable energy delivers a compelling return on investment that goes far beyond just the balance sheet.',
     imageUrl: 'https://picsum.photos/seed/blog3/800/450',
     imageHint: 'solar panels factory',
     tags: ['Renewable Energy', 'Solar', 'ROI'],
     content: `
-      <p>While corporate sustainability goals are a major driver for adopting solar energy, the financial business case is often what seals the deal. Investing in a commercial solar power system is a strategic move that delivers tangible returns, making it one of the smartest capital investments a business can make today. The most direct benefit is a significant reduction in electricity bills. By generating your own clean power on-site, you reduce your reliance on the grid and hedge against volatile utility rate hikes, leading to predictable, lower operational costs for decades.</p>
-      <p>Beyond the immediate savings, solar assets increase your property value and offer attractive tax incentives and accelerated depreciation benefits that can shorten the payback period significantly. Furthermore, a commitment to sustainability enhances your brand image, attracting environmentally conscious customers and talent. In a competitive market, being a green leader is a powerful differentiator. When you combine the operational savings, financial incentives, and brand enhancement, the return on investment for solar energy becomes undeniable. It\'s a strategic investment in a more profitable and sustainable future.</p>
+      <p>In today’s competitive business environment, organizations are not only expected to increase revenue but also to operate responsibly and sustainably. Sustainability is no longer a “good-to-have” — it has become a strategic advantage. Among the many green technologies available, solar energy stands out as one of the most effective ways to reduce operational expenses, future-proof your infrastructure, and significantly boost long-term ROI.</p>
+      <p>Whether you’re managing a hospital, government campus, manufacturing facility, commercial building, data center, or educational institution, embracing solar power can deliver measurable financial and environmental benefits.</p>
+      <p>This blog explores how solar energy drives profitability while strengthening your commitment to sustainability.</p>
+      <h3>🌞 Solar Energy: A Smart Financial Investment, Not Just an Eco-Choice</h3>
+      <p>Solar is often perceived as an environmental initiative, but in reality, it is one of the strongest financial decisions a business can make.</p>
+      <p>Here’s why:</p>
+      <h3>✔ 1. Dramatic Reduction in Electricity Bills</h3>
+      <p>Electricity costs are rising every year. For large facilities — hospitals, universities, IT companies, airports, and industrial plants — energy consumption is one of the largest operating expenses.</p>
+      <p>Solar energy directly offsets this cost.</p>
+      <ul>
+        <li>Most commercial installations recover 30–60% of monthly bills instantly.</li>
+        <li>Large projects can eliminate up to 80–90% of electricity expenditure.</li>
+        <li>Savings grow over time as utility tariffs increase.</li>
+      </ul>
+      <p><b>Result?</b><br/>Lower operating expenses and higher profitability.</p>
+      <h3>✔ 2. High & Stable Long-Term ROI</h3>
+      <p>Solar systems deliver ROI in two ways:</p>
+      <ul>
+        <li>🔹 Direct savings from reduced electricity usage</li>
+        <li>🔹 Revenue from government incentives & tax benefits</li>
+      </ul>
+      <p>Most commercial solar installations generate:</p>
+      <ul>
+        <li>18%–30% annual ROI</li>
+        <li>Cost recovery within 3–5 years</li>
+      </ul>
+      <p>Once the initial investment is recovered, the next 20–25 years of electricity is virtually free.</p>
+      <p>Few investments generate such stable, long-term returns.</p>
+      <h3>✔ 3. Government Subsidies, Tax Benefits & Incentives</h3>
+      <p>The Indian government provides several benefits for solar adoption:</p>
+      <ul>
+        <li>📌 Accelerated Depreciation (Up to 40%): Reduces taxable income significantly.</li>
+        <li>📌 Subsidies for specific sectors (State/central schemes): Hospitals, universities, and agricultural facilities often qualify for additional subsidies.</li>
+        <li>📌 Net Metering: Sell excess energy back to the grid and earn credits.</li>
+      </ul>
+      <p>These policies ensure that solar power delivers maximum financial impact from day one.</p>
+      <h3>✔ 4. Increased Property Value</h3>
+      <p>Buildings with solar installations offer:</p>
+      <ul>
+        <li>Lower operational expenses</li>
+        <li>Energy independence</li>
+        <li>Modern, sustainable infrastructure</li>
+      </ul>
+      <p>This leads to:</p>
+      <ul>
+        <li>🔺 Higher property valuation</li>
+        <li>🔺 Better leasing attractiveness</li>
+        <li>🔺 Long-term asset appreciation</li>
+      </ul>
+      <p>Companies that invest in solar typically outperform peers in total asset value.</p>
+      <h3>✔ 5. Lower Maintenance Costs</h3>
+      <p>Solar systems have:</p>
+      <ul>
+        <li>No moving parts</li>
+        <li>Minimal maintenance cost</li>
+        <li>Long system life (25+ years)</li>
+      </ul>
+      <p>This reduces OPEX and improves overall cost-efficiency.</p>
+      <h3>✔ 6. Environmental Impact That Pays Off</h3>
+      <p>Going solar reduces carbon footprint dramatically.</p>
+      <ul>
+        <li>🌍 Reduced CO₂ emissions</li>
+        <li>🌱 Cleaner, greener power supply</li>
+      </ul>
+      <p>Many regulatory bodies and clients prefer working with organizations that follow sustainable practices.</p>
+      <p>This can directly result in:</p>
+      <ul>
+        <li>Better brand reputation</li>
+        <li>Higher customer trust</li>
+        <li>Increased business opportunities</li>
+        <li>Alignment with ESG (Environmental, Social & Governance) goals</li>
+      </ul>
+      <h3>💼 How Solar Strengthens Your Business Competitiveness</h3>
+      <p>Solar is not just an energy solution — it's a strategic business enabler.</p>
+      <ul>
+        <li>🔶 Enhances corporate reputation: Clients prefer companies that adopt green energy.</li>
+        <li>🔶 Ensures operational stability: Solar reduces dependency on grid and uncertain fuel costs.</li>
+        <li>🔶 Supports future compliance: Upcoming government regulations will make sustainability mandatory for many sectors.</li>
+        <li>🔶 Helps win more tenders: Most government and private tenders now give preference to sustainable vendors.</li>
+      </ul>
+      <h3>🔧 Why Businesses Choose Cyrotics Technologies for Solar Implementation</h3>
+      <p>At Cyrotics Technologies (OPC) Pvt. Ltd., we provide end-to-end Solar Infrastructure Services:</p>
+      <ul>
+        <li>Solar Feasibility Study</li>
+        <li>Detailed Engineering & Design</li>
+        <li>Equipment Selection & Procurement</li>
+        <li>Installation & Commissioning</li>
+        <li>AMC & Remote Monitoring</li>
+        <li>Hybrid and On-Grid Solutions</li>
+        <li>Solar for Data Centers, Hospitals, Campuses & Commercial Buildings</li>
+      </ul>
+      <p>Our expertise ensures:</p>
+      <ul>
+        <li>Higher energy output</li>
+        <li>Maximum ROI</li>
+        <li>Long-term system reliability</li>
+        <li>Compliance with safety & quality standards</li>
+        <li>Seamless project execution</li>
+      </ul>
+      <h3>🚀 The Future is Solar — And the Future Starts Today</h3>
+      <p>Solar power is no longer an alternative; it is becoming the primary energy strategy for future-ready organizations.</p>
+      <p>By investing in solar today, businesses achieve:</p>
+      <ul>
+        <li>✔ Lower electricity bills</li>
+        <li>✔ Strong long-term ROI</li>
+        <li>✔ Energy independence</li>
+        <li>✔ Sustainability and ESG alignment</li>
+        <li>✔ Competitive advantage</li>
+      </ul>
+      <p>In other words:</p>
+      <blockquote><b>Solar doesn’t just power your building...<br/><br/>It powers your profitability.</b></blockquote>
     `
   },
   {
@@ -863,4 +968,5 @@ export const FAQS: FAQ[] = [
 
 
     
+
 
