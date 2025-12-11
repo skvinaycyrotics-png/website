@@ -309,7 +309,7 @@ export const PROJECTS: Project[] = [
     longDescription:
       'For the Government Medical College in Chandrapur, we provided a comprehensive turnkey solution. Our scope covered end-to-end IT and ELV infrastructure, including a campus-wide Wi-Fi deployment, robust network security and firewall setup, and an advanced IP CCTV system complete with a central monitoring command centre. This project ensures the new medical college has a secure, scalable, and high-performance technology backbone.',
     imageUrl: 'https://picsum.photos/seed/gmc-chandrapur/600/400',
-    imageHint: 'modern university campus',
+    imageHint: 'modern medical college',
     tags: [
       'IT Infrastructure',
       'Wi-Fi',
@@ -391,6 +391,18 @@ export const PROJECTS: Project[] = [
     ],
     timeline: 'Ongoing',
     results: "The project delivers a state-of-the-art smart medical campus, designed to ensure seamless connectivity, high system availability, and secure access to digital resources. By integrating advanced IT and ELV infrastructure, the institution now benefits from:\n\n- Uninterrupted network performance for academic, administrative, and clinical operations\n- Secure and centralized data accessibility for staff, students, and medical professionals\n- Enhanced digital learning experiences through reliable communication systems\n- Improved operational efficiency driven by automation and modern network design\n\nThis transformation empowers the medical campus to operate as a modern, technology-enabled institution capable of supporting future growth and innovation.",
+  },
+  {
+    id: 'nial-jewar',
+    title: 'Noida International Airport Limited - Jewar, Uttar Pradesh',
+    client: 'Noida International Airport Limited',
+    shortDescription: 'Comprehensive data center and network infrastructure setup for the new international airport.',
+    longDescription: 'For the new Noida International Airport, we are providing critical foundational technology infrastructure. This includes establishing the core Network & Security Infrastructure, setting up the primary Data Center, and executing the complete Data Center Cabling & Server Setup to ensure robust and scalable airport operations from day one.',
+    imageUrl: 'https://picsum.photos/seed/nial/600/400',
+    imageHint: 'airport terminal',
+    tags: ['Data Center', 'Network Security', 'IT Infrastructure', 'Airport'],
+    timeline: 'Ongoing',
+    results: 'Building a future-ready, high-performance technology backbone to support one of India\'s largest greenfield airport projects.',
   },
 ];
 
