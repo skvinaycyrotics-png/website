@@ -404,6 +404,18 @@ export const PROJECTS: Project[] = [
     timeline: 'Ongoing',
     results: 'Building a future-ready, high-performance technology backbone to support one of India\'s largest greenfield airport projects.',
   },
+  {
+    id: 'techno-dc',
+    title: 'Techno Data Center – Chennai',
+    client: 'Techno Group, Chennai',
+    shortDescription: 'Comprehensive data center build-out in Chennai, including network and security infrastructure, CCTV, and complete data center cabling and setup.',
+    longDescription: 'We delivered a full-scale data center infrastructure project for Techno Group in Chennai. The scope included setting up the core Network & Security Infrastructure, a comprehensive CCTV & Video Surveillance System, the primary Data Center, and all supporting IT Infrastructure. We implemented a Fiber Backbone for high-speed connectivity, managed the complete data center networking, cabling, and server setup, and deployed a robust Wireless Solution with integrated Access Control and Wi-Fi.',
+    imageUrl: 'https://picsum.photos/seed/technodc/600/400',
+    imageHint: 'data center servers',
+    tags: ['Data Center', 'Network Security', 'IT Infrastructure', 'CCTV', 'Wireless', 'Access Control'],
+    timeline: 'Completed',
+    results: "The project is designed to ensure seamless connectivity, high system availability, and secure access to digital resources. By integrating advanced IT infrastructure, the facility benefits from uninterrupted network performance, secure and centralized data accessibility, and improved operational efficiency driven by automation and modern network design.",
+  },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
@@ -527,7 +539,6 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>In the rapidly evolving digital landscape, organizations are under constant pressure to modernize their IT infrastructure. As applications grow, security threats intensify, and compliance standards become more stringent, enterprises can no longer rely on outdated on-premises infrastructure. Data Center Migration has emerged as a strategic necessity for businesses aiming to improve performance, security, and scalability.</p>
       <p>Cyrotics Technologies, having successfully delivered multiple large-scale national projects—including Multiple All India Govt Medical Hospital & college Projects, government institutions, Data Center Projects , and major airport and university infrastructures—brings deep expertise in executing complex migration projects with precision.</p>
       <p>This blog explores why data center migration is important, the risks involved, and the best practices for a smooth and secure transition.</p>
-
       <h3>⭐ What Is Data Center Migration?</h3>
       <p>Data center migration refers to the process of transferring digital assets—applications, databases, workloads, storage, network components, and entire servers—from one environment to another. This could be:</p>
       <ul>
@@ -537,7 +548,6 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>Local servers → Colocation facility</li>
       </ul>
       <p>Migration is not just about shifting servers—it is about re-architecting for performance, resilience, and future growth.</p>
-
       <h3>⭐ Why Enterprises Need Data Center Migration Today</h3>
       <h4>1. Outdated Infrastructure Raises Security Risks</h4>
       <p>Legacy systems cannot keep up with today’s cybersecurity demands. Migration helps businesses adopt:</p>
@@ -548,7 +558,6 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>Advanced threat analytics</li>
       </ul>
       <p>Cyrotics Technologies has upgraded security infrastructures for hospitals, government institutions, and airports, ensuring complete protection against modern attacks.</p>
-
       <h4>2. Scalability Becomes Effortless</h4>
       <p>Modern workloads demand rapid scaling. Migration enables:</p>
       <ul>
@@ -558,7 +567,6 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>Future expansion without downtime</li>
       </ul>
       <p>This is especially critical in critical sectors such as healthcare, education, and aviation.</p>
-
       <h4>3. Significant Cost Optimization</h4>
       <p>Enterprises reduce:</p>
       <ul>
@@ -568,7 +576,6 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>Staffing overhead</li>
       </ul>
       <p>Modern DCs and cloud platforms ensure pay-as-you-go efficiency.</p>
-
       <h4>4. Better Performance & Reliability</h4>
       <p>New-age data centers are built with:</p>
       <ul>
@@ -578,7 +585,6 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>99.995% uptime guarantees</li>
       </ul>
       <p>This is essential for projects like Chhindwara Medical College, AIIMS Rajkot, and NIAL Airport, where mission-critical applications must stay online 24×7.</p>
-
       <h3>⭐ Common Challenges in Data Center Migration</h3>
       <p>Even small mistakes can cause downtime or data loss. Common challenges include:</p>
       <ul>
@@ -591,28 +597,20 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>Undocumented legacy systems</li>
       </ul>
       <p>This is why migrations should only be executed by experienced teams.</p>
-
       <h3>⭐ Cyrotics Technologies' Approach to Seamless Migration</h3>
       <p>With 10+ large-scale projects executed successfully across India, Cyrotics follows a structured methodology:</p>
-
       <h4>Phase 1: Assessment & Planning</h4>
       <p>We audit existing infrastructure, identify dependencies, analyze risks, prepare a project plan, and decide the migration type (Lift & shift, Re-platform, Re-architect). We also conduct cost & impact analysis to ensure a smooth transition.</p>
-
       <h4>Phase 2: Designing the Target Environment</h4>
       <p>This phase includes network architecture design, security hardening, load balancing, backup & disaster recovery strategy, and compliance alignment. Cyrotics ensures the new environment is fully optimized and future-ready.</p>
-
       <h4>Phase 3: Data & Application Migration</h4>
       <p>Using industry-leading tools for database replication, VM migration, storage synchronization, and application refactoring, we maintain multiple copies to avoid any data loss.</p>
-
       <h4>Phase 4: Testing & Validation</h4>
       <p>Before the final cutover, we test performance, functionality, security policies, failover, and application compatibility to guarantee a zero-downtime migration.</p>
-
       <h4>Phase 5: Go-Live & Support</h4>
       <p>Once migrated, we optimize performance, monitor logs, validate security compliance, and provide 24×7 support to ensure a stable environment.</p>
-
       <h3>⭐ Real-World Example: Cyrotics Migration at Chhindwara Institute of Medical Science (MP)</h3>
       <p>Cyrotics successfully migrated the entire IT ecosystem including the data center, network infrastructure, CCTV environment, NMS setup, and ELV systems. The result was a 40% improvement in system performance, 99.99% uptime, enhanced security, and simplified monitoring.</p>
-
       <h3>⭐ Best Practices for a Successful Data Center Migration</h3>
       <ul>
         <li>✔ Create a detailed inventory of every application, cable, switch, and database.</li>
@@ -622,12 +620,11 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>✔ Use encryption everywhere to protect in-transit and at-rest data.</li>
         <li>✔ Always take multiple backups.</li>
       </ul>
-
       <h3>⭐ Conclusion</h3>
       <p>Data center migration is a strategic requirement for enterprises aiming to stay secure, agile, and competitive. With a structured approach, organizations can achieve higher performance, stronger security, lower costs, and greater scalability. Cyrotics Technologies has proven expertise in delivering high-end IT transformation projects nationwide.</p>
     `
   },
-    {
+  {
     slug: 'zero-trust-architecture-a-paradigm-shift-in-cybersecurity',
     title: 'Zero Trust Architecture: A Paradigm Shift in Modern Cybersecurity',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
@@ -656,13 +653,13 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>This approach ensures that access is only granted when required and only to the extent needed.</p>
       <h3>Why Zero Trust Has Become Essential</h3>
       <p>The shift toward Zero Trust is driven by modern IT challenges:</p>
-      <h4>1. Remote & Hybrid Workforce</h4>
+      <h4>Remote & Hybrid Workforce</h4>
       <p>Employees now access corporate applications from home networks, airports, cafés, and mobile devices. This dramatically expands the attack surface.</p>
-      <h4>2. Cloud Adoption</h4>
+      <h4>Cloud Adoption</h4>
       <p>Cloud environments eliminate the concept of a fixed perimeter. Traditional firewalls alone can no longer secure modern environments.</p>
-      <h4>3. Increasing Cyberattacks</h4>
+      <h4>Increasing Cyberattacks</h4>
       <p>Ransomware, insider threats, phishing, and advanced persistent threats (APTs) now target every layer of an organization.</p>
-      <h4>4. Device Explosion (IoT, BYOD, OT)</h4>
+      <h4>Device Explosion (IoT, BYOD, OT)</h4>
       <p>Organizations manage thousands of diverse and unmanaged devices. Each device becomes a potential entry point for attackers.</p>
       <p>Traditional security models cannot support this level of scale and complexity. Zero Trust can.</p>
       <h3>Core Principles of Zero Trust Architecture</h3>
@@ -819,3 +816,4 @@ export const FAQS: FAQ[] = [
     
 
     
+
