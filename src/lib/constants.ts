@@ -414,7 +414,19 @@ export const PROJECTS: Project[] = [
     imageHint: 'data center servers',
     tags: ['Data Center', 'Network Security', 'IT Infrastructure', 'CCTV', 'Wireless', 'Access Control'],
     timeline: 'Completed',
-    results: "The project is designed to ensure seamless connectivity, high system availability, and secure access to digital resources. By integrating advanced IT infrastructure, the facility benefits from uninterrupted network performance, secure and centralized data accessibility, and improved operational efficiency driven by automation and modern network design.",
+    results: "The project  designed to ensure seamless connectivity, high system availability, and secure access to digital resources. By integrating advanced IT  infrastructure, the benefits from:\n\nUninterrupted network performance \n\nSecure and centralized data accessibility \n\nEnhanced digital learning experiences through reliable communication systems\n\nImproved operational efficiency driven by automation and modern network design",
+  },
+  {
+    id: 'aiims-rajkot',
+    title: 'All India Institute of Medical Sciences – Rajkot, Gujarat',
+    client: 'AIIMS Rajkot',
+    shortDescription: 'End-to-end smart hospital and campus infrastructure, including data center, networking, security, and smart classroom solutions.',
+    longDescription: 'For AIIMS Rajkot, we are delivering a comprehensive, turnkey technology solution for the entire campus and hospital. The scope of work includes: Network & Security Infrastructure, CCTV & Video Surveillance System, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone & Enterprise Network, Smart Hospital IT Infrastructure, Campus Wi-Fi & Secure Network Backbone, CCTV Surveillance & Data Center Deployment, Complete Campus Networking, Data Center Cabling & Server Setup, Fire Alarm System & Public Address System Solutions, and an integrated Access Control System.',
+    imageUrl: 'https://picsum.photos/seed/aiimsrajkot/600/400',
+    imageHint: 'modern hospital building',
+    tags: ['Smart Hospital', 'IT Infrastructure', 'Data Center', 'Network Security', 'Smart Campus', 'ELV', 'CCTV'],
+    timeline: 'Ongoing',
+    results: 'The project delivers a state-of-the-art smart medical campus, designed to ensure seamless connectivity, high system availability, and secure access to digital resources. By integrating advanced IT and ELV infrastructure, the institution now benefits from:\n\n- Uninterrupted network performance for academic, administrative, and clinical operations\n\n- Secure and centralized data accessibility for staff, students, and medical professionals\n\n- Enhanced digital learning experiences through reliable communication systems\n\n- Improved operational efficiency driven by automation and modern network design\n\nThis transformation empowers the medical campus to operate as a modern, technology-enabled institution capable of supporting future growth and innovation.',
   },
 ];
 
@@ -817,3 +829,6 @@ export const FAQS: FAQ[] = [
 
     
 
+
+
+    
