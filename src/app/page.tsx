@@ -94,24 +94,22 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[80%]">
-            <div className="bg-white/90 backdrop-blur-sm shadow-lg rounded-lg">
-              <div className="grid grid-cols-2 md:grid-cols-6">
+          <div className="absolute -bottom-24 md:-bottom-32 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%]">
+            <div className="bg-white/90 backdrop-blur-sm shadow-lg rounded-lg p-4 md:p-0">
+              <div className="grid grid-cols-2 md:grid-cols-5">
                 {SERVICES.map((service, index) => (
                   <Link
                     key={service.slug}
                     href={`/services/${service.slug}`}
-                    className="group text-center pt-12 pb-4 px-4 relative transition-colors hover:bg-primary/10 rounded-lg"
+                    className="group text-center pt-12 pb-4 px-2 relative transition-colors hover:bg-primary/10 rounded-lg"
                   >
-                    {index > 0 && (
-                      <div className="absolute left-0 top-1/2 -translate-y-1/2 h-1/2 w-px bg-border" />
-                    )}
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 h-1/2 w-px bg-border hidden md:block" />
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
                       <div className="bg-primary text-primary-foreground rounded-lg p-3 w-16 h-16 flex items-center justify-center transition-transform group-hover:scale-110 border-4 border-white shadow-md">
                         <service.icon className="h-8 w-8" />
                       </div>
                     </div>
-                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary">
+                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary min-h-[40px] flex items-center justify-center">
                       {service.title}
                     </h3>
                   </Link>
@@ -124,7 +122,7 @@ export default function Home() {
 
       <section
         id="stats"
-        className="bg-background pt-32 pb-12 sm:pt-32 lg:pb-20"
+        className="bg-background pt-40 pb-12 sm:pt-48 lg:pb-20"
       >
         <div className="container px-4">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
