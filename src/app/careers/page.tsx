@@ -187,9 +187,9 @@ export default function CareersPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {/* Keyword Search */}
-                    <div className="lg:col-span-4">
+                <div className="space-y-4">
+                    {/* Row 1: Keyword Search */}
+                    <div>
                         <Label htmlFor="keywordSearch" className="sr-only">Search by Keyword</Label>
                         <div className="relative">
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
@@ -205,204 +205,211 @@ export default function CareersPage() {
                         </div>
                     </div>
                     
-                    {/* Location Filter */}
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button variant="outline" className="w-full justify-between h-11">
-                          <span>
-                            {filters.locations.length > 0
-                              ? `${filters.locations.length} locations selected`
-                              : 'Select Location'}
-                          </span>
-                          <ChevronDown />
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-[300px] p-0" align="start">
-                        <ScrollArea className="h-72">
-                          <div className="p-4">
-                            {LOCATIONS.map((country) => (
-                              <Accordion
-                                type="single"
-                                collapsible
-                                key={country.name}
-                              >
-                                <AccordionItem value={country.name}>
-                                  <AccordionTrigger className="py-2">
-                                    {country.name}
-                                  </AccordionTrigger>
-                                  <AccordionContent className="pl-4">
-                                    {country.states.map((state) => (
-                                      <Accordion
-                                        type="single"
-                                        collapsible
-                                        key={state.name}
-                                      >
-                                        <AccordionItem value={state.name}>
-                                          <AccordionTrigger className="py-2 text-sm">
-                                            {state.name}
-                                          </AccordionTrigger>
-                                          <AccordionContent className="pl-4">
-                                            {state.cities.map((city) => (
-                                              <div
-                                                key={city}
-                                                className="flex items-center space-x-2 py-1"
-                                              >
-                                                <Checkbox
-                                                  id={`loc-${city}`}
-                                                  checked={filters.locations.includes(
-                                                    city
-                                                  )}
-                                                  onCheckedChange={() =>
-                                                    handleMultiSelectChange(
-                                                      'locations',
-                                                      city
-                                                    )
-                                                  }
-                                                />
-                                                <Label htmlFor={`loc-${city}`} className="font-normal">
-                                                  {city}
-                                                </Label>
-                                              </div>
-                                            ))}
-                                          </AccordionContent>
-                                        </AccordionItem>
-                                      </Accordion>
-                                    ))}
-                                  </AccordionContent>
-                                </AccordionItem>
-                              </Accordion>
-                            ))}
-                          </div>
-                        </ScrollArea>
-                      </PopoverContent>
-                    </Popover>
-
-                    {/* Career Level Filter */}
-                    <Select
-                      value={filters.careerLevel}
-                      onValueChange={(value) => setFilters({ ...filters, careerLevel: value, jobTypes: [] })}
-                    >
-                      <SelectTrigger className="h-11">
-                        <SelectValue placeholder="Career Level" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {CAREER_LEVELS.map((level) => (
-                          <SelectItem key={level} value={level}>
-                            {level}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    
-                    {/* Job Type Filter */}
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button variant="outline" className="w-full justify-between h-11">
-                          <span>{filters.jobTypes.length > 0 ? `${filters.jobTypes.length} types selected` : 'Job Type'}</span>
-                          <ChevronDown />
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-[300px] p-0" align="start">
-                        <div className="p-4">
-                            {availableJobTypes.map(type => (
-                                <div key={type} className="flex items-center space-x-2 py-1">
-                                    <Checkbox
-                                        id={`type-${type}`}
-                                        checked={filters.jobTypes.includes(type)}
-                                        onCheckedChange={() => handleMultiSelectChange('jobTypes', type)}
-                                    />
-                                    <Label htmlFor={`type-${type}`} className="font-normal">{type}</Label>
-                                </div>
-                            ))}
-                        </div>
-                      </PopoverContent>
-                    </Popover>
-
-                    {/* Occupation Filter */}
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button variant="outline" className="w-full justify-between h-11">
-                          <span>{filters.occupations.length > 0 ? `${filters.occupations.length} occupations selected` : 'Occupation'}</span>
-                          <ChevronDown />
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-[300px] p-0" align="start">
-                         <ScrollArea className="h-72">
-                          <div className="p-4">
-                            {OCCUPATIONS.map(group => (
-                              <div key={group.level}>
-                                <h4 className="font-semibold my-2">{group.level}</h4>
-                                {group.roles.map(role => (
-                                   <div key={role} className="flex items-center space-x-2 py-1 pl-2">
-                                      <Checkbox
-                                          id={`occ-${role}`}
-                                          checked={filters.occupations.includes(role)}
-                                          onCheckedChange={() => handleMultiSelectChange('occupations', role)}
-                                      />
-                                      <Label htmlFor={`occ-${role}`} className="font-normal">{role}</Label>
-                                  </div>
+                    {/* Row 2: Filters */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {/* Location Filter */}
+                        <Popover>
+                        <PopoverTrigger asChild>
+                            <Button variant="outline" className="w-full justify-between h-11">
+                            <span>
+                                {filters.locations.length > 0
+                                ? `${filters.locations.length} locations selected`
+                                : 'Select Location'}
+                            </span>
+                            <ChevronDown />
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[300px] p-0" align="start">
+                            <ScrollArea className="h-72">
+                            <div className="p-4">
+                                {LOCATIONS.map((country) => (
+                                <Accordion
+                                    type="single"
+                                    collapsible
+                                    key={country.name}
+                                >
+                                    <AccordionItem value={country.name}>
+                                    <AccordionTrigger className="py-2">
+                                        {country.name}
+                                    </AccordionTrigger>
+                                    <AccordionContent className="pl-4">
+                                        {country.states.map((state) => (
+                                        <Accordion
+                                            type="single"
+                                            collapsible
+                                            key={state.name}
+                                        >
+                                            <AccordionItem value={state.name}>
+                                            <AccordionTrigger className="py-2 text-sm">
+                                                {state.name}
+                                            </AccordionTrigger>
+                                            <AccordionContent className="pl-4">
+                                                {state.cities.map((city) => (
+                                                <div
+                                                    key={city}
+                                                    className="flex items-center space-x-2 py-1"
+                                                >
+                                                    <Checkbox
+                                                    id={`loc-${city}`}
+                                                    checked={filters.locations.includes(
+                                                        city
+                                                    )}
+                                                    onCheckedChange={() =>
+                                                        handleMultiSelectChange(
+                                                        'locations',
+                                                        city
+                                                        )
+                                                    }
+                                                    />
+                                                    <Label htmlFor={`loc-${city}`} className="font-normal">
+                                                    {city}
+                                                    </Label>
+                                                </div>
+                                                ))}
+                                            </AccordionContent>
+                                            </AccordionItem>
+                                        </Accordion>
+                                        ))}
+                                    </AccordionContent>
+                                    </AccordionItem>
+                                </Accordion>
                                 ))}
-                              </div>
-                            ))}
                             </div>
-                          </ScrollArea>
-                      </PopoverContent>
-                    </Popover>
-                    
-                    {/* Segment Filter */}
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button variant="outline" className="w-full justify-between h-11">
-                          <span>{filters.segments.length > 0 ? `${filters.segments.length} segments selected` : 'Segment'}</span>
-                          <ChevronDown />
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-[300px] p-0" align="start">
-                         <ScrollArea className="h-72">
-                          <div className="p-4">
-                            {SEGMENTS.map(segment => (
-                                <div key={segment} className="flex items-center space-x-2 py-1">
-                                    <Checkbox
-                                        id={`seg-${segment}`}
-                                        checked={filters.segments.includes(segment)}
-                                        onCheckedChange={() => handleMultiSelectChange('segments', segment)}
-                                    />
-                                    <Label htmlFor={`seg-${segment}`} className="font-normal">{segment}</Label>
-                                </div>
-                            ))}
-                            </div>
-                          </ScrollArea>
-                      </PopoverContent>
-                    </Popover>
-                    
-                    {/* Experience Level Filter */}
-                     <Popover>
-                      <PopoverTrigger asChild>
-                        <Button variant="outline" className="w-full justify-between h-11">
-                          <span>{filters.experienceLevels.length > 0 ? `${filters.experienceLevels.length} levels selected` : 'Experience Level'}</span>
-                          <ChevronDown />
-                        </Button>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-[300px] p-0" align="start">
-                         <ScrollArea className="h-72">
-                          <div className="p-4">
-                            {EXPERIENCE_LEVELS.map(level => (
-                                <div key={level} className="flex items-center space-x-2 py-1">
-                                    <Checkbox
-                                        id={`exp-${level}`}
-                                        checked={filters.experienceLevels.includes(level)}
-                                        onCheckedChange={() => handleMultiSelectChange('experienceLevels', level)}
-                                    />
-                                    <Label htmlFor={`exp-${level}`} className="font-normal">{level}</Label>
-                                </div>
-                            ))}
-                            </div>
-                          </ScrollArea>
-                      </PopoverContent>
-                    </Popover>
+                            </ScrollArea>
+                        </PopoverContent>
+                        </Popover>
 
-                    {/* Reset Button */}
-                    <Button onClick={resetFilters} variant="secondary" className="w-full h-11">Reset Filters</Button>
+                        {/* Career Level Filter */}
+                        <Select
+                        value={filters.careerLevel}
+                        onValueChange={(value) => setFilters({ ...filters, careerLevel: value, jobTypes: [] })}
+                        >
+                        <SelectTrigger className="h-11">
+                            <SelectValue placeholder="Career Level" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            {CAREER_LEVELS.map((level) => (
+                            <SelectItem key={level} value={level}>
+                                {level}
+                            </SelectItem>
+                            ))}
+                        </SelectContent>
+                        </Select>
+                        
+                        {/* Job Type Filter */}
+                        <Popover>
+                        <PopoverTrigger asChild>
+                            <Button variant="outline" className="w-full justify-between h-11">
+                            <span>{filters.jobTypes.length > 0 ? `${filters.jobTypes.length} types selected` : 'Job Type'}</span>
+                            <ChevronDown />
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[300px] p-0" align="start">
+                            <div className="p-4">
+                                {availableJobTypes.map(type => (
+                                    <div key={type} className="flex items-center space-x-2 py-1">
+                                        <Checkbox
+                                            id={`type-${type}`}
+                                            checked={filters.jobTypes.includes(type)}
+                                            onCheckedChange={() => handleMultiSelectChange('jobTypes', type)}
+                                        />
+                                        <Label htmlFor={`type-${type}`} className="font-normal">{type}</Label>
+                                    </div>
+                                ))}
+                            </div>
+                        </PopoverContent>
+                        </Popover>
+                        <div></div>
+                    </div>
+                    
+                    {/* Row 3: Filters */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {/* Occupation Filter */}
+                        <Popover>
+                        <PopoverTrigger asChild>
+                            <Button variant="outline" className="w-full justify-between h-11">
+                            <span>{filters.occupations.length > 0 ? `${filters.occupations.length} occupations selected` : 'Occupation'}</span>
+                            <ChevronDown />
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[300px] p-0" align="start">
+                            <ScrollArea className="h-72">
+                            <div className="p-4">
+                                {OCCUPATIONS.map(group => (
+                                <div key={group.level}>
+                                    <h4 className="font-semibold my-2">{group.level}</h4>
+                                    {group.roles.map(role => (
+                                    <div key={role} className="flex items-center space-x-2 py-1 pl-2">
+                                        <Checkbox
+                                            id={`occ-${role}`}
+                                            checked={filters.occupations.includes(role)}
+                                            onCheckedChange={() => handleMultiSelectChange('occupations', role)}
+                                        />
+                                        <Label htmlFor={`occ-${role}`} className="font-normal">{role}</Label>
+                                    </div>
+                                    ))}
+                                </div>
+                                ))}
+                                </div>
+                            </ScrollArea>
+                        </PopoverContent>
+                        </Popover>
+                        
+                        {/* Segment Filter */}
+                        <Popover>
+                        <PopoverTrigger asChild>
+                            <Button variant="outline" className="w-full justify-between h-11">
+                            <span>{filters.segments.length > 0 ? `${filters.segments.length} segments selected` : 'Segment'}</span>
+                            <ChevronDown />
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[300px] p-0" align="start">
+                            <ScrollArea className="h-72">
+                            <div className="p-4">
+                                {SEGMENTS.map(segment => (
+                                    <div key={segment} className="flex items-center space-x-2 py-1">
+                                        <Checkbox
+                                            id={`seg-${segment}`}
+                                            checked={filters.segments.includes(segment)}
+                                            onCheckedChange={() => handleMultiSelectChange('segments', segment)}
+                                        />
+                                        <Label htmlFor={`seg-${segment}`} className="font-normal">{segment}</Label>
+                                    </div>
+                                ))}
+                                </div>
+                            </ScrollArea>
+                        </PopoverContent>
+                        </Popover>
+                        
+                        {/* Experience Level Filter */}
+                        <Popover>
+                        <PopoverTrigger asChild>
+                            <Button variant="outline" className="w-full justify-between h-11">
+                            <span>{filters.experienceLevels.length > 0 ? `${filters.experienceLevels.length} levels selected` : 'Experience Level'}</span>
+                            <ChevronDown />
+                            </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[300px] p-0" align="start">
+                            <ScrollArea className="h-72">
+                            <div className="p-4">
+                                {EXPERIENCE_LEVELS.map(level => (
+                                    <div key={level} className="flex items-center space-x-2 py-1">
+                                        <Checkbox
+                                            id={`exp-${level}`}
+                                            checked={filters.experienceLevels.includes(level)}
+                                            onCheckedChange={() => handleMultiSelectChange('experienceLevels', level)}
+                                        />
+                                        <Label htmlFor={`exp-${level}`} className="font-normal">{level}</Label>
+                                    </div>
+                                ))}
+                                </div>
+                            </ScrollArea>
+                        </PopoverContent>
+                        </Popover>
+
+                        {/* Reset Button */}
+                        <Button onClick={resetFilters} variant="secondary" className="w-full h-11">Reset Filters</Button>
+                    </div>
                 </div>
               </CardContent>
            </Card>
