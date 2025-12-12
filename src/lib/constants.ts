@@ -727,6 +727,30 @@ export const TESTIMONIALS: Testimonial[] = [
     company: 'Retail Chain Corp',
     imageUrl: 'https://picsum.photos/seed/amit/100/100',
   },
+  {
+    quote:
+      'Our new medical college required a state-of-the-art IT and ELV infrastructure, and CYROTICS delivered flawlessly. Their smart campus solution, including integrated security and data center, has set a new standard for educational institutions in the region.',
+    name: 'Dr. R. Mathur',
+    title: 'Dean',
+    company: 'National Medical College',
+    imageUrl: 'https://picsum.photos/seed/mathur/100/100',
+  },
+  {
+    quote:
+      'The solar power plant CYROTICS installed has exceeded our expectations. We\'ve reduced our energy costs by over 70% and significantly lowered our carbon footprint. Their end-to-end project management was professional and seamless.',
+    name: 'Sunil Agarwal',
+    title: 'Factory Head',
+    company: 'Green Manufacturing Co.',
+    imageUrl: 'https://picsum.photos/seed/sunil/100/100',
+  },
+  {
+    quote:
+      'CYROTICS\' expertise in automotive simulation and CAE is unmatched. Their virtual validation process helped us identify critical design flaws early, saving us months of development time and significant prototyping costs. A true engineering partner.',
+    name: 'Rajesh Nair',
+    title: 'Head of R&D',
+    company: 'Momentum EV',
+    imageUrl: 'https://picsum.photos/seed/rajesh/100/100',
+  },
 ];
 
 export const TEAM_MEMBERS: TeamMember[] = [
