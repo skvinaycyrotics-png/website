@@ -22,7 +22,7 @@ export function AdminFab() {
         className="h-14 w-14 rounded-full bg-background shadow-lg transition-transform hover:scale-110"
       >
         <Link href="/admin">
-          <Fingerprint className="h-6 w-6 text-primary" />
+          <Fingerprint className="h-8 w-8 text-primary" />
           <span className="sr-only">Admin Panel</span>
         </Link>
       </Button>
