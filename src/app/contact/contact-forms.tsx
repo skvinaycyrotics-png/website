@@ -84,8 +84,10 @@ export default function ContactForms() {
     <Card className="w-full">
       <CardHeader>
         <CardTitle className="text-3xl">Get in Touch</CardTitle>
-        <CardDescription>
-          Have a question, request, or suggestion about our services? Or would you like to learn more about how we can support your project?
+        <CardDescription className="font-semibold">
+          Have a question, request, or suggestion about our services?
+          <br /><br />
+          Or would you like to learn more about how we can support your project?
           <br /><br />
           Our team is here to assist you—feel free to reach out anytime.
           <br /><br />
