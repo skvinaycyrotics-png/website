@@ -2219,3 +2219,7 @@ export const HEAR_ABOUT_US_OPTIONS = [
   'Email Campaign',
   'Other',
 ];
+
+export const COUNTRY_CODES = [
+  "+91", "+1", "+44", "+971", "+65", "+61", "+49", "+81", "+86"
+];

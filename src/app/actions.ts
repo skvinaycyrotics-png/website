@@ -8,7 +8,8 @@ const contactFormSchema = z.object({
   firstName: z.string().min(1, 'First Name is required.'),
   lastName: z.string().min(1, 'Last Name is required.'),
   email: z.string().email('Invalid email address.'),
-  phone: z.string().min(1, 'Phone number is required.'),
+  countryCode: z.string().min(1, 'Country code is required.'),
+  phone: z.string().length(10, 'Phone number must be 10 digits.'),
   company: z.string().optional(),
   designation: z.string().optional(),
   country: z.string().min(1, 'Country is required.'),
@@ -39,6 +40,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
       firstName: formData.get('firstName'),
       lastName: formData.get('lastName'),
       email: formData.get('email'),
+      countryCode: formData.get('countryCode'),
       phone: formData.get('phone'),
       company: formData.get('company'),
       designation: formData.get('designation'),
@@ -71,14 +73,15 @@ export async function submitContactForm(prevState: any, formData: FormData) {
       };
     }
     
-    const { firstName, lastName, email, phone, company, message, subject, department } = validatedFields.data;
+    const { firstName, lastName, email, phone, company, message, subject, department, countryCode } = validatedFields.data;
+    const fullPhone = `${countryCode} ${phone}`;
     const recipient = department === 'Sales Team' ? 'sales@cyrotics.in' : 
                       department === 'Support Team' ? 'support@cyrotics.in' : 
                       'info@cyrotics.in';
 
     // Constructing a detailed mailto link as a fallback
     const mailto = `mailto:${recipient}?subject=${encodeURIComponent(`[${subject}] New Inquiry from ${firstName} ${lastName}`)}&body=${encodeURIComponent(
-        Object.entries(validatedFields.data)
+        Object.entries({...validatedFields.data, phone: fullPhone})
             .map(([key, value]) => {
                 if (value) {
                     if (Array.isArray(value)) {

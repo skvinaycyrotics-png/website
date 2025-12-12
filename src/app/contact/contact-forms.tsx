@@ -37,6 +37,7 @@ import {
   CONTACT_TIMES,
   HEAR_ABOUT_US_OPTIONS,
   SALUTATIONS,
+  COUNTRY_CODES,
 } from '@/lib/constants';
 
 function SubmitButton() {
@@ -124,7 +125,18 @@ export default function ContactForms() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number *</Label>
-                  <Input id="phone" name="phone" required />
+                   <div className="flex gap-2">
+                    <Select name="countryCode" required defaultValue="+91">
+                      <SelectTrigger className="w-[120px]">
+                        <SelectValue placeholder="Code" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {COUNTRY_CODES.map(code => <SelectItem key={code} value={code}>{code}</SelectItem>)}
+                      </SelectContent>
+                    </Select>
+                    <Input id="phone" name="phone" required maxLength={10} placeholder="10-digit number" />
+                  </div>
+                  {state.errors?.countryCode && <p className="text-sm text-destructive">{state.errors.countryCode[0]}</p>}
                    {state.errors?.phone && <p className="text-sm text-destructive">{state.errors.phone[0]}</p>}
                 </div>
              </div>
