@@ -4,6 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { FloatingContact } from '@/components/layout/FloatingContact';
+import { AdminFab } from '@/components/layout/AdminFab';
 
 export const metadata: Metadata = {
   title: 'CYROTICS TECHNOLOGIES | Technology Infrastructure & Security',
@@ -37,6 +38,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <FloatingContact />
+        <AdminFab />
         <Toaster />
       </body>
     </html>
