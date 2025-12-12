@@ -13,7 +13,7 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 
 export function FloatingContact() {
   return (
-    <div className="fixed right-4 top-1/2 z-50 -translate-y-1/2">
+    <div className="fixed right-4 top-1/2 z-50 -translate-y-[120%]">
       <Sheet>
         <SheetTrigger asChild>
           <Button
