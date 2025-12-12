@@ -102,4 +102,21 @@ export interface OccupationFilter {
   roles: string[];
 }
 
+export interface EmployeeTestimonial {
+    quote: string;
+    name: string;
+    role: string;
+}
+
+export interface Benefit {
+    icon: LucideIcon;
+    title: string;
+    description: string;
+}
+
+export interface CareerFAQ {
+    question: string;
+    answer: string;
+}
+
     

@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import {
   Accordion,
   AccordionContent,
@@ -37,7 +39,16 @@ import {
   MapPin,
   ChevronDown,
   Building,
+  Mail,
+  HelpCircle,
 } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 import {
   JOB_OPENINGS,
   LOCATIONS,
@@ -47,6 +58,9 @@ import {
   OCCUPATIONS,
   SEGMENTS,
   EXPERIENCE_LEVELS,
+  EMPLOYEE_TESTIMONIALS,
+  CAREER_BENEFITS,
+  CAREER_FAQS,
 } from '@/lib/constants';
 
 type Filters = {
@@ -69,6 +83,8 @@ export default function CareersPage() {
     segments: [],
     experienceLevels: [],
   });
+  
+  const quickSegments = ['Networking', 'Cybersecurity', 'AV & Smart Solutions', 'Project Management', 'Software Development'];
 
   const handleMultiSelectChange = (
     filterKey: keyof Filters,
@@ -80,6 +96,13 @@ export default function CareersPage() {
         : [...(prev[filterKey] as string[]), value];
       return { ...prev, [filterKey]: newValues };
     });
+  };
+
+  const handleQuickSegmentFilter = (segment: string) => {
+    setFilters(prev => ({
+        ...prev,
+        segments: prev.segments.includes(segment) ? prev.segments.filter(s => s !== segment) : [segment]
+    }));
   };
 
   const resetFilters = () => {
@@ -119,7 +142,7 @@ export default function CareersPage() {
 
       const segmentMatch =
         filters.segments.length === 0 ||
-        filters.segments.includes(job.segment);
+        filters.segments.some(seg => job.segment.includes(seg));
         
       const experienceLevelMatch =
         filters.experienceLevels.length === 0 ||
@@ -138,6 +161,13 @@ export default function CareersPage() {
   }, [filters]);
   
   const availableJobTypes = filters.careerLevel ? SPECIAL_JOB_TYPES[filters.careerLevel] || JOB_TYPES : JOB_TYPES;
+
+  const lifeAtCyroticsImages = [
+    { src: "https://picsum.photos/seed/work1/600/400", alt: "Team collaborating in office", hint: "team collaboration" },
+    { src: "https://picsum.photos/seed/work2/600/400", alt: "Engineer working on a server", hint: "data center" },
+    { src: "https://picsum.photos/seed/work3/600/400", alt: "Group discussion in a modern meeting room", hint: "modern office" },
+    { src: "https://picsum.photos/seed/work4/600/400", alt: "Employee presenting at a workshop", hint: "company presentation" },
+  ];
 
   return (
     <>
@@ -175,7 +205,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="py-8">
+      <section className="py-8 bg-primary/5">
         <div className="container max-w-6xl mx-auto">
            <Card className="w-full">
               <CardHeader className="text-center">
@@ -189,7 +219,7 @@ export default function CareersPage() {
               <CardContent>
                 <div className="space-y-4">
                     {/* Row 1: Keyword Search */}
-                    <div>
+                    <div className="px-12">
                         <Label htmlFor="keywordSearch" className="sr-only">Search by Keyword</Label>
                         <div className="relative">
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
@@ -319,7 +349,7 @@ export default function CareersPage() {
                             </div>
                         </PopoverContent>
                         </Popover>
-                        <div></div>
+                         <div></div>
                     </div>
                     
                     {/* Row 3: Filters */}
@@ -410,6 +440,19 @@ export default function CareersPage() {
                         {/* Reset Button */}
                         <Button onClick={resetFilters} variant="secondary" className="w-full h-11">Reset Filters</Button>
                     </div>
+                     <div className="pt-4 flex flex-wrap items-center justify-center gap-2">
+                        <span className="text-sm font-medium mr-2">Quick Filters:</span>
+                        {quickSegments.map(segment => (
+                            <Badge
+                                key={segment}
+                                variant={filters.segments.includes(segment) ? "default" : "secondary"}
+                                onClick={() => handleQuickSegmentFilter(segment)}
+                                className="cursor-pointer"
+                            >
+                                {segment}
+                            </Badge>
+                        ))}
+                    </div>
                 </div>
               </CardContent>
            </Card>
@@ -417,7 +460,7 @@ export default function CareersPage() {
       </section>
 
       {/* Job Listings */}
-      <section className="py-16 bg-primary/5">
+      <section className="py-16">
         <div className="container max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center">
              Current Job Openings ({filteredJobs.length})
@@ -435,7 +478,7 @@ export default function CareersPage() {
                           </div>
                       </div>
                        <div className="md:col-span-2 flex flex-col md:items-end gap-2">
-                         <div className="flex flex-wrap gap-2">
+                         <div className="flex flex-wrap gap-2 justify-end">
                             <Badge variant="outline">{job.experienceLevel}</Badge>
                             <Badge variant="secondary">{job.type}</Badge>
                           </div>
@@ -456,8 +499,122 @@ export default function CareersPage() {
           </div>
         </div>
       </section>
+
+       {/* Life at Cyrotics */}
+      <section className="py-16 bg-primary/5">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-4">Life at Cyrotics</h2>
+            <p className="text-muted-foreground text-lg">
+              We are a team of passionate innovators dedicated to solving complex challenges. Our culture is built on collaboration, continuous learning, and a shared commitment to excellence. We believe in empowering our people to grow, take ownership, and make a real impact.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {lifeAtCyroticsImages.map((image, index) => (
+              <div key={index} className="overflow-hidden rounded-lg shadow-md aspect-w-4 aspect-h-3">
+                 <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={600}
+                    height={450}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    data-ai-hint={image.hint}
+                 />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+       {/* Employee Testimonials */}
+       <section className="py-16">
+        <div className="container max-w-4xl mx-auto">
+           <h2 className="text-center font-headline text-3xl font-bold mb-12">
+            What Our Team Says
+          </h2>
+           <Carousel opts={{ loop: true }} className="w-full">
+            <CarouselContent>
+              {EMPLOYEE_TESTIMONIALS.map((testimonial, index) => (
+                <CarouselItem key={index}>
+                  <Card className="border-0 shadow-none bg-transparent">
+                    <CardContent className="text-center p-4">
+                       <blockquote className="text-lg italic text-muted-foreground">
+                        "{testimonial.quote}"
+                      </blockquote>
+                      <p className="mt-4 font-semibold text-primary">{testimonial.name}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-4 md:-left-12" />
+            <CarouselNext className="-right-4 md:-right-12" />
+          </Carousel>
+        </div>
+      </section>
+
+      {/* Benefits & Perks */}
+      <section className="py-16 bg-primary/5">
+        <div className="container">
+            <h2 className="text-center font-headline text-3xl font-bold mb-12">
+                Grow With Us: Benefits & Perks
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {CAREER_BENEFITS.map(benefit => (
+                <Card key={benefit.title} className="text-center">
+                    <CardHeader>
+                      <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit">
+                          <benefit.icon className="h-8 w-8 text-primary" />
+                      </div>
+                      <CardTitle className="pt-4 text-xl">{benefit.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground">{benefit.description}</p>
+                    </CardContent>
+                </Card>
+              ))}
+            </div>
+        </div>
+      </section>
+
+        {/* Quick Apply & FAQ */}
+      <section className="py-16">
+        <div className="container grid lg:grid-cols-2 gap-16 items-start">
+            {/* Quick Apply */}
+            <div className="bg-primary/10 p-8 rounded-lg text-center">
+                 <h3 className="font-headline text-2xl font-bold">Don't See a Fit?</h3>
+                 <p className="mt-2 text-muted-foreground">
+                    We are always looking for talented individuals. If you believe you have what it takes to be part of our team, send us your resume.
+                 </p>
+                 <Button asChild size="lg" className="mt-6">
+                    <Link href="mailto:career@cyrotics.in">
+                        <Mail className="mr-2" /> Submit Your Resume
+                    </Link>
+                 </Button>
+            </div>
+
+             {/* FAQ */}
+             <div className="max-w-4xl">
+                 <h2 className="font-headline text-3xl font-bold flex items-center justify-center lg:justify-start gap-3 mb-8">
+                     <HelpCircle className="h-8 w-8 text-primary" />
+                    Frequently Asked Questions
+                </h2>
+                <Accordion type="single" collapsible className="w-full">
+                    {CAREER_FAQS.map((faq, index) => (
+                    <AccordionItem value={`item-${index}`} key={index}>
+                        <AccordionTrigger className="text-left hover:no-underline text-lg font-semibold">
+                        {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="pt-2 text-base text-muted-foreground">
+                        {faq.answer}
+                        </AccordionContent>
+                    </AccordionItem>
+                    ))}
+                </Accordion>
+            </div>
+        </div>
+      </section>
     </>
   );
 }
-
-    

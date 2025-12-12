@@ -10,6 +10,9 @@ import type {
   FAQ,
   LocationFilter,
   OccupationFilter,
+  Benefit,
+  CareerFAQ,
+  EmployeeTestimonial,
 } from './types';
 import {
   Server,
@@ -67,6 +70,9 @@ import {
   MessageSquare,
   Share2,
   Phone,
+  BookOpenCheck,
+  Sparkles,
+  Award,
 } from 'lucide-react';
 
 export const NAV_LINKS: NavLink[] = [
@@ -90,7 +96,7 @@ export const NAV_LINKS: NavLink[] = [
     ],
   },
    {
-    href: '#industry-solutions',
+    href: '#industry',
     label: 'Business Sectors',
     subLinks: [
       { href: '/business-sector/overview', label: 'Overview' },
@@ -739,17 +745,17 @@ export const PROJECTS: Project[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      'CYROTICS’ technical expertise is unparalleled. Their team executed our data center migration flawlessly, with zero downtime. The post-migration performance improvements have been phenomenal, and our infrastructure is now future-proof. They are a truly reliable and professional partner.',
-    name: 'Priya Mehta',
-    title: 'CTO',
+      'Their end-to-end data center solution was a masterpiece of engineering. The migration was flawless, and our new infrastructure is faster, more secure, and ready for future AI workloads. Cyrotics is a partner you can trust with mission-critical projects.',
+    name: 'CIO',
+    title: 'Major Public Sector Bank',
     company: 'Apex Financial',
     imageUrl: 'https://picsum.photos/seed/priya/100/100',
   },
   {
     quote:
-      'We partnered with CYROTICS for our new smart campus, and the results have been extraordinary. Their integrated security, networking, and ELV solutions were implemented seamlessly. They have set a new benchmark for what a modern, secure educational environment should be. Their professionalism is truly inspiring.',
-    name: 'Dr. Alok Sharma',
-    title: 'Director of Facilities',
+      'The smart campus infrastructure Cyrotics delivered for our new medical college is world-class. From the data center to the ELV and security systems, everything is integrated seamlessly. Their team set a new benchmark for excellence and professionalism.',
+    name: 'Project Director',
+    title: 'Leading Government Medical College',
     company: 'Nova Labs',
     imageUrl: 'https://picsum.photos/seed/alok/100/100',
   },
@@ -1307,7 +1313,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'The ROI of Sustainability: How Solar Powers Your Bottom Line',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
-    date: '2024-07-20',
+    date: '2024-07-15',
     category: 'Renewable Energy',
     excerpt: 'Adopting solar energy is more than an environmental statement—it\'s a powerful financial strategy. From immediate operational savings to long-term brand enhancement, we explore how investing in renewable energy delivers a compelling return on investment that goes far beyond just the balance sheet.',
     imageUrl: 'https://picsum.photos/seed/blog3/800/450',
@@ -1431,7 +1437,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Beyond the Video Call: Crafting the Modern Conference Room',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
-    date: '2024-07-23',
+    date: '2024-06-23',
     category: 'Audio-Visual & Communication',
     excerpt: 'In the era of hybrid work, the conference room is no longer just a table with a speakerphone. It\'s a critical hub for collaboration between in-office and remote teams. This post dives into the key AV technologies and design principles for creating seamless, equitable, and productive meeting experiences.',
     imageUrl: 'https://picsum.photos/seed/blog4/800/450',
@@ -1581,7 +1587,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'The Hidden Genius of Your Building: An Introduction to BMS (Building Management System)',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
-    date: '2024-07-18',
+    date: '2024-07-02',
     category: 'Smart Factory & Building Solutions',
     excerpt: 'What if your building could think? A Building Management System (BMS) is the brain that does just that, quietly optimizing everything from temperature to security. Discover how this hidden genius works to make buildings more efficient, comfortable, and sustainable.',
     imageUrl: 'https://picsum.photos/seed/blog5/800/450',
@@ -2016,7 +2022,7 @@ BMS takes care of this by regulating:</p>
     title: 'How Smart ELV Systems Improve Security & Efficiency in Government and Corporate Campuses',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
-    date: '2024-05-05',
+    date: '2024-05-18',
     category: 'CCTV & ELV Systems',
     excerpt: 'In today’s rapidly evolving environment, security is no longer limited to guards and manual checks. Government institutions, medical campuses, and corporate offices now rely on Smart ELV (Extra Low Voltage) Systems for 360° safety and operational efficiency.',
     imageUrl: 'https://picsum.photos/seed/blog10/800/450',
@@ -2298,4 +2304,73 @@ export const COUNTRY_CODES = [
   "+91", "+1", "+44", "+971", "+65", "+61", "+49", "+81", "+86"
 ];
 
+export const EMPLOYEE_TESTIMONIALS: EmployeeTestimonial[] = [
+    {
+        quote: "Working at Cyrotics has been a phenomenal growth journey. The exposure to large-scale, mission-critical projects is unparalleled, and the leadership team truly invests in your professional development.",
+        name: "Anjali Sharma",
+        role: "Senior Network Architect",
+    },
+    {
+        quote: "The culture here is all about innovation and collaboration. I get to work with cutting-edge technologies in cybersecurity and smart infrastructure, and my voice is always heard.",
+        name: "Rajiv Menon",
+        role: "Cybersecurity Analyst",
+    },
+    {
+        quote: "As a software developer, I appreciate the creative freedom and the emphasis on quality. We're not just coding; we're building solutions that solve real-world problems for major clients.",
+        name: "Priya Singh",
+        role: "Software Engineer",
+    },
+];
+
+export const CAREER_BENEFITS: Benefit[] = [
+    {
+        icon: Globe,
+        title: "Work-Life Balance",
+        description: "We promote a healthy work-life balance with flexible work arrangements and a supportive environment.",
+    },
+    {
+        icon: BookOpenCheck,
+        title: "Skill Development",
+        description: "Continuous learning is in our DNA. We provide access to training, workshops, and certifications.",
+    },
+    {
+        icon: Rocket,
+        title: "Career Growth",
+        description: "We offer clear career paths and opportunities for advancement within the company.",
+    },
+    {
+        icon: Sparkles,
+        title: "Innovative Projects",
+        description: "Work on exciting, challenging projects that are shaping the future of technology in India.",
+    },
+    {
+        icon: Award,
+        title: "Rewards & Recognition",
+        description: "We believe in recognizing and rewarding our employees for their hard work and dedication.",
+    },
+    {
+        icon: Users,
+        title: "Collaborative Culture",
+        description: "Join a team of talented professionals who are passionate about what they do.",
+    }
+];
+
+export const CAREER_FAQS: CareerFAQ[] = [
+    {
+        question: "What is the hiring process at Cyrotics?",
+        answer: "Our hiring process typically includes an initial screening, a technical interview, and a final HR round. For senior roles, there may be an additional leadership interview. We aim to keep the process transparent and efficient."
+    },
+    {
+        question: "How long does it take to hear back after applying?",
+        answer: "We strive to review all applications within two weeks. If your profile matches our requirements, our HR team will get in touch with you to schedule the next steps."
+    },
+    {
+        question: "Can I apply for multiple roles at the same time?",
+        answer: "Yes, you can apply for multiple positions that you believe are a good fit for your skills and experience. However, we recommend tailoring your application for each specific role to highlight your relevant qualifications."
+    },
+    {
+        question: "Do you offer internships or programs for fresh graduates?",
+        answer: "Absolutely! We have dedicated internship and graduate trainee programs. These are great opportunities to gain hands-on experience and kick-start your career in the technology industry. Keep an eye on our careers page for openings."
+    }
+];
     
