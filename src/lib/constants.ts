@@ -689,7 +689,7 @@ export const PROJECTS: Project[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      'The CYROTICS team are true professionals. Their data center modernization project was a game-changer for our operations. Their expertise and meticulous execution resulted in significant cost savings and a far more resilient system. We saw a 35% increase in power efficiency almost immediately.',
+      'CYROTICS delivered a state-of-the-art data center that became the backbone of our operations. Their professionalism and technical expertise are second to none. They transformed our vision into a reality, and the results have been phenomenal.',
     name: 'Priya Mehta',
     title: 'CTO',
     company: 'Apex Financial',
@@ -697,7 +697,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      'Security and compliance are paramount in our industry. CYROTICS delivered an integrated security solution that exceeded our expectations. The platform is robust, intuitive, and has streamlined our operations, improving our incident response time by over 60%.',
+      'Partnering with CYROTICS was a strategic masterstroke. Their integrated security and ELV solutions for our new campus were implemented flawlessly. We now have a truly smart, secure, and future-proof environment. Their commitment to excellence is inspiring.',
     name: 'Dr. Alok Sharma',
     title: 'Director of Facilities',
     company: 'Nova Labs',
@@ -705,7 +705,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      'Transforming our building with CYROTICS was a fantastic investment. The energy savings were immediate, and our tenants love the new smart features. Their team managed the entire process flawlessly, from design to implementation. Tenant satisfaction is up 15%!',
+      'The custom automation solution CYROTICS built for our manufacturing line has driven a 40% increase in productivity. They are not just vendors; they are true innovation partners who understand the industry\'s needs deeply. Highly recommended.',
     name: 'Sameer Verma',
     title: 'Property Manager',
     company: 'Innovate Towers',
