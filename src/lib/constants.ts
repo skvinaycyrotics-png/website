@@ -90,7 +90,7 @@ export const NAV_LINKS: NavLink[] = [
     ],
   },
    {
-    href: '/business-sectors',
+    href: '#industry-solutions',
     label: 'Business Sectors',
     subLinks: [
       { href: '/business-sector/overview', label: 'Overview' },
@@ -650,7 +650,7 @@ export const PROJECTS: Project[] = [
     title: 'Shri Guru Tegh Bahadur Sahib Government Medical College – Yamuna Nagar, Haryana',
     client: 'Government of Haryana',
     shortDescription: 'End-to-end smart campus solution, integrating IT, ELV, security, and data center infrastructure for a new government medical college.',
-    longDescription: 'This project involves the delivery of a comprehensive technology infrastructure for a new medical college. The scope includes Network & Security Infrastructure, CCTV & Video Surveillance System, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone & Enterprise Network, Smart Hospital IT Infrastructure, Campus Wi-Fi & Secure Network Backbone, CCTV Surveillance & Data Center Deployment, Complete Campus Networking, Data Center Cabling & Server Setup, Fire Alarm System & Public Address System Solutions, and an integrated Access Control System.',
+    longDescription: 'This project involves the delivery of a comprehensive technology infrastructure for a new medical college. The scope includes: Network & Security Infrastructure, CCTV & Video Surveillance System, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone & Enterprise Network, Smart Hospital IT Infrastructure, Campus Wi-Fi & Secure Network Backbone, CCTV Surveillance & Data Center Deployment, Complete Campus Networking, Data Center Cabling & Server Setup, Fire Alarm System & Public Address System Solutions, and an integrated Access Control System.',
     imageUrl: 'https://picsum.photos/seed/sgtb/600/400',
     imageHint: 'modern medical college',
     tags: [
@@ -739,7 +739,7 @@ export const PROJECTS: Project[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      'CYROTICS delivered a state-of-the-art data center that became the backbone of our operations. Their professionalism and technical expertise are second to none. They transformed our vision into a reality, and the results have been phenomenal.',
+      'CYROTICS’ technical expertise is unparalleled. Their team executed our data center migration flawlessly, with zero downtime. The post-migration performance improvements have been phenomenal, and our infrastructure is now future-proof. They are a truly reliable and professional partner.',
     name: 'Priya Mehta',
     title: 'CTO',
     company: 'Apex Financial',
@@ -747,7 +747,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      'Partnering with CYROTICS was a strategic masterstroke. Their integrated security and ELV solutions for our new campus were implemented flawlessly. We now have a truly smart, secure, and future-proof environment. Their commitment to excellence is inspiring.',
+      'We partnered with CYROTICS for our new smart campus, and the results have been extraordinary. Their integrated security, networking, and ELV solutions were implemented seamlessly. They have set a new benchmark for what a modern, secure educational environment should be. Their professionalism is truly inspiring.',
     name: 'Dr. Alok Sharma',
     title: 'Director of Facilities',
     company: 'Nova Labs',
@@ -755,7 +755,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      'The custom automation solution CYROTICS built for our manufacturing line has driven a 40% increase in productivity. They are not just vendors; they are true innovation partners who understand the industry\'s needs deeply. Highly recommended.',
+      'The custom automation solution CYROTICS designed for our manufacturing line has been a game-changer, driving a 40% increase in productivity. They are more than just vendors; they are genuine innovation partners who deeply understand industrial needs. Highly recommended.',
     name: 'Sameer Verma',
     title: 'Property Manager',
     company: 'Innovate Towers',
@@ -763,7 +763,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
     {
     quote:
-      'The custom ERP system CYROTICS built for us has revolutionized our workflow. Production efficiency is up by 30%, and we have real-time visibility into our entire process. Their developers understood our unique needs and delivered a perfect solution.',
+      'The bespoke ERP system CYROTICS developed for us has completely revolutionized our workflow. Production efficiency has increased by 30%, and we now have real-time visibility across our entire process. Their developers truly understood our unique challenges and delivered a perfect solution.',
     name: 'Kiran Desai',
     title: 'COO',
     company: 'Precision Parts Inc.',
@@ -771,7 +771,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
     {
     quote:
-      'From network design to implementation, CYROTICS has been an invaluable partner. Their SD-WAN solution has increased our branch agility and significantly lowered our connectivity costs. Their technical support is always responsive and knowledgeable.',
+      'From network architecture to implementation, CYROTICS has been an indispensable partner. Their SD-WAN solution has dramatically increased our branch agility and significantly reduced connectivity costs. Their technical support is consistently responsive and highly knowledgeable.',
     name: 'Amit Patel',
     title: 'IT Director',
     company: 'Retail Chain Corp',
@@ -779,7 +779,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      'Our new medical college required a state-of-the-art IT and ELV infrastructure, and CYROTICS delivered flawlessly. Their smart campus solution, including integrated security and data center, has set a new standard for educational institutions in the region.',
+      'Our new medical college demanded a state-of-the-art IT and ELV infrastructure, and CYROTICS delivered flawlessly. Their smart campus solution, including an integrated data center and security systems, has established a new standard for educational institutions in our region.',
     name: 'Dr. R. Mathur',
     title: 'Dean',
     company: 'National Medical College',
@@ -787,7 +787,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      'The solar power plant CYROTICS installed has exceeded our expectations. We\'ve reduced our energy costs by over 70% and significantly lowered our carbon footprint. Their end-to-end project management was professional and seamless.',
+      'The solar power plant that CYROTICS installed has exceeded all our expectations. We have reduced our energy costs by over 70% and significantly lowered our carbon footprint. Their end-to-end project management was exceptionally professional and seamless.',
     name: 'Sunil Agarwal',
     title: 'Factory Head',
     company: 'Green Manufacturing Co.',
@@ -795,7 +795,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      'CYROTICS\' expertise in automotive simulation and CAE is unmatched. Their virtual validation process helped us identify critical design flaws early, saving us months of development time and significant prototyping costs. A true engineering partner.',
+      'CYROTICS’ expertise in automotive simulation and CAE is truly unmatched. Their virtual validation process identified critical design flaws early on, saving us months of development time and substantial prototyping costs. They are a genuine engineering partner.',
     name: 'Rajesh Nair',
     title: 'Head of R&D',
     company: 'Momentum EV',
@@ -1123,7 +1123,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Why Data Center Migration Is Critical for Modern Enterprises – Challenges, Strategy & Best Practices',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
-    date: '2024-07-20',
+    date: '2024-05-22',
     category: 'Data Center Migration & Cloud Infrastructure Solutions',
     excerpt: 'In the rapidly evolving digital landscape, organizations are under constant pressure to modernize their IT infrastructure. Data Center Migration has emerged as a strategic necessity for businesses aiming to improve performance, security, and scalability.',
     imageUrl: 'https://picsum.photos/seed/blog1/800/450',
@@ -1214,7 +1214,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Zero Trust Architecture: A Paradigm Shift in Modern Cybersecurity',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
-    date: '2024-07-18',
+    date: '2024-07-25',
     category: 'Network Security & Cyber Security',
     excerpt: 'The old castle-and-moat approach to security is broken. With perimeters dissolving and threats lurking inside and out, it\'s time for a new model: "Never trust, always verify." This introduction to Zero Trust Architecture (ZTA) explains why it\'s the future of enterprise security.',
     imageUrl: 'https://picsum.photos/seed/blog2/800/450',
@@ -1307,7 +1307,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'The ROI of Sustainability: How Solar Powers Your Bottom Line',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
-    date: '2024-06-25',
+    date: '2024-07-20',
     category: 'Renewable Energy',
     excerpt: 'Adopting solar energy is more than an environmental statement—it\'s a powerful financial strategy. From immediate operational savings to long-term brand enhancement, we explore how investing in renewable energy delivers a compelling return on investment that goes far beyond just the balance sheet.',
     imageUrl: 'https://picsum.photos/seed/blog3/800/450',
@@ -1431,7 +1431,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'Beyond the Video Call: Crafting the Modern Conference Room',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
-    date: '2024-06-10',
+    date: '2024-07-23',
     category: 'Audio-Visual & Communication',
     excerpt: 'In the era of hybrid work, the conference room is no longer just a table with a speakerphone. It\'s a critical hub for collaboration between in-office and remote teams. This post dives into the key AV technologies and design principles for creating seamless, equitable, and productive meeting experiences.',
     imageUrl: 'https://picsum.photos/seed/blog4/800/450',
@@ -1581,7 +1581,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'The Hidden Genius of Your Building: An Introduction to BMS (Building Management System)',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
-    date: '2024-05-22',
+    date: '2024-07-18',
     category: 'Smart Factory & Building Solutions',
     excerpt: 'What if your building could think? A Building Management System (BMS) is the brain that does just that, quietly optimizing everything from temperature to security. Discover how this hidden genius works to make buildings more efficient, comfortable, and sustainable.',
     imageUrl: 'https://picsum.photos/seed/blog5/800/450',
@@ -1736,7 +1736,7 @@ BMS takes care of this by regulating:</p>
     title: 'From Idea to App: The Journey of Custom Software Development',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
-    date: '2024-05-05',
+    date: '2024-06-10',
     category: 'Software Development',
     excerpt: 'Off-the-shelf software can only take you so far. When your business processes are unique, a custom-built application is the key to unlocking true efficiency. This post outlines the typical lifecycle of a custom software project, from initial discovery and design to deployment and beyond.',
     imageUrl: 'https://picsum.photos/seed/blog6/800/450',
@@ -1856,7 +1856,7 @@ BMS takes care of this by regulating:</p>
     title: 'The Role of IT Infrastructure in Modern Medical Colleges and Hospitals (With Cyrotics Project Insights)',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
-    date: '2024-07-23',
+    date: '2024-06-25',
     category: 'CCTV & ELV Systems',
     excerpt: 'Healthcare is transforming rapidly—and modern medical colleges, teaching hospitals, and research institutions now depend heavily on robust IT & ELV infrastructure to deliver efficient clinical care, secure data management, and smooth institutional functioning.',
     imageUrl: 'https://picsum.photos/seed/blog9/800/450',
@@ -2016,7 +2016,7 @@ BMS takes care of this by regulating:</p>
     title: 'How Smart ELV Systems Improve Security & Efficiency in Government and Corporate Campuses',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
-    date: '2024-07-24',
+    date: '2024-05-05',
     category: 'CCTV & ELV Systems',
     excerpt: 'In today’s rapidly evolving environment, security is no longer limited to guards and manual checks. Government institutions, medical campuses, and corporate offices now rely on Smart ELV (Extra Low Voltage) Systems for 360° safety and operational efficiency.',
     imageUrl: 'https://picsum.photos/seed/blog10/800/450',
@@ -2181,7 +2181,7 @@ BMS takes care of this by regulating:</p>
     title: 'The Importance of Data Center Migration & Modernization for Future-Ready Businesses',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
-    date: '2024-07-25',
+    date: '2024-07-24',
     category: 'Data Center Migration & Cloud Infrastructure Solutions',
     excerpt: 'In today’s digital-first era, businesses cannot afford downtime, legacy systems, or inefficient computing environments. Data Center Migration and Modernization has become a necessity.',
     imageUrl: 'https://picsum.photos/seed/blog11/800/450',
