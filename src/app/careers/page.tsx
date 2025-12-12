@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useMemo } from 'react';
@@ -442,7 +441,7 @@ export default function CareersPage() {
               <Card>
                 <CardContent className="p-10 text-center">
                   <p className="text-lg text-muted-foreground">
-                    Oops! We couldn’t find any matches. Try searching again with different filters.
+                    ⚠️ Oops! We couldn’t find any matches. Try searching again with different filters.
                   </p>
                 </CardContent>
               </Card>
@@ -453,7 +452,5 @@ export default function CareersPage() {
     </>
   );
 }
-
-    
 
     
