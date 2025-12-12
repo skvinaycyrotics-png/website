@@ -18,13 +18,13 @@ export function FloatingContact() {
         <Button
           variant="default"
           size="icon"
-          className="fixed left-4 top-1/2 z-50 h-14 w-14 -translate-y-1/2 rounded-full shadow-lg"
+          className="fixed right-4 top-1/2 z-50 h-14 w-14 -translate-y-1/2 rounded-full shadow-lg"
         >
           <Phone className="h-6 w-6" />
           <span className="sr-only">Open Contact Panel</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[300px] sm:w-[320px]">
+      <SheetContent side="right" className="w-[300px] sm:w-[320px]">
         <SheetHeader>
           <SheetTitle className="text-2xl">Contact Information</SheetTitle>
           <SheetDescription>
