@@ -91,7 +91,7 @@ export const NAV_LINKS: NavLink[] = [
     subLinks: [
       { href: '/business-sector/overview', label: 'Overview' },
        {
-        href: 'industry-solution-trigger',
+        href: '#',
         label: 'Industry Solution',
         subLinks: [
           { href: '/business-sector/urban-development', label: 'Urban Development' },
@@ -106,7 +106,7 @@ export const NAV_LINKS: NavLink[] = [
         ],
       },
       {
-        href: 'public-solution-trigger',
+        href: '#',
         label: 'Public Solution',
         subLinks: [
           { href: '/business-sector/defence', label: 'Defence' },
@@ -2223,3 +2223,5 @@ export const HEAR_ABOUT_US_OPTIONS = [
 export const COUNTRY_CODES = [
   "+91", "+1", "+44", "+971", "+65", "+61", "+49", "+81", "+86"
 ];
+
+    

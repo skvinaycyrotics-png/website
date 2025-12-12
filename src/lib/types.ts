@@ -61,13 +61,13 @@ export interface JobOpening {
   title: string;
   location: string;
   department: string;
-  type: 'Full-time' | 'Part-time' | 'Contract' | 'Internship' | 'Apprenticeship' | 'Training Integrated Studies' | 'Remote' | 'Hybrid';
+  type: string;
   description: string;
   requirements: string[];
-  careerLevel: 'Apprenticeship' | 'Graduates' | 'Internship / Working Students' | 'Manager' | 'Professionals';
+  careerLevel: string;
   occupation: string;
   segment: string;
-  experienceLevel: 'Executive' | 'Senior Level' | 'Mid-Senior Level' | 'Associate Level' | 'Entry Level' | 'Internship' | 'Apprenticeship';
+  experienceLevel: string;
 }
 
 export interface BlogPost {
@@ -101,3 +101,5 @@ export interface OccupationFilter {
   level: string;
   roles: string[];
 }
+
+    

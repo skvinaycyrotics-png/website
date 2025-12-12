@@ -294,6 +294,30 @@ export default function CareersPage() {
                         ))}
                       </SelectContent>
                     </Select>
+                    
+                    {/* Job Type Filter */}
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button variant="outline" className="w-full justify-between h-11">
+                          <span>{filters.jobTypes.length > 0 ? `${filters.jobTypes.length} types selected` : 'Job Type'}</span>
+                          <ChevronDown />
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-[300px] p-0" align="start">
+                        <div className="p-4">
+                            {availableJobTypes.map(type => (
+                                <div key={type} className="flex items-center space-x-2 py-1">
+                                    <Checkbox
+                                        id={`type-${type}`}
+                                        checked={filters.jobTypes.includes(type)}
+                                        onCheckedChange={() => handleMultiSelectChange('jobTypes', type)}
+                                    />
+                                    <Label htmlFor={`type-${type}`} className="font-normal">{type}</Label>
+                                </div>
+                            ))}
+                        </div>
+                      </PopoverContent>
+                    </Popover>
 
                     {/* Occupation Filter */}
                     <Popover>
@@ -320,6 +344,58 @@ export default function CareersPage() {
                                   </div>
                                 ))}
                               </div>
+                            ))}
+                            </div>
+                          </ScrollArea>
+                      </PopoverContent>
+                    </Popover>
+                    
+                    {/* Segment Filter */}
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button variant="outline" className="w-full justify-between h-11">
+                          <span>{filters.segments.length > 0 ? `${filters.segments.length} segments selected` : 'Segment'}</span>
+                          <ChevronDown />
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-[300px] p-0" align="start">
+                         <ScrollArea className="h-72">
+                          <div className="p-4">
+                            {SEGMENTS.map(segment => (
+                                <div key={segment} className="flex items-center space-x-2 py-1">
+                                    <Checkbox
+                                        id={`seg-${segment}`}
+                                        checked={filters.segments.includes(segment)}
+                                        onCheckedChange={() => handleMultiSelectChange('segments', segment)}
+                                    />
+                                    <Label htmlFor={`seg-${segment}`} className="font-normal">{segment}</Label>
+                                </div>
+                            ))}
+                            </div>
+                          </ScrollArea>
+                      </PopoverContent>
+                    </Popover>
+                    
+                    {/* Experience Level Filter */}
+                     <Popover>
+                      <PopoverTrigger asChild>
+                        <Button variant="outline" className="w-full justify-between h-11">
+                          <span>{filters.experienceLevels.length > 0 ? `${filters.experienceLevels.length} levels selected` : 'Experience Level'}</span>
+                          <ChevronDown />
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-[300px] p-0" align="start">
+                         <ScrollArea className="h-72">
+                          <div className="p-4">
+                            {EXPERIENCE_LEVELS.map(level => (
+                                <div key={level} className="flex items-center space-x-2 py-1">
+                                    <Checkbox
+                                        id={`exp-${level}`}
+                                        checked={filters.experienceLevels.includes(level)}
+                                        onCheckedChange={() => handleMultiSelectChange('experienceLevels', level)}
+                                    />
+                                    <Label htmlFor={`exp-${level}`} className="font-normal">{level}</Label>
+                                </div>
                             ))}
                             </div>
                           </ScrollArea>
@@ -377,5 +453,7 @@ export default function CareersPage() {
     </>
   );
 }
+
+    
 
     
