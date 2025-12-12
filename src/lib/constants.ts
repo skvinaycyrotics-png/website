@@ -91,7 +91,7 @@ export const NAV_LINKS: NavLink[] = [
     subLinks: [
       { href: '/business-sector/overview', label: 'Overview' },
        {
-        href: '#',
+        href: '#industry-solutions',
         label: 'Industry Solution',
         subLinks: [
           { href: '/business-sector/urban-development', label: 'Urban Development' },
@@ -106,7 +106,7 @@ export const NAV_LINKS: NavLink[] = [
         ],
       },
       {
-        href: '#',
+        href: '#public-solutions',
         label: 'Public Solution',
         subLinks: [
           { href: '/business-sector/defence', label: 'Defence' },
@@ -1084,7 +1084,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Cyrotics Technologies, having successfully delivered multiple large-scale national projects—including Multiple All India Govt Medical Hospital & college Projects, government institutions, Data Center Projects , and major airport and university infrastructures—brings deep expertise in executing complex migration projects with precision.</p>
       <p>This blog explores why data center migration is important, the risks involved, and the best practices for a smooth and secure transition.</p>
       <h3>⭐ What Is Data Center Migration?</h3>
-      <p>Data center migration refers to the process of transferring digital assets—applications, databases, workloads, storage, network components, and entire servers—from one environment to another. This could be:</p>
+      <p>data center migration refers to the process of transferring digital assets—applications, databases, workloads, storage, network components, and entire servers—from one environment to another. This could be:</p>
       <ul>
         <li>On-premises → Cloud</li>
         <li>Legacy data center → Modern data center</li>
