@@ -63,7 +63,10 @@ import {
   FileCheck2,
   Car,
   CircuitBoard,
-  Factory
+  Factory,
+  MessageSquare,
+  Share2,
+  Phone,
 } from 'lucide-react';
 
 export const NAV_LINKS: NavLink[] = [
@@ -78,6 +81,7 @@ export const NAV_LINKS: NavLink[] = [
       { href: '/services/next-gen-cyber-security-solutions', label: 'Next Gen Cyber Security' },
       { href: '/services/security-surveillance', label: 'Security & Surveillance' },
       { href: '/services/audio-visual-communication', label: 'Audio-Visual & Communication' },
+      { href: '/services/unified-communications', label: 'Unified Communications (UC)' },
       { href: '/services/smart-factory-building-solutions', label: 'Smart Factory & Building Solutions' },
       { href: '/services/smart-city-solutions', label: 'Smart City Solutions' },
       { href: '/services/software-development', label: 'Software Development' },
@@ -346,6 +350,52 @@ export const SERVICES: Service[] = [
       },
     ],
     techStack: ['Crestron', 'JBL', 'Polycom', 'Samsung Displays'],
+    caseStudies: [],
+  },
+    {
+    slug: 'unified-communications',
+    title: 'Unified Communications (UC)',
+    category: 'Audio-Visual & Communication',
+    shortDescription:
+      'Integrates all communication tools into a single, easy-to-use platform, enabling teams to collaborate efficiently from anywhere.',
+    description:
+      'Unified Communications (UC) integrates all communication tools into a single, easy-to-use platform, enabling teams to collaborate efficiently from anywhere. Whether your workforce is on-site, remote, or distributed across multiple locations, UC ensures smooth communication without the complexity of switching between multiple applications.',
+    icon: Users,
+    imageUrl: 'https://picsum.photos/seed/uc/1200/800',
+    imageHint: 'team collaboration video call',
+    features: [
+      {
+        title: 'Unified Voice & Video Calling',
+        description: 'High-quality voice and video calls with advanced features like call routing, IVR, voicemail-to-email, and conference bridging.',
+        icon: Phone,
+      },
+      {
+        title: 'Instant Messaging & Presence',
+        description: 'Send quick messages, share files, and check real-time availability of your team members.',
+        icon: MessageSquare,
+      },
+      {
+        title: 'Audio & Video Conferencing',
+        description: 'Host secure meetings, webinars, and virtual discussions with HD-quality video and screen-sharing capabilities.',
+        icon: Video,
+      },
+      {
+        title: 'Collaboration Tools',
+        description: 'Integrated platforms for group chats, document sharing, and collaborative workspaces to enhance teamwork.',
+        icon: Users,
+      },
+       {
+        title: 'Mobility & Remote Access',
+        description: 'Access communication tools from smartphones, tablets, or laptops, ensuring uninterrupted communication on the move.',
+        icon: Smartphone,
+      },
+       {
+        title: 'Integration with Business Applications',
+        description: 'Seamless integration with CRM, ERP, helpdesk systems, and project management tools for end-to-end communication flow.',
+        icon: Share2,
+      },
+    ],
+    techStack: ['Microsoft Teams', 'Cisco Webex', 'Zoom', 'Avaya', 'Poly'],
     caseStudies: [],
   },
   {
