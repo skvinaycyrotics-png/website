@@ -1,7 +1,7 @@
 'use client';
 
-import { useFormStatus, useFormState } from 'react-dom';
-import { useEffect, useRef, useState } from 'react';
+import { useFormStatus } from 'react-dom';
+import { useEffect, useRef, useState, useActionState } from 'react';
 import {
   Card,
   CardContent,
@@ -51,7 +51,7 @@ function SubmitButton() {
 
 export default function ContactForms() {
   const initialState = { message: null, errors: {}, type: '', mailto: null };
-  const [state, dispatch] = useFormState(submitContactForm, initialState);
+  const [state, dispatch] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const [showMailto, setShowMailto] = useState(false);
