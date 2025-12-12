@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -243,23 +244,9 @@ export default function Home() {
                 <CarouselItem key={index}>
                   <Card className="border-none bg-transparent shadow-none">
                     <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-                      <Image
-                        src={testimonial.imageUrl}
-                        alt={testimonial.name}
-                        width={80}
-                        height={80}
-                        className="rounded-full"
-                        data-ai-hint="professional portrait"
-                      />
                       <blockquote className="mt-6 border-none p-0 text-lg font-medium">
                         <p>"{testimonial.quote}"</p>
                       </blockquote>
-                      <div className="mt-4 font-semibold">
-                        {testimonial.name}
-                      </div>
-                      <div className="text-sm text-muted-foreground">
-                        {testimonial.title}, {testimonial.company}
-                      </div>
                     </CardContent>
                   </Card>
                 </CarouselItem>
