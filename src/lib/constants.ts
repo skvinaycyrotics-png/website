@@ -83,10 +83,10 @@ export const NAV_LINKS: NavLink[] = [
     href: '/services',
     label: 'Services',
     subLinks: [
-      { href: '/services/data-center-cloud-infrastructure-solutions', label: 'Data Center Infrastructure' },
+      { href: '/services/data-center-infrastructure-solutions', label: 'Data Center Infrastructure' },
       { href: '/services/cloud-hybrid-it-solutions', label: 'Cloud & Hybrid IT Solutions' },
       { href: '/services/scalable-storage-architecture', label: 'Scalable Storage Architecture' },
-      { href: '/services/next-gen-cyber-security-solutions', label: 'Next Gen Cyber Security' },
+      { href: '/services/nextgen-cybersecurity-shield', label: 'NextGen Cybersecurity Shield' },
       { href: '/services/security-surveillance', label: 'Security & Surveillance' },
       { href: '/services/audio-visual-communication', label: 'Audio-Visual & Communication' },
       { href: '/services/unified-communications', label: 'Unified Communications (UC)' },
@@ -139,9 +139,9 @@ export const NAV_LINKS: NavLink[] = [
 
 export const SERVICES: Service[] = [
   {
-    slug: 'data-center-cloud-infrastructure-solutions',
+    slug: 'data-center-infrastructure-solutions',
     title: 'Data Center Infrastructure Solutions',
-    category: 'Data Center Infrastructure Solutions',
+    category: 'Data Center Infrastructure',
     shortDescription:
       'We architect and manage resilient IT infrastructures that power enterprise success. From modernizing data centers to transforming networks, our solutions ensure high availability, performance, and scalability.',
     description:
@@ -301,8 +301,8 @@ export const SERVICES: Service[] = [
     caseStudies: [],
   },
     {
-    slug: 'next-gen-cyber-security-solutions',
-    title: 'Next Gen Cyber Security Solutions',
+    slug: 'nextgen-cybersecurity-shield',
+    title: 'NextGen Cybersecurity Shield',
     category: 'Network Security & Cyber Security',
     shortDescription: 'Defend your digital assets with our advanced, multi-layered cybersecurity services, powered by AI and a Zero Trust framework to protect against evolving threats.',
     description:
@@ -2548,6 +2548,8 @@ export const CAREER_FAQS: CareerFAQ[] = [
         answer: "Absolutely! We have dedicated internship and graduate trainee programs. These are great opportunities to gain hands-on experience and kick-start your career in the technology industry. Keep an eye on our careers page for openings."
     }
 ];
+    
+
     
 
     
