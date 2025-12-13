@@ -18,12 +18,13 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ServiceDetailPage({
+export default async function ServiceDetailPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  const service = SERVICES.find((s) => s.slug === params.slug);
+  const awaitedParams = await params;
+  const service = SERVICES.find((s) => s.slug === awaitedParams.slug);
 
   if (!service) {
     notFound();

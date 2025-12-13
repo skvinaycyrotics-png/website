@@ -15,7 +15,6 @@ export function Logo({ className }: { className?: string }) {
           width={180}
           height={40}
           priority
-          layout="responsive"
         />
       </div>
     </Link>
