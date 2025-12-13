@@ -84,6 +84,7 @@ export const NAV_LINKS: NavLink[] = [
     label: 'Services',
     subLinks: [
       { href: '/services/data-center-cloud-infrastructure-solutions', label: 'Data Center & Cloud Infrastructure' },
+      { href: '/services/cloud-hybrid-it-solutions', label: 'Cloud & Hybrid IT Solutions' },
       { href: '/services/scalable-storage-architecture', label: 'Scalable Storage Architecture' },
       { href: '/services/next-gen-cyber-security-solutions', label: 'Next Gen Cyber Security' },
       { href: '/services/security-surveillance', label: 'Security & Surveillance' },
@@ -188,6 +189,52 @@ export const SERVICES: Service[] = [
     ],
     techStack: ['Cisco', 'HPE', 'Dell EMC', 'VMware', 'Microsoft Azure', 'AWS', 'GCP'],
     caseStudies: [{ title: 'Enterprise Network Overhaul', slug: 'proj-1' }],
+  },
+  {
+    slug: 'cloud-hybrid-it-solutions',
+    title: 'Cloud & Hybrid IT Solutions',
+    category: 'Data Center & Cloud Infrastructure Solutions',
+    shortDescription:
+      'Empowering enterprises with secure, scalable, and intelligent cloud and hybrid IT infrastructures designed for performance, resilience, and future growth.',
+    description:
+      'We design and implement Cloud and Hybrid IT solutions that seamlessly integrate on-premise systems with public and private cloud environments—enabling innovation without compromise.',
+    icon: CloudCog,
+    imageUrl: 'https://picsum.photos/seed/cloud-hybrid/1200/800',
+    imageHint: 'hybrid cloud network',
+    features: [
+      {
+        title: 'Cloud Architecture & Strategy',
+        description:
+          'Expert design for AWS, Azure & GCP. We provide cloud readiness assessment, and a detailed migration planning & execution strategy.',
+        icon: Cloud,
+      },
+      {
+        title: 'Hybrid IT Integration',
+        description:
+          'Seamless integration of on-premise & cloud environments with secure connectivity, workload balancing, and multi-cloud interoperability.',
+        icon: GitBranch,
+      },
+      {
+        title: 'Cloud Security & Compliance',
+        description:
+          'Implementation of Zero Trust cloud architecture, IAM, MFA, encryption, and firewall integration to meet government & industry standards.',
+        icon: ShieldCheck,
+      },
+      {
+        title: 'Cloud Operations & Optimization',
+        description:
+          'Continuous performance monitoring, cost optimization (FinOps), and automation & orchestration of cloud resources.',
+        icon: ServerCog,
+      },
+      {
+        title: 'Disaster Recovery & Business Continuity',
+        description:
+          'Robust cloud-based DR solutions, high-availability architecture, and automated backup & recovery processes to ensure business continuity.',
+        icon: Shuffle,
+      },
+    ],
+    techStack: ['AWS', 'Microsoft Azure', 'Google Cloud Platform', 'VMware', 'Kubernetes', 'Terraform'],
+    caseStudies: [],
   },
   {
     slug: 'scalable-storage-architecture',
