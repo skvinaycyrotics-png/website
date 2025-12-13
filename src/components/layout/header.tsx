@@ -6,7 +6,14 @@ import { useState } from 'react';
 import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 import { Logo } from '@/components/logo';
 import { NAV_LINKS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
@@ -103,10 +110,10 @@ const renderNavLinks = (links: NavLink[], isMobile: boolean, closeMobileMenu?: (
         <DropdownMenu key={link.href}>
           <DropdownMenuTrigger asChild>
             <a
-              href={link.href === '#' ? undefined : link.href}
+              href={link.href.startsWith('#') ? undefined : link.href}
               className={cn(
                 'flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary',
-                pathname.startsWith(link.href)
+                pathname.startsWith(link.href) && !link.href.startsWith('#')
                   ? 'text-primary'
                   : 'text-muted-foreground'
               )}
@@ -177,6 +184,12 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full">
+              <SheetHeader className="sr-only">
+                <SheetTitle>Navigation Menu</SheetTitle>
+                <SheetDescription>
+                  Select a page to navigate to.
+                </SheetDescription>
+              </SheetHeader>
               <div className="flex h-full flex-col">
                 <div className="mb-8 flex items-center justify-between">
                   <Logo />
