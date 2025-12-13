@@ -87,16 +87,16 @@ export const NAV_LINKS: NavLink[] = [
       { href: '/services/cloud-hybrid-it-solutions', label: 'Cloud & Hybrid IT Solutions' },
       { href: '/services/scalable-storage-architecture', label: 'Scalable Storage Architecture' },
       { href: '/services/nextgen-cybersecurity-shield', label: 'NextGen Cybersecurity Shield' },
-      { href: '/services/security-surveillance', label: 'Security & Surveillance' },
       { href: '/services/audio-visual-communication', label: 'Audio-Visual & Communication' },
       { href: '/services/unified-communications', label: 'Unified Communications (UC)' },
-      { href: '/services/smart-factory-building-solutions', label: 'Smart Factory & Building Solutions' },
-      { href: '/services/smart-city-infrastructure', label: 'Smart City Infrastructure' },
+      { href: '/services/security-surveillance', label: 'Security & Surveillance' },
+      { href: '/services/managed-services', label: 'Managed Services' },
       { href: '/services/software-development', label: 'Software Development' },
       { href: '/services/ai-ml-solutions', label: 'AI & ML Solutions' },
-      { href: '/services/renewable-energy', label: 'Renewable Energy' },
+      { href: '/services/smart-factory-building-solutions', label: 'Smart Factory & Building' },
+      { href: '/services/smart-city-infrastructure', label: 'Smart City Infrastructure' },
       { href: '/services/mobility-automotives', label: 'Mobility & Automotives' },
-      { href: '/services/managed-services', label: 'Managed Services' },
+      { href: '/services/renewable-energy', label: 'Renewable Energy' },
     ],
   },
    {
@@ -300,7 +300,7 @@ export const SERVICES: Service[] = [
     techStack: ['Dell EMC', 'NetApp', 'HPE', 'Pure Storage', 'IBM Storage', 'Ceph', 'MinIO'],
     caseStudies: [],
   },
-    {
+  {
     slug: 'nextgen-cybersecurity-shield',
     title: 'NextGen Cybersecurity Shield',
     category: 'NextGen Cybersecurity Shield',
@@ -329,45 +329,6 @@ export const SERVICES: Service[] = [
     ],
     techStack: ['Palo Alto Networks', 'Fortinet', 'CrowdStrike', 'SIEM', 'SOAR'],
     caseStudies: [],
-  },
-  {
-    slug: 'security-surveillance',
-    title: 'Security & Surveillance',
-    category: 'CCTV & ELV Systems',
-    shortDescription:
-      'Protect your assets, people, and operations with our comprehensive security solutions. We design and deploy integrated systems for surveillance, access control, and fire detection, providing a unified security posture.',
-    description:
-      'Protect your assets, people, and operations with our comprehensive security solutions. We design and deploy integrated systems for surveillance, access control, and fire detection, providing a unified security posture.',
-    icon: Cctv,
-    imageUrl: 'https://picsum.photos/seed/security/1200/800',
-    imageHint: 'security camera',
-    features: [
-      {
-        title: 'CCTV Surveillance Systems',
-        description:
-          'High-definition IP, Analog, and Hybrid camera systems with advanced video analytics and remote monitoring.',
-        icon: Cctv,
-      },
-      {
-        title: 'Access Control Systems',
-        description:
-          'Secure your premises with biometric, card-based, and mobile access control solutions for granular control.',
-        icon: Fingerprint,
-      },
-      {
-        title: 'Fire Detection & Safety',
-        description:
-          'Intelligent fire alarm and suppression systems that provide early detection and ensure regulatory compliance.',
-        icon: Flame,
-      },
-      {
-        title: 'Integrated Security Solutions',
-        description: 'Unify all security systems onto a single platform for centralized command and control, improving situational awareness and response efficiency.',
-        icon: Combine,
-      },
-    ],
-    techStack: ['Hikvision', 'Bosch', 'Axis Communications', 'Honeywell'],
-    caseStudies: [{ title: 'Corporate Campus Security', slug: 'proj-2' }],
   },
   {
     slug: 'audio-visual-communication',
@@ -408,7 +369,7 @@ export const SERVICES: Service[] = [
     techStack: ['Crestron', 'JBL', 'Polycom', 'Samsung Displays'],
     caseStudies: [],
   },
-    {
+  {
     slug: 'unified-communications',
     title: 'Unified Communications (UC)',
     category: 'Audio-Visual & Communication',
@@ -455,72 +416,86 @@ export const SERVICES: Service[] = [
     caseStudies: [],
   },
   {
-    slug: 'smart-factory-building-solutions',
-    title: 'Smart Factory & Building Solutions',
-    category: 'Smart Factory & Building Solutions',
+    slug: 'security-surveillance',
+    title: 'Security & Surveillance',
+    category: 'CCTV & ELV Systems',
     shortDescription:
-      'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
+      'Protect your assets, people, and operations with our comprehensive security solutions. We design and deploy integrated systems for surveillance, access control, and fire detection, providing a unified security posture.',
     description:
-      'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
-    icon: Building,
-    imageUrl: 'https://picsum.photos/seed/building/1200/800',
-    imageHint: 'modern architecture',
+      'Protect your assets, people, and operations with our comprehensive security solutions. We design and deploy integrated systems for surveillance, access control, and fire detection, providing a unified security posture.',
+    icon: Cctv,
+    imageUrl: 'https://picsum.photos/seed/security/1200/800',
+    imageHint: 'security camera',
     features: [
       {
-        title: 'Building Management Systems (BMS)',
+        title: 'CCTV Surveillance Systems',
         description:
-          'Centralized control and automation of your building’s core systems for operational efficiency.',
-        icon: Building2,
-      },
-       {
-        title: 'HVAC Control Systems',
-        description: 'Intelligent control of heating, ventilation, and air conditioning to optimize comfort and reduce energy consumption.',
-        icon: Fan,
-      },
-      {
-        title: 'Energy Management',
-        description:
-          'Monitor, analyze, and optimize energy consumption to reduce costs and improve sustainability.',
-        icon: BatteryCharging,
-      },
-      {
-        title: 'IoT Integration',
-        description:
-          'Connect and manage a wide range of IoT sensors and devices for real-time insights and automation.',
-        icon: Signal,
-      },
-    ],
-    techStack: ['Schneider Electric', 'Siemens', 'Johnson Controls', 'LoRaWAN'],
-    caseStudies: [],
-  },
-    {
-    slug: 'smart-city-infrastructure',
-    title: 'Smart City Infrastructure',
-    category: 'Smart City Infrastructure',
-    shortDescription: 'Empower urban environments with our integrated smart city solutions, enhancing public safety, traffic management, and resource efficiency through IoT and data analytics.',
-    description:
-      'We empower urban environments by designing and deploying integrated smart city solutions. From intelligent traffic management to city-wide surveillance and smart lighting, we use IoT, data analytics, and robust network infrastructure to create safer, more efficient, and sustainable cities.',
-    icon: Building2,
-    imageUrl: 'https://picsum.photos/seed/city/1200/800',
-    imageHint: 'smart city',
-    features: [
-      {
-        title: 'Intelligent Traffic Management',
-        description: 'Deploy smart traffic signals, vehicle detection sensors, and centralized management platforms to reduce congestion and improve traffic flow.',
-        icon: TrafficCone,
-      },
-      {
-        title: 'City-Wide Surveillance',
-        description: 'Implement a network of AI-powered cameras for public safety, incident detection, and crowd management with a central command and control center.',
+          'High-definition IP, Analog, and Hybrid camera systems with advanced video analytics and remote monitoring.',
         icon: Cctv,
       },
       {
-        title: 'Smart Utilities & IoT',
-        description: 'Integrate IoT sensors for smart lighting, waste management, and environmental monitoring to optimize resource usage and reduce operational costs.',
-        icon: Map,
+        title: 'Access Control Systems',
+        description:
+          'Secure your premises with biometric, card-based, and mobile access control solutions for granular control.',
+        icon: Fingerprint,
+      },
+      {
+        title: 'Fire Detection & Safety',
+        description:
+          'Intelligent fire alarm and suppression systems that provide early detection and ensure regulatory compliance.',
+        icon: Flame,
+      },
+      {
+        title: 'Integrated Security Solutions',
+        description: 'Unify all security systems onto a single platform for centralized command and control, improving situational awareness and response efficiency.',
+        icon: Combine,
       },
     ],
-    techStack: ['LoRaWAN', '5G', 'IoT Platforms', 'GIS', 'Video Analytics'],
+    techStack: ['Hikvision', 'Bosch', 'Axis Communications', 'Honeywell'],
+    caseStudies: [{ title: 'Corporate Campus Security', slug: 'proj-2' }],
+  },
+  {
+    slug: 'managed-services',
+    title: 'Managed Services',
+    category: 'Managed Services',
+    shortDescription: 'Proactive, predictive, and always-on managed services to keep your IT ecosystem secure, optimized, and operational.',
+    description: 'Our Managed Services are designed to keep your IT ecosystem secure, optimized, and always operational—so you can focus on innovation while we manage complexity.',
+    icon: ServerCog,
+    imageUrl: 'https://picsum.photos/seed/managed/1200/800',
+    imageHint: 'managed services control room',
+    features: [
+      {
+        title: 'Network Managed Services',
+        description: '24×7 NOC Monitoring, LAN/WAN/Wi-Fi Management, SD-WAN Operations, and Performance Optimization.',
+        icon: Network,
+      },
+      {
+        title: 'Cybersecurity Managed Services',
+        description: 'SOC (L1, L2, L3) Operations, Firewall Management, SIEM/SOAR & Log Analytics, and Vulnerability Management.',
+        icon: Shield,
+      },
+      {
+        title: 'Data Center Managed Services',
+        description: 'Tier-III Data Center Operations, Server/Storage/Virtualization Management, Backup & Disaster Recovery (DR).',
+        icon: Database,
+      },
+      {
+        title: 'Cloud & Hybrid IT Management',
+        description: 'AWS/Azure/Private Cloud Operations, Hybrid Infrastructure Monitoring, Cost Optimization, and Security Governance.',
+        icon: CloudCog,
+      },
+      {
+        title: 'AV, ELV & Smart Infrastructure Management',
+        description: 'Command & Control Centers, Digital Signage & AV Systems, CCTV Monitoring, and BMS/IBMS Solutions.',
+        icon: Building,
+      },
+      {
+        title: 'IoT & Automation Managed Services',
+        description: 'Device Monitoring & Health Analytics, Edge Computing Support, and Predictive Maintenance Models.',
+        icon: Bot,
+      },
+    ],
+    techStack: ['ITIL', 'NOC', 'SOC', 'SIEM', 'SOAR', 'AWS', 'Azure', 'VMware'],
     caseStudies: [],
   },
   {
@@ -602,6 +577,93 @@ export const SERVICES: Service[] = [
     caseStudies: [],
   },
   {
+    slug: 'smart-factory-building-solutions',
+    title: 'Smart Factory & Building Solutions',
+    category: 'Smart Factory & Building Solutions',
+    shortDescription:
+      'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
+    description:
+      'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
+    icon: Building,
+    imageUrl: 'https://picsum.photos/seed/building/1200/800',
+    imageHint: 'modern architecture',
+    features: [
+      {
+        title: 'Building Management Systems (BMS)',
+        description:
+          'Centralized control and automation of your building’s core systems for operational efficiency.',
+        icon: Building2,
+      },
+       {
+        title: 'HVAC Control Systems',
+        description: 'Intelligent control of heating, ventilation, and air conditioning to optimize comfort and reduce energy consumption.',
+        icon: Fan,
+      },
+      {
+        title: 'Energy Management',
+        description:
+          'Monitor, analyze, and optimize energy consumption to reduce costs and improve sustainability.',
+        icon: BatteryCharging,
+      },
+      {
+        title: 'IoT Integration',
+        description:
+          'Connect and manage a wide range of IoT sensors and devices for real-time insights and automation.',
+        icon: Signal,
+      },
+    ],
+    techStack: ['Schneider Electric', 'Siemens', 'Johnson Controls', 'LoRaWAN'],
+    caseStudies: [],
+  },
+  {
+    slug: 'smart-city-infrastructure',
+    title: 'Smart City Infrastructure',
+    category: 'Smart City Infrastructure',
+    shortDescription: 'Empower urban environments with our integrated smart city solutions, enhancing public safety, traffic management, and resource efficiency through IoT and data analytics.',
+    description:
+      'We empower urban environments by designing and deploying integrated smart city solutions. From intelligent traffic management to city-wide surveillance and smart lighting, we use IoT, data analytics, and robust network infrastructure to create safer, more efficient, and sustainable cities.',
+    icon: Building2,
+    imageUrl: 'https://picsum.photos/seed/city/1200/800',
+    imageHint: 'smart city',
+    features: [
+      {
+        title: 'Intelligent Traffic Management',
+        description: 'Deploy smart traffic signals, vehicle detection sensors, and centralized management platforms to reduce congestion and improve traffic flow.',
+        icon: TrafficCone,
+      },
+      {
+        title: 'City-Wide Surveillance',
+        description: 'Implement a network of AI-powered cameras for public safety, incident detection, and crowd management with a central command and control center.',
+        icon: Cctv,
+      },
+      {
+        title: 'Smart Utilities & IoT',
+        description: 'Integrate IoT sensors for smart lighting, waste management, and environmental monitoring to optimize resource usage and reduce operational costs.',
+        icon: Map,
+      },
+    ],
+    techStack: ['LoRaWAN', '5G', 'IoT Platforms', 'GIS', 'Video Analytics'],
+    caseStudies: [],
+  },
+  {
+    slug: 'mobility-automotives',
+    title: 'Mobility & Automotives',
+    category: 'Mobility & Automotives',
+    shortDescription: 'End-to-end automotive engineering, simulation, EV, and robotics solutions to accelerate innovation in the mobility sector.',
+    description: 'Cyrotics Technologies delivers end-to-end automotive engineering solutions designed to enhance safety, improve vehicle performance, and accelerate digital transformation across the mobility sector. From mechanical design to embedded systems, we help OEMs, Tier-1 suppliers, and manufacturing units innovate with confidence.',
+    icon: Car,
+    imageUrl: 'https://picsum.photos/seed/auto-eng/1200/800',
+    imageHint: 'automotive engineering design',
+    features: [
+      { title: 'Vehicle Design & Engineering', description: 'CAD modeling (BIW, Interiors, Chassis), GD&T, and structural optimization.', icon: Car },
+      { title: 'CAE/Virtual Validation', description: 'Crashworthiness simulation, NVH analysis, and thermal simulation.', icon: Cpu },
+      { title: 'Embedded & Automotive Electronics', description: 'ECU hardware design, AUTOSAR architecture support, and CAN/LIN/FlexRay integration.', icon: CircuitBoard },
+      { title: 'Robotics & Industrial Automation', description: 'Industrial robotics, smart factory solutions, and PLC/SCADA control systems for manufacturing.', icon: Factory }
+    ],
+    techStack: ['ANSYS', 'HyperMesh', 'CATIA', 'Simulink', 'CANoe'],
+    caseStudies: [],
+  },
+  {
     slug: 'renewable-energy',
     title: 'Renewable Energy',
     category: 'Renewable Energy',
@@ -638,68 +700,6 @@ export const SERVICES: Service[] = [
       },
     ],
     techStack: ['Trina Solar', 'SMA', 'Enphase', 'Tesla Powerwall'],
-    caseStudies: [],
-  },
-  {
-    slug: 'mobility-automotives',
-    title: 'Mobility & Automotives',
-    category: 'Mobility & Automotives',
-    shortDescription: 'End-to-end automotive engineering, simulation, EV, and robotics solutions to accelerate innovation in the mobility sector.',
-    description: 'Cyrotics Technologies delivers end-to-end automotive engineering solutions designed to enhance safety, improve vehicle performance, and accelerate digital transformation across the mobility sector. From mechanical design to embedded systems, we help OEMs, Tier-1 suppliers, and manufacturing units innovate with confidence.',
-    icon: Car,
-    imageUrl: 'https://picsum.photos/seed/auto-eng/1200/800',
-    imageHint: 'automotive engineering design',
-    features: [
-      { title: 'Vehicle Design & Engineering', description: 'CAD modeling (BIW, Interiors, Chassis), GD&T, and structural optimization.', icon: Car },
-      { title: 'CAE/Virtual Validation', description: 'Crashworthiness simulation, NVH analysis, and thermal simulation.', icon: Cpu },
-      { title: 'Embedded & Automotive Electronics', description: 'ECU hardware design, AUTOSAR architecture support, and CAN/LIN/FlexRay integration.', icon: CircuitBoard },
-      { title: 'Robotics & Industrial Automation', description: 'Industrial robotics, smart factory solutions, and PLC/SCADA control systems for manufacturing.', icon: Factory }
-    ],
-    techStack: ['ANSYS', 'HyperMesh', 'CATIA', 'Simulink', 'CANoe'],
-    caseStudies: [],
-  },
-  {
-    slug: 'managed-services',
-    title: 'Managed Services',
-    category: 'Managed Services',
-    shortDescription: 'Proactive, predictive, and always-on managed services to keep your IT ecosystem secure, optimized, and operational.',
-    description: 'Our Managed Services are designed to keep your IT ecosystem secure, optimized, and always operational—so you can focus on innovation while we manage complexity.',
-    icon: ServerCog,
-    imageUrl: 'https://picsum.photos/seed/managed/1200/800',
-    imageHint: 'managed services control room',
-    features: [
-      {
-        title: 'Network Managed Services',
-        description: '24×7 NOC Monitoring, LAN/WAN/Wi-Fi Management, SD-WAN Operations, and Performance Optimization.',
-        icon: Network,
-      },
-      {
-        title: 'Cybersecurity Managed Services',
-        description: 'SOC (L1, L2, L3) Operations, Firewall Management, SIEM/SOAR & Log Analytics, and Vulnerability Management.',
-        icon: Shield,
-      },
-      {
-        title: 'Data Center Managed Services',
-        description: 'Tier-III Data Center Operations, Server/Storage/Virtualization Management, Backup & Disaster Recovery (DR).',
-        icon: Database,
-      },
-      {
-        title: 'Cloud & Hybrid IT Management',
-        description: 'AWS/Azure/Private Cloud Operations, Hybrid Infrastructure Monitoring, Cost Optimization, and Security Governance.',
-        icon: CloudCog,
-      },
-      {
-        title: 'AV, ELV & Smart Infrastructure Management',
-        description: 'Command & Control Centers, Digital Signage & AV Systems, CCTV Monitoring, and BMS/IBMS Solutions.',
-        icon: Building,
-      },
-      {
-        title: 'IoT & Automation Managed Services',
-        description: 'Device Monitoring & Health Analytics, Edge Computing Support, and Predictive Maintenance Models.',
-        icon: Bot,
-      },
-    ],
-    techStack: ['ITIL', 'NOC', 'SOC', 'SIEM', 'SOAR', 'AWS', 'Azure', 'VMware'],
     caseStudies: [],
   },
 ];
