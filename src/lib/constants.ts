@@ -83,7 +83,7 @@ export const NAV_LINKS: NavLink[] = [
     href: '/services',
     label: 'Services',
     subLinks: [
-      { href: '/services/data-center-cloud-infrastructure-solutions', label: 'Data Center & Cloud Infrastructure' },
+      { href: '/services/data-center-cloud-infrastructure-solutions', label: 'Data Center Infrastructure' },
       { href: '/services/cloud-hybrid-it-solutions', label: 'Cloud & Hybrid IT Solutions' },
       { href: '/services/scalable-storage-architecture', label: 'Scalable Storage Architecture' },
       { href: '/services/next-gen-cyber-security-solutions', label: 'Next Gen Cyber Security' },
