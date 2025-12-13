@@ -140,8 +140,8 @@ export const NAV_LINKS: NavLink[] = [
 export const SERVICES: Service[] = [
   {
     slug: 'data-center-cloud-infrastructure-solutions',
-    title: 'Data Center & Cloud Infrastructure Solutions',
-    category: 'Data Center & Cloud Infrastructure Solutions',
+    title: 'Data Center Infrastructure Solutions',
+    category: 'Data Center Infrastructure Solutions',
     shortDescription:
       'We architect and manage resilient IT infrastructures that power enterprise success. From modernizing data centers to transforming networks, our solutions ensure high availability, performance, and scalability.',
     description:
