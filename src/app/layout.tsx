@@ -3,7 +3,6 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { FloatingContact } from '@/components/layout/FloatingContact';
 import { FloatingCerts } from '@/components/layout/FloatingCerts';
 import { SupportDesk } from '@/components/layout/SupportDesk';
 
@@ -39,7 +38,6 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
-        <FloatingContact />
         <FloatingCerts />
         <Toaster />
       </body>
