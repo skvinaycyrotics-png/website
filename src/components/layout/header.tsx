@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X, ChevronDown, Phone } from 'lucide-react';
+import { Menu, X, ChevronDown, Headphones } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -170,7 +170,7 @@ export function Header() {
         </nav>
         <div className="ml-4 hidden md:flex">
           <Button id="support-desk-trigger-desktop">
-            <Phone className="mr-2 h-4 w-4" /> Need Help
+            <Headphones className="mr-2 h-4 w-4" /> Support Desk
           </Button>
         </div>
         <div className="ml-auto flex items-center md:hidden">
@@ -204,7 +204,7 @@ export function Header() {
                   </div>
                   <Button asChild size="lg" onClick={closeMobileMenu}>
                     <a href="tel:+919999295636">
-                      <Phone className="mr-2 h-4 w-4" /> Call Us
+                      <Headphones className="mr-2 h-4 w-4" /> Call Us
                     </a>
                   </Button>
                 </nav>

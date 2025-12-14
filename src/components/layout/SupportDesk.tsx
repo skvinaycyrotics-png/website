@@ -51,7 +51,7 @@ export function SupportDesk() {
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetContent side="left" className="w-full max-w-md p-0">
+      <SheetContent side="right" className="w-full max-w-md p-0">
         <div className="flex h-full flex-col">
           <SheetHeader className="p-6 text-left">
             <SheetTitle className="sr-only">Support Desk</SheetTitle>
