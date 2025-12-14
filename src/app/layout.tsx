@@ -6,6 +6,8 @@ import { Footer } from '@/components/layout/footer';
 import { FloatingContact } from '@/components/layout/FloatingContact';
 import { AdminFab } from '@/components/layout/AdminFab';
 import { FloatingCerts } from '@/components/layout/FloatingCerts';
+import { SupportDesk } from '@/components/layout/SupportDesk';
+import { FloatingSupport } from '@/components/layout/FloatingSupport';
 
 export const metadata: Metadata = {
   title: 'CYROTICS TECHNOLOGIES | Technology Infrastructure & Security',
@@ -33,12 +35,14 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased">
+        <SupportDesk />
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
         <FloatingContact />
+        <FloatingSupport />
         <FloatingCerts />
         <AdminFab />
         <Toaster />

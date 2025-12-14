@@ -169,10 +169,8 @@ export function Header() {
           {renderNavLinks(NAV_LINKS, false)}
         </nav>
         <div className="ml-4 hidden md:flex">
-          <Button asChild>
-            <a href="tel:+919999295636">
-              <Phone className="mr-2 h-4 w-4" /> +91-9999295636
-            </a>
+          <Button id="support-desk-trigger-desktop">
+            <Phone className="mr-2 h-4 w-4" /> Need Help
           </Button>
         </div>
         <div className="ml-auto flex items-center md:hidden">
