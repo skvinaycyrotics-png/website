@@ -93,7 +93,7 @@ export const NAV_LINKS: NavLink[] = [
       { href: '/services/managed-services', label: 'Managed Services' },
       { href: '/services/software-development', label: 'Software Development' },
       { href: '/services/ai-ml-solutions', label: 'AI & ML Solutions' },
-      { href: '/services/smart-factory-building-solutions', label: 'Smart Factory & Building' },
+      { href: '/services/smart-factory-building-infra', label: 'Smart Factory & Building Infra' },
       { href: '/services/intelligent-urban-ecosystems', label: 'Intelligent Urban Ecosystems' },
       { href: '/services/mobility-automotives', label: 'Mobility & Automotives' },
       { href: '/services/renewable-energy', label: 'Renewable Energy' },
@@ -577,9 +577,9 @@ export const SERVICES: Service[] = [
     caseStudies: [],
   },
   {
-    slug: 'smart-factory-building-solutions',
-    title: 'Smart Factory & Building Solutions',
-    category: 'Smart Factory & Building Solutions',
+    slug: 'smart-factory-building-infra',
+    title: 'Smart Factory & Building Infra',
+    category: 'Smart Factory & Building Infra',
     shortDescription:
       'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
     description:
@@ -2547,6 +2547,8 @@ export const CAREER_FAQS: CareerFAQ[] = [
         answer: "Absolutely! We have dedicated internship and graduate trainee programs. These are great opportunities to gain hands-on experience and kick-start your career in the technology industry. Keep an eye on our careers page for openings."
     }
 ];
+    
+
     
 
     
