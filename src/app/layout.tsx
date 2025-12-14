@@ -4,7 +4,6 @@ import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { FloatingContact } from '@/components/layout/FloatingContact';
-import { AdminFab } from '@/components/layout/AdminFab';
 import { FloatingCerts } from '@/components/layout/FloatingCerts';
 import { SupportDesk } from '@/components/layout/SupportDesk';
 
@@ -42,7 +41,6 @@ export default function RootLayout({
         </div>
         <FloatingContact />
         <FloatingCerts />
-        <AdminFab />
         <Toaster />
       </body>
     </html>
