@@ -2,12 +2,10 @@
 
 import Link from 'next/link';
 import {
-  Youtube,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Facebook,
   ArrowUp,
+  Mail,
+  MapPin,
+  Phone,
 } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { Button } from '../ui/button';
@@ -59,7 +57,7 @@ export function Footer() {
                      <ul key={index} className="space-y-2">
                         {column.map(link => (
                              <li key={link.href}>
-                                <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary">
+                                <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                                     {link.label}
                                 </Link>
                              </li>
@@ -73,22 +71,31 @@ export function Footer() {
           <div className="lg:col-span-3">
             <h3 className="font-semibold tracking-wide">Contact Information</h3>
             <div className="mt-4 space-y-4 text-sm">
-                <div>
-                    <h4 className="font-medium text-foreground">Corporate Office</h4>
-                    <address className="not-italic text-muted-foreground">
-                        Cyrotics Technologies (OPC) Pvt. Ltd.<br/>
-                        86/2, Street No.-54/V/3, Ist 60 Feet Road,<br/>
-                        Molarband Extension, Badarpur Border,<br/>
-                        New Delhi – 110044, India
-                    </address>
+                <div className="flex items-start gap-3">
+                    <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                        <h4 className="font-medium text-foreground">Corporate Office</h4>
+                        <address className="not-italic text-muted-foreground">
+                            Cyrotics Technologies (OPC) Pvt. Ltd.<br/>
+                            86/2, Street No.-54/V/3, Ist 60 Feet Road,<br/>
+                            Molarband Extension, Badarpur Border,<br/>
+                            New Delhi – 110044, India
+                        </address>
+                    </div>
                 </div>
-                 <div>
-                    <h4 className="font-medium text-foreground">Phone</h4>
-                    <a href="tel:+919999295636" className="text-muted-foreground hover:text-primary">+91 99992 95636</a>
+                 <div className="flex items-center gap-3">
+                    <Phone className="h-5 w-5 text-primary flex-shrink-0" />
+                    <div>
+                        <h4 className="font-medium text-foreground">Phone</h4>
+                        <a href="tel:+919999295636" className="text-muted-foreground hover:text-primary transition-colors">+91 99992 95636</a>
+                    </div>
                 </div>
-                 <div>
-                    <h4 className="font-medium text-foreground">Email</h4>
-                    <a href="mailto:info@cyrotics.in" className="text-muted-foreground hover:text-primary">info@cyrotics.in</a>
+                 <div className="flex items-center gap-3">
+                    <Mail className="h-5 w-5 text-primary flex-shrink-0" />
+                    <div>
+                        <h4 className="font-medium text-foreground">Email</h4>
+                        <a href="mailto:info@cyrotics.in" className="text-muted-foreground hover:text-primary transition-colors">info@cyrotics.in</a>
+                    </div>
                 </div>
             </div>
           </div>
@@ -100,24 +107,25 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
            <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2">
                 {legalLinks.map(link => (
-                    <Link key={link.href} href={link.href} className="text-xs text-muted-foreground hover:text-primary">
+                    <Link key={link.href} href={link.href} className="text-xs text-muted-foreground hover:text-primary transition-colors">
                         {link.label}
                     </Link>
                 ))}
            </div>
             <div className="flex items-center gap-4">
-               <div className="flex space-x-4">
+               <div className="flex space-x-2">
                     {socialLinks.map((social) => (
-                        <a
-                        key={social.name}
-                        href={social.href}
-                        className="text-muted-foreground hover:text-primary"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >
-                        <social.icon className="h-5 w-5" />
-                        <span className="sr-only">{social.name}</span>
-                        </a>
+                        <Button key={social.name} variant="outline" size="icon" asChild>
+                            <a
+                            href={social.href}
+                            className="text-muted-foreground hover:text-primary"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >
+                            <social.icon className="h-5 w-5" />
+                            <span className="sr-only">{social.name}</span>
+                            </a>
+                        </Button>
                     ))}
                 </div>
                  <Button variant="outline" size="icon" onClick={handleScrollToTop} aria-label="Go to top">
