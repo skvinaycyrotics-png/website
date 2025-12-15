@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X, ChevronDown, Headphones, FileText } from 'lucide-react';
+import { Menu, X, ChevronDown, Headphones, FileText, Award } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -36,14 +36,8 @@ import {
 import type { NavLink } from '@/lib/types';
 
 
-const renderNavLinks = (links: NavLink[], isMobile: boolean, closeMobileMenu?: () => void) => {
+const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: () => void) => {
   const pathname = usePathname();
-
-  const handleLinkClick = () => {
-    if (isMobile && closeMobileMenu) {
-      closeMobileMenu();
-    }
-  };
 
   const DesktopSubMenu = ({ subLinks, label }: { subLinks: NavLink[], label: string }) => (
     <DropdownMenuSub>
@@ -156,17 +150,50 @@ const renderNavLinks = (links: NavLink[], isMobile: boolean, closeMobileMenu?: (
   });
 };
 
+const credentialsLinks = [
+  { href: '/msme-certificate.pdf', label: 'MSME Certificate' },
+  { href: '/startup-india-certificate.pdf', label: 'Startup India Certificate' },
+  { href: '/gst-certificate.pdf', label: 'GST Certificate' },
+  { href: '/cyrotics-brochure.pdf', label: 'Company Business Brochure' },
+];
+
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
+  const pathname = usePathname();
+
+  const handleLinkClick = () => {
+    if (isMobileMenuOpen) {
+      closeMobileMenu();
+    }
+  };
+
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm">
       <div className="container flex h-20 items-center">
         <Logo />
         <nav className="ml-auto hidden items-center gap-6 md:flex">
-          {renderNavLinks(NAV_LINKS, false)}
+          {renderNavLinks(NAV_LINKS, false, handleLinkClick)}
+
+          {/* Credentials Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <a className={cn('flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary text-muted-foreground')}>
+                Credentials
+                <ChevronDown className="h-4 w-4" />
+              </a>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              {credentialsLinks.map((link) => (
+                <DropdownMenuItem key={link.href} asChild>
+                  <Link href={link.href} target="_blank">{link.label}</Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
         </nav>
         <div className="ml-4 hidden items-center gap-2 md:flex">
           <Button asChild variant="outline">
@@ -206,7 +233,26 @@ export function Header() {
                 </div>
                 <nav className="flex flex-1 flex-col justify-between">
                   <div className="flex flex-col gap-4">
-                    {renderNavLinks(NAV_LINKS, true, closeMobileMenu)}
+                    {renderNavLinks(NAV_LINKS, true, handleLinkClick)}
+
+                     {/* Mobile Credentials */}
+                    <Accordion type="single" collapsible className="w-full">
+                      <AccordionItem value="credentials" className="border-b-0">
+                        <AccordionTrigger className="py-2 text-lg font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180">
+                          Credentials
+                        </AccordionTrigger>
+                        <AccordionContent className="pl-4">
+                          <ul className="flex flex-col gap-2">
+                             {credentialsLinks.map((link) => (
+                                <li key={link.href}>
+                                  <Link href={link.href} onClick={handleLinkClick} target="_blank" className="text-muted-foreground hover:text-primary">{link.label}</Link>
+                                </li>
+                             ))}
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                    
                      <Link
                         href="/cyrotics-brochure.pdf"
                         target="_blank"
