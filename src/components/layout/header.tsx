@@ -160,8 +160,9 @@ const credentialsLinks = [
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const closeMobileMenu = () => setIsMobileMenuOpen(false);
   const pathname = usePathname();
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const handleLinkClick = () => {
     if (isMobileMenuOpen) {
@@ -196,12 +197,6 @@ export function Header() {
 
         </nav>
         <div className="ml-4 hidden items-center gap-2 md:flex">
-          <Button asChild variant="outline">
-            <Link href="/cyrotics-brochure.pdf" target="_blank">
-              <FileText />
-              Company Brochure
-            </Link>
-          </Button>
           <Button id="support-desk-trigger-desktop">
             <Headphones /> Support Desk
           </Button>
@@ -252,15 +247,6 @@ export function Header() {
                         </AccordionContent>
                       </AccordionItem>
                     </Accordion>
-                    
-                     <Link
-                        href="/cyrotics-brochure.pdf"
-                        target="_blank"
-                        onClick={closeMobileMenu}
-                        className='text-lg font-medium transition-colors hover:text-primary text-foreground'
-                      >
-                       Company Brochure
-                      </Link>
                   </div>
                    <Button id="support-desk-trigger-mobile" size="lg" onClick={closeMobileMenu}>
                      <Headphones /> Support Desk
