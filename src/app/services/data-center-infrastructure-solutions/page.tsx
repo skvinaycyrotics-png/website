@@ -1,39 +1,27 @@
 
-import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { SERVICES } from '@/lib/constants';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { CheckCircle, ArrowRight } from 'lucide-react';
-import { redirect } from 'next/navigation';
+import { ArrowRight, CheckCircle } from 'lucide-react';
+import { SERVICES } from '@/lib/constants';
 
-export async function generateStaticParams() {
-  return SERVICES.filter(service => service.slug !== 'data-center-infrastructure-solutions').map((service) => ({
-    slug: service.slug,
-  }));
-}
+export const metadata = {
+  title: 'Data Center Infrastructure Solutions | CYROTICS TECHNOLOGIES',
+  description: 'End-to-end data center solutions. We design, build, migrate, and manage secure, scalable, and high-availability digital foundations adhering to Tier-III and Tier-IV standards.',
+};
 
-export default async function ServiceDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-
-  if (params.slug === 'data-center-infrastructure-solutions') {
-    redirect('/services/data-center-infrastructure-solutions');
-  }
-
-  const service = SERVICES.find((s) => s.slug === params.slug);
+export default function DataCenterPage() {
+  const service = SERVICES.find(s => s.slug === 'data-center-infrastructure-solutions');
 
   if (!service) {
-    notFound();
+    return null; // Or a not found component
   }
 
   return (
@@ -51,9 +39,6 @@ export default async function ServiceDetailPage({
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="container relative text-primary-foreground text-center">
-          <Badge variant="secondary" className="text-sm">
-            {service.category}
-          </Badge>
           <h1 className="mt-4 font-headline text-4xl md:text-5xl lg:text-6xl font-bold">
             {service.title}
           </h1>
@@ -63,7 +48,20 @@ export default async function ServiceDetailPage({
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container">
+            <Image 
+                src="/cyrotics-your-partner-for-mission-critical-data-centers.png"
+                alt="Infographic detailing Cyrotics' end-to-end data center services, including design, implementation, migration, security, and maintenance."
+                width={1200}
+                height={675}
+                className="w-full h-auto rounded-lg shadow-2xl"
+                data-ai-hint="data center infographic"
+            />
+        </div>
+      </section>
+      
+      <section className="py-16 md:py-24 bg-primary/5">
         <div className="container grid lg:grid-cols-3 gap-12 items-start">
           <div className="lg:col-span-2">
             <h2 className="font-headline text-3xl font-bold">
@@ -89,6 +87,9 @@ export default async function ServiceDetailPage({
             <Card className="sticky top-24 shadow-lg">
               <CardHeader className="bg-muted/50">
                 <CardTitle>Technology Stack</CardTitle>
+                <CardDescription>
+                  We partner with industry leaders to deliver best-in-class solutions.
+                </CardDescription>
               </CardHeader>
               <CardContent className="pt-6">
                 <ul className="space-y-3">
@@ -108,11 +109,10 @@ export default async function ServiceDetailPage({
       <section className="bg-primary text-primary-foreground">
         <div className="container py-16 text-center">
           <h2 className="font-headline text-3xl font-bold">
-            Ready to implement {service.title}?
+            Ready to Build Your Future-Ready Data Center?
           </h2>
           <p className="mt-4 text-lg max-w-2xl mx-auto">
-            Our specialists are on hand to discuss how we can tailor this
-            solution to your precise needs.
+            Our specialists are on hand to discuss how we can tailor a data center solution to your precise needs.
           </p>
           <div className="mt-8">
             <Button asChild size="lg" variant="secondary">
