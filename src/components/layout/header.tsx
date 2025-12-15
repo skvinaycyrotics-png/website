@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -162,13 +163,14 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const closeMobileMenu = () => setIsMobileMenuOpen(false);
-
   const handleLinkClick = () => {
     if (isMobileMenuOpen) {
       closeMobileMenu();
     }
   };
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
 
 
   return (
@@ -178,23 +180,17 @@ export function Header() {
         <nav className="ml-auto hidden items-center gap-6 md:flex">
           {renderNavLinks(NAV_LINKS, false, handleLinkClick)}
 
-          {/* Credentials Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <a className={cn('flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary text-muted-foreground')}>
-                Credentials
-                <ChevronDown className="h-4 w-4" />
-              </a>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              {credentialsLinks.map((link) => (
-                <DropdownMenuItem key={link.href} asChild>
-                  <Link href={link.href} target="_blank">{link.label}</Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-
+           <Link
+              href="/trust-and-compliance"
+              className={cn(
+                'flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary',
+                pathname === '/trust-and-compliance'
+                  ? 'text-primary'
+                  : 'text-muted-foreground'
+              )}
+            >
+              Trust & Compliance
+            </Link>
         </nav>
         <div className="ml-4 hidden items-center gap-2 md:flex">
           <Button id="support-desk-trigger-desktop">
@@ -230,23 +226,19 @@ export function Header() {
                   <div className="flex flex-col gap-4">
                     {renderNavLinks(NAV_LINKS, true, handleLinkClick)}
 
-                     {/* Mobile Credentials */}
-                    <Accordion type="single" collapsible className="w-full">
-                      <AccordionItem value="credentials" className="border-b-0">
-                        <AccordionTrigger className="py-2 text-lg font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180">
-                          Credentials
-                        </AccordionTrigger>
-                        <AccordionContent className="pl-4">
-                          <ul className="flex flex-col gap-2">
-                             {credentialsLinks.map((link) => (
-                                <li key={link.href}>
-                                  <Link href={link.href} onClick={handleLinkClick} target="_blank" className="text-muted-foreground hover:text-primary">{link.label}</Link>
-                                </li>
-                             ))}
-                          </ul>
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
+                     <Link
+                        href="/trust-and-compliance"
+                        onClick={handleLinkClick}
+                        className={cn(
+                          'text-lg font-medium',
+                          'transition-colors hover:text-primary',
+                           pathname === '/trust-and-compliance'
+                            ? 'text-primary'
+                            : 'text-foreground'
+                        )}
+                      >
+                       Trust & Compliance
+                      </Link>
                   </div>
                    <Button id="support-desk-trigger-mobile" size="lg" onClick={closeMobileMenu}>
                      <Headphones /> Support Desk
