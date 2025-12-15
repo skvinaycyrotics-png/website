@@ -10,7 +10,7 @@ export default function PrivacyPolicyPage() {
   }, []);
 
   return (
-    <div className="container max-w-4xl py-12">
+    <div className="container max-w-4xl py-12 sm:py-16 lg:py-20">
       <h1 className="font-headline text-4xl font-bold mb-8">Privacy Policy</h1>
       <div className="prose prose-lg max-w-none text-muted-foreground">
         <p>Last updated: {currentDate || '...'}</p>
@@ -90,7 +90,7 @@ export default function PrivacyPolicyPage() {
           us:
         </p>
         <ul className="list-disc pl-6 space-y-2 my-4">
-          <li>By email: privacy@cyrotics.in</li>
+          <li>By email: info@cyrotics.in</li>
         </ul>
       </div>
     </div>
