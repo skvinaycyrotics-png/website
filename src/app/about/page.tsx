@@ -77,7 +77,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="container max-w-4xl mx-auto text-center">
              <p className="text-muted-foreground text-lg">
                 Founded with a vision to deliver next-generation IT & ELV Infrastructure solutions, we have grown into a trusted partner for government institutions, medical colleges, airports, commercial complexes, data centers, and leading private organizations across India.
@@ -88,7 +88,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-       <section className="py-16 bg-primary/5">
+       <section className="py-12 sm:py-16 lg:py-20 bg-primary/5">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="font-headline text-3xl font-bold">Who We Are</h2>
@@ -109,7 +109,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
              <Card>
@@ -134,7 +134,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-primary/5">
+      <section className="py-12 sm:py-16 lg:py-20 bg-primary/5">
         <div className="container">
           <h2 className="text-center font-headline text-3xl font-bold mb-12">Our Core Values</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -157,7 +157,7 @@ export default function AboutUsPage() {
         </div>
       </section>
       
-       <section className="py-16">
+       <section className="py-12 sm:py-16 lg:py-20">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
             <div>
                 <Image

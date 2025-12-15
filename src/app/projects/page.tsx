@@ -31,7 +31,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="container">
           {/* A full implementation would have client-side filtering controls here */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

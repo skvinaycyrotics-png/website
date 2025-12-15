@@ -21,7 +21,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <div className="container py-16">
+      <div className="container py-12 sm:py-16 lg:py-20">
           <ContactForms />
       </div>
     </>

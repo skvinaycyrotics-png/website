@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { ArrowRight, HelpCircle } from 'lucide-react';
 import {
@@ -38,7 +37,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {SERVICES.map((service) => (
@@ -78,13 +77,13 @@ export default function ServicesPage() {
         </div>
       </section>
       
-      <section className="py-16">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="container max-w-4xl">
-           <h2 className="text-center font-headline text-3xl font-bold flex items-center justify-center gap-3">
+           <h2 className="text-center font-headline text-3xl font-bold flex items-center justify-center gap-3 mb-8">
              <HelpCircle className="h-8 w-8 text-primary" />
             Frequently Asked Questions
           </h2>
-          <Accordion type="single" collapsible className="w-full mt-8">
+          <Accordion type="single" collapsible className="w-full">
             {FAQS.map((faq, index) => (
               <AccordionItem value={`item-${index}`} key={index}>
                 <AccordionTrigger className="text-left hover:no-underline text-lg font-semibold">
@@ -118,4 +117,3 @@ export default function ServicesPage() {
     </>
   );
 }
-
