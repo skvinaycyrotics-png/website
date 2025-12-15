@@ -20,6 +20,7 @@ import {
   Bot,
   Globe,
   Shuffle,
+  Signal,
 } from 'lucide-react';
 
 export const metadata = {
