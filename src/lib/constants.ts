@@ -74,6 +74,8 @@ import {
   Sparkles,
   Award,
   Eye,
+  Briefcase,
+  TrendingUp,
 } from 'lucide-react';
 
 export const NAV_LINKS: NavLink[] = [
@@ -83,6 +85,7 @@ export const NAV_LINKS: NavLink[] = [
     href: '/services',
     label: 'Services',
     subLinks: [
+      { href: '/services/consulting-services', label: 'Consulting Services' },
       { href: '/services/data-center-infrastructure-solutions', label: 'Data Center Infrastructure' },
       { href: '/services/cloud-hybrid-it-solutions', label: 'Cloud & Hybrid IT Solutions' },
       { href: '/services/scalable-storage-architecture', label: 'Scalable Storage Architecture' },
@@ -138,6 +141,46 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const SERVICES: Service[] = [
+    {
+    slug: 'consulting-services',
+    title: 'Consulting Services',
+    category: 'Consulting Services',
+    shortDescription:
+      'Strategic IT Consulting for a Smarter, Secure & Scalable Future. We help you plan, design, modernize, and transform your IT ecosystems with confidence.',
+    description:
+      'Strategic IT Consulting for a Smarter, Secure & Scalable Future. We help you plan, design, modernize, and transform your IT ecosystems with confidence.',
+    icon: BrainCircuit,
+    imageUrl: 'https://picsum.photos/seed/consulting/1200/800',
+    imageHint: 'business consulting meeting',
+    features: [
+      {
+        title: 'IT Infrastructure Consulting',
+        description:
+          'We design and optimize resilient, high-performance IT infrastructures—including network architecture, cloud strategy, and HA/DR planning—aligned with your long-term business growth.',
+        icon: Server,
+      },
+      {
+        title: 'Data Center Consulting',
+        description:
+          'Our experts provide end-to-end consulting for data center assessment, modernization, migration, and greenfield builds, ensuring peak efficiency, security, and compliance.',
+        icon: Database,
+      },
+      {
+        title: 'IT Strategy Consulting',
+        description:
+          'We align technology investments with your organizational goals by developing clear IT roadmaps, digital transformation strategies, and robust governance frameworks.',
+        icon: TrendingUp,
+      },
+      {
+        title: 'Project Management Consultancy',
+        description:
+          'Our PMP-certified experts ensure complex IT projects are delivered on time and within budget through structured planning, risk mitigation, and stakeholder management.',
+        icon: GanttChartSquare,
+      },
+    ],
+    techStack: ['ITIL', 'PMP', 'Agile', 'TOGAF', 'AWS', 'Azure', 'GCP', 'Cisco'],
+    caseStudies: [],
+  },
   {
     slug: 'data-center-infrastructure-solutions',
     title: 'Data Center Infrastructure Solutions',
