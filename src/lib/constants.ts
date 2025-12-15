@@ -76,6 +76,11 @@ import {
   Eye,
   Briefcase,
   TrendingUp,
+  Youtube,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Facebook,
 } from 'lucide-react';
 
 export const NAV_LINKS: NavLink[] = [
@@ -2591,9 +2596,33 @@ export const CAREER_FAQS: CareerFAQ[] = [
     }
 ];
     
-
+export const socialLinks = [
+  { name: 'YouTube', icon: Youtube, href: '#' },
+  { name: 'Twitter', icon: Twitter, href: '#' },
+  { name: 'LinkedIn', icon: Linkedin, href: '#' },
+  { name: 'Instagram', icon: Instagram, href: '#' },
+  { name: 'Facebook', icon: Facebook, href: '#' },
+];
     
-
+export const footerQuickLinks = [
+    [
+        { href: "/", label: "Home" },
+        { href: "/services", label: "Services" },
+        { href: "/business-sector/overview", label: "Business Sectors" },
+        { href: "/projects", label: "Projects" },
+    ],
+    [
+        { href: "/blog", label: "Blog" },
+        { href: "/careers", label: "Careers" },
+        { href: "/trust-and-compliance", label: "Trust & Compliance" },
+        { href: "#", label: "Support Desk" }, // Or link to a support page
+    ],
+    [
+        { href: "/services", label: "FAQs" }, // Assuming FAQs are on services page
+        { href: "/about", label: "About Us" },
+        { href: "/contact", label: "Contact Us" },
+    ]
+];
     
 
     
