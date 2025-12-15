@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X, ChevronDown, Headphones } from 'lucide-react';
+import { Menu, X, ChevronDown, Headphones, FileText } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -168,9 +168,15 @@ export function Header() {
         <nav className="ml-auto hidden items-center gap-6 md:flex">
           {renderNavLinks(NAV_LINKS, false)}
         </nav>
-        <div className="ml-4 hidden md:flex">
+        <div className="ml-4 hidden items-center gap-2 md:flex">
+          <Button asChild variant="outline">
+            <Link href="/cyrotics-brochure.pdf" target="_blank">
+              <FileText />
+              Company Brochure
+            </Link>
+          </Button>
           <Button id="support-desk-trigger-desktop">
-            <Headphones className="mr-2 h-4 w-4" /> Support Desk
+            <Headphones /> Support Desk
           </Button>
         </div>
         <div className="ml-auto flex items-center md:hidden">
@@ -201,11 +207,17 @@ export function Header() {
                 <nav className="flex flex-1 flex-col justify-between">
                   <div className="flex flex-col gap-4">
                     {renderNavLinks(NAV_LINKS, true, closeMobileMenu)}
+                     <Link
+                        href="/cyrotics-brochure.pdf"
+                        target="_blank"
+                        onClick={closeMobileMenu}
+                        className='text-lg font-medium transition-colors hover:text-primary text-foreground'
+                      >
+                       Company Brochure
+                      </Link>
                   </div>
-                  <Button asChild size="lg" onClick={closeMobileMenu}>
-                    <a href="tel:+919999295636">
-                      <Headphones className="mr-2 h-4 w-4" /> Call Us
-                    </a>
+                   <Button id="support-desk-trigger-mobile" size="lg" onClick={closeMobileMenu}>
+                     <Headphones /> Support Desk
                   </Button>
                 </nav>
               </div>
