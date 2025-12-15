@@ -48,19 +48,6 @@ export default function DataCenterPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container">
-            <Image 
-                src="/cyrotics-your-partner-for-mission-critical-data-centers.png"
-                alt="Infographic detailing Cyrotics' end-to-end data center services, including design, implementation, migration, security, and maintenance."
-                width={1200}
-                height={675}
-                className="w-full h-auto rounded-lg shadow-2xl"
-                data-ai-hint="data center infographic"
-            />
-        </div>
-      </section>
-      
       <section className="py-16 md:py-24 bg-primary/5">
         <div className="container grid lg:grid-cols-3 gap-12 items-start">
           <div className="lg:col-span-2">
