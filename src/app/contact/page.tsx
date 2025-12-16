@@ -8,8 +8,10 @@ export const metadata = {
 };
 
 export default function ContactPage() {
-  const address = "Cyrotics Technologies (OPC) Pvt. Ltd. 86/2, Street No.-54/V/3, Ist 60 Feet Road, Molarband Extension, Badarpur Border, New Delhi – 110044, India";
-  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;
+  const addressLine1 = "Cyrotics Technologies (OPC) Pvt. Ltd.";
+  const addressLine2 = "86/2, Street No.-54/V/3, Ist 60 Feet Road, Molarband Extension, Badarpur Border, New Delhi – 110044, India";
+  const fullAddress = `${addressLine1} ${addressLine2}`;
+  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(fullAddress)}&output=embed`;
 
   return (
     <>
@@ -50,7 +52,8 @@ export default function ContactPage() {
                     <div>
                         <h4 className="font-medium text-foreground">Corporate Office</h4>
                         <address className="not-italic text-muted-foreground">
-                            {address}
+                            {addressLine1}<br/>
+                            {addressLine2}
                         </address>
                     </div>
                 </div>
