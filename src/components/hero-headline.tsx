@@ -1,10 +1,11 @@
+
 'use client';
 
 import { TypeAnimation } from 'react-type-animation';
 
 export default function HeroHeadline() {
   return (
-    <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl">
+    <h1 className="font-headline text-3xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
       <span className="block">Engineering Your Future in</span>
       <TypeAnimation
         sequence={[
