@@ -70,12 +70,12 @@ const whyChooseUs = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative w-full pb-24 bg-primary/5">
+      <section className="relative w-full pt-20 pb-24 bg-primary/5">
         <div className="absolute inset-0 z-0">
           <PlexusBackground />
         </div>
         <div className="relative z-10">
-          <div className="container px-4 pt-20 pb-32 md:pt-32 md:pb-48 text-left">
+          <div className="container px-4 text-left md:pt-12 md:pb-24">
             <div className="max-w-3xl">
               <HeroHeadline />
               <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
@@ -94,35 +94,56 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%]">
-            <div className="bg-white/90 backdrop-blur-sm shadow-lg rounded-lg p-4">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 gap-x-4 pt-8">
-                {SERVICES.map((service, index) => (
-                  <Link
-                    key={service.slug}
-                    href={`/services/${service.slug}`}
-                    className="group text-center pt-12 pb-4 px-2 relative transition-colors hover:bg-primary/10 rounded-lg"
-                  >
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                      <div className="bg-primary text-primary-foreground rounded-lg p-3 w-16 h-16 flex items-center justify-center transition-transform group-hover:scale-110 border-4 border-white shadow-md">
-                        <service.icon className="h-8 w-8" />
-                      </div>
-                    </div>
-                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary min-h-[40px] flex items-center justify-center">
-                      {service.title}
-                    </h3>
-                  </Link>
-                ))}
-              </div>
-            </div>
+      <section id="our-solutions" className="py-16 sm:py-20 lg:py-24">
+        <div className="container px-4">
+          <div className="text-center">
+             <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
+              Our Solutions
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+              End-to-end technology services to power your enterprise.
+            </p>
           </div>
+
+           <Carousel
+              opts={{
+                align: 'start',
+              }}
+              className="w-full mt-12"
+            >
+              <CarouselContent>
+                {SERVICES.map((service, index) => (
+                  <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/5">
+                    <div className="p-1">
+                      <Card className="h-full group text-center flex flex-col items-center justify-start p-4 transition-all hover:shadow-lg hover:-translate-y-1">
+                         <div className="bg-primary text-primary-foreground rounded-lg p-4 flex items-center justify-center transition-transform group-hover:scale-110 shadow-md mb-4">
+                          <service.icon className="h-8 w-8" />
+                        </div>
+                        <h3 className="text-sm font-semibold text-foreground group-hover:text-primary min-h-[40px]">
+                          {service.title}
+                        </h3>
+                        <Button asChild variant="link" size="sm" className="mt-auto">
+                            <Link href={`/services/${service.slug}`}>
+                                Learn More <ArrowRight />
+                            </Link>
+                        </Button>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
         </div>
       </section>
 
       <section
         id="stats"
-        className="bg-background pt-32 pb-12 sm:pt-48 lg:pb-20"
+        className="bg-background pt-12 sm:pt-16 lg:pb-20"
       >
         <div className="container px-4">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
