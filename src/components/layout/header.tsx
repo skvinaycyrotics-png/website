@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useRef, useEffect } from 'react';
-import { Menu, X, ChevronDown, Headphones, FileText, Award } from 'lucide-react';
+import { Menu, X, ChevronDown, Headphones } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -91,8 +91,60 @@ const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: ()
         );
       }
       // Desktop
+       const DesktopSubMenu = ({ subLinks, label, icon: Icon }: { subLinks: NavLink[], label: string, icon?: React.ElementType }) => {
+        return (
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger>
+              {Icon && <Icon className="mr-2 h-4 w-4 text-muted-foreground" />}
+              <span>{label}</span>
+            </DropdownMenuSubTrigger>
+            <DropdownMenuPortal>
+              <DropdownMenuSubContent>
+                {subLinks.map(subLink => (
+                  <DropdownMenuItem key={subLink.href} asChild>
+                    <Link href={subLink.href} onClick={handleLinkClick} className="flex items-center gap-2">
+                      {subLink.icon && <subLink.icon className="h-4 w-4 text-muted-foreground" />}
+                      <span>{subLink.label}</span>
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuSubContent>
+            </DropdownMenuPortal>
+          </DropdownMenuSub>
+        );
+      };
       return (
-        <HoverDropdownMenu key={link.href} link={link} handleLinkClick={handleLinkClick} />
+        <DropdownMenu key={link.href}>
+          <DropdownMenuTrigger asChild>
+            <a
+              href={link.href.startsWith('#') ? undefined : link.href}
+              className={cn(
+                'flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary',
+                pathname.startsWith(link.href) && !link.href.startsWith('#')
+                  ? 'text-primary'
+                  : 'text-muted-foreground'
+              )}
+              onClick={(e) => link.href.startsWith('#') && e.preventDefault()}
+            >
+              {link.label}
+              <ChevronDown className="h-4 w-4" />
+            </a>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-64">
+            {link.subLinks!.map((subLink) => (
+              subLink.subLinks ? (
+                <DesktopSubMenu key={subLink.href} subLinks={subLink.subLinks} label={subLink.label} icon={subLink.icon} />
+              ) : (
+                <DropdownMenuItem key={subLink.href} asChild>
+                  <Link href={subLink.href} onClick={handleLinkClick} className="flex items-center gap-2">
+                    {subLink.icon && <subLink.icon className="h-4 w-4 text-muted-foreground" />}
+                    <span>{subLink.label}</span>
+                  </Link>
+                </DropdownMenuItem>
+              )
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
       );
     }
     // No sublinks
@@ -114,79 +166,6 @@ const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: ()
     );
   });
 };
-
-const HoverDropdownMenu = ({ link, handleLinkClick }: { link: NavLink; handleLinkClick: () => void }) => {
-  const [open, setOpen] = useState(false);
-  const pathname = usePathname();
-
-  const DesktopSubMenu = ({ subLinks, label, icon: Icon }: { subLinks: NavLink[], label: string, icon?: React.ElementType }) => {
-    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
-    return (
-      <DropdownMenuSub open={isSubMenuOpen} onOpenChange={setIsSubMenuOpen}>
-        <DropdownMenuSubTrigger>
-          {Icon && <Icon className="mr-2 h-4 w-4 text-muted-foreground" />}
-          <span>{label}</span>
-        </DropdownMenuSubTrigger>
-        <DropdownMenuPortal>
-          <DropdownMenuSubContent>
-            {subLinks.map(subLink => (
-              <DropdownMenuItem key={subLink.href} asChild>
-                <Link href={subLink.href} onClick={handleLinkClick} className="flex items-center gap-2">
-                   {subLink.icon && <subLink.icon className="h-4 w-4 text-muted-foreground" />}
-                   <span>{subLink.label}</span>
-                </Link>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuSubContent>
-        </DropdownMenuPortal>
-      </DropdownMenuSub>
-    );
-  };
-
-  return (
-    <DropdownMenu open={open} onOpenChange={setOpen}>
-      <div onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-        <DropdownMenuTrigger asChild>
-          <a
-            href={link.href.startsWith('#') ? undefined : link.href}
-            className={cn(
-              'flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary',
-              pathname.startsWith(link.href) && !link.href.startsWith('#')
-                ? 'text-primary'
-                : 'text-muted-foreground'
-            )}
-          >
-            {link.label}
-            <ChevronDown className="h-4 w-4" />
-          </a>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-64" onMouseLeave={() => setOpen(false)}>
-           {link.subLinks!.map((subLink) => (
-              subLink.subLinks ? (
-                <DesktopSubMenu key={subLink.href} subLinks={subLink.subLinks} label={subLink.label} icon={subLink.icon} />
-              ) : (
-                <DropdownMenuItem key={subLink.href} asChild>
-                  <Link href={subLink.href} onClick={handleLinkClick} className="flex items-center gap-2">
-                    {subLink.icon && <subLink.icon className="h-4 w-4 text-muted-foreground" />}
-                    <span>{subLink.label}</span>
-                  </Link>
-                </DropdownMenuItem>
-              )
-           ))}
-        </DropdownMenuContent>
-      </div>
-    </DropdownMenu>
-  );
-};
-
-
-const credentialsLinks = [
-  { href: '/msme-certificate.pdf', label: 'MSME Certificate' },
-  { href: '/startup-india-certificate.pdf', label: 'Startup India Certificate' },
-  { href: '/gst-certificate.pdf', label: 'GST Certificate' },
-  { href: '/cyrotics-brochure.pdf', label: 'Company Business Brochure' },
-];
-
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -274,4 +253,3 @@ export function Header() {
     </header>
   );
 }
-
