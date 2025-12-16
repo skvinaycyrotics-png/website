@@ -37,7 +37,6 @@ import { SERVICES, PROJECTS, TESTIMONIALS } from '@/lib/constants';
 import AnimatedCounter from '@/components/animated-counter';
 import HeroHeadline from '@/components/hero-headline';
 import PlexusBackground from '@/components/plexus-background';
-import ExpertMatcher from '@/components/expert-matcher';
 import Autoplay from 'embla-carousel-autoplay';
 import { useRef } from 'react';
 
@@ -84,7 +83,7 @@ export default function Home() {
     <main className="flex w-full flex-col items-center">
       <div className="w-full">
         {/* HERO SECTION */}
-        <section className="relative w-full bg-primary/5 pb-16 pt-8 sm:pb-20 md:pb-32 lg:pb-40">
+        <section className="relative w-full bg-background pb-16 pt-8 sm:pb-20 md:pb-32 lg:pb-40">
           <div className="absolute inset-0 z-0">
             <PlexusBackground />
           </div>
@@ -95,12 +94,12 @@ export default function Home() {
                 A professional approach to business results through systems integration.
               </p>
               <div className="mt-6 sm:mt-8 flex flex-wrap justify-start gap-3 sm:gap-4">
-                <Button asChild size="sm" className="font-semibold sm:size-lg">
+                <Button asChild size="lg" className="font-semibold">
                   <Link href="/services">
                     Our Solutions <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
-                <Button asChild size="sm" variant="outline" className="sm:size-lg">
+                <Button asChild size="lg" variant="outline">
                   <Link href="/contact">Request a Consultation</Link>
                 </Button>
               </div>
@@ -269,7 +268,7 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-8 sm:mt-12">
-              <Button asChild size="sm" variant="outline" className="sm:size-lg">
+              <Button asChild size="lg" variant="outline">
                 <Link href="/projects">
                   View All Projects <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -320,7 +319,7 @@ export default function Home() {
         {/* CTA SECTION */}
         <section
           id="cta"
-          className="bg-primary/10 w-full py-12 sm:py-16 lg:py-20"
+          className="bg-primary/5 w-full py-12 sm:py-16 lg:py-20"
         >
           <div className="container px-4 sm:px-6">
           <div className="mx-auto max-w-2xl text-center">
@@ -332,7 +331,7 @@ export default function Home() {
                 exact needs. Contact us for a consultation.
               </p>
               <div className="mt-8 flex justify-center">
-                <Button asChild size="sm" className="font-semibold sm:size-lg">
+                <Button asChild size="lg" className="font-semibold">
                   <Link href="/contact">
                     Start a Project <ArrowRight className="h-4 w-4" />
                   </Link>
