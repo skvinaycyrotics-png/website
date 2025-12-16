@@ -69,12 +69,12 @@ const whyChooseUs = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center">
       <section className="relative w-full bg-primary/5 pb-24 pt-12 md:pb-32 lg:pb-40">
         <div className="absolute inset-0 z-0">
           <PlexusBackground />
         </div>
-        <div className="container relative z-10 text-left">
+        <div className="container relative z-10">
           <div className="max-w-3xl">
             <HeroHeadline />
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
@@ -132,7 +132,7 @@ export default function Home() {
 
       <section
         id="stats"
-        className="bg-background pt-32 sm:pt-36 lg:pt-40 pb-12 sm:pb-16 lg:pb-20"
+        className="bg-background w-full pt-32 sm:pt-36 lg:pt-40 pb-12 sm:pb-16 lg:pb-20"
       >
         <div className="container px-4">
            <div className="text-center mb-12">
@@ -157,7 +157,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="why-choose-us" className="bg-primary/5 py-12 sm:py-16 lg:py-20">
+      <section id="why-choose-us" className="bg-primary/5 w-full py-12 sm:py-16 lg:py-20">
         <div className="container px-4 text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
             Why Clients Trust Cyrotics Technologies
@@ -183,7 +183,7 @@ export default function Home() {
         </div>
       </section>
       
-      <section id="projects" className="bg-background py-12 sm:py-16 lg:py-20">
+      <section id="projects" className="bg-background w-full py-12 sm:py-16 lg:py-20">
         <div className="container px-4 text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
             Proven Success in Action
@@ -239,13 +239,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="expert-matcher" className="py-12 sm:py-16 lg:py-20">
+      <section id="expert-matcher" className="w-full py-12 sm:py-16 lg:py-20">
         <div className="container">
           <ExpertMatcher />
         </div>
       </section>
 
-      <section id="testimonials" className="relative py-12 sm:py-16 lg:py-20">
+      <section id="testimonials" className="relative w-full py-12 sm:py-16 lg:py-20">
         <div className="container px-4">
           <h2 className="text-center font-headline text-3xl font-bold tracking-tight md:text-4xl">
             What Our Clients Say
@@ -280,7 +280,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="cta" className="bg-primary/10 py-12 sm:py-16 lg:py-20">
+      <section id="cta" className="bg-primary/10 w-full py-12 sm:py-16 lg:py-20">
         <div className="container px-4">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
