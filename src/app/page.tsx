@@ -95,7 +95,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="absolute -bottom-40 md:-bottom-48 lg:-bottom-64 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%]">
+          <div className="absolute -bottom-24 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%]">
             <div className="bg-white/90 backdrop-blur-sm shadow-lg rounded-lg p-4">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 gap-x-4 pt-8">
                 {SERVICES.map((service, index) => (
@@ -122,7 +122,7 @@ export default function Home() {
 
       <section
         id="stats"
-        className="bg-background pt-48 md:pt-64 lg:pt-80 pb-12 sm:pt-48 lg:pb-20"
+        className="bg-background pt-32 pb-12 sm:pt-48 lg:pb-20"
       >
         <div className="container px-4">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
