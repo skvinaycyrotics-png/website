@@ -34,7 +34,7 @@ export default function ContactPage() {
               <ContactForms />
             </div>
             <div className="lg:sticky lg:top-24">
-              <div className="overflow-hidden rounded-lg shadow-lg">
+              <div className="overflow-hidden rounded-lg shadow-lg border">
                 <iframe
                   src={mapSrc}
                   width="100%"
