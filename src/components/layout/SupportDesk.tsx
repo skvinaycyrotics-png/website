@@ -6,6 +6,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetClose,
+  SheetTrigger,
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import {
@@ -18,10 +19,11 @@ import {
   Facebook,
   Youtube,
   Instagram,
+  Headphones,
 } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Logo } from '../logo';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const socialLinks = [
   { name: 'YouTube', icon: Youtube, href: '#' },
@@ -34,23 +36,14 @@ const socialLinks = [
 export function SupportDesk() {
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const handleTriggerClick = () => setIsOpen(true);
-
-    const desktopTrigger = document.getElementById('support-desk-trigger-desktop');
-    const mobileTrigger = document.getElementById('support-desk-trigger-mobile');
-
-    desktopTrigger?.addEventListener('click', handleTriggerClick);
-    mobileTrigger?.addEventListener('click', handleTriggerClick);
-
-    return () => {
-      desktopTrigger?.removeEventListener('click', handleTriggerClick);
-      mobileTrigger?.removeEventListener('click', handleTriggerClick);
-    };
-  }, []);
-
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
+      <SheetTrigger asChild>
+        <>
+          <div id="support-desk-trigger-desktop" onClick={() => setIsOpen(true)} className="hidden" />
+          <div id="support-desk-trigger-mobile" onClick={() => setIsOpen(true)} className="hidden" />
+        </>
+      </SheetTrigger>
       <SheetContent side="right" className="w-full max-w-md p-0">
         <div className="flex h-full flex-col">
           <SheetHeader className="p-6 text-left">
