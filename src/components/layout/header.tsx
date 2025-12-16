@@ -124,7 +124,13 @@ const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: ()
                   ? 'text-primary'
                   : 'text-muted-foreground'
               )}
-              onClick={(e) => link.href.startsWith('#') && e.preventDefault()}
+              onClick={(e) => {
+                if (link.href.startsWith('#')) {
+                  e.preventDefault();
+                } else {
+                  handleLinkClick();
+                }
+              }}
             >
               {link.label}
               <ChevronDown className="h-4 w-4" />
@@ -169,7 +175,13 @@ const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: ()
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
 
   const handleLinkClick = () => {
     if (isMobileMenuOpen) {
@@ -188,67 +200,71 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm">
       <div className="container flex h-20 items-center">
         <Logo className="transition-transform hover:scale-105" />
-        <nav className="ml-auto hidden items-center gap-6 md:flex">
-          {renderNavLinks(PRIMARY_NAV_LINKS, false, handleLinkClick)}
-        </nav>
-        <div className="ml-4 hidden items-center gap-2 md:flex">
-          <Button onClick={openSupportDesk}>
-            <Headphones /> Support Desk
-          </Button>
-        </div>
-        <div className="ml-auto flex items-center md:hidden">
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu />
-                <span className="sr-only">Open menu</span>
+        {isMounted && (
+          <>
+            <nav className="ml-auto hidden items-center gap-6 md:flex">
+              {renderNavLinks(PRIMARY_NAV_LINKS, false, handleLinkClick)}
+            </nav>
+            <div className="ml-4 hidden items-center gap-2 md:flex">
+              <Button onClick={openSupportDesk}>
+                <Headphones /> Support Desk
               </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-full">
-              <SheetHeader className="sr-only">
-                <SheetTitle>Navigation Menu</SheetTitle>
-                <SheetDescription>
-                  Select a page to navigate to.
-                </SheetDescription>
-              </SheetHeader>
-              <div className="flex h-full flex-col">
-                <div className="mb-8 flex items-center justify-between">
-                  <Logo />
-                  <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon" onClick={closeMobileMenu}>
-                      <X />
-                      <span className="sr-only">Close menu</span>
-                    </Button>
-                  </SheetTrigger>
-                </div>
-                <nav className="flex flex-1 flex-col justify-between">
-                  <div className="flex flex-col gap-4">
-                    {renderNavLinks(PRIMARY_NAV_LINKS, true, handleLinkClick)}
-                     <Accordion type="single" collapsible className="w-full">
-                        <AccordionItem value="other-links" className="border-b-0">
-                        <AccordionTrigger className="py-2 text-lg font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180">
-                            More
-                        </AccordionTrigger>
-                        <AccordionContent className="pl-4">
-                            <ul className="flex flex-col gap-4">
-                            {SECONDARY_NAV_LINKS.map((link) => (
-                                <li key={link.href}>
-                                <Link href={link.href} onClick={handleLinkClick} className="text-muted-foreground hover:text-primary">{link.label}</Link>
-                                </li>
-                            ))}
-                            </ul>
-                        </AccordionContent>
-                        </AccordionItem>
-                    </Accordion>
-                  </div>
-                   <Button size="lg" onClick={() => { closeMobileMenu(); openSupportDesk(); }}>
-                     <Headphones /> Support Desk
+            </div>
+            <div className="ml-auto flex items-center md:hidden">
+              <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu />
+                    <span className="sr-only">Open menu</span>
                   </Button>
-                </nav>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-full">
+                  <SheetHeader className="sr-only">
+                    <SheetTitle>Navigation Menu</SheetTitle>
+                    <SheetDescription>
+                      Select a page to navigate to.
+                    </SheetDescription>
+                  </SheetHeader>
+                  <div className="flex h-full flex-col">
+                    <div className="mb-8 flex items-center justify-between">
+                      <Logo />
+                      <SheetTrigger asChild>
+                        <Button variant="ghost" size="icon" onClick={closeMobileMenu}>
+                          <X />
+                          <span className="sr-only">Close menu</span>
+                        </Button>
+                      </SheetTrigger>
+                    </div>
+                    <nav className="flex flex-1 flex-col justify-between">
+                      <div className="flex flex-col gap-4">
+                        {renderNavLinks(PRIMARY_NAV_LINKS, true, handleLinkClick)}
+                         <Accordion type="single" collapsible className="w-full">
+                            <AccordionItem value="other-links" className="border-b-0">
+                            <AccordionTrigger className="py-2 text-lg font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180">
+                                More
+                            </AccordionTrigger>
+                            <AccordionContent className="pl-4">
+                                <ul className="flex flex-col gap-4">
+                                {SECONDARY_NAV_LINKS.map((link) => (
+                                    <li key={link.href}>
+                                    <Link href={link.href} onClick={handleLinkClick} className="text-muted-foreground hover:text-primary">{link.label}</Link>
+                                    </li>
+                                ))}
+                                </ul>
+                            </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
+                      </div>
+                       <Button size="lg" onClick={() => { closeMobileMenu(); openSupportDesk(); }}>
+                         <Headphones /> Support Desk
+                      </Button>
+                    </nav>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+          </>
+        )}
       </div>
     </header>
   );
