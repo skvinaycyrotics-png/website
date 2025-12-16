@@ -70,74 +70,63 @@ const whyChooseUs = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative w-full pt-20 pb-24 bg-primary/5">
+      <section className="relative w-full bg-primary/5 pb-24 md:pb-32 lg:pb-40">
         <div className="absolute inset-0 z-0">
           <PlexusBackground />
         </div>
-        <div className="relative z-10">
-          <div className="container px-4 text-left md:pt-12 md:pb-24">
-            <div className="max-w-3xl">
-              <HeroHeadline />
-              <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-                A professional approach to business results through systems
-                integration.
-              </p>
-              <div className="mt-8 flex flex-wrap justify-start gap-4">
-                <Button asChild size="lg" className="font-semibold">
-                  <Link href="/services">
-                    Our Solutions <ArrowRight />
-                  </Link>
-                </Button>
-                <Button asChild size="lg" variant="outline">
-                  <Link href="/contact">Request a Consultation</Link>
-                </Button>
-              </div>
+        <div className="container relative z-10 px-4 pt-20 text-left md:pt-12">
+          <div className="max-w-3xl">
+            <HeroHeadline />
+            <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
+              A professional approach to business results through systems
+              integration.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-start gap-4">
+              <Button asChild size="lg" className="font-semibold">
+                <Link href="/services">
+                  Our Solutions <ArrowRight />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link href="/contact">Request a Consultation</Link>
+              </Button>
             </div>
           </div>
         </div>
-      </section>
 
-      <section id="our-solutions" className="py-16 sm:py-20 lg:py-24">
-        <div className="container px-4">
-          <div className="text-center">
-             <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
-              Our Solutions
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              End-to-end technology services to power your enterprise.
-            </p>
-          </div>
-
-           <Carousel
-              opts={{
-                align: 'start',
-              }}
-              className="w-full mt-12"
-            >
-              <CarouselContent>
-                {SERVICES.map((service, index) => (
-                  <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/5">
-                    <div className="p-1">
-                      <Card className="h-full group text-center flex flex-col items-center justify-start p-4 transition-all hover:shadow-lg hover:-translate-y-1">
-                         <div className="bg-primary text-primary-foreground rounded-lg p-4 flex items-center justify-center transition-transform group-hover:scale-110 shadow-md mb-4">
-                          <service.icon className="h-8 w-8" />
+        <div className="absolute bottom-0 left-1/2 w-full max-w-6xl -translate-x-1/2 translate-y-1/2 px-4">
+           <div className="rounded-lg bg-background p-6 shadow-2xl">
+             <Carousel
+                opts={{
+                  align: 'start',
+                }}
+                className="w-full"
+              >
+                <CarouselContent>
+                  {SERVICES.map((service, index) => (
+                    <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/5">
+                      <div className="p-1 h-full">
+                        <div className="h-full group text-center flex flex-col items-center justify-start p-4 transition-all hover:shadow-lg hover:-translate-y-1 rounded-lg border">
+                           <div className="bg-primary text-primary-foreground rounded-lg p-3 flex items-center justify-center transition-transform group-hover:scale-110 shadow-md mb-3">
+                            <service.icon className="h-6 w-6" />
+                          </div>
+                          <h3 className="text-sm font-semibold text-foreground group-hover:text-primary min-h-[40px] flex-grow flex items-center">
+                            {service.title}
+                          </h3>
+                          <Button asChild variant="link" size="sm" className="mt-2">
+                              <Link href={`/services/${service.slug}`}>
+                                  Learn More <ArrowRight className="h-4 w-4" />
+                              </Link>
+                          </Button>
                         </div>
-                        <h3 className="text-sm font-semibold text-foreground group-hover:text-primary min-h-[40px]">
-                          {service.title}
-                        </h3>
-                        <Button asChild variant="link" size="sm" className="mt-auto">
-                            <Link href={`/services/${service.slug}`}>
-                                Learn More <ArrowRight />
-                            </Link>
-                        </Button>
-                      </Card>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="hidden md:flex" />
-              <CarouselNext className="hidden md:flex" />
-            </Carousel>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="hidden md:flex -left-4" />
+                <CarouselNext className="hidden md:flex -right-4" />
+              </Carousel>
+           </div>
         </div>
       </section>
 
