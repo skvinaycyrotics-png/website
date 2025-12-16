@@ -35,6 +35,7 @@ import {
   DropdownMenuSubTrigger
 } from '@/components/ui/dropdown-menu';
 import type { NavLink } from '@/lib/types';
+import Marquee from './Marquee';
 
 
 const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: () => void) => {
@@ -78,13 +79,17 @@ const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: ()
                           <Accordion type="single" collapsible className="w-full">
                              <AccordionItem value={subLink.label} className="border-b-0">
                                <AccordionTrigger className="py-2 text-base font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180">
+                                {subLink.icon && <subLink.icon className="inline-block mr-2 h-4 w-4" />}
                                 {subLink.label}
                               </AccordionTrigger>
                               <AccordionContent className="pl-4">
                                 <ul className="flex flex-col gap-2">
                                   {subLink.subLinks.map(innerSub => (
                                       <li key={innerSub.href}>
-                                        <Link href={innerSub.href} onClick={handleLinkClick} className="text-muted-foreground hover:text-primary">{innerSub.label}</Link>
+                                        <Link href={innerSub.href} onClick={handleLinkClick} className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+                                         {innerSub.icon && <innerSub.icon className="h-4 w-4" />}
+                                         {innerSub.label}
+                                        </Link>
                                       </li>
                                   ))}
                                 </ul>
@@ -94,7 +99,10 @@ const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: ()
                         </li>
                      ) : (
                       <li key={subLink.href}>
-                        <Link href={subLink.href} onClick={handleLinkClick} className="text-muted-foreground hover:text-primary">{subLink.label}</Link>
+                        <Link href={subLink.href} onClick={handleLinkClick} className="flex items-center gap-2 text-muted-foreground hover:text-primary">
+                          {subLink.icon && <subLink.icon className="h-4 w-4" />}
+                          {subLink.label}
+                        </Link>
                       </li>
                      )
                   ))}
@@ -246,6 +254,7 @@ export function Header() {
           </Sheet>
         </div>
       </div>
+      <Marquee />
     </header>
   );
 }
