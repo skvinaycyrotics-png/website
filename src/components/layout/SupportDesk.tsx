@@ -65,12 +65,6 @@ export function SupportDesk() {
             <SheetTitle className="sr-only">Support Desk</SheetTitle>
             <div className="flex items-center justify-between">
               <Logo />
-              <SheetClose asChild>
-                <Button variant="ghost" size="icon">
-                  <X />
-                  <span className="sr-only">Close</span>
-                </Button>
-              </SheetClose>
             </div>
           </SheetHeader>
 
