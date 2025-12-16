@@ -40,27 +40,6 @@ import type { NavLink } from '@/lib/types';
 const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: () => void) => {
   const pathname = usePathname();
 
-  const DesktopSubMenu = ({ subLinks, label, icon: Icon }: { subLinks: NavLink[], label: string, icon?: React.ElementType }) => (
-    <DropdownMenuSub>
-      <DropdownMenuSubTrigger>
-        {Icon && <Icon className="mr-2 h-4 w-4 text-muted-foreground" />}
-        <span>{label}</span>
-      </DropdownMenuSubTrigger>
-      <DropdownMenuPortal>
-        <DropdownMenuSubContent>
-          {subLinks.map(subLink => (
-            <DropdownMenuItem key={subLink.href} asChild>
-              <Link href={subLink.href} onClick={handleLinkClick} className="flex items-center gap-2">
-                 {subLink.icon && <subLink.icon className="h-4 w-4 text-muted-foreground" />}
-                 <span>{subLink.label}</span>
-              </Link>
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuSubContent>
-      </DropdownMenuPortal>
-    </DropdownMenuSub>
-  );
-
   return links.map((link) => {
     if (link.subLinks) {
       if (isMobile) {
@@ -140,26 +119,29 @@ const HoverDropdownMenu = ({ link, handleLinkClick }: { link: NavLink; handleLin
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
-  const DesktopSubMenu = ({ subLinks, label, icon: Icon }: { subLinks: NavLink[], label: string, icon?: React.ElementType }) => (
-    <DropdownMenuSub open={open} onOpenChange={setOpen}>
-      <DropdownMenuSubTrigger>
-        {Icon && <Icon className="mr-2 h-4 w-4 text-muted-foreground" />}
-        <span>{label}</span>
-      </DropdownMenuSubTrigger>
-      <DropdownMenuPortal>
-        <DropdownMenuSubContent>
-          {subLinks.map(subLink => (
-            <DropdownMenuItem key={subLink.href} asChild>
-              <Link href={subLink.href} onClick={handleLinkClick} className="flex items-center gap-2">
-                 {subLink.icon && <subLink.icon className="h-4 w-4 text-muted-foreground" />}
-                 <span>{subLink.label}</span>
-              </Link>
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuSubContent>
-      </DropdownMenuPortal>
-    </DropdownMenuSub>
-  );
+  const DesktopSubMenu = ({ subLinks, label, icon: Icon }: { subLinks: NavLink[], label: string, icon?: React.ElementType }) => {
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+    return (
+      <DropdownMenuSub open={isSubMenuOpen} onOpenChange={setIsSubMenuOpen}>
+        <DropdownMenuSubTrigger>
+          {Icon && <Icon className="mr-2 h-4 w-4 text-muted-foreground" />}
+          <span>{label}</span>
+        </DropdownMenuSubTrigger>
+        <DropdownMenuPortal>
+          <DropdownMenuSubContent>
+            {subLinks.map(subLink => (
+              <DropdownMenuItem key={subLink.href} asChild>
+                <Link href={subLink.href} onClick={handleLinkClick} className="flex items-center gap-2">
+                   {subLink.icon && <subLink.icon className="h-4 w-4 text-muted-foreground" />}
+                   <span>{subLink.label}</span>
+                </Link>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuSubContent>
+        </DropdownMenuPortal>
+      </DropdownMenuSub>
+    );
+  };
 
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
@@ -293,4 +275,3 @@ export function Header() {
   );
 }
 
-    
