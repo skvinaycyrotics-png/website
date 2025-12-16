@@ -263,7 +263,7 @@ export default function ContactForms() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div className="space-y-2">
                   <Label>Priority</Label>
-                   <RadioGroup name="priority" defaultValue="Normal" className="flex space-x-4 pt-2">
+                   <RadioGroup name="priority" defaultValue="Normal" className="space-y-2 pt-2">
                     {PRIORITY_LEVELS.map(level => (
                        <div key={level} className="flex items-center space-x-2">
                         <RadioGroupItem value={level} id={`p-${level}`} />
@@ -372,5 +372,3 @@ export default function ContactForms() {
     </Card>
   );
 }
-
-    
