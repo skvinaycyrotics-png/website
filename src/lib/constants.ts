@@ -81,6 +81,7 @@ import {
   Linkedin,
   Instagram,
   Facebook,
+  Headphones,
 } from 'lucide-react';
 
 export const NAV_LINKS: NavLink[] = [
@@ -90,21 +91,21 @@ export const NAV_LINKS: NavLink[] = [
     href: '/services',
     label: 'Services',
     subLinks: [
-      { href: '/services/data-center-infrastructure-solutions', label: 'Data Center Infrastructure' },
-      { href: '/services/cloud-hybrid-it-solutions', label: 'Cloud & Hybrid IT Solutions' },
-      { href: '/services/scalable-storage-architecture', label: 'Scalable Storage Architecture' },
-      { href: '/services/nextgen-cybersecurity-shield', label: 'NextGen Cybersecurity Shield' },
-      { href: '/services/audio-visual-communication', label: 'Audio-Visual & Communication' },
-      { href: '/services/consulting-services', label: 'Consulting Services' },
-      { href: '/services/unified-communications', label: 'Unified Communications (UC)' },
-      { href: '/services/security-surveillance', label: 'Security & Surveillance' },
-      { href: '/services/managed-services', label: 'Managed Services' },
-      { href: '/services/software-development', label: 'Software Development' },
-      { href: '/services/ai-ml-solutions', label: 'AI & ML Solutions' },
-      { href: '/services/smart-factory-building-infra', label: 'Smart Factory & Building Infra' },
-      { href: '/services/intelligent-urban-ecosystems', label: 'Intelligent Urban Ecosystems' },
-      { href: '/services/mobility-automotives', label: 'Mobility & Automotives' },
-      { href: '/services/renewable-energy', label: 'Renewable Energy' },
+      { href: '/services/data-center-infrastructure-solutions', label: 'Data Center Infrastructure', icon: Server },
+      { href: '/services/cloud-hybrid-it-solutions', label: 'Cloud & Hybrid IT', icon: CloudCog },
+      { href: '/services/scalable-storage-architecture', label: 'Scalable Storage', icon: Database },
+      { href: '/services/nextgen-cybersecurity-shield', label: 'Cybersecurity', icon: Shield },
+      { href: '/services/audio-visual-communication', label: 'Audio-Visual', icon: MonitorSpeaker },
+      { href: '/services/consulting-services', label: 'Consulting', icon: Briefcase },
+      { href: '/services/unified-communications', label: 'Unified Communications', icon: Users },
+      { href: '/services/security-surveillance', label: 'Security & Surveillance', icon: Cctv },
+      { href: '/services/managed-services', label: 'Managed Services', icon: ServerCog },
+      { href: '/services/software-development', label: 'Software Development', icon: Code },
+      { href: '/services/ai-ml-solutions', label: 'AI & ML Solutions', icon: BrainCircuit },
+      { href: '/services/smart-factory-building-infra', label: 'Smart Building Infra', icon: Building },
+      { href: '/services/intelligent-urban-ecosystems', label: 'Smart City Solutions', icon: Building2 },
+      { href: '/services/automotive-engineering', label: 'Automotive Engineering', icon: Car },
+      { href: '/services/renewable-energy', label: 'Renewable Energy', icon: Sun },
     ],
   },
    {
@@ -694,8 +695,8 @@ export const SERVICES: Service[] = [
     caseStudies: [],
   },
   {
-    slug: 'mobility-automotives',
-    title: 'Mobility & Automotives',
+    slug: 'automotive-engineering',
+    title: 'Automotive Engineering',
     category: 'Mobility & Automotives',
     shortDescription: 'End-to-end automotive engineering, simulation, EV, and robotics solutions to accelerate innovation in the mobility sector.',
     description: 'Cyrotics Technologies delivers end-to-end automotive engineering solutions designed to enhance safety, improve vehicle performance, and accelerate digital transformation across the mobility sector. From mechanical design to embedded systems, we help OEMs, Tier-1 suppliers, and manufacturing units innovate with confidence.',
@@ -2615,10 +2616,10 @@ export const footerQuickLinks = [
         { href: "/blog", label: "Blog" },
         { href: "/careers", label: "Careers" },
         { href: "/trust-and-compliance", label: "Trust & Compliance" },
-        { href: "#", label: "Support Desk" }, // Or link to a support page
+        { href: "#", label: "Support Desk", icon: Headphones },
     ],
     [
-        { href: "/services", label: "FAQs" }, // Assuming FAQs are on services page
+        { href: "/faqs", label: "FAQs" },
         { href: "/about", label: "About Us" },
         { href: "/contact", label: "Contact Us" },
     ]

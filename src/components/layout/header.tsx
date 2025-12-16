@@ -117,13 +117,16 @@ const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: ()
               <ChevronDown className="h-4 w-4" />
             </a>
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
+          <DropdownMenuContent className="w-64">
              {link.subLinks.map((subLink) => (
                 subLink.subLinks ? (
                   <DesktopSubMenu key={subLink.href} subLinks={subLink.subLinks} label={subLink.label} />
                 ) : (
                   <DropdownMenuItem key={subLink.href} asChild>
-                    <Link href={subLink.href}>{subLink.label}</Link>
+                    <Link href={subLink.href} className="flex items-center gap-2">
+                      {subLink.icon && <subLink.icon className="h-4 w-4 text-muted-foreground" />}
+                      <span>{subLink.label}</span>
+                    </Link>
                   </DropdownMenuItem>
                 )
              ))}
