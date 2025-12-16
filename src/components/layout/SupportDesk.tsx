@@ -23,7 +23,7 @@ import {
 } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Logo } from '../logo';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const socialLinks = [
   { name: 'YouTube', icon: Youtube, href: '#' },
@@ -35,13 +35,29 @@ const socialLinks = [
 
 export function SupportDesk() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+
+    const handleOpenSupportDesk = () => setIsOpen(true);
+    
+    document.addEventListener('open-support-desk', handleOpenSupportDesk);
+
+    return () => {
+      document.removeEventListener('open-support-desk', handleOpenSupportDesk);
+    };
+  }, []);
+
+  if (!isMounted) {
+    return null; // Don't render on the server
+  }
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
+      {/* The trigger is not rendered, but Sheet needs a trigger */}
       <SheetTrigger asChild>
-        <button id="support-desk-trigger" className="hidden">
-          Open Support Desk
-        </button>
+        <button className="sr-only" aria-hidden="true">Open Support Desk</button>
       </SheetTrigger>
       <SheetContent side="right" className="w-full max-w-md p-0">
         <div className="flex h-full flex-col">

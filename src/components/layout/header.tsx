@@ -185,10 +185,7 @@ export function Header() {
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
   
   const openSupportDesk = () => {
-    const trigger = document.getElementById('support-desk-trigger');
-    if (trigger) {
-        trigger.click();
-    }
+    document.dispatchEvent(new Event('open-support-desk'));
   }
 
 
