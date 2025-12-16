@@ -76,7 +76,7 @@ const whyChooseUs = [
 
 export default function Home() {
     const plugin = useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true, stopOnMouseEnter: true })
+    Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
   return (
@@ -115,8 +115,6 @@ export default function Home() {
                   loop: true,
                 }}
                 className="w-full"
-                 onMouseEnter={plugin.current.stop}
-                onMouseLeave={plugin.current.reset}
               >
                 <CarouselContent className="-ml-2 sm:-ml-4">
                   {SERVICES.map((service, index) => (
