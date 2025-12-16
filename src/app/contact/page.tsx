@@ -21,9 +21,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <div className="container py-12 sm:py-16 lg:py-20">
+      <section className="py-12 sm:py-16 lg:py-20">
+        <div className="container max-w-4xl">
           <ContactForms />
-      </div>
+        </div>
+      </section>
     </>
   );
 }
