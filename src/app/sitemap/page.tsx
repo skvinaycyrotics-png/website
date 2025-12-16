@@ -8,7 +8,6 @@ import {
   BookOpen,
   ShieldCheck,
   Share2,
-  FileText,
   Mail,
   Phone,
   Layers,
@@ -121,7 +120,7 @@ export default function SitemapPage() {
                 <h2 className="font-semibold text-2xl text-foreground flex items-center gap-3"><Briefcase /> Services & Solutions</h2>
                 <ul className="space-y-3">
                     {sitemapData.services.map(link => (
-                        <li key={link.href}>
+                        <li key={link.label}>
                             <Link href={link.href} className="font-semibold text-primary hover:underline">{link.label}</Link>
                             <p className="text-sm text-muted-foreground ml-4">– {link.description}</p>
                         </li>
@@ -157,7 +156,7 @@ export default function SitemapPage() {
                 <h2 className="font-semibold text-2xl text-foreground flex items-center gap-3"><Share2 /> External & Social Channels</h2>
                  <ul className="space-y-3">
                     {sitemapData.social.map(link => (
-                        <li key={link.href}>
+                        <li key={link.label}>
                             <Link href={link.href} className="font-semibold text-primary hover:underline">{link.label}</Link>
                             <p className="text-sm text-muted-foreground ml-4">– {link.description}</p>
                         </li>
