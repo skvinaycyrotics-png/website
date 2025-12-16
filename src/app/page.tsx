@@ -35,6 +35,7 @@ import { SERVICES, PROJECTS, TESTIMONIALS } from '@/lib/constants';
 import AnimatedCounter from '@/components/animated-counter';
 import HeroHeadline from '@/components/hero-headline';
 import PlexusBackground from '@/components/plexus-background';
+import ExpertMatcher from '@/components/expert-matcher';
 
 const stats = [
   { value: 4, label: 'Years of Experience', icon: Calendar },
@@ -97,7 +98,7 @@ export default function Home() {
           <div className="absolute -bottom-24 md:-bottom-32 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%]">
             <div className="bg-white/90 backdrop-blur-sm shadow-lg rounded-lg p-4 md:p-0">
               <div className="grid grid-cols-2 md:grid-cols-5">
-                {SERVICES.map((service, index) => (
+                {SERVICES.slice(0,5).map((service, index) => (
                   <Link
                     key={service.slug}
                     href={`/services/${service.slug}`}
@@ -218,6 +219,12 @@ export default function Home() {
               </Link>
             </Button>
           </div>
+        </div>
+      </section>
+
+      <section id="expert-matcher" className="py-12 sm:py-16 lg:py-20">
+        <div className="container">
+          <ExpertMatcher />
         </div>
       </section>
 
