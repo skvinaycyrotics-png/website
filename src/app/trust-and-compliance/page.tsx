@@ -25,24 +25,32 @@ export const metadata = {
 
 const certifications = [
   {
+    id: 'msme',
     title: 'MSME Registered Organization',
     icon: Award,
     href: '/msme-certificate.pdf',
+    buttonText: 'Request Documents',
   },
   {
+    id: 'startup',
     title: 'Startup India Recognized Entity',
     icon: Award,
     href: '/startup-india-certificate.pdf',
+    buttonText: 'Request Documents',
   },
   {
+    id: 'gst',
     title: 'GST Compliant Company',
     icon: FileText,
     href: '/gst-certificate.pdf',
+    buttonText: 'Request Documents',
   },
   {
+    id: 'brochure',
     title: 'Company Business Brochure',
     icon: FileText,
     href: '/cyrotics-brochure.pdf',
+    buttonText: 'View Brochure',
   },
 ];
 
@@ -114,7 +122,7 @@ export default function TrustAndCompliancePage() {
                 <CardContent>
                   <Button asChild variant="outline">
                     <Link href={cert.href} target="_blank">
-                      View Document
+                      {cert.buttonText}
                     </Link>
                   </Button>
                 </CardContent>
