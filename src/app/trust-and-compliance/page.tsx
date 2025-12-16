@@ -28,29 +28,33 @@ const certifications = [
     id: 'msme',
     title: 'MSME Registered Organization',
     icon: Award,
-    href: '/msme-certificate.pdf',
+    href: '/contact',
     buttonText: 'Request Documents',
+    target: '_self',
   },
   {
     id: 'startup',
     title: 'Startup India Recognized Entity',
     icon: Award,
-    href: '/startup-india-certificate.pdf',
+    href: '/contact',
     buttonText: 'Request Documents',
+    target: '_self',
   },
   {
     id: 'gst',
     title: 'GST Compliant Company',
     icon: FileText,
-    href: '/gst-certificate.pdf',
+    href: '/contact',
     buttonText: 'Request Documents',
+    target: '_self',
   },
   {
     id: 'brochure',
     title: 'Company Business Brochure',
     icon: FileText,
-    href: '/cyrotics-brochure.pdf',
+    href: '/Cyrotics_Engineering_a_Secure_Future.pdf',
     buttonText: 'View Brochure',
+    target: '_blank',
   },
 ];
 
@@ -121,7 +125,7 @@ export default function TrustAndCompliancePage() {
                 </CardHeader>
                 <CardContent>
                   <Button asChild variant="outline">
-                    <Link href={cert.href} target="_blank">
+                    <Link href={cert.href} target={cert.target}>
                       {cert.buttonText}
                     </Link>
                   </Button>
