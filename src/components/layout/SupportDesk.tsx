@@ -39,10 +39,9 @@ export function SupportDesk() {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <div>
-          <div id="support-desk-trigger-desktop" onClick={() => setIsOpen(true)} className="hidden" />
-          <div id="support-desk-trigger-mobile" onClick={() => setIsOpen(true)} className="hidden" />
-        </div>
+        <button id="support-desk-trigger" className="hidden">
+          Open Support Desk
+        </button>
       </SheetTrigger>
       <SheetContent side="right" className="w-full max-w-md p-0">
         <div className="flex h-full flex-col">

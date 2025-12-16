@@ -183,7 +183,13 @@ export function Header() {
   };
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
-
+  
+  const openSupportDesk = () => {
+    const trigger = document.getElementById('support-desk-trigger');
+    if (trigger) {
+        trigger.click();
+    }
+  }
 
 
   return (
@@ -194,7 +200,7 @@ export function Header() {
           {renderNavLinks(PRIMARY_NAV_LINKS, false, handleLinkClick)}
         </nav>
         <div className="ml-4 hidden items-center gap-2 md:flex">
-          <Button id="support-desk-trigger-desktop">
+          <Button onClick={openSupportDesk}>
             <Headphones /> Support Desk
           </Button>
         </div>
@@ -243,7 +249,7 @@ export function Header() {
                         </AccordionItem>
                     </Accordion>
                   </div>
-                   <Button id="support-desk-trigger-mobile" size="lg" onClick={closeMobileMenu}>
+                   <Button size="lg" onClick={() => { closeMobileMenu(); openSupportDesk(); }}>
                      <Headphones /> Support Desk
                   </Button>
                 </nav>
