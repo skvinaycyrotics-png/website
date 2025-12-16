@@ -24,11 +24,11 @@ import { Logo } from '../logo';
 import { useEffect, useState } from 'react';
 
 const socialLinks = [
-  { name: 'Instagram', icon: Instagram, href: '#' },
-  { name: 'Facebook', icon: Facebook, href: '#' },
+  { name: 'YouTube', icon: Youtube, href: '#' },
   { name: 'Twitter', icon: Twitter, href: '#' },
   { name: 'LinkedIn', icon: Linkedin, href: '#' },
-  { name: 'YouTube', icon: Youtube, href: '#' },
+  { name: 'Instagram', icon: Instagram, href: '#' },
+  { name: 'Facebook', icon: Facebook, href: '#' },
 ];
 
 export function SupportDesk() {
