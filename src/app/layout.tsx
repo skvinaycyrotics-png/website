@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { SupportDesk } from '@/components/layout/SupportDesk';
 import CookieConsent from '@/components/cookie-consent';
+import { ClientToaster } from '@/components/client-toaster';
 
 export const metadata: Metadata = {
   title: 'CYROTICS TECHNOLOGIES | Technology Infrastructure & Security',
@@ -38,7 +38,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
-        <Toaster />
+        <ClientToaster />
         <CookieConsent />
       </body>
     </html>
