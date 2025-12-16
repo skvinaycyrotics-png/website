@@ -16,7 +16,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Logo } from '@/components/logo';
-import { NAV_LINKS } from '@/lib/constants';
+import { PRIMARY_NAV_LINKS, SECONDARY_NAV_LINKS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import {
   Accordion,
@@ -43,7 +43,7 @@ const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: ()
   const DesktopSubMenu = ({ subLinks, label, icon: Icon }: { subLinks: NavLink[], label: string, icon?: React.ElementType }) => (
     <DropdownMenuSub>
       <DropdownMenuSubTrigger>
-        {Icon && <Icon className="h-4 w-4 text-muted-foreground" />}
+        {Icon && <Icon className="mr-2 h-4 w-4 text-muted-foreground" />}
         <span>{label}</span>
       </DropdownMenuSubTrigger>
       <DropdownMenuPortal>
@@ -183,21 +183,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm">
       <div className="container flex h-20 items-center">
-        <Logo />
+        <Logo className="transition-transform hover:scale-105" />
         <nav className="ml-auto hidden items-center gap-6 md:flex">
-          {renderNavLinks(NAV_LINKS, false, handleLinkClick)}
-
-           <Link
-              href="/trust-and-compliance"
-              className={cn(
-                'flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary',
-                pathname === '/trust-and-compliance'
-                  ? 'text-primary'
-                  : 'text-muted-foreground'
-              )}
-            >
-              Trust & Compliance
-            </Link>
+          {renderNavLinks(PRIMARY_NAV_LINKS, false, handleLinkClick)}
         </nav>
         <div className="ml-4 hidden items-center gap-2 md:flex">
           <Button id="support-desk-trigger-desktop">
@@ -231,21 +219,23 @@ export function Header() {
                 </div>
                 <nav className="flex flex-1 flex-col justify-between">
                   <div className="flex flex-col gap-4">
-                    {renderNavLinks(NAV_LINKS, true, handleLinkClick)}
-
-                     <Link
-                        href="/trust-and-compliance"
-                        onClick={handleLinkClick}
-                        className={cn(
-                          'text-lg font-medium',
-                          'transition-colors hover:text-primary',
-                           pathname === '/trust-and-compliance'
-                            ? 'text-primary'
-                            : 'text-foreground'
-                        )}
-                      >
-                       Trust & Compliance
-                      </Link>
+                    {renderNavLinks(PRIMARY_NAV_LINKS, true, handleLinkClick)}
+                     <Accordion type="single" collapsible className="w-full">
+                        <AccordionItem value="other-links" className="border-b-0">
+                        <AccordionTrigger className="py-2 text-lg font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180">
+                            More
+                        </AccordionTrigger>
+                        <AccordionContent className="pl-4">
+                            <ul className="flex flex-col gap-4">
+                            {SECONDARY_NAV_LINKS.map((link) => (
+                                <li key={link.href}>
+                                <Link href={link.href} onClick={handleLinkClick} className="text-muted-foreground hover:text-primary">{link.label}</Link>
+                                </li>
+                            ))}
+                            </ul>
+                        </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
                   </div>
                    <Button id="support-desk-trigger-mobile" size="lg" onClick={closeMobileMenu}>
                      <Headphones /> Support Desk

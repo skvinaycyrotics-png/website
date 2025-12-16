@@ -89,6 +89,8 @@ import {
   HeartPulse,
   Truck,
   BuildingIcon,
+  Home,
+  FileText,
 } from 'lucide-react';
 
 export const NAV_LINKS: NavLink[] = [
@@ -154,6 +156,78 @@ export const NAV_LINKS: NavLink[] = [
   { href: '/careers', label: 'Careers' },
   { href: '/contact', label: 'Contact Us' },
 ];
+
+export const PRIMARY_NAV_LINKS: NavLink[] = [
+  { href: '/', label: 'Home', icon: Home },
+  {
+    href: '/services',
+    label: 'Services',
+    icon: Briefcase,
+    subLinks: [
+      { href: '/services/data-center-infrastructure-solutions', label: 'Data Center Infrastructure', icon: Server },
+      { href: '/services/cloud-hybrid-it-solutions', label: 'Cloud & Hybrid IT', icon: CloudCog },
+      { href: '/services/scalable-storage-architecture', label: 'Scalable Storage', icon: Database },
+      { href: '/services/nextgen-cybersecurity-shield', label: 'Cybersecurity', icon: Shield },
+      { href: '/services/audio-visual-communication', label: 'Audio-Visual', icon: MonitorSpeaker },
+      { href: '/services/consulting-services', label: 'Consulting', icon: Briefcase },
+      { href: '/services/unified-communications', label: 'Unified Communications', icon: Users },
+      { href: '/services/security-surveillance', label: 'Security & Surveillance', icon: Cctv },
+      { href: '/services/managed-services', label: 'Managed Services', icon: ServerCog },
+      { href: '/services/software-development', label: 'Software Development', icon: Code },
+      { href: '/services/ai-ml-solutions', label: 'AI & ML Solutions', icon: BrainCircuit },
+      { href: '/services/smart-factory-building-infra', label: 'Smart Building Infra', icon: Building },
+      { href: '/services/intelligent-urban-ecosystems', label: 'Smart City Solutions', icon: Building2 },
+      { href: '/services/automotive-engineering', label: 'Automotive Engineering', icon: Car },
+      { href: '/services/renewable-energy', label: 'Renewable Energy', icon: Sun },
+    ],
+  },
+   {
+    href: '#industry',
+    label: 'Business Sectors',
+    icon: Building,
+    subLinks: [
+      { href: '/business-sector/overview', label: 'Overview', icon: Briefcase },
+       {
+        href: '#industry-solutions',
+        label: 'Industry Solution',
+        icon: Building,
+        subLinks: [
+          { href: '/business-sector/urban-development', label: 'Urban Development', icon: BuildingIcon },
+          { href: '/business-sector/telecom', label: 'Telecom', icon: Signal },
+          { href: '/business-sector/logistics', label: 'Logistics', icon: Truck },
+          { href: '/business-sector/education', label: 'Education', icon: GraduationCap },
+          { href: '/business-sector/health-pharmacy', label: 'Health & Pharmacy', icon: HeartPulse },
+          { href: '/business-sector/processing-units', label: 'Processing Units', icon: Cpu },
+          { href: '/business-sector/manufacturing-units', label: 'Manufacturing Units', icon: FactoryIcon },
+          { href: '/business-sector/mobility-automotive-engineering', label: 'Mobility & Automotive', icon: Car },
+          { href: '/business-sector/energy', label: 'Energy', icon: Sun },
+        ],
+      },
+      {
+        href: '#public-solutions',
+        label: 'Public Solution',
+        icon: Landmark,
+        subLinks: [
+          { href: '/business-sector/defence', label: 'Defence', icon: ShieldHalf },
+          { href: '/business-sector/smart-city', label: 'Smart City', icon: Lightbulb },
+          { href: '/business-sector/e-governance', label: 'E-Governance', icon: Globe },
+          { href: '/business-sector/public-sector-undertakings', label: 'Public Sector Undertakings', icon: Building },
+        ],
+      },
+    ],
+  },
+  { href: '/projects', label: 'Projects', icon: GanttChartSquare },
+  { href: '/trust-and-compliance', label: 'Trust & Compliance', icon: Award },
+  { href: '/careers', label: 'Careers', icon: Users },
+  { href: '/contact', label: 'Contact Us', icon: Phone },
+];
+
+export const SECONDARY_NAV_LINKS: NavLink[] = [
+    { href: '/about', label: 'About Us' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/faqs', label: 'FAQs' },
+];
+
 
 export const SERVICES: Service[] = [
   {
