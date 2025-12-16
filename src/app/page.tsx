@@ -88,7 +88,7 @@ export default function Home() {
           <div className="absolute inset-0 z-0">
             <PlexusBackground />
           </div>
-          <div className="container relative z-10 text-left">
+          <div className="container relative z-10">
              <div className="max-w-6xl">
               <HeroHeadline />
               <p className="mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-muted-foreground">
@@ -158,7 +158,7 @@ export default function Home() {
         {/* STATS SECTION */}
         <section
           id="stats"
-          className="bg-background w-full pt-20 sm:pt-28 md:pt-36 lg:pt-40 pb-12 sm:pb-16 lg:pb-20"
+          className="bg-primary/5 w-full pt-20 sm:pt-28 md:pt-36 lg:pt-40 pb-12 sm:pb-16 lg:pb-20"
         >
           <div className="container px-4 sm:px-6">
             <div className="text-center mb-8 sm:mb-12">
@@ -188,7 +188,7 @@ export default function Home() {
         {/* WHY CHOOSE US SECTION */}
         <section
           id="why-choose-us"
-          className="bg-primary/5 w-full py-12 sm:py-16 lg:py-20"
+          className="bg-background w-full py-12 sm:py-16 lg:py-20"
         >
           <div className="container px-4 sm:px-6 text-center">
             <h2 className="font-headline text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
@@ -222,7 +222,7 @@ export default function Home() {
         {/* PROJECTS SECTION */}
         <section
           id="projects"
-          className="bg-background w-full py-12 sm:py-16 lg:py-20"
+          className="bg-primary/5 w-full py-12 sm:py-16 lg:py-20"
         >
           <div className="container px-4 sm:px-6 text-center">
             <h2 className="font-headline text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
@@ -275,16 +275,6 @@ export default function Home() {
                 </Link>
               </Button>
             </div>
-          </div>
-        </section>
-
-        {/* EXPERT MATCHER SECTION */}
-        <section
-          id="expert-matcher"
-          className="w-full py-12 sm:py-16 lg:py-20"
-        >
-          <div className="container px-4 sm:px-6">
-            <ExpertMatcher />
           </div>
         </section>
 
@@ -355,5 +345,3 @@ export default function Home() {
     </main>
   );
 }
-
-    
