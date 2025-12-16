@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Headphones } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -37,9 +37,7 @@ import {
 import type { NavLink } from '@/lib/types';
 
 
-const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: () => void) => {
-  const pathname = usePathname();
-
+const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: () => void, pathname: string) => {
   return links.map((link) => {
     if (link.subLinks) {
       if (isMobile) {
@@ -203,7 +201,7 @@ export function Header() {
         {isMounted && (
           <>
             <nav className="ml-auto hidden items-center gap-6 md:flex">
-              {renderNavLinks(PRIMARY_NAV_LINKS, false, handleLinkClick)}
+              {renderNavLinks(PRIMARY_NAV_LINKS, false, handleLinkClick, pathname)}
             </nav>
             <div className="ml-4 hidden items-center gap-2 md:flex">
               <Button onClick={openSupportDesk}>
@@ -237,7 +235,7 @@ export function Header() {
                     </div>
                     <nav className="flex flex-1 flex-col justify-between">
                       <div className="flex flex-col gap-4">
-                        {renderNavLinks(PRIMARY_NAV_LINKS, true, handleLinkClick)}
+                        {renderNavLinks(PRIMARY_NAV_LINKS, true, handleLinkClick, pathname)}
                          <Accordion type="single" collapsible className="w-full">
                             <AccordionItem value="other-links" className="border-b-0">
                             <AccordionTrigger className="py-2 text-lg font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180">
