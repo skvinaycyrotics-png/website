@@ -9,7 +9,7 @@ export default function HeroHeadline() {
       <span className="block">Engineering Your Future in</span>
       <TypeAnimation
         sequence={[
-          'Data Center Infrastructure Solutions.',
+          'Data Center Solutions.',
           2000,
           'Cloud & Hybrid IT Solutions.',
           2000,
@@ -17,7 +17,7 @@ export default function HeroHeadline() {
           2000,
           'NextGen Cybersecurity Shield.',
           2000,
-          'Audio-Visual & Smart Communication.',
+          'Smart AV & Communication.',
           2000,
           'Consulting Services.',
           2000,
