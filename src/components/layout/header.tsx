@@ -40,16 +40,20 @@ import type { NavLink } from '@/lib/types';
 const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: () => void) => {
   const pathname = usePathname();
 
-  const DesktopSubMenu = ({ subLinks, label }: { subLinks: NavLink[], label: string }) => (
+  const DesktopSubMenu = ({ subLinks, label, icon: Icon }: { subLinks: NavLink[], label: string, icon?: React.ElementType }) => (
     <DropdownMenuSub>
       <DropdownMenuSubTrigger>
-        {label}
+        {Icon && <Icon className="h-4 w-4 text-muted-foreground" />}
+        <span>{label}</span>
       </DropdownMenuSubTrigger>
       <DropdownMenuPortal>
         <DropdownMenuSubContent>
           {subLinks.map(subLink => (
             <DropdownMenuItem key={subLink.href} asChild>
-              <Link href={subLink.href} onClick={handleLinkClick}>{subLink.label}</Link>
+              <Link href={subLink.href} onClick={handleLinkClick} className="flex items-center gap-2">
+                 {subLink.icon && <subLink.icon className="h-4 w-4 text-muted-foreground" />}
+                 <span>{subLink.label}</span>
+              </Link>
             </DropdownMenuItem>
           ))}
         </DropdownMenuSubContent>
@@ -120,7 +124,7 @@ const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: ()
           <DropdownMenuContent className="w-64">
              {link.subLinks.map((subLink) => (
                 subLink.subLinks ? (
-                  <DesktopSubMenu key={subLink.href} subLinks={subLink.subLinks} label={subLink.label} />
+                  <DesktopSubMenu key={subLink.href} subLinks={subLink.subLinks} label={subLink.label} icon={subLink.icon} />
                 ) : (
                   <DropdownMenuItem key={subLink.href} asChild>
                     <Link href={subLink.href} className="flex items-center gap-2">
