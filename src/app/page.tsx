@@ -74,7 +74,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <PlexusBackground />
         </div>
-        <div className="container relative z-10 px-4 pt-20 text-left md:pt-12">
+        <div className="container relative z-10 pt-20 text-left md:pt-12">
           <div className="max-w-3xl">
             <HeroHeadline />
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
@@ -137,7 +137,7 @@ export default function Home() {
         <div className="container px-4">
            <div className="text-center mb-12">
             <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
-              About CyroSecure
+              About Cyrotics
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
               Our journey and commitment to excellence in numbers.
