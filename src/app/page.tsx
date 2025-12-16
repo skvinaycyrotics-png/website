@@ -74,7 +74,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <PlexusBackground />
         </div>
-        <div className="container relative z-10 pt-20 text-left md:pt-12">
+        <div className="container relative z-10 pt-20 md:pt-12">
           <div className="max-w-3xl">
             <HeroHeadline />
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
