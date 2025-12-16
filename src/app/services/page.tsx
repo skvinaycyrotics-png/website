@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { SERVICES, FAQS } from '@/lib/constants';
+import { SERVICES } from '@/lib/constants';
 import {
   Accordion,
   AccordionContent,
@@ -78,23 +78,17 @@ export default function ServicesPage() {
       </section>
       
       <section className="py-12 sm:py-16 lg:py-20">
-        <div className="container max-w-4xl">
-           <h2 className="text-center font-headline text-3xl font-bold flex items-center justify-center gap-3 mb-8">
+        <div className="container max-w-4xl text-center">
+           <h2 className="font-headline text-3xl font-bold flex items-center justify-center gap-3 mb-8">
              <HelpCircle className="h-8 w-8 text-primary" />
-            Frequently Asked Questions
+            Have Questions?
           </h2>
-          <Accordion type="single" collapsible className="w-full">
-            {FAQS.map((faq, index) => (
-              <AccordionItem value={`item-${index}`} key={index}>
-                <AccordionTrigger className="text-left hover:no-underline text-lg font-semibold">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="pt-2 text-base text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <p className="text-lg text-muted-foreground mb-8">
+            Find quick answers in our dedicated FAQ section or contact us for a detailed consultation.
+          </p>
+          <Button asChild size="lg">
+            <Link href="/faqs">Go to FAQs</Link>
+          </Button>
         </div>
       </section>
 

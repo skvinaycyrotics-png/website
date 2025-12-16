@@ -28,6 +28,12 @@ export function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const updatedFooterQuickLinks = footerQuickLinks.map(column => 
+    column.map(link => 
+      link.label === "FAQs" ? { ...link, href: "/faqs" } : link
+    )
+  );
+
   return (
     <footer className="border-t bg-background">
       <div className="container py-12 px-4">
@@ -53,7 +59,7 @@ export function Footer() {
           <div className="lg:col-span-5">
             <h3 className="font-semibold tracking-wide">Quick Links</h3>
             <div className="mt-4 grid grid-cols-3 gap-8">
-                {footerQuickLinks.map((column, index) => (
+                {updatedFooterQuickLinks.map((column, index) => (
                      <ul key={index} className="space-y-2">
                         {column.map(link => (
                              <li key={link.href}>
@@ -72,7 +78,7 @@ export function Footer() {
             <h3 className="font-semibold tracking-wide">Contact Information</h3>
             <div className="mt-4 space-y-4 text-sm">
                 <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                    <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1 transition-colors group-hover:text-accent" />
                     <div>
                         <h4 className="font-medium text-foreground">Corporate Office</h4>
                         <address className="not-italic text-muted-foreground">
@@ -83,20 +89,20 @@ export function Footer() {
                         </address>
                     </div>
                 </div>
-                 <div className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-primary flex-shrink-0" />
+                 <a href="tel:+919999295636" className="flex items-center gap-3 group">
+                    <Phone className="h-5 w-5 text-primary flex-shrink-0 transition-colors group-hover:text-accent" />
                     <div>
                         <h4 className="font-medium text-foreground">Phone</h4>
-                        <a href="tel:+919999295636" className="text-muted-foreground hover:text-primary transition-colors">+91 99992 95636</a>
+                        <span className="text-muted-foreground transition-colors group-hover:text-primary">+91 99992 95636</span>
                     </div>
-                </div>
-                 <div className="flex items-center gap-3">
-                    <Mail className="h-5 w-5 text-primary flex-shrink-0" />
+                </a>
+                 <a href="mailto:info@cyrotics.in" className="flex items-center gap-3 group">
+                    <Mail className="h-5 w-5 text-primary flex-shrink-0 transition-colors group-hover:text-accent" />
                     <div>
                         <h4 className="font-medium text-foreground">Email</h4>
-                        <a href="mailto:info@cyrotics.in" className="text-muted-foreground hover:text-primary transition-colors">info@cyrotics.in</a>
+                        <span className="text-muted-foreground transition-colors group-hover:text-primary">info@cyrotics.in</span>
                     </div>
-                </div>
+                </a>
             </div>
           </div>
         </div>
@@ -115,20 +121,20 @@ export function Footer() {
             <div className="flex items-center gap-4">
                <div className="flex space-x-2">
                     {socialLinks.map((social) => (
-                        <Button key={social.name} variant="outline" size="icon" asChild>
+                        <Button key={social.name} variant="outline" size="icon" asChild className="group">
                             <a
                             href={social.href}
-                            className="text-muted-foreground hover:text-primary"
+                            className="text-muted-foreground transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary"
                             target="_blank"
                             rel="noopener noreferrer"
                             >
-                            <social.icon className="h-5 w-5" />
+                            <social.icon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                             <span className="sr-only">{social.name}</span>
                             </a>
                         </Button>
                     ))}
                 </div>
-                 <Button variant="outline" size="icon" onClick={handleScrollToTop} aria-label="Go to top">
+                 <Button variant="outline" size="icon" onClick={handleScrollToTop} aria-label="Go to top" className="transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:border-primary">
                     <ArrowUp className="h-4 w-4" />
                 </Button>
             </div>
