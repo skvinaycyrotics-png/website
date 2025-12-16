@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { BLOG_POSTS } from '@/lib/constants';
@@ -18,6 +19,8 @@ export const metadata = {
 
 
 export default function BlogPage() {
+  const sortedBlogPosts = [...BLOG_POSTS].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
   return (
     <>
       <section className="bg-primary text-primary-foreground py-20 text-center">
@@ -34,7 +37,7 @@ export default function BlogPage() {
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {BLOG_POSTS.map((post) => (
+            {sortedBlogPosts.map((post) => (
               <Card key={post.slug} className="flex flex-col group overflow-hidden">
                 <Link href={`/blog/${post.slug}`} className="block">
                   <div className="overflow-hidden">
