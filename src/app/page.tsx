@@ -132,9 +132,17 @@ export default function Home() {
 
       <section
         id="stats"
-        className="bg-background pt-12 sm:pt-16 lg:pb-20"
+        className="bg-background pt-32 sm:pt-36 lg:pt-40 pb-12 sm:pb-16 lg:pb-20"
       >
         <div className="container px-4">
+           <div className="text-center mb-12">
+            <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
+              About CyroSecure
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+              Our journey and commitment to excellence in numbers.
+            </p>
+          </div>
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
@@ -149,7 +157,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="why-choose-us" className="bg-background py-12 sm:py-16 lg:py-20">
+      <section id="why-choose-us" className="bg-primary/5 py-12 sm:py-16 lg:py-20">
         <div className="container px-4 text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
             Why Clients Trust Cyrotics Technologies
@@ -175,7 +183,7 @@ export default function Home() {
         </div>
       </section>
       
-      <section id="projects" className="bg-primary/5 py-12 sm:py-16 lg:py-20">
+      <section id="projects" className="bg-background py-12 sm:py-16 lg:py-20">
         <div className="container px-4 text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight md:text-4xl">
             Proven Success in Action
