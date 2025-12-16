@@ -153,7 +153,6 @@ export const NAV_LINKS: NavLink[] = [
   },
   { href: '/projects', label: 'Projects' },
   { href: '/blog', label: 'Blog' },
-  { href: '/careers', label: 'Careers' },
   { href: '/contact', label: 'Contact Us' },
 ];
 
@@ -218,7 +217,6 @@ export const PRIMARY_NAV_LINKS: NavLink[] = [
   },
   { href: '/projects', label: 'Projects', icon: GanttChartSquare },
   { href: '/trust-and-compliance', label: 'Trust & Compliance', icon: Award },
-  { href: '/careers', label: 'Careers', icon: Users },
   { href: '/contact', label: 'Contact Us', icon: Phone },
 ];
 

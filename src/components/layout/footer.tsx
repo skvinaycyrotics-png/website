@@ -29,9 +29,11 @@ export function Footer() {
   };
 
   const updatedFooterQuickLinks = footerQuickLinks.map(column => 
-    column.map(link => 
-      link.label === "FAQs" ? { ...link, href: "/faqs" } : link
-    )
+    column
+      .filter(link => link.label !== "Careers")
+      .map(link => 
+        link.label === "FAQs" ? { ...link, href: "/faqs" } : link
+      )
   );
 
   return (
