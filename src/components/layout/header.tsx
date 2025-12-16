@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -35,7 +34,6 @@ import {
   DropdownMenuSubTrigger
 } from '@/components/ui/dropdown-menu';
 import type { NavLink } from '@/lib/types';
-import Marquee from './Marquee';
 
 
 const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: () => void) => {
@@ -254,7 +252,6 @@ export function Header() {
           </Sheet>
         </div>
       </div>
-      <Marquee />
     </header>
   );
 }
