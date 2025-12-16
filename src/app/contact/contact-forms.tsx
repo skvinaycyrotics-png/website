@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useFormStatus } from 'react-dom';
@@ -44,7 +45,7 @@ function SubmitButton() {
   const { pending } = useFormStatus();
   return (
     <Button type="submit" disabled={pending} className="w-full text-lg py-6">
-      {pending ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Submitting...</> : 'Submit Inquiry'}
+      {pending ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Submitting...</> : 'Schedule a Consultation'}
     </Button>
   );
 }
@@ -83,15 +84,22 @@ export default function ContactForms() {
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle className="text-3xl">Get in Touch</CardTitle>
-        <CardDescription className="font-semibold">
-          Have a question, request, or suggestion about our services?
-          <br /><br />
-          Or would you like to learn more about how we can support your project?
-          <br /><br />
-          Our team is here to assist you—feel free to reach out anytime.
-          <br /><br />
-          We will be happy to help!
+        <CardTitle className="text-3xl font-headline">Let's Build Something Remarkable</CardTitle>
+        <CardDescription className="text-base text-muted-foreground pt-4 space-y-4">
+          <p>
+            Great infrastructure doesn't happen by accident. It's the result of strategic 
+            planning, technical precision, and a team that's fully invested in your success.
+          </p>
+          <p>
+            At CYROTICS, we partner with organizations across India to design, deploy, and 
+            optimize infrastructure that powers their most critical operations. From data 
+            center architecture to enterprise-wide network solutions, we bring certified 
+            expertise, proven methodologies, and an unwavering commitment to on-time delivery.
+          </p>
+          <p>
+            Have a project in mind? Questions about our capabilities? Or simply want to 
+            explore what's possible? Our team is ready to listen, advise, and deliver.
+          </p>
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -99,7 +107,7 @@ export default function ContactForms() {
           
           {/* User Information */}
           <div className="space-y-6 border-b pb-8">
-             <h3 className="text-xl font-semibold flex items-center"><User className="mr-2" /> User Information</h3>
+             <h3 className="text-xl font-semibold flex items-center"><User className="mr-2" /> Schedule a Consultation</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="salutation">Salutation</Label>
@@ -364,3 +372,5 @@ export default function ContactForms() {
     </Card>
   );
 }
+
+    
