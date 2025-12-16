@@ -70,11 +70,11 @@ const whyChooseUs = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative w-full bg-primary/5 pb-24 md:pb-32 lg:pb-40">
+      <section className="relative w-full bg-primary/5 pb-24 pt-12 md:pb-32 lg:pb-40">
         <div className="absolute inset-0 z-0">
           <PlexusBackground />
         </div>
-        <div className="container relative z-10 pt-20 md:pt-12">
+        <div className="container relative z-10 text-left">
           <div className="max-w-3xl">
             <HeroHeadline />
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
