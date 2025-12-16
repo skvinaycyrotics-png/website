@@ -4,6 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { SupportDesk } from '@/components/layout/SupportDesk';
+import CookieConsent from '@/components/cookie-consent';
 
 export const metadata: Metadata = {
   title: 'CYROTICS TECHNOLOGIES | Technology Infrastructure & Security',
@@ -38,6 +39,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <Toaster />
+        <CookieConsent />
       </body>
     </html>
   );
