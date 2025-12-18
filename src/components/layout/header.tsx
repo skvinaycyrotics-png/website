@@ -37,7 +37,7 @@ import {
 import type { NavLink } from '@/lib/types';
 
 
-const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: () => void, pathname: string) => {
+const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: () => void, pathname: string, openMenu: string | null, setOpenMenu: (menu: string | null) => void) => {
   return links.map((link) => {
     if (link.subLinks) {
       if (isMobile) {
@@ -112,43 +112,50 @@ const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: ()
         );
       };
       return (
-        <DropdownMenu key={link.href}>
-          <DropdownMenuTrigger asChild>
-            <a
-              href={link.href.startsWith('#') ? undefined : link.href}
-              className={cn(
-                'flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary',
-                pathname.startsWith(link.href) && !link.href.startsWith('#')
-                  ? 'text-primary'
-                  : 'text-muted-foreground'
-              )}
-              onClick={(e) => {
-                if (link.href.startsWith('#')) {
-                  e.preventDefault();
-                } else {
-                  handleLinkClick();
-                }
-              }}
-            >
-              {link.label}
-              <ChevronDown className="h-4 w-4" />
-            </a>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-64">
-            {link.subLinks!.map((subLink) => (
-              subLink.subLinks ? (
-                <DesktopSubMenu key={subLink.href} subLinks={subLink.subLinks} label={subLink.label} icon={subLink.icon} />
-              ) : (
-                <DropdownMenuItem key={subLink.href} asChild>
-                  <Link href={subLink.href} onClick={handleLinkClick} className="flex items-center gap-2">
-                    {subLink.icon && <subLink.icon className="h-4 w-4 text-muted-foreground" />}
-                    <span>{subLink.label}</span>
-                  </Link>
-                </DropdownMenuItem>
-              )
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <div 
+            onMouseEnter={() => setOpenMenu(link.label)} 
+            onMouseLeave={() => setOpenMenu(null)} 
+            className="relative"
+            key={link.href}
+        >
+            <DropdownMenu open={openMenu === link.label} onOpenChange={(isOpen) => setOpenMenu(isOpen ? link.label : null)}>
+              <DropdownMenuTrigger asChild>
+                <a
+                  href={link.href.startsWith('#') ? undefined : link.href}
+                  className={cn(
+                    'flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary',
+                    pathname.startsWith(link.href) && !link.href.startsWith('#')
+                      ? 'text-primary'
+                      : 'text-muted-foreground'
+                  )}
+                  onClick={(e) => {
+                    if (link.href.startsWith('#')) {
+                      e.preventDefault();
+                    } else {
+                      handleLinkClick();
+                    }
+                  }}
+                >
+                  {link.label}
+                  <ChevronDown className="h-4 w-4" />
+                </a>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-64">
+                {link.subLinks!.map((subLink) => (
+                  subLink.subLinks ? (
+                    <DesktopSubMenu key={subLink.href} subLinks={subLink.subLinks} label={subLink.label} icon={subLink.icon} />
+                  ) : (
+                    <DropdownMenuItem key={subLink.href} asChild>
+                      <Link href={subLink.href} onClick={handleLinkClick} className="flex items-center gap-2">
+                        {subLink.icon && <subLink.icon className="h-4 w-4 text-muted-foreground" />}
+                        <span>{subLink.label}</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  )
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+        </div>
       );
     }
     // No sublinks
@@ -174,6 +181,7 @@ const renderNavLinks = (links: NavLink[], isMobile: boolean, handleLinkClick: ()
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -201,7 +209,7 @@ export function Header() {
         {isMounted && (
           <>
             <nav className="ml-auto hidden items-center gap-6 md:flex">
-              {renderNavLinks(PRIMARY_NAV_LINKS, false, handleLinkClick, pathname)}
+              {renderNavLinks(PRIMARY_NAV_LINKS, false, handleLinkClick, pathname, openMenu, setOpenMenu)}
             </nav>
             <div className="ml-4 hidden items-center gap-2 md:flex">
               <Button onClick={openSupportDesk}>
@@ -235,7 +243,7 @@ export function Header() {
                     </div>
                     <nav className="flex flex-1 flex-col justify-between">
                       <div className="flex flex-col gap-4">
-                        {renderNavLinks(PRIMARY_NAV_LINKS, true, handleLinkClick, pathname)}
+                        {renderNavLinks(PRIMARY_NAV_LINKS, true, handleLinkClick, pathname, openMenu, setOpenMenu)}
                          <Accordion type="single" collapsible className="w-full">
                             <AccordionItem value="other-links" className="border-b-0">
                             <AccordionTrigger className="py-2 text-lg font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180">
