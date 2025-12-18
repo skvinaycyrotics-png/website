@@ -15,6 +15,7 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 import { redirect } from 'next/navigation';
 
 export async function generateStaticParams() {
+  // We will generate all pages dynamically, except for the data-center-infrastructure-solutions one which has a dedicated page.
   return SERVICES.filter(service => service.slug !== 'data-center-infrastructure-solutions').map((service) => ({
     slug: service.slug,
   }));
@@ -26,6 +27,7 @@ export default async function ServiceDetailPage({
   params: { slug: string };
 }) {
 
+  // This is a special case redirect, if a user lands here.
   if (params.slug === 'data-center-infrastructure-solutions') {
     redirect('/services/data-center-infrastructure-solutions');
   }
