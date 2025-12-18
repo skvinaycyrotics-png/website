@@ -29,7 +29,7 @@ export default function CloudHybridITPage() {
       <section className="relative bg-primary/10 pt-32 pb-16 md:pt-40 md:pb-24">
         <div className="absolute inset-0">
           <Image
-            src={service.imageUrl}
+            src="/Cloud-&-Hybrid.png"
             alt={service.title}
             fill
             className="object-cover"
