@@ -30,7 +30,8 @@ export async function generateStaticParams() {
     service.slug !== 'renewable-energy' &&
     service.slug !== 'consulting-services' &&
     service.slug !== 'ai-ml-solutions' &&
-    service.slug !== 'intelligent-urban-ecosystems'
+    service.slug !== 'intelligent-urban-ecosystems' &&
+    service.slug !== 'automotive-engineering'
   ).map((service) => ({
     slug: service.slug,
   }));
@@ -81,6 +82,9 @@ export default async function ServiceDetailPage({
   }
   if (params.slug === 'intelligent-urban-ecosystems') {
     redirect('/services/intelligent-urban-ecosystems');
+  }
+  if (params.slug === 'automotive-engineering') {
+    redirect('/services/automotive-engineering');
   }
 
   const service = SERVICES.find((s) => s.slug === params.slug);
