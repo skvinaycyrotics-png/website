@@ -708,7 +708,7 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'smart-factory-building-infra',
-    title: 'Smart Factory & Building Infra',
+    title: 'Smart Factory & Building',
     category: 'Smart Factory & Building',
     shortDescription:
       'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
