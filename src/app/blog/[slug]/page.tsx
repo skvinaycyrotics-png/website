@@ -1,10 +1,11 @@
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BLOG_POSTS, SERVICES } from '@/lib/constants';
+import { BLOG_POSTS } from '@/lib/constants';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, MessageSquare } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { format, parseISO } from 'date-fns';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,6 +14,22 @@ export async function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({
     slug: post.slug,
   }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+      description: 'The blog post you are looking for does not exist.',
+    };
+  }
+
+  return {
+    title: `${post.title} | CYROTICS Insights`,
+    description: post.excerpt,
+  };
 }
 
 export default function BlogPostPage({
