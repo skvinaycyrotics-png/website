@@ -508,7 +508,7 @@ export const SERVICES: Service[] = [
     description:
       'Unified Communications (UC) integrates all communication tools into a single, easy-to-use platform, enabling teams to collaborate efficiently from anywhere. Whether your workforce is on-site, remote, or distributed across multiple locations, UC ensures smooth communication without the complexity of switching between multiple applications.',
     icon: Users,
-    imageUrl: 'https://picsum.photos/seed/uc/1200/800',
+    imageUrl: '/Unified-Communications-(UC).png',
     imageHint: 'team collaboration video call',
     features: [
       {
