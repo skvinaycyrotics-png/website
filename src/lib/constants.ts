@@ -554,7 +554,7 @@ export const SERVICES: Service[] = [
     description:
       'Protect your assets, people, and operations with our comprehensive security solutions. We design and deploy integrated systems for surveillance, access control, and fire detection, providing a unified security posture.',
     icon: Cctv,
-    imageUrl: 'https://picsum.photos/seed/security/1200/800',
+    imageUrl: '/Security-&-Surveillance.png',
     imageHint: 'security camera',
     features: [
       {
@@ -591,7 +591,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Proactive, predictive, and always-on managed services to keep your IT ecosystem secure, optimized, and operational.',
     description: 'Our Managed Services are designed to keep your IT ecosystem secure, optimized, and always operational—so you can focus on innovation while we manage complexity.',
     icon: ServerCog,
-    imageUrl: 'https://picsum.photos/seed/managed/1200/800',
+    imageUrl: '/Managed-Services.png',
     imageHint: 'managed services control room',
     features: [
       {
@@ -637,7 +637,7 @@ export const SERVICES: Service[] = [
     description:
       'From enterprise applications to cloud-native solutions, our software development services are tailored to your unique business needs, driving innovation and efficiency.',
     icon: Code,
-    imageUrl: 'https://picsum.photos/seed/software/1200/800',
+    imageUrl: '/Software-Development.png',
     imageHint: 'code editor',
     features: [
       {
@@ -669,7 +669,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Empower your business with our custom AI and Machine Learning solutions, from predictive analytics to intelligent automation.',
     description: 'At Cyrotics Technologies, we believe the future belongs to organizations that can think smarter, act faster, and innovate continuously. Our AI & ML solutions empower businesses to move beyond traditional automation and unlock real-time intelligence, predictive accuracy, and decision-making capabilities that scale effortlessly.',
     icon: BrainCircuit,
-    imageUrl: 'https://picsum.photos/seed/ai-ml/1200/800',
+    imageUrl: '/AL-&-ML-Solutions.png',
     imageHint: 'artificial intelligence brain',
     features: [
       {
@@ -715,7 +715,7 @@ export const SERVICES: Service[] = [
     description:
       'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
     icon: Building,
-    imageUrl: 'https://picsum.photos/seed/building/1200/800',
+    imageUrl: '/Smart-Factory-&-Building.png',
     imageHint: 'modern architecture',
     features: [
       {
@@ -753,7 +753,7 @@ export const SERVICES: Service[] = [
     description:
       'We empower urban environments by designing and deploying integrated smart city solutions. From intelligent traffic management to city-wide surveillance and smart lighting, we use IoT, data analytics, and robust network infrastructure to create safer, more efficient, and sustainable cities.',
     icon: Building2,
-    imageUrl: 'https://picsum.photos/seed/city/1200/800',
+    imageUrl: '/Smart-City-Infrastructure.png',
     imageHint: 'smart city',
     features: [
       {
@@ -782,7 +782,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'End-to-end automotive engineering, simulation, EV, and robotics solutions to accelerate innovation in the mobility sector.',
     description: 'Cyrotics Technologies delivers end-to-end automotive engineering solutions designed to enhance safety, improve vehicle performance, and accelerate digital transformation across the mobility sector. From mechanical design to embedded systems, we help OEMs, Tier-1 suppliers, and manufacturing units innovate with confidence.',
     icon: Car,
-    imageUrl: 'https://picsum.photos/seed/auto-eng/1200/800',
+    imageUrl: '/Mobility-&-Automotives.png',
     imageHint: 'automotive engineering design',
     features: [
       { title: 'Vehicle Design & Engineering', description: 'CAD modeling (BIW, Interiors, Chassis), GD&T, and structural optimization.', icon: Car },
@@ -802,7 +802,7 @@ export const SERVICES: Service[] = [
     description:
       'Harness the power of the sun with our end-to-end solar energy solutions. We help businesses reduce their carbon footprint and energy costs with reliable and efficient solar power systems.',
     icon: Sun,
-    imageUrl: 'https://picsum.photos/seed/solar/1200/800',
+    imageUrl: '/Renewable-Energy.png',
     imageHint: 'solar panels',
     features: [
       {
@@ -1045,7 +1045,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
     {
     quote:
-      'From network architecture to implementation, CYROTICS has been an indispensable partner. Their SD-WAN solution has dramatically increased our branch agility and significantly reduced connectivity costs. Their technical support is consistently responsive and highly knowledgeable.',
+      'From network architecture to implementation, CYROTICS has been an indispensable partner. Their SD-WAN solution has dramatically increased our branch agility and significantly reduced our connectivity costs. Their technical support is consistently responsive and highly knowledgeable.',
     name: 'Amit Patel',
     title: 'IT Director',
     company: 'Retail Chain Corp',
