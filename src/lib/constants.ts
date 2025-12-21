@@ -429,7 +429,7 @@ export const SERVICES: Service[] = [
     description:
       'Enhance communication and collaboration with our state-of-the-art audio-visual solutions. We create immersive experiences for boardrooms, auditoriums, and public spaces.',
     icon: MonitorSpeaker,
-    imageUrl: 'https://picsum.photos/seed/av/1200/800',
+    imageUrl: '/Audio-Visual-&-Communication.png',
     imageHint: 'conference room',
     features: [
       {
