@@ -1,4 +1,5 @@
 
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -86,8 +87,8 @@ export default function BlogPostPage({
             />
           </div>
 
-          <article 
-            className="prose-lg max-w-none text-muted-foreground [&_h3]:text-foreground [&_h3]:font-semibold [&_h3]:mt-8 [&_h3]:mb-4 [&_h3]:text-2xl [&_blockquote]:border-l-4 [&_blockquote]:border-primary [&_blockquote]:pl-4 [&_blockquote]:italic [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_li::marker]:text-primary [&_p]:leading-relaxed"
+          <div 
+            className="prose max-w-none lg:prose-lg prose-headings:font-headline prose-headings:text-foreground prose-h3:text-2xl prose-a:text-primary hover:prose-a:text-primary/80 prose-strong:text-foreground text-muted-foreground"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
