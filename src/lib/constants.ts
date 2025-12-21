@@ -289,7 +289,7 @@ export const SERVICES: Service[] = [
     description:
       'We design and implement Cloud and Hybrid IT solutions that seamlessly integrate on-premise systems with public and private cloud environments—enabling innovation without compromise.',
     icon: CloudCog,
-    imageUrl: 'https://picsum.photos/seed/cloud-hybrid/1200/800',
+    imageUrl: '/Cloud-&-Hybrid.png',
     imageHint: 'hybrid cloud network',
     features: [
       {
@@ -333,7 +333,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Secure, scalable, and high-performance storage solutions for data centers, hospitals, airports, and government institutions, powering your critical IT infrastructure.',
     description: 'Enterprise-Grade Storage Solutions for Data Centers, Hospitals, Airports & Government Institutions. We design and deploy secure, scalable, high-performance storage for your critical IT infrastructure.',
     icon: Database,
-    imageUrl: 'https://picsum.photos/seed/storage/1200/800',
+    imageUrl: '/Storage.png',
     imageHint: 'data storage array',
     features: [
       {
@@ -398,7 +398,7 @@ export const SERVICES: Service[] = [
     description:
       'Defend your digital assets with our advanced, multi-layered cybersecurity services. We leverage AI-driven threat intelligence, proactive monitoring, and a Zero Trust framework to protect your infrastructure, data, and users against evolving cyber threats.',
     icon: ShieldCheck,
-    imageUrl: 'https://picsum.photos/seed/cybersec/1200/800',
+    imageUrl: '/Cyber.png',
     imageHint: 'cyber security',
     features: [
       {
@@ -468,7 +468,7 @@ export const SERVICES: Service[] = [
     description:
       'Strategic IT Consulting for a Smarter, Secure & Scalable Future. We help you plan, design, modernize, and transform your IT ecosystems with confidence.',
     icon: Briefcase,
-    imageUrl: 'https://picsum.photos/seed/consulting/1200/800',
+    imageUrl: '/IT-Strategy-&-Advisory.png',
     imageHint: 'business consulting meeting',
     features: [
       {
@@ -2705,6 +2705,8 @@ export const footerQuickLinks = [
         { href: "/contact", label: "Contact Us" },
     ]
 ];
+    
+
     
 
     
