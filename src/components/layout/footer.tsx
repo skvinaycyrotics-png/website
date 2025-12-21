@@ -46,6 +46,12 @@ export function Footer() {
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+  
+  const openSupportDesk = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    document.dispatchEvent(new Event('open-support-desk'));
+  }
+
 
   const updatedFooterQuickLinks = footerQuickLinks.map(column => 
     column
@@ -85,9 +91,13 @@ export function Footer() {
                       <ul key={index} className="space-y-2">
                           {column.map(link => (
                               <li key={link.href}>
-                                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                                  <a 
+                                    href={link.href} 
+                                    onClick={link.href === '#' ? openSupportDesk : undefined}
+                                    className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                                  >
                                       {link.label}
-                                  </Link>
+                                  </a>
                               </li>
                           ))}
                       </ul>
