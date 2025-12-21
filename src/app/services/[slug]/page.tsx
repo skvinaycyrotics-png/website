@@ -30,6 +30,7 @@ export async function generateStaticParams() {
     service.slug !== 'renewable-energy' &&
     service.slug !== 'consulting-services' &&
     service.slug !== 'ai-ml-solutions' &&
+    service.slug !== 'software-development' &&
     service.slug !== 'intelligent-urban-ecosystems' &&
     service.slug !== 'automotive-engineering'
   ).map((service) => ({
@@ -79,6 +80,9 @@ export default async function ServiceDetailPage({
   }
   if (params.slug === 'ai-ml-solutions') {
     redirect('/services/ai-ml-solutions');
+  }
+  if (params.slug === 'software-development') {
+    redirect('/services/software-development');
   }
   if (params.slug === 'intelligent-urban-ecosystems') {
     redirect('/services/intelligent-urban-ecosystems');
