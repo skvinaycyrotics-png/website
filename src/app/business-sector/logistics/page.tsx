@@ -1,11 +1,10 @@
 
 import Image from 'next/image';
 import {
-  Truck,
-  Warehouse,
-  Signal,
-  Bot,
+  Server,
+  Network,
   ShieldCheck,
+  Cloud,
 } from 'lucide-react';
 import {
   Card,
@@ -19,24 +18,24 @@ import Link from 'next/link';
 export default function LogisticsPage() {
   const solutions = [
     {
-      title: 'IoT-Based Asset Tracking',
-      icon: Signal,
-      description: 'Real-time tracking of shipments, vehicles, and assets using GPS and IoT sensors to provide complete visibility across your supply chain and prevent losses.',
+      title: 'Data Center Infrastructure',
+      icon: Server,
+      description: 'Building and managing high-density, scalable data centers that form the core of modern telecommunication networks, ensuring 99.99% uptime for critical services.',
     },
     {
-      title: 'Smart Warehouse & Automation',
-      icon: Warehouse,
-      description: 'Implementing warehouse management systems (WMS), automated sorting, and robotic process automation (RPA) to improve inventory accuracy and order fulfillment speed.',
-    },
-    {
-      title: 'Supply Chain Visibility Platforms',
-      icon: Bot,
-      description: 'Developing custom platforms that integrate data from various sources (ERP, GPS, sensors) to provide end-to-end visibility and predictive analytics for your supply chain.',
+      title: 'High-Speed Network Solutions',
+      icon: Network,
+      description: 'Deploying carrier-grade routing, switching, and optical transport networks to support massive data traffic.',
     },
     {
       title: 'Cybersecurity for Logistics',
       icon: ShieldCheck,
-      description: 'Securing your logistics and supply chain systems from cyber threats, ensuring the integrity of your data and the continuity of your operations.',
+      description: 'Protecting network infrastructure, subscriber data, and billing systems from sophisticated cyber threats with our managed security services and next-gen firewalls.',
+    },
+    {
+      title: 'Cloud & NFV Infrastructure',
+      icon: Cloud,
+      description: 'Helping telcos transition to Network Functions Virtualization (NFV) and cloud-native architectures for greater agility, scalability, and cost-efficiency.',
     },
   ];
 
