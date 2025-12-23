@@ -1,4 +1,5 @@
 
+
 import type {
   NavLink,
   Service,
@@ -2349,7 +2350,7 @@ export const socialLinks = [
   { name: 'YouTube', icon: Youtube, href: '#' },
   { name: 'Twitter', icon: Twitter, href: '#' },
   { name: 'LinkedIn', icon: Linkedin, href: '#' },
-  { name: 'Instagram', icon: Instagram, href: '#' },
+  { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/cyroticstechnologies/' },
   { name: 'Facebook', icon: Facebook, href: '#' },
 ];
     
@@ -2377,4 +2378,5 @@ export const footerQuickLinks = [
     
 
     
+
 
