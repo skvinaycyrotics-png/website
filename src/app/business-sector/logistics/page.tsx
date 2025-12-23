@@ -1,10 +1,10 @@
 
 import Image from 'next/image';
 import {
-  Server,
-  Network,
+  Truck,
+  Warehouse,
   ShieldCheck,
-  Cloud,
+  Bot,
 } from 'lucide-react';
 import {
   Card,
@@ -19,12 +19,12 @@ export default function LogisticsPage() {
   const solutions = [
     {
       title: 'Data Center Infrastructure',
-      icon: Server,
+      icon: Warehouse,
       description: 'Building and managing high-density, scalable data centers that form the core of modern telecommunication networks, ensuring 99.99% uptime for critical services.',
     },
     {
       title: 'High-Speed Network Solutions',
-      icon: Network,
+      icon: Truck,
       description: 'Deploying carrier-grade routing, switching, and optical transport networks to support massive data traffic.',
     },
     {
@@ -34,7 +34,7 @@ export default function LogisticsPage() {
     },
     {
       title: 'Cloud & NFV Infrastructure',
-      icon: Cloud,
+      icon: Bot,
       description: 'Helping telcos transition to Network Functions Virtualization (NFV) and cloud-native architectures for greater agility, scalability, and cost-efficiency.',
     },
   ];
@@ -67,12 +67,11 @@ export default function LogisticsPage() {
           </div>
           <div>
             <Image
-              src="https://picsum.photos/seed/logistics/600/400"
+              src="/Logistics.png"
               alt="Warehouse with automated robots"
               width={600}
               height={400}
               className="rounded-lg shadow-md"
-              data-ai-hint="logistics warehouse"
             />
           </div>
         </div>
