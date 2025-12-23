@@ -68,7 +68,7 @@ export default function TelecomPage() {
           </div>
           <div>
             <Image
-              src="https://picsum.photos/seed/telecom/600/400"
+              src="/Telecom.png"
               alt="Telecommunication tower with network signals"
               width={600}
               height={400}
