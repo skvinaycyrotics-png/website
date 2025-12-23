@@ -120,7 +120,6 @@ export const NAV_LINKS: NavLink[] = [
         label: 'Industry Solution',
         icon: Building,
         subLinks: [
-          { href: '/business-sector/urban-development', label: 'Urban Development', icon: BuildingIcon },
           { href: '/business-sector/telecom', label: 'Telecom', icon: Signal },
           { href: '/business-sector/logistics', label: 'Logistics', icon: Truck },
           { href: '/business-sector/education', label: 'Education', icon: GraduationCap },
@@ -175,7 +174,6 @@ export const PRIMARY_NAV_LINKS: NavLink[] = [
         label: 'Industry Solution',
         icon: Building,
         subLinks: [
-          { href: '/business-sector/urban-development', label: 'Urban Development', icon: BuildingIcon },
           { href: '/business-sector/telecom', label: 'Telecom', icon: Signal },
           { href: '/business-sector/logistics', label: 'Logistics', icon: Truck },
           { href: '/business-sector/education', label: 'Education', icon: GraduationCap },
@@ -2691,4 +2689,5 @@ export const footerQuickLinks = [
     
 
     
+
 
