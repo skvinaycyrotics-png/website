@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import {
   Server,
@@ -38,21 +39,6 @@ const whatWeDo = [
     title: 'ELV, AV & Smart Solutions',
     icon: MonitorSpeaker,
     description: 'Surveillance systems, public address, smart AV conference rooms, and access control.',
-  },
-  {
-    title: 'IoT, Automation & Smart Systems',
-    icon: Bot,
-    description: 'Industrial IoT, automation engineering, smart facilities, and custom automation solutions.',
-  },
-  {
-    title: 'Software Development & Digital Solutions',
-    icon: Code,
-    description: 'Web & mobile apps, cloud-native systems, AI/ML integrations, and real-time analytics.',
-  },
-  {
-    title: 'Mobility & Automotive Engineering',
-    icon: Car,
-    description: 'EV system design, automotive simulation (CAE/CFD), autonomous & robotics solutions.',
   },
 ];
 
