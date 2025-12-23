@@ -67,12 +67,11 @@ export default function PsuPage() {
           </div>
           <div>
             <Image
-              src="https://picsum.photos/seed/psu/600/400"
+              src="/psu.png"
               alt="Government building with digital network lines"
               width={600}
               height={400}
               className="rounded-lg shadow-md"
-              data-ai-hint="government building"
             />
           </div>
         </div>

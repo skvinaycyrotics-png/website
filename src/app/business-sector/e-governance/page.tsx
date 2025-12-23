@@ -71,12 +71,11 @@ export default function EGovernancePage() {
           </div>
           <div>
             <Image
-              src="https://picsum.photos/seed/egov/600/400"
+              src="/E-Gov.png"
               alt="Person using a government service on a laptop"
               width={600}
               height={400}
               className="rounded-lg shadow-md"
-              data-ai-hint="digital governance"
             />
           </div>
         </div>

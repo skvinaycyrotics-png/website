@@ -67,12 +67,11 @@ export default function EnergyPage() {
           </div>
           <div>
             <Image
-              src="https://picsum.photos/seed/energy/600/400"
+              src="/Energy.png"
               alt="Solar panels against a blue sky"
               width={600}
               height={400}
               className="rounded-lg shadow-md"
-              data-ai-hint="solar panels"
             />
           </div>
         </div>

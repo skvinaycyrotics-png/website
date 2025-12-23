@@ -71,12 +71,11 @@ export default function DefencePage() {
           </div>
           <div>
             <Image
-              src="https://picsum.photos/seed/defence/600/400"
+              src="/Defence.png"
               alt="Military personnel in a command center"
               width={600}
               height={400}
               className="rounded-lg shadow-md"
-              data-ai-hint="defence command center"
             />
           </div>
         </div>

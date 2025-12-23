@@ -67,12 +67,11 @@ export default function EducationPage() {
           </div>
           <div>
             <Image
-              src="https://picsum.photos/seed/education/600/400"
+              src="/Education.png"
               alt="Students collaborating in a modern classroom"
               width={600}
               height={400}
               className="rounded-lg shadow-md"
-              data-ai-hint="modern classroom"
             />
           </div>
         </div>

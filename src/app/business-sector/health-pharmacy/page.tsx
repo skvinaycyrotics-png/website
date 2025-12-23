@@ -67,12 +67,11 @@ export default function HealthPharmacyPage() {
           </div>
           <div>
             <Image
-              src="https://picsum.photos/seed/healthcare/600/400"
+              src="/Health.png"
               alt="Doctor using a tablet in a modern hospital"
               width={600}
               height={400}
               className="rounded-lg shadow-md"
-              data-ai-hint="doctor tablet"
             />
           </div>
         </div>
