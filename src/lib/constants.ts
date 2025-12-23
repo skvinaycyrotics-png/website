@@ -102,11 +102,19 @@ export const NAV_LINKS: NavLink[] = [
     label: 'Services',
     subLinks: [
       { href: '/services/data-center-infrastructure-solutions', label: 'Data Center Infrastructure', icon: Server },
+      { href: '/services/cloud-hybrid-it-solutions', label: 'Cloud & Hybrid IT Solutions', icon: CloudCog },
+      { href: '/services/scalable-storage-architecture', label: 'Scalable Storage Architecture', icon: Database },
       { href: '/services/nextgen-cybersecurity-shield', label: 'NextGen Cybersecurity Shield', icon: Shield },
       { href: '/services/audio-visual-communication', label: 'Audio-Visual & Communication', icon: MonitorSpeaker },
+      { href: '/services/consulting-services', label: 'IT Strategy & Advisory', icon: Briefcase },
       { href: '/services/unified-communications', label: 'Unified Communications (UC)', icon: Users },
       { href: '/services/security-surveillance', label: 'Security & Surveillance', icon: Cctv },
       { href: '/services/managed-services', label: 'Managed Services', icon: ServerCog },
+      { href: '/services/software-development', label: 'Software Development', icon: Code },
+      { href: '/services/ai-ml-solutions', label: 'AI & ML Solutions', icon: BrainCircuit },
+      { href: '/services/smart-factory-building-infra', label: 'Smart Factory & Building', icon: Building },
+      { href: '/services/intelligent-urban-ecosystems', label: 'Smart City Infrastructure', icon: Building2 },
+      { href: '/services/automotive-engineering', label: 'Mobility & Automotives', icon: Car },
       { href: '/services/renewable-energy', label: 'Renewable Energy', icon: Sun },
     ],
   },
@@ -124,8 +132,7 @@ export const NAV_LINKS: NavLink[] = [
           { href: '/business-sector/logistics', label: 'Logistics', icon: Truck },
           { href: '/business-sector/education', label: 'Education', icon: GraduationCap },
           { href: '/business-sector/health-pharmacy', label: 'Health & Pharmacy', icon: HeartPulse },
-          { href: '/business-sector/processing-units', label: 'Processing Units', icon: Cpu },
-          { href: '/business-sector/manufacturing-units', label: 'Manufacturing Units', icon: FactoryIcon },
+          { href: '/business-sector/mobility-automotive-engineering', label: 'Mobility & Automotive', icon: Car },
           { href: '/business-sector/energy', label: 'Energy', icon: Sun },
         ],
       },
@@ -135,7 +142,6 @@ export const NAV_LINKS: NavLink[] = [
         icon: Landmark,
         subLinks: [
           { href: '/business-sector/defence', label: 'Defence', icon: ShieldHalf },
-          { href: '/business-sector/smart-city', label: 'Smart City', icon: Lightbulb },
           { href: '/business-sector/e-governance', label: 'E-Governance', icon: Globe },
           { href: '/business-sector/public-sector-undertakings', label: 'Public Sector Undertakings', icon: Building },
         ],
@@ -155,11 +161,19 @@ export const PRIMARY_NAV_LINKS: NavLink[] = [
     icon: Briefcase,
     subLinks: [
       { href: '/services/data-center-infrastructure-solutions', label: 'Data Center Infrastructure', icon: Server },
+      { href: '/services/cloud-hybrid-it-solutions', label: 'Cloud & Hybrid IT Solutions', icon: CloudCog },
+      { href: '/services/scalable-storage-architecture', label: 'Scalable Storage Architecture', icon: Database },
       { href: '/services/nextgen-cybersecurity-shield', label: 'NextGen Cybersecurity Shield', icon: Shield },
       { href: '/services/audio-visual-communication', label: 'Audio-Visual & Communication', icon: MonitorSpeaker },
+      { href: '/services/consulting-services', label: 'IT Strategy & Advisory', icon: Briefcase },
       { href: '/services/unified-communications', label: 'Unified Communications (UC)', icon: Users },
       { href: '/services/security-surveillance', label: 'Security & Surveillance', icon: Cctv },
       { href: '/services/managed-services', label: 'Managed Services', icon: ServerCog },
+      { href: '/services/software-development', label: 'Software Development', icon: Code },
+      { href: '/services/ai-ml-solutions', label: 'AI & ML Solutions', icon: BrainCircuit },
+      { href: '/services/smart-factory-building-infra', label: 'Smart Factory & Building', icon: Building },
+      { href: '/services/intelligent-urban-ecosystems', label: 'Smart City Infrastructure', icon: Building2 },
+      { href: '/services/automotive-engineering', label: 'Mobility & Automotives', icon: Car },
       { href: '/services/renewable-energy', label: 'Renewable Energy', icon: Sun },
     ],
   },
@@ -178,8 +192,7 @@ export const PRIMARY_NAV_LINKS: NavLink[] = [
           { href: '/business-sector/logistics', label: 'Logistics', icon: Truck },
           { href: '/business-sector/education', label: 'Education', icon: GraduationCap },
           { href: '/business-sector/health-pharmacy', label: 'Health & Pharmacy', icon: HeartPulse },
-          { href: '/business-sector/processing-units', label: 'Processing Units', icon: Cpu },
-          { href: '/business-sector/manufacturing-units', label: 'Manufacturing Units', icon: FactoryIcon },
+          { href: '/business-sector/mobility-automotive-engineering', label: 'Mobility & Automotive', icon: Car },
           { href: '/business-sector/energy', label: 'Energy', icon: Sun },
         ],
       },
@@ -189,7 +202,6 @@ export const PRIMARY_NAV_LINKS: NavLink[] = [
         icon: Landmark,
         subLinks: [
           { href: '/business-sector/defence', label: 'Defence', icon: ShieldHalf },
-          { href: '/business-sector/smart-city', label: 'Smart City', icon: Lightbulb },
           { href: '/business-sector/e-governance', label: 'E-Governance', icon: Globe },
           { href: '/business-sector/public-sector-undertakings', label: 'Public Sector Undertakings', icon: Building },
         ],
@@ -2689,5 +2701,4 @@ export const footerQuickLinks = [
     
 
     
-
 
