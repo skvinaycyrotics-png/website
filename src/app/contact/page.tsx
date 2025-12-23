@@ -1,5 +1,6 @@
 
 import { Phone, Mail, MapPin } from 'lucide-react';
+import Link from 'next/link';
 import ContactForms from './contact-forms';
 
 export const metadata = {
@@ -11,7 +12,7 @@ export default function ContactPage() {
   const addressLine1 = "Cyrotics Technologies (OPC) Pvt. Ltd.";
   const addressLine2 = "86/2, Street No.-54/V/3, Ist 60 Feet Road, Molarband Extension, Badarpur Border, New Delhi – 110044, India";
   const fullAddress = `${addressLine1} ${addressLine2}`;
-  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(fullAddress)}&output=embed`;
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
 
   return (
     <>
@@ -35,16 +36,16 @@ export default function ContactPage() {
             </div>
             <div className="lg:sticky lg:top-24">
               <div className="overflow-hidden rounded-lg shadow-lg border">
-                <iframe
-                  src={mapSrc}
-                  width="100%"
-                  height="400"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Company Location"
-                ></iframe>
+                <a href={mapUrl} target="_blank" rel="noopener noreferrer">
+                  <img 
+                    src="https://picsum.photos/seed/map-placeholder/600/400" 
+                    alt="Map showing company location"
+                    width="100%"
+                    height="400"
+                    style={{ border: 0, objectFit: 'cover' }}
+                    data-ai-hint="world map"
+                  />
+                </a>
               </div>
               <div className="mt-6 space-y-4 text-sm">
                 <div className="flex items-start gap-3 group">
