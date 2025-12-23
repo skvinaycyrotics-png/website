@@ -63,7 +63,7 @@ export default function TelecomPage() {
               The telecommunications industry is the lifeline of the digital economy. At CYROTICS Technologies, we provide the foundational infrastructure that enables telecom operators to deliver reliable, high-speed services to millions of users.
             </p>
             <p className="mt-4 text-muted-foreground">
-              From building resilient data centers to deploying secure, high-capacity networks, our solutions are engineered to meet the demanding standards of the telecom sector. We partner with operators to support their growth, facilitate the adoption of new technologies like 5G, and ensure their networks are secure against emerging threats.
+              From building resilient data centers to deploying secure, high-capacity networks, our solutions are engineered to meet the demanding standards of the telecom sector.
             </p>
           </div>
           <div>
