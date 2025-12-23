@@ -264,6 +264,116 @@ export const SERVICES: Service[] = [
     caseStudies: [{ title: 'Enterprise Network Overhaul', slug: 'proj-1' }],
   },
   {
+    slug: 'cloud-hybrid-it-solutions',
+    title: 'Cloud & Hybrid IT Solutions',
+    category: 'Cloud & Hybrid IT Solutions',
+    shortDescription:
+      'Empowering enterprises with secure, scalable, and intelligent cloud and hybrid IT infrastructures designed for performance, resilience, and future growth.',
+    description:
+      'We design and implement Cloud and Hybrid IT solutions that seamlessly integrate on-premise systems with public and private cloud environments—enabling innovation without compromise.',
+    icon: CloudCog,
+    imageUrl: 'https://picsum.photos/seed/cloud-hybrid/1200/800',
+    imageHint: 'hybrid cloud network',
+    features: [
+      {
+        title: 'Cloud Architecture & Strategy',
+        description:
+          'Expert design for AWS, Azure & GCP. We provide cloud readiness assessment, and a detailed migration planning & execution strategy.',
+        icon: Cloud,
+      },
+      {
+        title: 'Hybrid IT Integration',
+        description:
+          'Seamless integration of on-premise & cloud environments with secure connectivity, workload balancing, and multi-cloud interoperability.',
+        icon: GitBranch,
+      },
+      {
+        title: 'Cloud Security & Compliance',
+        description:
+          'Implementation of Zero Trust cloud architecture, IAM, MFA, encryption, and firewall integration to meet government & industry standards.',
+        icon: ShieldCheck,
+      },
+      {
+        title: 'Cloud Operations & Optimization',
+        description:
+          'Continuous performance monitoring, cost optimization (FinOps), and automation & orchestration of cloud resources.',
+        icon: ServerCog,
+      },
+      {
+        title: 'Disaster Recovery & Business Continuity',
+        description:
+          'Robust cloud-based DR solutions, high-availability architecture, and automated backup & recovery processes to ensure business continuity.',
+        icon: Shuffle,
+      },
+    ],
+    techStack: ['AWS', 'Microsoft Azure', 'Google Cloud Platform', 'VMware', 'Kubernetes', 'Terraform'],
+    caseStudies: [],
+  },
+  {
+    slug: 'scalable-storage-architecture',
+    title: 'Scalable Storage Architecture',
+    category: 'Data Center & Cloud Infrastructure Solutions',
+    shortDescription: 'Secure, scalable, and high-performance storage solutions for data centers, hospitals, airports, and government institutions, powering your critical IT infrastructure.',
+    description: 'Enterprise-Grade Storage Solutions for Data Centers, Hospitals, Airports & Government Institutions. We design and deploy secure, scalable, high-performance storage for your critical IT infrastructure.',
+    icon: Database,
+    imageUrl: 'https://picsum.photos/seed/storage/1200/800',
+    imageHint: 'data storage array',
+    features: [
+      {
+        title: 'Easily scale from TB to multiple PB',
+        description: 'Supports horizontal and vertical expansion, ideal for growing enterprise workloads.',
+        icon: Expand,
+      },
+      {
+        title: 'High-Performance Storage (All-Flash / Hybrid)',
+        description: 'NVMe/SSD-based high-speed response with low-latency read/write operations, suitable for HPC, databases, VMs, and analytics.',
+        icon: Zap,
+      },
+      {
+        title: 'Multi-Tier Storage',
+        description: 'Automated tiering based on data usage across high-performance SSD, cost-optimal SAS, and archival HDD storage.',
+        icon: Layers3,
+      },
+      {
+        title: 'SAN / NAS / Object Storage Support',
+        description: 'Support for SAN (Fibre Channel, iSCSI), NAS (NFS, SMB/CIFS), and Object Storage (S3) for any workload.',
+        icon: ServerCog,
+      },
+      {
+        title: 'Storage Virtualization',
+        description: 'Pool storage from multiple vendors into a single, centrally managed console to reduce hardware dependency.',
+        icon: Combine,
+      },
+      {
+        title: 'High Availability & Redundancy',
+        description: 'Active-active/active-passive architecture with RAID 5/6/10 support and multipath I/O (MPIO) failover clusters.',
+        icon: Shield,
+      },
+      {
+        title: 'Data Protection & Disaster Recovery',
+        description: 'Features snapshot replication, synchronous/asynchronous replication, offsite DR, and immutable storage for ransomware protection.',
+        icon: Clock,
+      },
+      {
+        title: 'Intelligent Data Management',
+        description: 'Benefit from deduplication, compression, thin provisioning, and real-time monitoring and forecasting.',
+        icon: BrainCircuit,
+      },
+      {
+        title: 'Cloud-Ready Storage',
+        description: 'Hybrid & multi-cloud integration with support for cloud backup (AWS, Azure, GCP) and cloud tiering.',
+        icon: CloudCog,
+      },
+      {
+        title: 'Secure Storage Architecture',
+        description: 'AES-256 data-at-rest encryption, end-to-end data path encryption, and RBAC with MFA access control.',
+        icon: FileCheck2,
+      },
+    ],
+    techStack: ['Dell EMC', 'NetApp', 'HPE', 'Pure Storage', 'IBM Storage', 'Ceph', 'MinIO'],
+    caseStudies: [],
+  },
+  {
     slug: 'nextgen-cybersecurity-shield',
     title: 'NextGen Cybersecurity Shield',
     category: 'NextGen Cybersecurity Shield',
@@ -271,7 +381,7 @@ export const SERVICES: Service[] = [
     description:
       'Defend your digital assets with our advanced, multi-layered cybersecurity services. We leverage AI-driven threat intelligence, proactive monitoring, and a Zero Trust framework to protect your infrastructure, data, and users against evolving cyber threats.',
     icon: ShieldCheck,
-    imageUrl: '/Cyber.png',
+    imageUrl: 'https://picsum.photos/seed/cybersec/1200/800',
     imageHint: 'cyber security',
     features: [
       {
@@ -302,7 +412,7 @@ export const SERVICES: Service[] = [
     description:
       'Enhance communication and collaboration with our state-of-the-art audio-visual solutions. We create immersive experiences for boardrooms, auditoriums, and public spaces.',
     icon: MonitorSpeaker,
-    imageUrl: '/Audio-Visual-&-Communication.png',
+    imageUrl: 'https://picsum.photos/seed/av/1200/800',
     imageHint: 'conference room',
     features: [
       {
@@ -333,6 +443,46 @@ export const SERVICES: Service[] = [
     caseStudies: [],
   },
   {
+    slug: 'consulting-services',
+    title: 'IT Strategy & Advisory',
+    category: 'IT Strategy & Advisory',
+    shortDescription:
+      'Strategic IT Consulting for a Smarter, Secure & Scalable Future. We help you plan, design, modernize, and transform your IT ecosystems with confidence.',
+    description:
+      'Strategic IT Consulting for a Smarter, Secure & Scalable Future. We help you plan, design, modernize, and transform your IT ecosystems with confidence.',
+    icon: Briefcase,
+    imageUrl: 'https://picsum.photos/seed/consulting/1200/800',
+    imageHint: 'business consulting meeting',
+    features: [
+      {
+        title: 'IT Infrastructure Consulting',
+        description:
+          'We design and optimize resilient, high-performance IT infrastructures—including network architecture, cloud strategy, and HA/DR planning—aligned with your long-term business growth.',
+        icon: Server,
+      },
+      {
+        title: 'Data Center Consulting',
+        description:
+          'Our experts provide end-to-end consulting for data center assessment, modernization, migration, and greenfield builds, ensuring peak efficiency, security, and compliance.',
+        icon: Database,
+      },
+      {
+        title: 'IT Strategy Consulting',
+        description:
+          'We align technology investments with your organizational goals by developing clear IT roadmaps, digital transformation strategies, and robust governance frameworks.',
+        icon: TrendingUp,
+      },
+      {
+        title: 'Project Management Consultancy',
+        description:
+          'Our PMP-certified experts ensure complex IT projects are delivered on time and within budget through structured planning, risk mitigation, and stakeholder management.',
+        icon: GanttChartSquare,
+      },
+    ],
+    techStack: ['ITIL', 'PMP', 'Agile', 'TOGAF', 'AWS', 'Azure', 'GCP', 'Cisco'],
+    caseStudies: [],
+  },
+  {
     slug: 'unified-communications',
     title: 'Unified Communications (UC)',
     category: 'Audio-Visual & Communication',
@@ -341,7 +491,7 @@ export const SERVICES: Service[] = [
     description:
       'Unified Communications (UC) integrates all communication tools into a single, easy-to-use platform, enabling teams to collaborate efficiently from anywhere. Whether your workforce is on-site, remote, or distributed across multiple locations, UC ensures smooth communication without the complexity of switching between multiple applications.',
     icon: Users,
-    imageUrl: '/Unified-Communications-(UC).png',
+    imageUrl: 'https://picsum.photos/seed/uc/1200/800',
     imageHint: 'team collaboration video call',
     features: [
       {
@@ -387,7 +537,7 @@ export const SERVICES: Service[] = [
     description:
       'Protect your assets, people, and operations with our comprehensive security solutions. We design and deploy integrated systems for surveillance, access control, and fire detection, providing a unified security posture.',
     icon: Cctv,
-    imageUrl: '/Security-&-Surveillance.png',
+    imageUrl: 'https://picsum.photos/seed/security/1200/800',
     imageHint: 'security camera',
     features: [
       {
@@ -424,7 +574,7 @@ export const SERVICES: Service[] = [
     shortDescription: 'Proactive, predictive, and always-on managed services to keep your IT ecosystem secure, optimized, and operational.',
     description: 'Our Managed Services are designed to keep your IT ecosystem secure, optimized, and always operational—so you can focus on innovation while we manage complexity.',
     icon: ServerCog,
-    imageUrl: '/Managed-Services.png',
+    imageUrl: 'https://picsum.photos/seed/managed/1200/800',
     imageHint: 'managed services control room',
     features: [
       {
@@ -462,6 +612,171 @@ export const SERVICES: Service[] = [
     caseStudies: [],
   },
   {
+    slug: 'software-development',
+    title: 'Software Development',
+    category: 'Software Development',
+    shortDescription:
+      'From enterprise applications to cloud-native solutions, our software development services are tailored to your unique business needs, driving innovation and efficiency.',
+    description:
+      'From enterprise applications to cloud-native solutions, our software development services are tailored to your unique business needs, driving innovation and efficiency.',
+    icon: Code,
+    imageUrl: 'https://picsum.photos/seed/software/1200/800',
+    imageHint: 'code editor',
+    features: [
+      {
+        title: 'Custom Enterprise Applications',
+        description:
+          'Bespoke software solutions designed to streamline your business processes and workflows.',
+        icon: Rocket,
+      },
+      {
+        title: 'Cloud & Mobile Solutions',
+        description:
+          'Develop and deploy scalable applications on the cloud and deliver seamless experiences on mobile devices.',
+        icon: Smartphone,
+      },
+      {
+        title: 'API Development & Integration',
+        description:
+          'Build and integrate robust APIs to connect your systems and unlock new business capabilities.',
+        icon: GitBranch,
+      },
+    ],
+    techStack: ['React', 'Node.js', 'Python', 'Docker', 'AWS'],
+    caseStudies: [],
+  },
+  {
+    slug: 'ai-ml-solutions',
+    title: 'AI & ML Solutions',
+    category: 'Software Development',
+    shortDescription: 'Empower your business with our custom AI and Machine Learning solutions, from predictive analytics to intelligent automation.',
+    description: 'At Cyrotics Technologies, we believe the future belongs to organizations that can think smarter, act faster, and innovate continuously. Our AI & ML solutions empower businesses to move beyond traditional automation and unlock real-time intelligence, predictive accuracy, and decision-making capabilities that scale effortlessly.',
+    icon: BrainCircuit,
+    imageUrl: 'https://picsum.photos/seed/ai-ml/1200/800',
+    imageHint: 'artificial intelligence brain',
+    features: [
+      {
+        title: 'AI-Powered Automation',
+        description: 'Streamline repetitive workflows using intelligent automation systems that reduce manual effort, minimize errors, and deliver operational precision.',
+        icon: Bot,
+      },
+      {
+        title: 'Machine Learning Models',
+        description: 'We build robust ML models engineered to understand data patterns, predict outcomes, and support strategic decisions.',
+        icon: Layers3,
+      },
+      {
+        title: 'Computer Vision Solutions',
+        description: 'Enable machines to see, analyze, and interpret real-world visuals with advanced vision models.',
+        icon: Eye,
+      },
+      {
+        title: 'Natural Language Processing (NLP)',
+        description: 'Allow systems to comprehend human language and deliver intelligent, contextual responses, like chatbots and sentiment analysis.',
+        icon: MessageSquare,
+      },
+      {
+        title: 'AI for IoT & Smart Infrastructure',
+        description: 'Integrate AI with IoT to unlock adaptive, self-learning environments for predictive maintenance and energy optimization.',
+        icon: Signal,
+      },
+      {
+        title: 'AI Consulting & Strategy',
+        description: 'We guide organizations in developing future-proof AI strategies aligned with business KPIs, from readiness assessment to end-to-end solution design.',
+        icon: Sparkles,
+      },
+    ],
+    techStack: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'AWS SageMaker', 'GCP AI Platform'],
+    caseStudies: [],
+  },
+  {
+    slug: 'smart-factory-building-infra',
+    title: 'Smart Factory & Building',
+    category: 'Smart Factory & Building',
+    shortDescription:
+      'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
+    description:
+      'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
+    icon: Building,
+    imageUrl: 'https://picsum.photos/seed/building/1200/800',
+    imageHint: 'modern architecture',
+    features: [
+      {
+        title: 'Building Management Systems (BMS)',
+        description:
+          'Centralized control and automation of your building’s core systems for operational efficiency.',
+        icon: Building2,
+      },
+       {
+        title: 'HVAC Control Systems',
+        description: 'Intelligent control of heating, ventilation, and air conditioning to optimize comfort and reduce energy consumption.',
+        icon: Fan,
+      },
+      {
+        title: 'Energy Management',
+        description:
+          'Monitor, analyze, and optimize energy consumption to reduce costs and improve sustainability.',
+        icon: BatteryCharging,
+      },
+      {
+        title: 'IoT Integration',
+        description:
+          'Connect and manage a wide range of IoT sensors and devices for real-time insights and automation.',
+        icon: Signal,
+      },
+    ],
+    techStack: ['Schneider Electric', 'Siemens', 'Johnson Controls', 'LoRaWAN'],
+    caseStudies: [],
+  },
+  {
+    slug: 'intelligent-urban-ecosystems',
+    title: 'Smart City Infrastructure',
+    category: 'Smart City Infrastructure',
+    shortDescription: 'Empower urban environments with our integrated smart city solutions, enhancing public safety, traffic management, and resource efficiency through IoT and data analytics.',
+    description:
+      'We empower urban environments by designing and deploying integrated smart city solutions. From intelligent traffic management to city-wide surveillance and smart lighting, we use IoT, data analytics, and robust network infrastructure to create safer, more efficient, and sustainable cities.',
+    icon: Building2,
+    imageUrl: 'https://picsum.photos/seed/city/1200/800',
+    imageHint: 'smart city',
+    features: [
+      {
+        title: 'Intelligent Traffic Management',
+        description: 'Deploy smart traffic signals, vehicle detection sensors, and centralized management platforms to reduce congestion and improve traffic flow.',
+        icon: TrafficCone,
+      },
+      {
+        title: 'City-Wide Surveillance',
+        description: 'Implement a network of AI-powered cameras for public safety, incident detection, and crowd management with a central command and control center.',
+        icon: Cctv,
+      },
+      {
+        title: 'Smart Utilities & IoT',
+        description: 'Integrate IoT sensors for smart lighting, waste management, and environmental monitoring to optimize resource usage and reduce operational costs.',
+        icon: Map,
+      },
+    ],
+    techStack: ['LoRaWAN', '5G', 'IoT Platforms', 'GIS', 'Video Analytics'],
+    caseStudies: [],
+  },
+  {
+    slug: 'automotive-engineering',
+    title: 'Mobility & Automotives',
+    category: 'Mobility & Automotives',
+    shortDescription: 'End-to-end automotive engineering, simulation, EV, and robotics solutions to accelerate innovation in the mobility sector.',
+    description: 'Cyrotics Technologies delivers end-to-end automotive engineering solutions designed to enhance safety, improve vehicle performance, and accelerate digital transformation across the mobility sector. From mechanical design to embedded systems, we help OEMs, Tier-1 suppliers, and manufacturing units innovate with confidence.',
+    icon: Car,
+    imageUrl: 'https://picsum.photos/seed/auto-eng/1200/800',
+    imageHint: 'automotive engineering design',
+    features: [
+      { title: 'Vehicle Design & Engineering', description: 'CAD modeling (BIW, Interiors, Chassis), GD&T, and structural optimization.', icon: Car },
+      { title: 'CAE/Virtual Validation', description: 'Crashworthiness simulation, NVH analysis, and thermal simulation.', icon: Cpu },
+      { title: 'Embedded & Automotive Electronics', description: 'ECU hardware design, AUTOSAR architecture support, and CAN/LIN/FlexRay integration.', icon: CircuitBoard },
+      { title: 'Robotics & Industrial Automation', description: 'Industrial robotics, smart factory solutions, and PLC/SCADA control systems for manufacturing.', icon: Factory }
+    ],
+    techStack: ['ANSYS', 'HyperMesh', 'CATIA', 'Simulink', 'CANoe'],
+    caseStudies: [],
+  },
+  {
     slug: 'renewable-energy',
     title: 'Renewable Energy',
     category: 'Renewable Energy',
@@ -470,7 +785,7 @@ export const SERVICES: Service[] = [
     description:
       'Harness the power of the sun with our end-to-end solar energy solutions. We help businesses reduce their carbon footprint and energy costs with reliable and efficient solar power systems.',
     icon: Sun,
-    imageUrl: '/Renewable-Energy.png',
+    imageUrl: 'https://picsum.photos/seed/solar/1200/800',
     imageHint: 'solar panels',
     features: [
       {
@@ -2347,7 +2662,7 @@ export const CAREER_FAQS: CareerFAQ[] = [
 ];
     
 export const socialLinks = [
-  { name: 'YouTube', icon: Youtube, href: '#' },
+  { name: 'YouTube', icon: Youtube, href: 'https://www.youtube.com/@CyroticsTechnologies' },
   { name: 'Twitter', icon: Twitter, href: '#' },
   { name: 'LinkedIn', icon: Linkedin, href: '#' },
   { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/cyroticstechnologies/' },
@@ -2376,7 +2691,4 @@ export const footerQuickLinks = [
     
 
     
-
-    
-
 
