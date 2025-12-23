@@ -50,12 +50,12 @@ export default function ManagedServicesPage() {
       </section>
 
       <section className="py-16 md:py-24 bg-primary/5">
-        <div className="container grid lg:grid-cols-3 gap-12 items-start">
-          <div className="lg:col-span-2">
-            <h2 className="font-headline text-3xl font-bold">
+        <div className="container">
+          <div>
+            <h2 className="font-headline text-3xl font-bold text-center">
               Key Features & Benefits
             </h2>
-            <div className="mt-8 grid md:grid-cols-2 gap-8">
+            <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {service.features.map((feature) => (
                 <div key={feature.title} className="flex gap-4">
                   <div className="flex-shrink-0">
@@ -71,26 +71,6 @@ export default function ManagedServicesPage() {
               ))}
             </div>
           </div>
-          <aside className="lg:col-span-1">
-            <Card className="sticky top-24 shadow-lg">
-              <CardHeader className="bg-muted/50">
-                <CardTitle>Technology Stack</CardTitle>
-                <CardDescription>
-                  We partner with industry leaders to deliver best-in-class solutions.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-6">
-                <ul className="space-y-3">
-                  {service.techStack.map((tech) => (
-                    <li key={tech} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-green-500" />
-                      <span className="font-medium">{tech}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </aside>
         </div>
       </section>
 
