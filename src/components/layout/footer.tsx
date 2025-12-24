@@ -76,11 +76,7 @@ export function Footer() {
                 Engineering the Future. Securing the Present.
               </p>
               <p className="mt-4 text-sm text-muted-foreground">
-                A future‑driven technology company delivering{' '}
-                <span className="font-semibold text-foreground">
-                  Data Centre Transformation, Network & Cyber Security, Automation, and AV Solutions
-                </span>
-                . We design, build, and secure intelligent infrastructures that empower businesses to scale with confidence.
+                A future‑driven technology company delivering data center transformation, network infrastructure, cyber security, IT automation, and AV solutions in India. We design and deliver secure, scalable, and intelligent IT & ELV infrastructure for government, healthcare, airports, commercial buildings, and enterprise organizations—empowering digital growth with reliability and confidence.
               </p>
             </div>
 
