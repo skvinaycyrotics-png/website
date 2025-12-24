@@ -76,7 +76,7 @@ export function Footer() {
                 Engineering the Future. Securing the Present.
               </p>
               <p className="mt-4 text-sm text-muted-foreground">
-                A future‑driven technology company delivering data center transformation, network infrastructure, cyber security, IT automation, and AV solutions in India. We design and deliver secure, scalable, and intelligent IT & ELV infrastructure for government, healthcare, airports, commercial buildings, and enterprise organizations—empowering digital growth with reliability and confidence.
+                A future‑driven technology company delivering <span className="font-semibold text-foreground">data center transformation, network infrastructure, cyber security, IT automation, and AV solutions in India.</span> We design and deliver <span className="font-semibold text-foreground">secure, scalable, and intelligent IT & ELV infrastructure</span> for government, healthcare, airports, commercial buildings, and enterprise organizations—empowering digital growth with reliability and confidence.
               </p>
             </div>
 
@@ -106,7 +106,7 @@ export function Footer() {
             <div className="lg:col-span-3">
               <h3 className="font-semibold tracking-wide">Contact Information</h3>
               <div className="mt-4 space-y-4 text-sm">
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-3 group">
                       <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1 transition-colors group-hover:text-accent" />
                       <div>
                           <h4 className="font-medium text-foreground">Corporate Office</h4>
