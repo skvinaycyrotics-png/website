@@ -294,11 +294,11 @@ export default function Home() {
             <Carousel
               plugins={[testimonialPlugin.current]}
               opts={{ align: 'start', loop: true }}
-              className="mx-auto mt-8 sm:mt-12 w-full max-w-4xl"
+              className="mx-auto mt-8 sm:mt-12 w-full max-w-6xl"
             >
               <CarouselContent>
                 {TESTIMONIALS.map((testimonial, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                      <div className="p-4">
                       <Card className="h-full">
                         <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">
