@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -77,7 +78,7 @@ export function Footer() {
               <p className="mt-4 text-sm text-muted-foreground">
                 A future‑driven technology company delivering{' '}
                 <span className="font-semibold text-foreground">
-                  Data Centre Transformation, Network & Cyber Security, Automation, AV Solutions, Software Engineering, and Advanced Automotive Technologies
+                  Data Centre Transformation, Network & Cyber Security, Automation, and AV Solutions
                 </span>
                 . We design, build, and secure intelligent infrastructures that empower businesses to scale with confidence.
               </p>
