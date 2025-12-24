@@ -102,7 +102,7 @@ export default function Home() {
                     Our Solutions <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="secondary" className="animate-pulse-glow">
+                <Button asChild size="lg" variant="outline" className="animate-pulse-glow border-primary text-primary hover:bg-primary/10 hover:text-primary">
                   <Link href="/contact">Request a Consultation</Link>
                 </Button>
               </div>
@@ -302,16 +302,11 @@ export default function Home() {
                      <div className="p-4">
                       <Card className="h-full">
                         <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">
-                          <Avatar className="h-16 w-16 mb-4">
-                            <AvatarImage src={testimonial.imageUrl} alt={testimonial.name} />
-                            <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                          </Avatar>
                           <blockquote className="mt-2 flex-grow border-none p-0 text-sm sm:text-base text-muted-foreground">
                             <p>"{testimonial.quote}"</p>
                           </blockquote>
                            <div className="mt-4">
-                            <p className="font-semibold text-primary">{testimonial.name}</p>
-                            <p className="text-xs text-muted-foreground">{testimonial.title}, {testimonial.company}</p>
+                            <p className="font-semibold text-primary">{testimonial.company}</p>
                           </div>
                         </CardContent>
                       </Card>
