@@ -503,7 +503,7 @@ export const PROJECTS: Project[] = [
       'Complete IT infrastructure development, including data center, networking, CCTV, and wireless infrastructure.',
     longDescription:
       "For the Chhindwara Institute of Medical Science in Madhya Pradesh, we executed a comprehensive IT infrastructure project. The scope included the full development of the IT infrastructure, migration and commissioning of the data center, setup of the network core and access layers, installation of CCTV and surveillance server infrastructure, and implementation of wireless infrastructure, passive cabling, and server management.",
-    imageUrl: 'https://picsum.photos/seed/projcims/600/400',
+    imageUrl: '/cims.png',
     imageHint: 'hospital building',
     tags: ['IT Infrastructure', 'Data Center', 'Networking', 'CCTV', 'Smart Campus'],
     timeline: 'Ongoing',
@@ -2368,5 +2368,6 @@ export const footerQuickLinks = [
     
 
     
+
 
 
