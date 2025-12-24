@@ -12,6 +12,7 @@ export default function ContactPage() {
   const addressLine1 = "Cyrotics Technologies (OPC) Pvt. Ltd.";
   const addressLine2 = "86/2, Street No.-54/V/3, Ist 60 Feet Road, Molarband Extension, Badarpur Border, New Delhi – 110044, India";
   const fullAddress = `${addressLine1} ${addressLine2}`;
+  const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(fullAddress)}`;
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
 
   return (
@@ -36,26 +37,25 @@ export default function ContactPage() {
             </div>
             <div className="lg:sticky lg:top-24">
               <div className="overflow-hidden rounded-lg shadow-lg border">
-                <a href={mapUrl} target="_blank" rel="noopener noreferrer">
-                  <img 
-                    src="https://picsum.photos/seed/map-placeholder/600/400" 
-                    alt="Map showing company location"
+                <iframe
                     width="100%"
                     height="400"
-                    style={{ border: 0, objectFit: 'cover' }}
-                    data-ai-hint="world map"
-                  />
-                </a>
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                    src={mapEmbedUrl}>
+                </iframe>
               </div>
               <div className="mt-6 space-y-4 text-sm">
                 <div className="flex items-start gap-3 group">
                     <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                     <div>
                         <h4 className="font-medium text-foreground">Corporate Office</h4>
-                        <address className="not-italic text-muted-foreground">
+                        <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="not-italic text-muted-foreground hover:text-primary transition-colors">
                             {addressLine1}<br/>
                             {addressLine2}
-                        </address>
+                        </a>
                     </div>
                 </div>
                  <a href="tel:+919999295636" className="flex items-center gap-3 group">
