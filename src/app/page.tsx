@@ -30,12 +30,14 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
-import { PROJECTS_FOR_HOME, TESTIMONIALS, homeServices } from '@/lib/constants';
+import { homeServices, PROJECTS_FOR_HOME, TESTIMONIALS } from '@/lib/constants';
 import AnimatedCounter from '@/components/animated-counter';
 import HeroHeadline from '@/components/hero-headline';
 import PlexusBackground from '@/components/plexus-background';
 import Autoplay from 'embla-carousel-autoplay';
 import { useRef } from 'react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { cn } from '@/lib/utils';
 
 const stats = [
   { value: 4, label: 'Years of Experience', icon: Calendar },
@@ -74,6 +76,10 @@ const whyChooseUs = [
 export default function Home() {
     const plugin = useRef(
     Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
+
+  const testimonialPlugin = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
   );
 
   return (
@@ -275,7 +281,7 @@ export default function Home() {
         {/* TESTIMONIALS SECTION */}
         <section
           id="testimonials"
-          className="relative w-full py-12 sm:py-16 lg:py-20"
+          className="relative w-full overflow-hidden bg-background py-12 sm:py-16 lg:py-20"
         >
           <div className="container px-4 sm:px-6">
             <h2 className="text-center font-headline text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
@@ -286,27 +292,35 @@ export default function Home() {
               clients&apos; experiences.
             </p>
             <Carousel
-              opts={{
-                align: 'start',
-                loop: true,
-              }}
+              plugins={[testimonialPlugin.current]}
+              opts={{ align: 'start', loop: true }}
               className="mx-auto mt-8 sm:mt-12 w-full max-w-4xl"
             >
               <CarouselContent>
                 {TESTIMONIALS.map((testimonial, index) => (
-                  <CarouselItem key={index}>
-                    <Card className="border-none bg-transparent shadow-none">
-                      <CardContent className="flex flex-col items-center justify-center p-4 sm:p-6 text-center">
-                        <blockquote className="mt-4 sm:mt-6 border-none p-0 text-sm sm:text-base md:text-lg font-medium">
-                          <p>"{testimonial.quote}"</p>
-                        </blockquote>
-                      </CardContent>
-                    </Card>
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+                     <div className="p-4">
+                      <Card className="h-full">
+                        <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">
+                          <Avatar className="h-16 w-16 mb-4">
+                            <AvatarImage src={testimonial.imageUrl} alt={testimonial.name} />
+                            <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                          </Avatar>
+                          <blockquote className="mt-2 flex-grow border-none p-0 text-sm sm:text-base text-muted-foreground">
+                            <p>"{testimonial.quote}"</p>
+                          </blockquote>
+                           <div className="mt-4">
+                            <p className="font-semibold text-primary">{testimonial.name}</p>
+                            <p className="text-xs text-muted-foreground">{testimonial.title}, {testimonial.company}</p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              <CarouselPrevious className="left-[-2rem] md:left-[-4rem]" />
+              <CarouselNext className="right-[-2rem] md:right-[-4rem]" />
             </Carousel>
           </div>
         </section>
