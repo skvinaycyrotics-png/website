@@ -497,11 +497,15 @@ export const SERVICES: Service[] = [
   },
 ];
 
-export const homeServices: HomeService[] = SERVICES.map(service => ({
-  slug: service.slug,
-  title: service.title,
-  icon: service.icon
-}));
+export const homeServices: HomeService[] = [
+  { slug: 'data-center-infrastructure-solutions', title: 'Data Center Infrastructure', icon: Server },
+  { slug: 'nextgen-cybersecurity-shield', title: 'NextGen Cybersecurity Shield', icon: ShieldCheck },
+  { slug: 'audio-visual-communication', title: 'Audio-Visual & Communication', icon: MonitorSpeaker },
+  { slug: 'unified-communications', title: 'Unified Communications (UC)', icon: Users },
+  { slug: 'security-surveillance', title: 'Security & Surveillance', icon: Cctv },
+  { slug: 'managed-services', title: 'Managed Services', icon: ServerCog },
+  { slug: 'renewable-energy', title: 'Renewable Energy', icon: Sun },
+];
 
 export const PROJECTS: Project[] = [
   {
@@ -678,6 +682,17 @@ export const PROJECTS: Project[] = [
     results: 'Delivered a fully integrated, centrally managed smart AV solution that enhances the visitor experience, improves operational efficiency, and provides a powerful platform for retail promotions and mall-wide communications.',
   },
 ];
+
+export const PROJECTS_FOR_HOME = PROJECTS.slice(0, 3).map(p => ({
+  id: p.id,
+  title: p.title,
+  client: p.client,
+  shortDescription: p.shortDescription,
+  imageUrl: p.imageUrl,
+  imageHint: p.imageHint,
+  tags: p.tags,
+}));
+
 
 export const TESTIMONIALS: Testimonial[] = [
   {
@@ -2439,6 +2454,7 @@ export const footerQuickLinks = [
     
 
     
+
 
 
 

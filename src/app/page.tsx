@@ -30,7 +30,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
-import { PROJECTS, TESTIMONIALS, homeServices } from '@/lib/constants';
+import { PROJECTS_FOR_HOME, TESTIMONIALS, homeServices } from '@/lib/constants';
 import AnimatedCounter from '@/components/animated-counter';
 import HeroHeadline from '@/components/hero-headline';
 import PlexusBackground from '@/components/plexus-background';
@@ -227,7 +227,7 @@ export default function Home() {
               various industries.
             </p>
             <div className="mt-8 sm:mt-12 grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {PROJECTS.slice(0, 3).map((project) => (
+              {PROJECTS_FOR_HOME.map((project) => (
                 <Card key={project.id} className="group overflow-hidden text-left">
                   <div className="overflow-hidden h-40 sm:h-48">
                     <Image
