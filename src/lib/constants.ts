@@ -120,7 +120,6 @@ export const NAV_LINKS: NavLink[] = [
         label: 'Industry Solution',
         icon: Building,
         subLinks: [
-          { href: '/business-sector/urban-development', label: 'Urban Development', icon: BuildingIcon },
           { href: '/business-sector/telecom', label: 'Telecom', icon: Signal },
           { href: '/business-sector/logistics', label: 'Logistics', icon: Truck },
           { href: '/business-sector/education', label: 'Education', icon: GraduationCap },
@@ -173,7 +172,6 @@ export const PRIMARY_NAV_LINKS: NavLink[] = [
         label: 'Industry Solution',
         icon: Building,
         subLinks: [
-          { href: '/business-sector/urban-development', label: 'Urban Development', icon: BuildingIcon },
           { href: '/business-sector/telecom', label: 'Telecom', icon: Signal },
           { href: '/business-sector/logistics', label: 'Logistics', icon: Truck },
           { href: '/business-sector/education', label: 'Education', icon: GraduationCap },
@@ -709,7 +707,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
     {
     quote:
-      'From network architecture to implementation, CYROTICS has been an indispensable partner. Their SD-WAN solution has dramatically increased our branch agility and significantly reduced connectivity costs. Their technical support is consistently responsive and highly knowledgeable.',
+      'From network architecture to implementation, CYROTICS has been an indispensable partner. Their SD-WAN solution has dramatically increased our branch agility and significantly reduced our connectivity costs. Their technical support is consistently responsive and highly knowledgeable.',
     name: 'Amit Patel',
     title: 'IT Director',
     company: 'Retail Chain Corp',
@@ -1094,12 +1092,12 @@ export const JOB_OPENINGS: JobOpening[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'navigating-the-maze-of-data-center-modernization',
-    title: 'Why Data Center Migration Is Critical for Modern Enterprises – Challenges, Strategy & Best Practices',
+    title: 'Why Data Center Migration Is Critical for Modern Enterprises',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
     date: '2024-03-20',
     category: 'Data Center Migration & Cloud Infrastructure Solutions',
-    excerpt: 'In the rapidly evolving digital landscape, organizations are under constant pressure to modernize their IT infrastructure. Data Center Migration has emerged as a strategic necessity for businesses aiming to improve performance, security, and scalability.',
+    excerpt: 'In today’s digital-first economy, data is no longer just an operational asset—it is the core foundation of business continuity, innovation, and competitive advantage. Enterprises across industries are experiencing unprecedented growth in data volume, application complexity, cybersecurity threats, and customer expectations.',
     imageUrl: 'https://picsum.photos/seed/blog1/800/450',
     imageHint: 'data center aisle',
     tags: ['Data Center', 'Infrastructure', 'Migration'],
@@ -2434,5 +2432,6 @@ export const footerQuickLinks = [
     
 
     
+
 
 
