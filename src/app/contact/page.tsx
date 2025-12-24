@@ -2,6 +2,8 @@
 import { Phone, Mail, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import ContactForms from './contact-forms';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Terminal } from 'lucide-react';
 
 export const metadata = {
   title: 'Contact Us | CYROTICS TECHNOLOGIES',
@@ -12,7 +14,8 @@ export default function ContactPage() {
   const addressLine1 = "Cyrotics Technologies (OPC) Pvt. Ltd.";
   const addressLine2 = "86/2, Street No.-54/V/3, Ist 60 Feet Road, Molarband Extension, Badarpur Border, New Delhi – 110044, India";
   const fullAddress = `${addressLine1} ${addressLine2}`;
-  const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(fullAddress)}`;
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodeURIComponent(fullAddress)}`;
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
 
   return (
@@ -36,17 +39,27 @@ export default function ContactPage() {
               <ContactForms />
             </div>
             <div className="lg:sticky lg:top-24">
-              <div className="overflow-hidden rounded-lg shadow-lg border">
-                <iframe
-                    width="100%"
-                    height="400"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
-                    referrerPolicy="no-referrer-when-downgrade"
-                    src={mapEmbedUrl}>
-                </iframe>
-              </div>
+              {!apiKey ? (
+                 <Alert>
+                  <Terminal className="h-4 w-4" />
+                  <AlertTitle>Google Maps API Key Needed</AlertTitle>
+                  <AlertDescription>
+                    To display the map, please add your Google Maps API key to a `.env.local` file as `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`.
+                  </AlertDescription>
+                </Alert>
+              ) : (
+                <div className="overflow-hidden rounded-lg shadow-lg border">
+                  <iframe
+                      width="100%"
+                      height="400"
+                      style={{ border: 0 }}
+                      loading="lazy"
+                      allowFullScreen
+                      referrerPolicy="no-referrer-when-downgrade"
+                      src={mapEmbedUrl}>
+                  </iframe>
+                </div>
+              )}
               <div className="mt-6 space-y-4 text-sm">
                 <div className="flex items-start gap-3 group">
                     <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
