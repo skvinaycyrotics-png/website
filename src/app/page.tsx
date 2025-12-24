@@ -96,7 +96,7 @@ export default function Home() {
                     Our Solutions <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="animate-pulse-glow">
+                <Button asChild size="lg" variant="secondary" className="animate-pulse-glow">
                   <Link href="/contact">Request a Consultation</Link>
                 </Button>
               </div>
