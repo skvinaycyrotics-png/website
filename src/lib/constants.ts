@@ -519,7 +519,7 @@ export const PROJECTS: Project[] = [
       'End-to-end IT & ELV infrastructure, Wi-Fi campus, network security, and IP CCTV with a monitoring command centre.',
     longDescription:
       'For the Government Medical College in Chandrapur, we provided a comprehensive turnkey solution. Our scope covered end-to-end IT and ELV infrastructure, including a campus-wide Wi-Fi deployment, a robust network security and firewall setup, and an advanced IP CCTV system complete with a central monitoring command centre. This project ensures the new medical college has a secure, scalable, and high-performance technology backbone.',
-    imageUrl: 'https://picsum.photos/seed/gmc-chandrapur/600/400',
+    imageUrl: '/gmc.png',
     imageHint: 'modern medical college',
     tags: [
       'IT Infrastructure',
@@ -2432,6 +2432,7 @@ export const footerQuickLinks = [
     
 
     
+
 
 
 
