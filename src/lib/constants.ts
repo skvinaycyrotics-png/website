@@ -2431,29 +2431,29 @@ export const socialLinks = [
 ];
     
 export const footerQuickLinks = [
-    [
-        { href: "/", label: "Home" },
-        { href: "/services", label: "Services" },
-        { href: "/business-sector/overview", label: "Business Sectors" },
-        { href: "/projects", label: "Projects" },
-    ],
-    [
-        { href: "/blog", label: "Blog" },
-        { href: "/careers", label: "Careers" },
-        { href: "/trust-and-compliance", label: "Trust & Compliance" },
-        { href: "#", label: "Support Desk", icon: Headphones },
-    ],
-    [
-        { href: "/faqs", label: "FAQs" },
-        { href: "/about", label: "About Us" },
-        { href: "/contact", label: "Contact Us" },
-    ]
+  [
+    { href: '/', label: 'Home' },
+    { href: '/services', label: 'Services' },
+    { href: '/business-sector/overview', label: 'Business Sectors' },
+    { href: '/projects', label: 'Projects' },
+  ],
+  [
+    { href: '/about', label: 'About Us' },
+    { href: '/careers', label: 'Careers' },
+    { href: '/trust-and-compliance', label: 'Trust & Compliance' },
+    { href: '/contact', label: 'Contact Us' },
+  ],
+  [
+    { href: '/faqs', label: 'FAQs' },
+    { href: '#', label: 'Support Desk', icon: Headphones },
+  ],
 ];
     
 
     
 
     
+
 
 
 

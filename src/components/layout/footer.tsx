@@ -53,15 +53,6 @@ export function Footer() {
     document.dispatchEvent(new Event('open-support-desk'));
   }
 
-
-  const updatedFooterQuickLinks = footerQuickLinks.map(column => 
-    column
-      .filter(link => link.label !== "Careers")
-      .map(link => 
-        link.label === "FAQs" ? { ...link, href: "/faqs" } : link
-      )
-  );
-
   return (
     <>
       <footer className="border-t bg-background">
@@ -84,10 +75,10 @@ export function Footer() {
             <div className="lg:col-span-5">
               <h3 className="font-semibold tracking-wide">Quick Links</h3>
               <div className="mt-4 grid grid-cols-3 gap-8">
-                  {updatedFooterQuickLinks.map((column, index) => (
+                  {footerQuickLinks.map((column, index) => (
                       <ul key={index} className="space-y-2">
                           {column.map(link => (
-                              <li key={link.href}>
+                              <li key={link.label}>
                                   <a 
                                     href={link.href} 
                                     onClick={link.href === '#' ? openSupportDesk : undefined}
