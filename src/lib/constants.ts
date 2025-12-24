@@ -14,6 +14,7 @@ import type {
   Benefit,
   CareerFAQ,
   EmployeeTestimonial,
+  HomeService,
 } from './types';
 import {
   Server,
@@ -495,6 +496,12 @@ export const SERVICES: Service[] = [
     caseStudies: [],
   },
 ];
+
+export const homeServices: HomeService[] = SERVICES.map(service => ({
+  slug: service.slug,
+  title: service.title,
+  icon: service.icon
+}));
 
 export const PROJECTS: Project[] = [
   {
@@ -1978,7 +1985,7 @@ BMS takes care of this by regulating:</p>
       <p><strong>Real Example:</strong> At Shri Guru Tegh Bahadur Govt. Medical College Yamunanagar, we deployed:</p>
       <ul>
         <li>800+ CCTV cameras</li>
-        <li>Server-based surveillance with long-term storage</li>
+        <li>Server-based long-term storage with long-term storage</li>
         <li>Complete access control & fire alarm integration</li>
       </ul>
       <p>This ensured a fully-secure medical campus with 24×7 monitoring.</p>
@@ -2432,6 +2439,7 @@ export const footerQuickLinks = [
     
 
     
+
 
 
 

@@ -4,6 +4,7 @@ import type { LucideIcon } from 'lucide-react';
 export type NavLink = {
   href: string;
   label: string;
+  icon?: LucideIcon;
   subLinks?: NavLink[];
 };
 
@@ -27,6 +28,12 @@ export interface Service {
     slug: string;
   }[];
 }
+
+export type HomeService = {
+  slug: string;
+  title: string;
+  icon: LucideIcon;
+};
 
 export interface Project {
   id: string;

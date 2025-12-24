@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
-  ShieldCheck,
   Users,
   GanttChartSquare,
   Calendar,
@@ -13,7 +12,6 @@ import {
   Globe,
   Building,
   GraduationCap,
-  HardHat,
   PackageCheck,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -32,8 +30,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { SERVICES, PROJECTS, TESTIMONIALS } from '@/lib/constants';
+import { PROJECTS, TESTIMONIALS, homeServices } from '@/lib/constants';
 import AnimatedCounter from '@/components/animated-counter';
 import HeroHeadline from '@/components/hero-headline';
 import PlexusBackground from '@/components/plexus-background';
@@ -99,7 +96,7 @@ export default function Home() {
                     Our Solutions <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline">
+                <Button asChild size="lg" variant="outline" className="animate-pulse-glow">
                   <Link href="/contact">Request a Consultation</Link>
                 </Button>
               </div>
@@ -117,7 +114,7 @@ export default function Home() {
                 className="w-full"
               >
                 <CarouselContent className="-ml-2 sm:-ml-4">
-                  {SERVICES.map((service, index) => (
+                  {homeServices.map((service, index) => (
                     <CarouselItem
                       key={index}
                       className="pl-2 sm:pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/5"
