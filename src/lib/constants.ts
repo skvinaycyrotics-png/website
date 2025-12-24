@@ -125,8 +125,6 @@ export const NAV_LINKS: NavLink[] = [
           { href: '/business-sector/logistics', label: 'Logistics', icon: Truck },
           { href: '/business-sector/education', label: 'Education', icon: GraduationCap },
           { href: '/business-sector/health-pharmacy', label: 'Health & Pharmacy', icon: HeartPulse },
-          { href: '/business-sector/processing-units', label: 'Processing Units', icon: Cpu },
-          { href: '/business-sector/manufacturing-units', label: 'Manufacturing Units', icon: FactoryIcon },
           { href: '/business-sector/mobility-automotive-engineering', label: 'Mobility & Automotive', icon: Car },
           { href: '/business-sector/energy', label: 'Energy', icon: Sun },
         ],
@@ -137,7 +135,6 @@ export const NAV_LINKS: NavLink[] = [
         icon: Landmark,
         subLinks: [
           { href: '/business-sector/defence', label: 'Defence', icon: ShieldHalf },
-          { href: '/business-sector/smart-city', label: 'Smart City', icon: Lightbulb },
           { href: '/business-sector/e-governance', label: 'E-Governance', icon: Globe },
           { href: '/business-sector/public-sector-undertakings', label: 'Public Sector Undertakings', icon: Building },
         ],
@@ -181,8 +178,6 @@ export const PRIMARY_NAV_LINKS: NavLink[] = [
           { href: '/business-sector/logistics', label: 'Logistics', icon: Truck },
           { href: '/business-sector/education', label: 'Education', icon: GraduationCap },
           { href: '/business-sector/health-pharmacy', label: 'Health & Pharmacy', icon: HeartPulse },
-          { href: '/business-sector/processing-units', label: 'Processing Units', icon: Cpu },
-          { href: '/business-sector/manufacturing-units', label: 'Manufacturing Units', icon: FactoryIcon },
           { href: '/business-sector/mobility-automotive-engineering', label: 'Mobility & Automotive', icon: Car },
           { href: '/business-sector/energy', label: 'Energy', icon: Sun },
         ],
@@ -193,7 +188,6 @@ export const PRIMARY_NAV_LINKS: NavLink[] = [
         icon: Landmark,
         subLinks: [
           { href: '/business-sector/defence', label: 'Defence', icon: ShieldHalf },
-          { href: '/business-sector/smart-city', label: 'Smart City', icon: Lightbulb },
           { href: '/business-sector/e-governance', label: 'E-Governance', icon: Globe },
           { href: '/business-sector/public-sector-undertakings', label: 'Public Sector Undertakings', icon: Building },
         ],
@@ -1100,7 +1094,7 @@ export const JOB_OPENINGS: JobOpening[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'navigating-the-maze-of-data-center-modernization',
-    title: 'Why Data Center Migration Is Critical for Modern Enterprises',
+    title: 'Why Data Center Migration Is Critical for Modern Enterprises – Challenges, Strategy & Best Practices',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
     date: '2024-03-20',
@@ -2440,4 +2434,5 @@ export const footerQuickLinks = [
     
 
     
+
 
