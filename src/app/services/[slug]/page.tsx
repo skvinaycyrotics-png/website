@@ -19,20 +19,12 @@ export async function generateStaticParams() {
   // Exclude services that have their own dedicated pages to prevent conflicts.
   return SERVICES.filter(service => 
     service.slug !== 'data-center-infrastructure-solutions' &&
-    service.slug !== 'cloud-hybrid-it-solutions' &&
-    service.slug !== 'scalable-storage-architecture' &&
     service.slug !== 'nextgen-cybersecurity-shield' &&
     service.slug !== 'audio-visual-communication' &&
     service.slug !== 'unified-communications' &&
     service.slug !== 'security-surveillance' &&
     service.slug !== 'managed-services' &&
-    service.slug !== 'smart-factory-building-infra' &&
-    service.slug !== 'renewable-energy' &&
-    service.slug !== 'consulting-services' &&
-    service.slug !== 'ai-ml-solutions' &&
-    service.slug !== 'software-development' &&
-    service.slug !== 'intelligent-urban-ecosystems' &&
-    service.slug !== 'automotive-engineering'
+    service.slug !== 'renewable-energy'
   ).map((service) => ({
     slug: service.slug,
   }));
@@ -47,12 +39,6 @@ export default async function ServiceDetailPage({
   // This is a special case redirect, if a user lands here.
   if (params.slug === 'data-center-infrastructure-solutions') {
     redirect('/services/data-center-infrastructure-solutions');
-  }
-  if (params.slug === 'cloud-hybrid-it-solutions') {
-    redirect('/services/cloud-hybrid-it-solutions');
-  }
-  if (params.slug === 'scalable-storage-architecture') {
-    redirect('/services/scalable-storage-architecture');
   }
   if (params.slug === 'nextgen-cybersecurity-shield') {
     redirect('/services/nextgen-cybersecurity-shield');
@@ -69,26 +55,8 @@ export default async function ServiceDetailPage({
    if (params.slug === 'managed-services') {
     redirect('/services/managed-services');
   }
-  if (params.slug === 'smart-factory-building-infra') {
-    redirect('/services/smart-factory-building-infra');
-  }
    if (params.slug === 'renewable-energy') {
     redirect('/services/renewable-energy');
-  }
-   if (params.slug === 'consulting-services') {
-    redirect('/services/consulting-services');
-  }
-  if (params.slug === 'ai-ml-solutions') {
-    redirect('/services/ai-ml-solutions');
-  }
-  if (params.slug === 'software-development') {
-    redirect('/services/software-development');
-  }
-  if (params.slug === 'intelligent-urban-ecosystems') {
-    redirect('/services/intelligent-urban-ecosystems');
-  }
-  if (params.slug === 'automotive-engineering') {
-    redirect('/services/automotive-engineering');
   }
 
   const service = SERVICES.find((s) => s.slug === params.slug);
