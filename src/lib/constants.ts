@@ -2441,18 +2441,27 @@ export const footerQuickLinks = [
     { href: '/about', label: 'About Us' },
     { href: '/careers', label: 'Careers' },
     { href: '/trust-and-compliance', label: 'Trust & Compliance' },
-    { href: '/contact', label: 'Contact Us' },
   ],
   [
     { href: '/faqs', label: 'FAQs' },
+    { href: '/contact', label: 'Contact Us' },
     { href: '#', label: 'Support Desk', icon: Headphones },
   ],
 ];
+
+export const companyAddress = {
+  name: "Cyrotics Technologies (OPC) Pvt. Ltd.",
+  full: "Cyrotics Technologies (OPC) Pvt. Ltd. 86/2, Street No.-54/V/3, Ist 60 Feet Road, Molarband Extension, Badarpur Border, New Delhi – 110044, India",
+  line1: "86/2, Street No.-54/V/3, Ist 60 Feet Road,",
+  line2: "Molarband Extension, Badarpur Border,",
+  cityStateZip: "New Delhi – 110044, India",
+};
     
 
     
 
     
+
 
 
 

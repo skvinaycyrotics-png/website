@@ -1,9 +1,11 @@
 
+
 import { Phone, Mail, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import ContactForms from './contact-forms';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Terminal } from 'lucide-react';
+import { companyAddress } from '@/lib/constants';
 
 export const metadata = {
   title: 'Contact Us | CYROTICS TECHNOLOGIES',
@@ -11,12 +13,9 @@ export const metadata = {
 };
 
 export default function ContactPage() {
-  const addressLine1 = "Cyrotics Technologies (OPC) Pvt. Ltd.";
-  const addressLine2 = "86/2, Street No.-54/V/3, Ist 60 Feet Road, Molarband Extension, Badarpur Border, New Delhi – 110044, India";
-  const fullAddress = `${addressLine1} ${addressLine2}`;
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-  const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodeURIComponent(fullAddress)}`;
-  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
+  const mapEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodeURIComponent(companyAddress.full)}`;
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress.full)}`;
 
   return (
     <>
@@ -40,11 +39,11 @@ export default function ContactPage() {
             </div>
             <div className="lg:sticky lg:top-24">
               {!apiKey ? (
-                 <Alert>
+                 <Alert variant="destructive">
                   <Terminal className="h-4 w-4" />
-                  <AlertTitle>Google Maps API Key Needed</AlertTitle>
+                  <AlertTitle>Google Maps API Key Missing</AlertTitle>
                   <AlertDescription>
-                    To display the map, please add your Google Maps API key to a `.env.local` file as `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY`.
+                    To display the map, an administrator needs to add a Google Maps API key. Please create a `.env.local` file and add your key as `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=YOUR_API_KEY_HERE`.
                   </AlertDescription>
                 </Alert>
               ) : (
@@ -66,8 +65,10 @@ export default function ContactPage() {
                     <div>
                         <h4 className="font-medium text-foreground">Corporate Office</h4>
                         <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="not-italic text-muted-foreground hover:text-primary transition-colors">
-                            {addressLine1}<br/>
-                            {addressLine2}
+                            {companyAddress.name}<br/>
+                            {companyAddress.line1}<br/>
+                            {companyAddress.line2}<br/>
+                            {companyAddress.cityStateZip}
                         </a>
                     </div>
                 </div>
