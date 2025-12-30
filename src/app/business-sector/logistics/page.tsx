@@ -56,13 +56,13 @@ export default function LogisticsPage() {
         <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="font-headline text-3xl font-bold">
-              Optimizing the Flow of Commerce
+              Empowering Intelligent Logistics
             </h2>
             <p className="mt-4 text-muted-foreground">
-              In the fast-paced world of logistics and supply chain management, efficiency and visibility are key to success. CYROTICS Technologies provides advanced solutions that help logistics companies streamline their operations, reduce costs, and deliver better service to their customers.
+              Cyrotics Technologies delivers advanced technology solutions for the logistics, warehousing, and supply chain sectors, enabling organizations to operate with speed, accuracy, and resilience. We have a strong track record of executing end-to-end IT and ELV infrastructure projects for logistics hubs, distribution centers, transport facilities, and large commercial operations across India.
             </p>
             <p className="mt-4 text-muted-foreground">
-              From real-time asset tracking with IoT to smart warehouse automation, our technologies are designed to solve the most pressing challenges in the logistics industry. We help you build a smarter, more connected, and more resilient supply chain.
+              Our solutions are designed to optimize operations, ensure real-time visibility, strengthen security, and support scalable growth. From secure networks and surveillance to automation-ready infrastructure and command-and-control systems, we help build smart, connected, and future-ready logistics ecosystems.
             </p>
           </div>
           <div>
