@@ -1,5 +1,4 @@
 
-
 import type {
   NavLink,
   Service,
@@ -125,7 +124,6 @@ export const NAV_LINKS: NavLink[] = [
           { href: '/business-sector/logistics', label: 'Logistics', icon: Truck },
           { href: '/business-sector/education', label: 'Education', icon: GraduationCap },
           { href: '/business-sector/health-pharmacy', label: 'Health & Pharmacy', icon: HeartPulse },
-          { href: '/business-sector/mobility-automotive-engineering', label: 'Mobility & Automotive', icon: Car },
           { href: '/business-sector/energy', label: 'Energy', icon: Sun },
         ],
       },
@@ -177,7 +175,6 @@ export const PRIMARY_NAV_LINKS: NavLink[] = [
           { href: '/business-sector/logistics', label: 'Logistics', icon: Truck },
           { href: '/business-sector/education', label: 'Education', icon: GraduationCap },
           { href: '/business-sector/health-pharmacy', label: 'Health & Pharmacy', icon: HeartPulse },
-          { href: '/business-sector/mobility-automotive-engineering', label: 'Mobility & Automotive', icon: Car },
           { href: '/business-sector/energy', label: 'Energy', icon: Sun },
         ],
       },
@@ -259,6 +256,116 @@ export const SERVICES: Service[] = [
     caseStudies: [{ title: 'Enterprise Network Overhaul', slug: 'proj-1' }],
   },
   {
+    slug: 'cloud-hybrid-it-solutions',
+    title: 'Cloud & Hybrid IT Solutions',
+    category: 'Cloud & Hybrid IT Solutions',
+    shortDescription:
+      'Empowering enterprises with secure, scalable, and intelligent cloud and hybrid IT infrastructures designed for performance, resilience, and future growth.',
+    description:
+      'We design and implement Cloud and Hybrid IT solutions that seamlessly integrate on-premise systems with public and private cloud environments—enabling innovation without compromise.',
+    icon: CloudCog,
+    imageUrl: 'https://picsum.photos/seed/cloud-hybrid/1200/800',
+    imageHint: 'hybrid cloud network',
+    features: [
+      {
+        title: 'Cloud Architecture & Strategy',
+        description:
+          'Expert design for AWS, Azure & GCP. We provide cloud readiness assessment, and a detailed migration planning & execution strategy.',
+        icon: Cloud,
+      },
+      {
+        title: 'Hybrid IT Integration',
+        description:
+          'Seamless integration of on-premise & cloud environments with secure connectivity, workload balancing, and multi-cloud interoperability.',
+        icon: GitBranch,
+      },
+      {
+        title: 'Cloud Security & Compliance',
+        description:
+          'Implementation of Zero Trust cloud architecture, IAM, MFA, encryption, and firewall integration to meet government & industry standards.',
+        icon: ShieldCheck,
+      },
+      {
+        title: 'Cloud Operations & Optimization',
+        description:
+          'Continuous performance monitoring, cost optimization (FinOps), and automation & orchestration of cloud resources.',
+        icon: ServerCog,
+      },
+      {
+        title: 'Disaster Recovery & Business Continuity',
+        description:
+          'Robust cloud-based DR solutions, high-availability architecture, and automated backup & recovery processes to ensure business continuity.',
+        icon: Shuffle,
+      },
+    ],
+    techStack: ['AWS', 'Microsoft Azure', 'Google Cloud Platform', 'VMware', 'Kubernetes', 'Terraform'],
+    caseStudies: [],
+  },
+  {
+    slug: 'scalable-storage-architecture',
+    title: 'Scalable Storage Architecture',
+    category: 'Data Center & Cloud Infrastructure Solutions',
+    shortDescription: 'Secure, scalable, and high-performance storage solutions for data centers, hospitals, airports, and government institutions, powering your critical IT infrastructure.',
+    description: 'Enterprise-Grade Storage Solutions for Data Centers, Hospitals, Airports & Government Institutions. We design and deploy secure, scalable, high-performance storage for your critical IT infrastructure.',
+    icon: Database,
+    imageUrl: 'https://picsum.photos/seed/storage/1200/800',
+    imageHint: 'data storage array',
+    features: [
+      {
+        title: 'Easily scale from TB to multiple PB',
+        description: 'Supports horizontal and vertical expansion, ideal for growing enterprise workloads.',
+        icon: Expand,
+      },
+      {
+        title: 'High-Performance Storage (All-Flash / Hybrid)',
+        description: 'NVMe/SSD-based high-speed response with low-latency read/write operations, suitable for HPC, databases, VMs, and analytics.',
+        icon: Zap,
+      },
+      {
+        title: 'Multi-Tier Storage',
+        description: 'Automated tiering based on data usage across high-performance SSD, cost-optimal SAS, and archival HDD storage.',
+        icon: Layers3,
+      },
+      {
+        title: 'SAN / NAS / Object Storage Support',
+        description: 'Support for SAN (Fibre Channel, iSCSI), NAS (NFS, SMB/CIFS), and Object Storage (S3) for any workload.',
+        icon: ServerCog,
+      },
+      {
+        title: 'Storage Virtualization',
+        description: 'Pool storage from multiple vendors into a single, centrally managed console to reduce hardware dependency.',
+        icon: Combine,
+      },
+      {
+        title: 'High Availability & Redundancy',
+        description: 'Active-active/active-passive architecture with RAID 5/6/10 support and multipath I/O (MPIO) failover clusters.',
+        icon: Shield,
+      },
+      {
+        title: 'Data Protection & Disaster Recovery',
+        description: 'Features snapshot replication, synchronous/asynchronous replication, offsite DR, and immutable storage for ransomware protection.',
+        icon: Clock,
+      },
+      {
+        title: 'Intelligent Data Management',
+        description: 'Benefit from deduplication, compression, thin provisioning, and real-time monitoring and forecasting.',
+        icon: BrainCircuit,
+      },
+      {
+        title: 'Cloud-Ready Storage',
+        description: 'Hybrid & multi-cloud integration with support for cloud backup (AWS, Azure, GCP) and cloud tiering.',
+        icon: CloudCog,
+      },
+      {
+        title: 'Secure Storage Architecture',
+        description: 'AES-256 data-at-rest encryption, end-to-end data path encryption, and RBAC with MFA access control.',
+        icon: FileCheck2,
+      },
+    ],
+    techStack: ['Dell EMC', 'NetApp', 'HPE', 'Pure Storage', 'IBM Storage', 'Ceph', 'MinIO'],
+    caseStudies: [],
+  },
+  {
     slug: 'nextgen-cybersecurity-shield',
     title: 'NextGen Cybersecurity Shield',
     category: 'NextGen Cybersecurity Shield',
@@ -325,6 +432,46 @@ export const SERVICES: Service[] = [
       },
     ],
     techStack: ['Crestron', 'JBL', 'Polycom', 'Samsung Displays'],
+    caseStudies: [],
+  },
+  {
+    slug: 'consulting-services',
+    title: 'IT Strategy & Advisory',
+    category: 'IT Strategy & Advisory',
+    shortDescription:
+      'Strategic IT Consulting for a Smarter, Secure & Scalable Future. We help you plan, design, modernize, and transform your IT ecosystems with confidence.',
+    description:
+      'Strategic IT Consulting for a Smarter, Secure & Scalable Future. We help you plan, design, modernize, and transform your IT ecosystems with confidence.',
+    icon: Briefcase,
+    imageUrl: 'https://picsum.photos/seed/consulting/1200/800',
+    imageHint: 'business consulting meeting',
+    features: [
+      {
+        title: 'IT Infrastructure Consulting',
+        description:
+          'We design and optimize resilient, high-performance IT infrastructures—including network architecture, cloud strategy, and HA/DR planning—aligned with your long-term business growth.',
+        icon: Server,
+      },
+      {
+        title: 'Data Center Consulting',
+        description:
+          'Our experts provide end-to-end consulting for data center assessment, modernization, migration, and greenfield builds, ensuring peak efficiency, security, and compliance.',
+        icon: Database,
+      },
+      {
+        title: 'IT Strategy Consulting',
+        description:
+          'We align technology investments with your organizational goals by developing clear IT roadmaps, digital transformation strategies, and robust governance frameworks.',
+        icon: TrendingUp,
+      },
+      {
+        title: 'Project Management Consultancy',
+        description:
+          'Our PMP-certified experts ensure complex IT projects are delivered on time and within budget through structured planning, risk mitigation, and stakeholder management.',
+        icon: GanttChartSquare,
+      },
+    ],
+    techStack: ['ITIL', 'PMP', 'Agile', 'TOGAF', 'AWS', 'Azure', 'GCP', 'Cisco'],
     caseStudies: [],
   },
   {
@@ -457,6 +604,153 @@ export const SERVICES: Service[] = [
     caseStudies: [],
   },
   {
+    slug: 'software-development',
+    title: 'Software Development',
+    category: 'Software Development',
+    shortDescription:
+      'From enterprise applications to cloud-native solutions, our software development services are tailored to your unique business needs, driving innovation and efficiency.',
+    description:
+      'From enterprise applications to cloud-native solutions, our software development services are tailored to your unique business needs, driving innovation and efficiency.',
+    icon: Code,
+    imageUrl: 'https://picsum.photos/seed/software/1200/800',
+    imageHint: 'code editor',
+    features: [
+      {
+        title: 'Custom Enterprise Applications',
+        description:
+          'Bespoke software solutions designed to streamline your business processes and workflows.',
+        icon: Rocket,
+      },
+      {
+        title: 'Cloud & Mobile Solutions',
+        description:
+          'Develop and deploy scalable applications on the cloud and deliver seamless experiences on mobile devices.',
+        icon: Smartphone,
+      },
+      {
+        title: 'API Development & Integration',
+        description:
+          'Build and integrate robust APIs to connect your systems and unlock new business capabilities.',
+        icon: GitBranch,
+      },
+    ],
+    techStack: ['React', 'Node.js', 'Python', 'Docker', 'AWS'],
+    caseStudies: [],
+  },
+  {
+    slug: 'ai-ml-solutions',
+    title: 'AI & ML Solutions',
+    category: 'Software Development',
+    shortDescription: 'Empower your business with our custom AI and Machine Learning solutions, from predictive analytics to intelligent automation.',
+    description: 'At Cyrotics Technologies, we believe the future belongs to organizations that can think smarter, act faster, and innovate continuously. Our AI & ML solutions empower businesses to move beyond traditional automation and unlock real-time intelligence, predictive accuracy, and decision-making capabilities that scale effortlessly.',
+    icon: BrainCircuit,
+    imageUrl: 'https://picsum.photos/seed/ai-ml/1200/800',
+    imageHint: 'artificial intelligence brain',
+    features: [
+      {
+        title: 'AI-Powered Automation',
+        description: 'Streamline repetitive workflows using intelligent automation systems that reduce manual effort, minimize errors, and deliver operational precision.',
+        icon: Bot,
+      },
+      {
+        title: 'Machine Learning Models',
+        description: 'We build robust ML models engineered to understand data patterns, predict outcomes, and support strategic decisions.',
+        icon: Layers3,
+      },
+      {
+        title: 'Computer Vision Solutions',
+        description: 'Enable machines to see, analyze, and interpret real-world visuals with advanced vision models.',
+        icon: Eye,
+      },
+      {
+        title: 'Natural Language Processing (NLP)',
+        description: 'Allow systems to comprehend human language and deliver intelligent, contextual responses, like chatbots and sentiment analysis.',
+        icon: MessageSquare,
+      },
+      {
+        title: 'AI for IoT & Smart Infrastructure',
+        description: 'Integrate AI with IoT to unlock adaptive, self-learning environments for predictive maintenance and energy optimization.',
+        icon: Signal,
+      },
+      {
+        title: 'AI Consulting & Strategy',
+        description: 'We guide organizations in developing future-proof AI strategies aligned with business KPIs, from readiness assessment to end-to-end solution design.',
+        icon: Sparkles,
+      },
+    ],
+    techStack: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'AWS SageMaker', 'GCP AI Platform'],
+    caseStudies: [],
+  },
+  {
+    slug: 'smart-factory-building-infra',
+    title: 'Smart Factory & Building',
+    category: 'Smart Factory & Building',
+    shortDescription:
+      'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
+    description:
+      'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
+    icon: Building,
+    imageUrl: 'https://picsum.photos/seed/building/1200/800',
+    imageHint: 'modern architecture',
+    features: [
+      {
+        title: 'Building Management Systems (BMS)',
+        description:
+          'Centralized control and automation of your building’s core systems for operational efficiency.',
+        icon: Building2,
+      },
+       {
+        title: 'HVAC Control Systems',
+        description: 'Intelligent control of heating, ventilation, and air conditioning to optimize comfort and reduce energy consumption.',
+        icon: Fan,
+      },
+      {
+        title: 'Energy Management',
+        description:
+          'Monitor, analyze, and optimize energy consumption to reduce costs and improve sustainability.',
+        icon: BatteryCharging,
+      },
+      {
+        title: 'IoT Integration',
+        description:
+          'Connect and manage a wide range of IoT sensors and devices for real-time insights and automation.',
+        icon: Signal,
+      },
+    ],
+    techStack: ['Schneider Electric', 'Siemens', 'Johnson Controls', 'LoRaWAN'],
+    caseStudies: [],
+  },
+  {
+    slug: 'intelligent-urban-ecosystems',
+    title: 'Smart City Infrastructure',
+    category: 'Smart City Infrastructure',
+    shortDescription: 'Empower urban environments with our integrated smart city solutions, enhancing public safety, traffic management, and resource efficiency through IoT and data analytics.',
+    description:
+      'We empower urban environments by designing and deploying integrated smart city solutions. From intelligent traffic management to city-wide surveillance and smart lighting, we use IoT, data analytics, and robust network infrastructure to create safer, more efficient, and sustainable cities.',
+    icon: Building2,
+    imageUrl: 'https://picsum.photos/seed/city/1200/800',
+    imageHint: 'smart city',
+    features: [
+      {
+        title: 'Intelligent Traffic Management',
+        description: 'Deploy smart traffic signals, vehicle detection sensors, and centralized management platforms to reduce congestion and improve traffic flow.',
+        icon: TrafficCone,
+      },
+      {
+        title: 'City-Wide Surveillance',
+        description: 'Implement a network of AI-powered cameras for public safety, incident detection, and crowd management with a central command and control center.',
+        icon: Cctv,
+      },
+      {
+        title: 'Smart Utilities & IoT',
+        description: 'Integrate IoT sensors for smart lighting, waste management, and environmental monitoring to optimize resource usage and reduce operational costs.',
+        icon: Map,
+      },
+    ],
+    techStack: ['LoRaWAN', '5G', 'IoT Platforms', 'GIS', 'Video Analytics'],
+    caseStudies: [],
+  },
+  {
     slug: 'renewable-energy',
     title: 'Renewable Energy',
     category: 'Renewable Energy',
@@ -488,7 +782,7 @@ export const SERVICES: Service[] = [
       {
         title: 'Solar Maintenance',
         description:
-          'Comprehensive O&M services to maximize the performance and lifespan of your solar assets.',
+          'Comprehensive O&amp;M services to maximize the performance and lifespan of your solar assets.',
         icon: Wrench,
       },
     ],
@@ -545,7 +839,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'proj-3',
     title: 'Mahindra Enclave – Mumbai',
-    client: 'Mahindra & Mahindra',
+    client: 'Mahindra &amp; Mahindra',
     shortDescription:
       'Comprehensive fire safety and smart security solutions, including fire alarms, public address systems, surveillance, and access control.',
     longDescription:
@@ -563,7 +857,7 @@ export const PROJECTS: Project[] = [
     shortDescription:
       'Full campus technology deployment including networking, data center, fire alarm, PA system, access control, CCTV, and Wi-Fi.',
     longDescription:
-      'We delivered a comprehensive technology overhaul for the Bihar Animal Sciences University campus. The project included complete campus networking, data center cabling & server setup, a fire alarm and public address system, access control, and the deployment of integrated CCTV and Wi-Fi systems to create a modern, secure, and connected learning environment.',
+      'We delivered a comprehensive technology overhaul for the Bihar Animal Sciences University campus. The project included complete campus networking, data center cabling &amp; server setup, a fire alarm and public address system, access control, and the deployment of integrated CCTV and Wi-Fi systems to create a modern, secure, and connected learning environment.',
     imageUrl: '/basu.png',
     imageHint: 'university campus',
     tags: ['Campus Networking', 'Data Center', 'Fire Safety', 'Access Control', 'CCTV', 'Wi-Fi'],
@@ -574,8 +868,8 @@ export const PROJECTS: Project[] = [
     id: 'bpgmc',
     title: 'Bhagwan Parshuram Government Medical College – Kaithal, Haryana',
     client: 'Bridge and Roof Company (India) Limited',
-    shortDescription: 'Comprehensive IT & ELV infrastructure for a new medical college, including smart lecture halls, campus-wide networking, and integrated security systems.',
-    longDescription: 'We provided a full turnkey solution for the Bhagwan Parshuram Government Medical College in Haryana. The project encompassed the entire IT and Extra-Low Voltage (ELV) infrastructure. This included smart lecture hall solutions, a high-speed fiber backbone and enterprise network, complete campus networking, data center cabling & server setup, Fire Alarm & Public Address System Solutions, Access Control System, and comprehensive CCTV, Wi-Fi & Access Control coverage across the campus.',
+    shortDescription: 'Comprehensive IT &amp; ELV infrastructure for a new medical college, including smart lecture halls, campus-wide networking, and integrated security systems.',
+    longDescription: 'We provided a full turnkey solution for the Bhagwan Parshuram Government Medical College in Haryana. The project encompassed the entire IT and Extra-Low Voltage (ELV) infrastructure. This included smart lecture hall solutions, a high-speed fiber backbone and enterprise network, complete campus networking, data center cabling &amp; server setup, Fire Alarm &amp; Public Address System Solutions, Access Control System, and comprehensive CCTV, Wi-Fi &amp; Access Control coverage across the campus.',
     imageUrl: '/kaithal.png',
     imageHint: 'medical college building',
     tags: [
@@ -597,7 +891,7 @@ export const PROJECTS: Project[] = [
     title: 'Shri Guru Tegh Bahadur Sahib Government Medical College – Yamuna Nagar, Haryana',
     client: 'Government of Haryana',
     shortDescription: 'End-to-end smart campus solution, integrating IT, ELV, security, and data center infrastructure for a new government medical college.',
-    longDescription: 'This project involves the delivery of a comprehensive technology infrastructure for a new medical college. The scope includes: Network & Security Infrastructure, CCTV & Video Surveillance System, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone & Enterprise Network, Smart Hospital IT Infrastructure, Campus Wi-Fi & Secure Network Backbone, CCTV Surveillance & Data Center Deployment, Complete Campus Networking, Data Center Cabling & Server Setup, Fire Alarm System & Public Address System Solutions, and an integrated Access Control System.',
+    longDescription: 'This project involves the delivery of a comprehensive technology infrastructure for a new medical college. The scope includes: Network &amp; Security Infrastructure, CCTV &amp; Video Surveillance System, Data Center Setup, IT &amp; ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone &amp; Enterprise Network, Smart Hospital IT Infrastructure, Campus Wi-Fi &amp; Secure Network Backbone, CCTV Surveillance &amp; Data Center Deployment, Complete Campus Networking, Data Center Cabling &amp; Server Setup, Fire Alarm System &amp; Public Address System Solutions, and an integrated Access Control System.',
     imageUrl: '/yamunanagar.png',
     imageHint: 'modern medical college',
     tags: [
@@ -619,19 +913,19 @@ export const PROJECTS: Project[] = [
     title: 'Noida International Airport Limited - Jewar, Uttar Pradesh',
     client: 'Noida International Airport Limited',
     shortDescription: 'Comprehensive data center and network infrastructure setup for the new international airport.',
-    longDescription: 'For the new Noida International Airport, we are providing critical foundational technology infrastructure. This includes establishing the core Network & Security Infrastructure, setting up the primary Data Center, and executing the complete Data Center Cabling & Server Setup to ensure robust and scalable airport operations from day one.',
+    longDescription: 'For the new Noida International Airport, we are providing critical foundational technology infrastructure. This includes establishing the core Network &amp; Security Infrastructure, setting up the primary Data Center, and executing the complete Data Center Cabling &amp; Server Setup to ensure robust and scalable airport operations from day one.',
     imageUrl: '/nial.png',
     imageHint: 'airport terminal',
     tags: ['Data Center', 'Network Security', 'IT Infrastructure', 'Airport'],
     timeline: 'Ongoing',
-    results: 'Building a future-ready, high-performance technology backbone to support one of India\'s largest greenfield airport projects.',
+    results: "Building a future-ready, high-performance technology backbone to support one of India's largest greenfield airport projects.",
   },
   {
     id: 'techno-dc',
     title: 'Techno Data Center – Chennai',
     client: 'Techno Group, Chennai',
     shortDescription: 'Comprehensive data center build-out in Chennai, including network and security infrastructure, CCTV, and complete data center cabling and setup.',
-    longDescription: 'We delivered a full-scale data center infrastructure project for Techno Group in Chennai. The scope included setting up the core Network & Security Infrastructure, a comprehensive CCTV & Video Surveillance System, the primary Data Center, and all supporting IT Infrastructure. We implemented a Fiber Backbone for high-speed connectivity, managed the complete data center networking, cabling, and server setup, and deployed a robust Wireless Solution with integrated Access Control and Wi-Fi.',
+    longDescription: 'We delivered a full-scale data center infrastructure project for Techno Group in Chennai. The scope included setting up the core Network &amp; Security Infrastructure, a comprehensive CCTV &amp; Video Surveillance System, the primary Data Center, and all supporting IT Infrastructure. We implemented a Fiber Backbone for high-speed connectivity, managed the complete data center networking, cabling, and server setup, and deployed a robust Wireless Solution with integrated Access Control and Wi-Fi.',
     imageUrl: '/techno.png',
     imageHint: 'data center servers',
     tags: ['Data Center', 'Network Security', 'IT Infrastructure', 'CCTV', 'Wireless', 'Access Control'],
@@ -643,19 +937,19 @@ export const PROJECTS: Project[] = [
     title: 'All India Institute of Medical Sciences – Rajkot, Gujarat',
     client: 'AIIMS Rajkot',
     shortDescription: 'End-to-end smart hospital and campus infrastructure, including data center, networking, security, and smart classroom solutions.',
-    longDescription: 'We are delivering a comprehensive, turnkey technology solution for the entire campus and hospital. The scope of work includes: Network & Security Infrastructure, CCTV & Video Surveillance System, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone & Enterprise Network, Smart Hospital IT Infrastructure, Campus Wi-Fi & Secure Network Backbone, CCTV Surveillance & Data Center Deployment, Complete Campus Networking, Data Center Cabling & Server Setup, Fire Alarm System & Public Address System Solutions, and an integrated Access Control System.',
+    longDescription: 'We are delivering a comprehensive, turnkey technology solution for the entire campus and hospital. The scope of work includes: Network &amp; Security Infrastructure, CCTV &amp; Video Surveillance System, Data Center Setup, IT &amp; ELV Infrastructure, Smart Lecture Hall Solutions, Fiber Backbone &amp; Enterprise Network, Smart Hospital IT Infrastructure, Campus Wi-Fi &amp; Secure Network Backbone, CCTV Surveillance &amp; Data Center Deployment, Complete Campus Networking, Data Center Cabling &amp; Server Setup, Fire Alarm System &amp; Public Address System Solutions, and an integrated Access Control System.',
     imageUrl: '/aiims.png',
     imageHint: 'modern hospital building',
     tags: ['Smart Hospital', 'IT Infrastructure', 'Data Center', 'Network Security', 'Smart Campus', 'ELV', 'CCTV'],
     timeline: 'Ongoing',
-    results: 'The project delivers a state-of-the-art smart medical campus, designed to ensure seamless connectivity, high system availability, and secure access to digital resources. By integrating advanced IT and ELV infrastructure, the institution now benefits from:\n\n- Uninterrupted network performance for academic, administrative, and clinical operations\n\n- Secure and centralized data accessibility for staff, students, and medical professionals\n\n- Enhanced digital learning experiences through reliable communication systems\n\n- Improved operational efficiency driven by automation and modern network design\n\nThis transformation empowers the medical campus to operate as a modern, technology-enabled institution capable of supporting future growth and innovation.',
+    results: "The project delivers a state-of-the-art smart medical campus, designed to ensure seamless connectivity, high system availability, and secure access to digital resources. By integrating advanced IT and ELV infrastructure, the institution now benefits from:\n\n- Uninterrupted network performance for academic, administrative, and clinical operations\n\n- Secure and centralized data accessibility for staff, students, and medical professionals\n\n- Enhanced digital learning experiences through reliable communication systems\n\n- Improved operational efficiency driven by automation and modern network design\n\nThis transformation empowers the medical campus to operate as a modern, technology-enabled institution capable of supporting future growth and innovation.",
   },
   {
     id: 'iim-bodh-gaya',
     title: 'IIM Bodh Gaya – Bihar',
     client: 'Indian Institute of Management Bodh Gaya',
     shortDescription: 'Comprehensive smart campus solution for IIM Bodh Gaya, integrating IT, security, and data center infrastructure.',
-    longDescription: "For IIM Bodh Gaya, we are providing an end-to-end technology infrastructure solution. The scope includes Network & Security Infrastructure, CCTV & Video Surveillance, Data Center Setup, IT & ELV Infrastructure, Smart Lecture Hall Solutions, a Fiber Backbone & Enterprise Network, and a comprehensive Access Control System. This creates a fully integrated and modern campus environment fit for a premier management institute.",
+    longDescription: "For IIM Bodh Gaya, we are providing an end-to-end technology infrastructure solution. The scope includes Network &amp; Security Infrastructure, CCTV &amp; Video Surveillance, Data Center Setup, IT &amp; ELV Infrastructure, Smart Lecture Hall Solutions, a Fiber Backbone &amp; Enterprise Network, and a comprehensive Access Control System. This creates a fully integrated and modern campus environment fit for a premier management institute.",
     imageUrl: '/iim.png',
     imageHint: 'university campus building',
     tags: [
@@ -674,7 +968,7 @@ export const PROJECTS: Project[] = [
     title: 'DLF Mall – Goa',
     client: 'DLF Limited',
     shortDescription: 'State-of-the-art Audio-Visual (AV) infrastructure for a seamless and immersive visitor experience.',
-    longDescription: `Cyrotics Technologies successfully delivered a state-of-the-art Audio-Visual (AV) infrastructure for the prestigious DLF Mall – Goa, ensuring a seamless and immersive visitor experience. Our scope included the design, integration, testing, and commissioning of a complete smart AV ecosystem. This involved a centralized AV distribution system for multi-screen content routing, deployment of 4K digital signage and video walls, and a comprehensive Public Address & Background Music system with zonal controls. We also equipped the conference and control rooms with modern AV solutions, including wireless presentation and video conferencing capabilities, to streamline mall operations.`,
+    longDescription: `Cyrotics Technologies successfully delivered a state-of-the-art Audio-Visual (AV) infrastructure for the prestigious DLF Mall – Goa, ensuring a seamless and immersive visitor experience. Our scope included the design, integration, testing, and commissioning of a complete smart AV ecosystem. This involved a centralized AV distribution system for multi-screen content routing, deployment of 4K digital signage and video walls, and a comprehensive Public Address &amp; Background Music system with zonal controls. We also equipped the conference and control rooms with modern AV solutions, including wireless presentation and video conferencing capabilities, to streamline mall operations.`,
     imageUrl: '/dlf.png',
     imageHint: 'shopping mall interior',
     tags: ['Smart AV', 'Digital Signage', 'Video Wall', 'Public Address System', 'Smart Building'],
@@ -755,7 +1049,7 @@ export const TESTIMONIALS: Testimonial[] = [
     quote:
       'CYROTICS’ expertise in automotive simulation and CAE is truly unmatched. Their virtual validation process identified critical design flaws early on, saving us months of development time and substantial prototyping costs. They are a genuine engineering partner.',
     name: 'Rajesh Nair',
-    title: 'Head of R&D',
+    title: 'Head of R&amp;D',
     company: 'Momentum EV',
     imageUrl: 'https://picsum.photos/seed/rajesh/100/100',
   },
@@ -829,7 +1123,6 @@ export const OCCUPATIONS: OccupationFilter[] = [
         'Procurement Director',
         'CFO',
         'AI/ML Director',
-        'Head of Automotive Engineering',
     ],
   },
   {
@@ -852,7 +1145,6 @@ export const OCCUPATIONS: OccupationFilter[] = [
         'Senior Full Stack Developer',
         'Senior Accountant',
         'Senior AI Engineer',
-        'Senior Robotics Engineer',
     ],
   },
   {
@@ -875,7 +1167,6 @@ export const OCCUPATIONS: OccupationFilter[] = [
         'Sales Manager',
         'Accounts Executive',
         'Machine Learning Engineer',
-        'EV/Robotics Engineer',
     ],
   },
   {
@@ -893,7 +1184,6 @@ export const OCCUPATIONS: OccupationFilter[] = [
       'Logistics Coordinator',
       'Billing Coordinator',
       'AI/ML Associate',
-      'Automotive Technician',
     ],
   },
   {
@@ -918,7 +1208,6 @@ export const OCCUPATIONS: OccupationFilter[] = [
         'Store Assistant',
         'Accounts Intern',
         'AI/ML Intern',
-        'EV/Robotics Intern',
     ],
   },
   {
@@ -944,7 +1233,6 @@ export const SEGMENTS = [
   'Procurement & Logistics',
   'Finance & Accounts',
   'AI & Machine Learning',
-  'Automotive, EV & Robotics',
   'Executive',
   'Apprenticeship',
   'Internship (Students)',
@@ -1226,19 +1514,19 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>In short, data center migration transforms IT from a cost center into a business enabler.</p>
       <h3>Cyrotics Technologies’ Approach to Data Center Migration</h3>
       <p>At Cyrotics Technologies OPC Pvt. Ltd., we follow a structured, risk-free, and business-aligned migration methodology:</p>
-      <p><strong>🔹 Assessment & Planning</strong></p>
+      <p><strong>🔹 Assessment &amp; Planning</strong></p>
       <p>Infrastructure and application discovery</p>
       <p>Risk analysis and dependency mapping</p>
       <p>Migration roadmap aligned with business objectives</p>
-      <p><strong>🔹 Architecture & Design</strong></p>
+      <p><strong>🔹 Architecture &amp; Design</strong></p>
       <p>Modern, scalable, and secure infrastructure design</p>
       <p>Network transformation and optimization</p>
       <p>Integration with cloud and hybrid platforms</p>
-      <p><strong>🔹 Migration & Execution</strong></p>
+      <p><strong>🔹 Migration &amp; Execution</strong></p>
       <p>Zero or minimal downtime migration</p>
       <p>Secure data transfer and validation</p>
       <p>Phased implementation for operational continuity</p>
-      <p><strong>🔹 Testing & Optimization</strong></p>
+      <p><strong>🔹 Testing &amp; Optimization</strong></p>
       <p>Performance benchmarking</p>
       <p>Security validation</p>
       <p>Failover and disaster recovery testing</p>
@@ -1292,7 +1580,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>This approach ensures that access is only granted when required and only to the extent needed.</p>
       <h3>Why Zero Trust Has Become Essential</h3>
       <p>The shift toward Zero Trust is driven by modern IT challenges:</p>
-      <h4>Remote & Hybrid Workforce</h4><p>Employees now access corporate applications from home networks, airports, cafés, and mobile devices. This dramatically expands the attack surface.</p>
+      <h4>Remote &amp; Hybrid Workforce</h4><p>Employees now access corporate applications from home networks, airports, cafés, and mobile devices. This dramatically expands the attack surface.</p>
       <h4>Cloud Adoption</h4><p>Cloud environments eliminate the concept of a fixed perimeter. Traditional firewalls alone can no longer secure modern environments.</p>
       <h4>Increasing Cyberattacks</h4><p>Ransomware, insider threats, phishing, and advanced persistent threats (APTs) now target every layer of an organization.</p>
       <h4>Device Explosion (IoT, BYOD, OT)</h4><p>Organizations manage thousands of diverse and unmanaged devices. Each device becomes a potential entry point for attackers.</p>
@@ -1301,34 +1589,34 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>🔐 1. Continuous Verification: Access is always treated as untrusted, regardless of user location or previous approvals.</p>
       <p>🧱 2. Least Privilege Access: Users and applications receive only the minimum access necessary to perform their function.</p>
       <p>📍 3. Micro-Segmentation: Networks are divided into tightly controlled zones to prevent lateral movement.</p>
-      <p>📊 4. Real-Time Monitoring & Analytics: User behavior, traffic flows, and access patterns are continuously analyzed for anomalies.</p>
-      <p>📑 5. Strong Identity & Access Management (IAM): MFA, biometrics, SSO, and identity governance become central security components.</p>
+      <p>📊 4. Real-Time Monitoring &amp; Analytics: User behavior, traffic flows, and access patterns are continuously analyzed for anomalies.</p>
+      <p>📑 5. Strong Identity &amp; Access Management (IAM): MFA, biometrics, SSO, and identity governance become central security components.</p>
       <p>🔄 6. Assume Breach: Zero Trust operates on the assumption that attackers may already be inside the network, and controls are built accordingly.</p>
       <h3>How Zero Trust Strengthens Security</h3>
       <p>✅ Prevents Insider Threats: Even internal users must undergo continuous verification.</p>
       <p>✅ Limits Lateral Movement: Micro-segmentation stops attackers from spreading across the network.</p>
       <p>✅ Enhances Visibility: Every request, session, and connection is logged and analyzed.</p>
-      <p>✅ Protects Remote & Cloud Access: Zero Trust aligns perfectly with modern cloud-native environments.</p>
+      <p>✅ Protects Remote &amp; Cloud Access: Zero Trust aligns perfectly with modern cloud-native environments.</p>
       <p>✅ Reduces Blast Radius: Any breach is contained within a small, isolated environment.</p>
       <h3>Industries Benefiting from Zero Trust</h3>
       <p>Zero Trust is now widely implemented across:</p>
       <ul>
         <li>Healthcare: EMR protection, patient data security</li>
-        <li>Banking & Finance: Transaction integrity, compliance</li>
-        <li>Government & Defense: National cybersecurity resilience</li>
-        <li>Manufacturing & Automotive: Securing OT, robotics, and IoT</li>
-        <li>IT & Data Centers: Cloud-native security and workload segmentation</li>
+        <li>Banking &amp; Finance: Transaction integrity, compliance</li>
+        <li>Government &amp; Defense: National cybersecurity resilience</li>
+        <li>Manufacturing &amp; Automotive: Securing OT, robotics, and IoT</li>
+        <li>IT &amp; Data Centers: Cloud-native security and workload segmentation</li>
       </ul>
       <p>Even SMBs are adopting Zero Trust because of its flexibility and scalability.</p>
       <h3>Key Technologies Behind Zero Trust</h3>
       <p>Zero Trust is not a product — it is a comprehensive framework supported by:</p>
       <ul>
-        <li>Identity & Access Management (IAM)</li>
+        <li>Identity &amp; Access Management (IAM)</li>
         <li>Multi-Factor Authentication (MFA)</li>
         <li>Privileged Access Management (PAM)</li>
         <li>Endpoint Detection and Response (EDR)</li>
         <li>Secure Access Service Edge (SASE)</li>
-        <li>Micro-segmentation & Next-Gen Firewalls</li>
+        <li>Micro-segmentation &amp; Next-Gen Firewalls</li>
         <li>Continuous Threat Monitoring</li>
         <li>Data Loss Prevention (DLP)</li>
       </ul>
@@ -1383,11 +1671,11 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>Savings grow over time as utility tariffs increase.</li>
       </ul>
       <p><strong>Result?</strong><br/>Lower operating expenses and higher profitability.</p>
-      <h3>✔ 2. High & Stable Long-Term ROI</h3>
+      <h3>✔ 2. High &amp; Stable Long-Term ROI</h3>
       <p>Solar systems deliver ROI in two ways:</p>
       <ul>
         <li>🔹 Direct savings from reduced electricity usage</li>
-        <li>🔹 Revenue from government incentives & tax benefits</li>
+        <li>🔹 Revenue from government incentives &amp; tax benefits</li>
       </ul>
       <p>Most commercial solar installations generate:</p>
       <ul>
@@ -1396,7 +1684,7 @@ export const BLOG_POSTS: BlogPost[] = [
       </ul>
       <p>Once the initial investment is recovered, the next 20–25 years of electricity is virtually free.</p>
       <p>Few investments generate such stable, long-term returns.</p>
-      <h3>✔ 3. Government Subsidies, Tax Benefits & Incentives</h3>
+      <h3>✔ 3. Government Subsidies, Tax Benefits &amp; Incentives</h3>
       <p>The Indian government provides several benefits for solar adoption:</p>
       <ul>
         <li>📌 Accelerated Depreciation (Up to 40%): Reduces taxable income significantly.</li>
@@ -1438,7 +1726,7 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>Better brand reputation</li>
         <li>Higher customer trust</li>
         <li>Increased business opportunities</li>
-        <li>Alignment with ESG (Environmental, Social & Governance) goals</li>
+        <li>Alignment with ESG (Environmental, Social &amp; Governance) goals</li>
       </ul>
       <h3>💼 How Solar Strengthens Your Business Competitiveness</h3>
       <p>Solar is not just an energy solution — it's a strategic business enabler.</p>
@@ -1452,19 +1740,19 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>At Cyrotics Technologies (OPC) Pvt. Ltd., we provide end-to-end Solar Infrastructure Services:</p>
       <ul>
         <li>Solar Feasibility Study</li>
-        <li>Detailed Engineering & Design</li>
-        <li>Equipment Selection & Procurement</li>
-        <li>Installation & Commissioning</li>
-        <li>AMC & Remote Monitoring</li>
+        <li>Detailed Engineering &amp; Design</li>
+        <li>Equipment Selection &amp; Procurement</li>
+        <li>Installation &amp; Commissioning</li>
+        <li>AMC &amp; Remote Monitoring</li>
         <li>Hybrid and On-Grid Solutions</li>
-        <li>Solar for Data Centers, Hospitals, Campuses & Commercial Buildings</li>
+        <li>Solar for Data Centers, Hospitals, Campuses &amp; Commercial Buildings</li>
       </ul>
       <p>Our expertise ensures:</p>
       <ul>
         <li>Higher energy output</li>
         <li>Maximum ROI</li>
         <li>Long-term system reliability</li>
-        <li>Compliance with safety & quality standards</li>
+        <li>Compliance with safety &amp; quality standards</li>
         <li>Seamless project execution</li>
       </ul>
       <h3>🚀 The Future is Solar — And the Future Starts Today</h3>
@@ -1512,7 +1800,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <ul>
         <li>AI-powered cameras that auto-track speakers</li>
         <li>4K/Full HD video systems for crystal-clear communication</li>
-        <li>Smart framing & noise cancellation</li>
+        <li>Smart framing &amp; noise cancellation</li>
         <li>Real-time meeting analytics</li>
       </ul>
       <p>Platforms like Zoom Rooms, Microsoft Teams Rooms, and Google Meet Rooms are redefining meeting productivity.</p>
@@ -1542,18 +1830,18 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>One-touch meeting start</li>
         <li>Automated lighting and blinds</li>
         <li>Environmental sensors</li>
-        <li>Centralized AV & room control panels</li>
+        <li>Centralized AV &amp; room control panels</li>
         <li>Voice-based control integration</li>
       </ul>
       <p>Automation ensures a frictionless meeting experience every time.</p>
-      <h4>5. Secure & High-Speed Network Infrastructure</h4>
+      <h4>5. Secure &amp; High-Speed Network Infrastructure</h4>
       <p>Behind every modern meeting room is a powerful IT backbone:</p>
       <ul>
         <li>Enterprise-grade Wi-Fi</li>
         <li>High-throughput switching</li>
         <li>Dedicated conferencing bandwidth</li>
         <li>VLAN network segmentation</li>
-        <li>QoS for voice & video traffic</li>
+        <li>QoS for voice &amp; video traffic</li>
       </ul>
       <p>Reliable connectivity ensures that meetings stay smooth and uninterrupted.</p>
       <h4>6. Integration With Unified Communication Platforms</h4>
@@ -1571,12 +1859,12 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>🔹 Huddle Rooms: Small spaces designed for 2–5 people; ideal for quick collaborations.</li>
         <li>🔹 Medium Meeting Rooms: Flexible spaces equipped with mid-range AV and collaboration tools.</li>
         <li>🔹 Boardrooms: Premium spaces with high-end video walls, advanced automation, and executive-level AV.</li>
-        <li>🔹 Experience Centers & Training Rooms: Large-scale interactive environments for workshops, presentations, and virtual demonstrations.</li>
+        <li>🔹 Experience Centers &amp; Training Rooms: Large-scale interactive environments for workshops, presentations, and virtual demonstrations.</li>
       </ul>
       <h3>💡 Benefits of Modern Conference Room Infrastructure</h3>
       <p>Upgrading your meeting spaces delivers long-term value:</p>
       <ul>
-        <li>✔ Improved Communication & Engagement: Eliminates communication barriers for hybrid teams.</li>
+        <li>✔ Improved Communication &amp; Engagement: Eliminates communication barriers for hybrid teams.</li>
         <li>✔ Enhanced Productivity: Meetings start faster, run smoother, and drive decisions quicker.</li>
         <li>✔ Professional Brand Image: High-quality AV systems create an impressive environment for clients.</li>
         <li>✔ Reduced Operational Cost: Automated systems and energy-efficient designs ensure long-term savings.</li>
@@ -1586,27 +1874,27 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Conference room modernization is rapidly advancing across sectors:</p>
       <ul>
         <li>Corporate Offices</li>
-        <li>Hospitals & Medical Colleges</li>
+        <li>Hospitals &amp; Medical Colleges</li>
         <li>Data Centers</li>
         <li>Government Institutions</li>
-        <li>Universities & Educational Campuses</li>
-        <li>Hotels & Hospitality</li>
-        <li>Manufacturing & Automotive</li>
-        <li>Airports & Aviation</li>
-        <li>Real Estate & Commercial Spaces</li>
+        <li>Universities &amp; Educational Campuses</li>
+        <li>Hotels &amp; Hospitality</li>
+        <li>Manufacturing &amp; Automotive</li>
+        <li>Airports &amp; Aviation</li>
+        <li>Real Estate &amp; Commercial Spaces</li>
       </ul>
       <p>Every industry needs smarter collaboration — and modern conference rooms deliver exactly that.</p>
       <h3>🚀 Why Cyrotics Technologies Leads in Modern Conference Room Solutions</h3>
       <p>At Cyrotics Technologies (OPC) Pvt. Ltd., we specialize in designing high-performance, integrated conference rooms that meet global standards.</p>
       <p>Our services include:</p>
       <ul>
-        <li>AV design & engineering</li>
+        <li>AV design &amp; engineering</li>
         <li>Boardroom and training room setup</li>
         <li>Video conferencing solutions</li>
         <li>Acoustic treatment</li>
         <li>Digital signage</li>
         <li>Structured cabling</li>
-        <li>Networking & automation integration</li>
+        <li>Networking &amp; automation integration</li>
         <li>End-to-end project execution</li>
       </ul>
       <p>Our approach ensures:</p>
@@ -1614,7 +1902,7 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>Aesthetically pleasing design</li>
         <li>User-friendly experience</li>
         <li>Scalable architecture</li>
-        <li>Long-term support & maintenance</li>
+        <li>Long-term support &amp; maintenance</li>
       </ul>
       <p>From top medical institutes to corporate offices and government organizations across India, we have delivered smart, future-ready conferencing ecosystems.</p>
       <h3>📌 Conclusion: The Future of Meetings Is Hybrid, Smart, and Fully Connected</h3>
@@ -1650,11 +1938,11 @@ export const BLOG_POSTS: BlogPost[] = [
       <ul>
         <li>HVAC (Heating, Ventilation, Air Conditioning)</li>
         <li>Lighting automation</li>
-        <li>Power & energy systems</li>
-        <li>Elevators & movement control</li>
-        <li>Fire alarm & life safety systems</li>
-        <li>Water pumping & plumbing</li>
-        <li>CCTV & access control integration (in advanced setups)</li>
+        <li>Power &amp; energy systems</li>
+        <li>Elevators &amp; movement control</li>
+        <li>Fire alarm &amp; life safety systems</li>
+        <li>Water pumping &amp; plumbing</li>
+        <li>CCTV &amp; access control integration (in advanced setups)</li>
         <li>Environmental quality sensors (CO₂, temperature, humidity)</li>
       </ul>
       <p>By connecting thousands of sensors and devices, a BMS brings everything together on a single, intelligent dashboard.</p>
@@ -1674,7 +1962,7 @@ export const BLOG_POSTS: BlogPost[] = [
       </ul>
       <p>—all from one screen.</p>
       <p>BMS acts as a centralized command center that gives facility managers complete visibility and control over every system.</p>
-      <h4>2. Energy Savings & Sustainability</h4>
+      <h4>2. Energy Savings &amp; Sustainability</h4>
       <p>Energy is often the biggest operational cost of any building.</p>
       <p>A smart BMS helps reduce this by:</p>
       <ul>
@@ -1685,7 +1973,7 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>Predicting energy demand trends</li>
       </ul>
       <p>Buildings with BMS experience up to 30–40% energy savings, contributing directly to cost reduction and environmental sustainability.</p>
-      <h4>3. Enhanced Safety & Risk Prevention</h4>
+      <h4>3. Enhanced Safety &amp; Risk Prevention</h4>
       <p>A BMS strengthens building safety through:</p>
       <ul>
         <li>Real-time fire alarm monitoring</li>
@@ -1695,7 +1983,7 @@ export const BLOG_POSTS: BlogPost[] = [
         <li>Intelligent lockdown controls</li>
       </ul>
       <p>When an incident occurs, the BMS responds instantly — far faster than any manual intervention.</p>
-      <h4>4. Improved Comfort & Workplace Experience</h4>
+      <h4>4. Improved Comfort &amp; Workplace Experience</h4>
       <p>Modern occupants expect smart, comfortable, and personalized spaces.
 BMS takes care of this by regulating:</p>
       <ul>
@@ -1717,7 +2005,7 @@ BMS takes care of this by regulating:</p>
       <h3>🧠 How a BMS Actually Works</h3>
       <p>A Building Management System uses a 4-layer architecture:</p>
       <ol>
-        <li><strong>Sensors & Field Devices:</strong> Temperature sensors, smoke detectors, motion sensors, flow meters, etc.</li>
+        <li><strong>Sensors &amp; Field Devices:</strong> Temperature sensors, smoke detectors, motion sensors, flow meters, etc.</li>
         <li><strong>Controllers:</strong> Programmable Logic Controllers (PLCs) and DDCs (Direct Digital Controllers) that interpret signals.</li>
         <li><strong>Communication Network:</strong> Protocols like BACnet, Modbus, KNX, LonWorks, IP networks.</li>
         <li><strong>Central Management Software:</strong> Dashboards, alerts, analytics, automation rules, reporting.</li>
@@ -1726,13 +2014,13 @@ BMS takes care of this by regulating:</p>
       <h3>🏢 Where Is BMS Used?</h3>
       <p>BMS is essential in:</p>
       <ul>
-        <li>Hospitals & Medical Colleges</li>
-        <li>Corporate Offices & IT Parks</li>
+        <li>Hospitals &amp; Medical Colleges</li>
+        <li>Corporate Offices &amp; IT Parks</li>
         <li>Data Centers</li>
-        <li>Airports & Metro Stations</li>
-        <li>Smart Buildings & Shopping Malls</li>
-        <li>Universities & Schools</li>
-        <li>Hotels & Hospitality</li>
+        <li>Airports &amp; Metro Stations</li>
+        <li>Smart Buildings &amp; Shopping Malls</li>
+        <li>Universities &amp; Schools</li>
+        <li>Hotels &amp; Hospitality</li>
         <li>Manufacturing Plants</li>
         <li>Government Institutions</li>
       </ul>
@@ -1752,11 +2040,11 @@ BMS takes care of this by regulating:</p>
       <p>At Cyrotics Technologies, we specialize in designing, integrating, and delivering advanced BMS and smart infrastructure solutions across India.</p>
       <p>Our expertise includes:</p>
       <ul>
-        <li>Full-scale BMS consulting & design</li>
+        <li>Full-scale BMS consulting &amp; design</li>
         <li>HVAC automation</li>
-        <li>Lighting & energy optimization</li>
-        <li>Access control & security integration</li>
-        <li>Fire & safety system integration</li>
+        <li>Lighting &amp; energy optimization</li>
+        <li>Access control &amp; security integration</li>
+        <li>Fire &amp; safety system integration</li>
         <li>IoT-based smart building solutions</li>
         <li>Command center and monitoring setup</li>
         <li>End-to-end project execution</li>
@@ -1768,17 +2056,17 @@ BMS takes care of this by regulating:</p>
         <li>Noida International Airport Limited</li>
         <li>AIIMS Rajkot</li>
         <li>Bihar Animal Science University</li>
-        <li>And multiple private & public sector clients</li>
+        <li>And multiple private &amp; public sector clients</li>
       </ul>
       <p>We ensure every project is future-ready, scalable, efficient, and compliant with global standards.</p>
-      <h3>📌 Conclusion: The Building of the Future Is Smart, Responsive & Efficient</h3>
+      <h3>📌 Conclusion: The Building of the Future Is Smart, Responsive &amp; Efficient</h3>
       <p>A Building Management System is not a luxury — it’s a strategic investment.</p>
       <p>It enhances:</p>
       <ul>
         <li>✔ Operational efficiency</li>
         <li>✔ Energy savings</li>
-        <li>✔ Security & safety</li>
-        <li>✔ Comfort & user experience</li>
+        <li>✔ Security &amp; safety</li>
+        <li>✔ Comfort &amp; user experience</li>
         <li>✔ Predictive building intelligence</li>
       </ul>
       <p>The hidden genius of your building is already here — and with the right implementation, it can transform how your infrastructure performs for decades.</p>
@@ -1799,7 +2087,7 @@ BMS takes care of this by regulating:</p>
     content: `
       <p>In today’s digital era, businesses are no longer asking whether they need digital solutions — they are asking how fast they can build them. Whether it’s a mobile app, a web platform, a mission-critical enterprise tool, or an automation system, the journey from concept to deployment requires expertise, strategy, and innovation.</p>
       <p>At Cyrotics Technologies, we specialize in transforming ideas into fully functional, scalable, and secure applications. This blog walks you through the complete journey of custom software development — from the very first spark of an idea to delivering a production-ready application.</p>
-      <h3>1. Ideation & Requirement Discovery</h3>
+      <h3>1. Ideation &amp; Requirement Discovery</h3>
       <p>Every great app begins with a clear vision. During this phase, we work closely with the client to understand:</p>
       <ul>
         <li>The business problem</li>
@@ -1810,12 +2098,12 @@ BMS takes care of this by regulating:</p>
         <li>Budget and timelines</li>
       </ul>
       <p>Through structured discovery workshops, brainstorming sessions, and competitor analysis, we convert ideas into a defined project scope. This forms the foundation of all future development activities.</p>
-      <h3>2. Planning, Documentation & Architecture Design</h3>
+      <h3>2. Planning, Documentation &amp; Architecture Design</h3>
       <p>Once the idea is validated, our team creates a detailed blueprint of the solution, which includes:</p>
       <ul>
         <li><strong>✔ Technical Architecture:</strong> Defines system components, databases, APIs, and integrations.</li>
         <li><strong>✔ UI/UX Wireframes:</strong> Visual outlines of how users will interact with the application.</li>
-        <li><strong>✔ Project Plan & Milestones:</strong> Agile sprint planning, deliverable timelines, resource allocation.</li>
+        <li><strong>✔ Project Plan &amp; Milestones:</strong> Agile sprint planning, deliverable timelines, resource allocation.</li>
         <li><strong>✔ Technology Stack Selection:</strong> Choosing the most suitable tools (React, Node.js, Python, Flutter, AWS, etc.) based on performance, scalability, and cost.</li>
       </ul>
       <p>This phase ensures clarity, transparency, and predictable project execution.</p>
@@ -1841,7 +2129,7 @@ BMS takes care of this by regulating:</p>
         <li>Java / .NET</li>
         <li>PHP Laravel</li>
       </ul>
-      <h4>🔹 Database & Cloud Deployment</h4>
+      <h4>🔹 Database &amp; Cloud Deployment</h4>
       <p>Designing scalable data structures on platforms like:</p>
       <ul>
         <li>AWS</li>
@@ -1849,7 +2137,7 @@ BMS takes care of this by regulating:</p>
         <li>Azure</li>
       </ul>
       <p>We ensure every feature is built modularly, tested thoroughly, and optimized for speed.</p>
-      <h3>5. Testing & Quality Assurance</h3>
+      <h3>5. Testing &amp; Quality Assurance</h3>
       <p>Quality is non-negotiable in custom software development. Our QA engineers perform:</p>
       <ul>
         <li>Functional testing</li>
@@ -1860,7 +2148,7 @@ BMS takes care of this by regulating:</p>
         <li>Cross-platform and cross-device testing</li>
       </ul>
       <p>Our objective: zero bugs and maximum reliability. Every feature undergoes rigorous validation before moving to production.</p>
-      <h3>6. Deployment & Go-Live</h3>
+      <h3>6. Deployment &amp; Go-Live</h3>
       <p>Once the application passes all quality checkpoints, we prepare for deployment. This includes:</p>
       <ul>
         <li>Server setup and cloud configuration</li>
@@ -1870,7 +2158,7 @@ BMS takes care of this by regulating:</p>
         <li>Go-live readiness checks</li>
       </ul>
       <p>After deployment, we monitor the application to ensure smooth performance and immediate issue resolution if needed.</p>
-      <h3>7. Post-Launch Support, Upgrades & Scaling</h3>
+      <h3>7. Post-Launch Support, Upgrades &amp; Scaling</h3>
       <p>Software development does not end at launch — it evolves. We offer long-term support through:</p>
       <ul>
         <li>Continuous monitoring</li>
@@ -1917,9 +2205,9 @@ BMS takes care of this by regulating:</p>
     imageHint: 'doctor using tablet',
     tags: ['Healthcare', 'IT Infrastructure', 'Smart Hospital'],
     content: `
-      <p>Healthcare is transforming rapidly—and modern medical colleges, teaching hospitals, and research institutions now depend heavily on robust IT & ELV infrastructure to deliver efficient clinical care, secure data management, and smooth institutional functioning.</p>
+      <p>Healthcare is transforming rapidly—and modern medical colleges, teaching hospitals, and research institutions now depend heavily on robust IT &amp; ELV infrastructure to deliver efficient clinical care, secure data management, and smooth institutional functioning.</p>
       <p>From electronic medical records to advanced CCTV surveillance, from high-speed campus networks to smart classrooms—technology is at the heart of every modern healthcare institution.</p>
-      <p>At Cyrotics Technologies, we have successfully built and delivered complete IT & ELV infrastructures for leading medical institutions across India, including:</p>
+      <p>At Cyrotics Technologies, we have successfully built and delivered complete IT &amp; ELV infrastructures for leading medical institutions across India, including:</p>
       <ul>
         <li>Chhindwara Institute of Medical Science (MP)</li>
         <li>Govt. Medical College Chandrapur (MH)</li>
@@ -1935,10 +2223,10 @@ BMS takes care of this by regulating:</p>
       <ul>
         <li>Student computers</li>
         <li>Smart classrooms</li>
-        <li>Labs & simulation centers</li>
+        <li>Labs &amp; simulation centers</li>
         <li>Hospital OPD/IPD systems</li>
         <li>Diagnostic machines</li>
-        <li>Faculty & administration systems</li>
+        <li>Faculty &amp; administration systems</li>
       </ul>
       <p>A high-speed, redundant network is mandatory.</p>
       <h4>What Cyrotics Provides:</h4>
@@ -1950,27 +2238,27 @@ BMS takes care of this by regulating:</p>
         <li>✔ High availability Internet links</li>
       </ul>
       <p><strong>Project Example:</strong> At Govt. Medical College Chandrapur, we built a multi-gigabit fiber network covering hostels, classrooms, OPD/IPD blocks, exam halls, and labs.</p>
-      <h3>⭐ 2. Data Centers & Server Rooms – The Heart of Healthcare Data</h3>
+      <h3>⭐ 2. Data Centers &amp; Server Rooms – The Heart of Healthcare Data</h3>
       <p>Modern healthcare requires centralized processing and storage for:</p>
       <ul>
         <li>EMR/EHR systems</li>
         <li>PACS/RIS imaging systems</li>
         <li>HRMS/Accounts/ERP</li>
-        <li>Attendance & RFID tracking</li>
+        <li>Attendance &amp; RFID tracking</li>
         <li>CCTV video retention</li>
-        <li>Lab & diagnostic databases</li>
+        <li>Lab &amp; diagnostic databases</li>
       </ul>
       <h4>Cyrotics Expertise:</h4>
       <ul>
         <li>✔ Tier-based server room setup</li>
         <li>✔ Environmental control (PAC, humidity sensors)</li>
-        <li>✔ Redundant power & UPS</li>
+        <li>✔ Redundant power &amp; UPS</li>
         <li>✔ Structured cabling</li>
         <li>✔ Blade/virtualized servers</li>
         <li>✔ Firewall security</li>
       </ul>
       <p><strong>Project Example:</strong> Chhindwara Institute of Medical Science received a full data center migration, including server upgrades, CCTV storage servers, and virtualized infrastructure.</p>
-      <h3>⭐ 3. Smart Classroom & E-Learning Integration</h3>
+      <h3>⭐ 3. Smart Classroom &amp; E-Learning Integration</h3>
       <p>Medical colleges today rely on:</p>
       <ul>
         <li>Smart boards</li>
@@ -1982,18 +2270,18 @@ BMS takes care of this by regulating:</p>
       <h4>Our Deliverables:</h4>
       <ul>
         <li>✔ Classroom automation</li>
-        <li>✔ Audio & video integration</li>
+        <li>✔ Audio &amp; video integration</li>
         <li>✔ High-bandwidth Wi-Fi</li>
-        <li>✔ Central monitoring & control</li>
+        <li>✔ Central monitoring &amp; control</li>
       </ul>
       <p>Smart classrooms enable better learning, real-time online sessions, and digital skill development for medical students.</p>
-      <h3>⭐ 4. Hospital & Campus Security Through ELV Systems</h3>
+      <h3>⭐ 4. Hospital &amp; Campus Security Through ELV Systems</h3>
       <p>Security is extremely critical in medical environments.</p>
       <h4>We Deploy Full ELV Ecosystems:</h4>
       <ul>
         <li>✔ CCTV surveillance (NVR-based or VMS-based)</li>
-        <li>✔ Fire alarm & smoke detection systems</li>
-        <li>✔ Access control & biometric systems</li>
+        <li>✔ Fire alarm &amp; smoke detection systems</li>
+        <li>✔ Access control &amp; biometric systems</li>
         <li>✔ Public announcement systems</li>
         <li>✔ IP-based intercom solutions</li>
       </ul>
@@ -2001,7 +2289,7 @@ BMS takes care of this by regulating:</p>
       <ul>
         <li>800+ CCTV cameras</li>
         <li>Server-based long-term storage with long-term storage</li>
-        <li>Complete access control & fire alarm integration</li>
+        <li>Complete access control &amp; fire alarm integration</li>
       </ul>
       <p>This ensured a fully-secure medical campus with 24×7 monitoring.</p>
       <h3>⭐ 5. IT Integration for Clinical Departments</h3>
@@ -2036,24 +2324,24 @@ BMS takes care of this by regulating:</p>
       <ul>
         <li>✔ Modular data centers</li>
         <li>✔ Tier-based expansion possibility</li>
-        <li>✔ Extra fiber cores & spare capacity</li>
+        <li>✔ Extra fiber cores &amp; spare capacity</li>
         <li>✔ Flexible VLAN/IP schemas</li>
         <li>✔ Cloud-ready infrastructure</li>
       </ul>
       <p>Our infrastructures are designed to scale effortlessly for 5–10 years.</p>
-      <h3>⭐ 7. Ensuring 24×7 Availability & IT Security</h3>
+      <h3>⭐ 7. Ensuring 24×7 Availability &amp; IT Security</h3>
       <p>Healthcare cannot afford downtime or cyber risks.</p>
       <h4>We provide:</h4>
       <ul>
         <li>✔ Redundant Internet</li>
         <li>✔ Failover routing</li>
-        <li>✔ Firewall & UTM protection</li>
+        <li>✔ Firewall &amp; UTM protection</li>
         <li>✔ Regular security audits</li>
-        <li>✔ Data backups & DR solutions</li>
+        <li>✔ Data backups &amp; DR solutions</li>
       </ul>
       <p>This ensures uninterrupted hospital operations and protection against cyberattacks.</p>
       <h3>⭐ Conclusion</h3>
-      <p>Modern medical colleges are not just educational institutions—they are technology-driven ecosystems that require strong, secure, and scalable IT & ELV infrastructure.</p>
+      <p>Modern medical colleges are not just educational institutions—they are technology-driven ecosystems that require strong, secure, and scalable IT &amp; ELV infrastructure.</p>
       <p>Cyrotics Technologies helps healthcare institutions achieve:</p>
       <ul>
         <li>✔ Faster operations</li>
@@ -2067,7 +2355,7 @@ BMS takes care of this by regulating:</p>
   },
   {
     slug: 'how-smart-elv-systems-improve-security',
-    title: 'How Smart ELV Systems Improve Security & Efficiency in Government and Corporate Campuses',
+    title: 'How Smart ELV Systems Improve Security &amp; Efficiency in Government and Corporate Campuses',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
     date: '2024-06-02',
@@ -2096,7 +2384,7 @@ BMS takes care of this by regulating:</p>
       <h4>Key Features:</h4>
       <ul>
         <li>✔ Facial recognition</li>
-        <li>✔ Motion & intrusion detection</li>
+        <li>✔ Motion &amp; intrusion detection</li>
         <li>✔ Perimeter breach alerts</li>
         <li>✔ Crowd detection</li>
         <li>✔ Number plate recognition</li>
@@ -2110,7 +2398,7 @@ BMS takes care of this by regulating:</p>
         <li>Safer hostels, academic areas, parking, and patient zones</li>
       </ul>
       <p><strong>Example Project:</strong> At SGTBS Govt. Medical College Yamunanagar, Cyrotics deployed 800+ cameras with server-based long-term storage and AI analytics.</p>
-      <h3>⭐ 2. Access Control & Biometric Security</h3>
+      <h3>⭐ 2. Access Control &amp; Biometric Security</h3>
       <p>Managing entry and exit in sensitive areas is critical.</p>
       <h4>Smart Access Systems Include:</h4>
       <ul>
@@ -2128,7 +2416,7 @@ BMS takes care of this by regulating:</p>
         <li>Ideal for labs, server rooms, ICUs, data centers, hostels</li>
       </ul>
       <p><strong>Example:</strong> At Chhindwara Institute of Medical Science, we implemented multi-layer biometric access for server rooms and critical departments.</p>
-      <h3>⭐ 3. Public Address (PA) & Emergency Announcement Systems</h3>
+      <h3>⭐ 3. Public Address (PA) &amp; Emergency Announcement Systems</h3>
       <p>A smart PA system is essential for emergency alerts and routine announcements.</p>
       <h4>Capabilities:</h4>
       <ul>
@@ -2143,12 +2431,12 @@ BMS takes care of this by regulating:</p>
         <li>Clear communication across large areas</li>
         <li>Important for hospitals, hostels, admin blocks, and public areas</li>
       </ul>
-      <h3>⭐ 4. Fire Alarm & Smoke Detection Systems</h3>
+      <h3>⭐ 4. Fire Alarm &amp; Smoke Detection Systems</h3>
       <p>Modern campuses demand advanced fire protection.</p>
       <h4>ELV Fire Systems Include:</h4>
       <ul>
         <li>✔ Addressable fire alarm panels</li>
-        <li>✔ Heat & smoke sensors</li>
+        <li>✔ Heat &amp; smoke sensors</li>
         <li>✔ Water leak detection</li>
         <li>✔ Gas leak detection</li>
         <li>✔ Emergency evacuation systems</li>
@@ -2159,13 +2447,13 @@ BMS takes care of this by regulating:</p>
         <li>Reduces risk to life and infrastructure</li>
         <li>Integrated with BMS, CCTV, and PA systems</li>
       </ul>
-      <h3>⭐ 5. Structured Cabling & Communication Infrastructure</h3>
+      <h3>⭐ 5. Structured Cabling &amp; Communication Infrastructure</h3>
       <p>All ELV devices rely on a strong cabling backbone.</p>
       <h4>Cyrotics Provides:</h4>
       <ul>
         <li>✔ OFC backbone</li>
         <li>✔ CAT6/CAT6A copper network</li>
-        <li>✔ Patch panel & racks</li>
+        <li>✔ Patch panel &amp; racks</li>
         <li>✔ End-to-end certified cabling</li>
       </ul>
       <h4>Benefits:</h4>
@@ -2174,7 +2462,7 @@ BMS takes care of this by regulating:</p>
         <li>Zero downtime</li>
         <li>Better scalability for future devices</li>
       </ul>
-      <h3>⭐ 6. Smart Energy & Building Automation Integration</h3>
+      <h3>⭐ 6. Smart Energy &amp; Building Automation Integration</h3>
       <p>ELV systems are now integrated with:</p>
       <ul>
         <li>BMS (Building Management System)</li>
@@ -2189,7 +2477,7 @@ BMS takes care of this by regulating:</p>
         <li>✔ Improved sustainability</li>
       </ul>
       <p>This is especially useful for government buildings focusing on green initiatives.</p>
-      <h3>⭐ 7. Visitor & Vehicle Management Systems (VMS)</h3>
+      <h3>⭐ 7. Visitor &amp; Vehicle Management Systems (VMS)</h3>
       <p>Managing large footfall requires automation.</p>
       <h4>ELV Helps Automate:</h4>
       <ul>
@@ -2220,10 +2508,10 @@ BMS takes care of this by regulating:</p>
       <p>At Cyrotics Technologies, we design and deploy end-to-end ELV ecosystems that include:</p>
       <ul>
         <li>AI CCTV Surveillance</li>
-        <li>Access Control & Biometric Systems</li>
-        <li>Fire Alarm & Smoke Detection</li>
-        <li>PA & Emergency Alert Systems</li>
-        <li>Visitor & Vehicle Management</li>
+        <li>Access Control &amp; Biometric Systems</li>
+        <li>Fire Alarm &amp; Smoke Detection</li>
+        <li>PA &amp; Emergency Alert Systems</li>
+        <li>Visitor &amp; Vehicle Management</li>
         <li>Structured Cabling</li>
         <li>Integrated Command Centers</li>
       </ul>
@@ -2232,7 +2520,7 @@ BMS takes care of this by regulating:</p>
   },
   {
     slug: 'importance-of-data-center-migration-and-modernization',
-    title: 'The Importance of Data Center Migration & Modernization for Future-Ready Businesses',
+    title: 'The Importance of Data Center Migration &amp; Modernization for Future-Ready Businesses',
     author: 'Cyrotics Technologies (OPC) Pvt. Ltd.',
     authorImage: 'https://picsum.photos/seed/logo/100/100',
     date: '2024-04-15',
@@ -2252,7 +2540,7 @@ BMS takes care of this by regulating:</p>
         <li><strong>Scalability Needs Are Higher Than Ever:</strong> A modernized data center easily scales to handle more users, new applications, and exponential data growth.</li>
       </ul>
       <h3>⭐ How Cyrotics Technologies Performs Seamless Data Center Migration</h3>
-      <p>Our expertise ensures zero data loss and minimal downtime. Our step-by-step approach includes Assessment & Audit, Design & Architecture, Migration Planning, Execution & Deployment, Testing & Validation, and Go-Live & Optimization.</p>
+      <p>Our expertise ensures zero data loss and minimal downtime. Our step-by-step approach includes Assessment &amp; Audit, Design &amp; Architecture, Migration Planning, Execution &amp; Deployment, Testing &amp; Validation, and Go-Live &amp; Optimization.</p>
       <h3>⭐ Benefits of Modernizing Your Data Center</h3>
       <p>Modernization brings immediate and long-term advantages, including enhanced performance, improved security, reduced operational costs, better business continuity, and a future-proof IT environment ready for AI, IoT, and 5G.</p>
       <h3>⭐ Conclusion</h3>
@@ -2324,7 +2612,7 @@ export const PROJECT_TYPES = [
 ];
 
 export const BUDGET_RANGES = [
-  '< ₹1 Lakh',
+  '&lt; ₹1 Lakh',
   '₹1–10 Lakh',
   '₹10–50 Lakh',
   '₹50 Lakh–1 Cr',
@@ -2393,7 +2681,7 @@ export const CAREER_BENEFITS: Benefit[] = [
     },
     {
         icon: Award,
-        title: "Rewards & Recognition",
+        title: "Rewards &amp; Recognition",
         description: "We believe in recognizing and rewarding our employees for their hard work and dedication.",
     },
     {
@@ -2469,3 +2757,6 @@ export const companyAddress = {
 
 
 
+
+
+    
