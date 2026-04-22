@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const response = NextResponse.next();
 
-  // ── Security Headers ────────────────────────────────────
+  // ── Security Headers (Production) ───────────────────────
   
   // Prevent clickjacking
   response.headers.set('X-Frame-Options', 'DENY');
@@ -21,8 +21,7 @@ export function middleware(request: NextRequest) {
   // Permissions Policy
   response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), interest-cohort=()');
 
-  // CSP is temporarily commented out to ensure development scripts aren't blocked
-  /*
+  // Content Security Policy
   const cspHeader = `
     default-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline' https://maps.googleapis.com https://fonts.googleapis.com;
@@ -38,7 +37,6 @@ export function middleware(request: NextRequest) {
   `.replace(/\s{2,}/g, ' ').trim();
   
   response.headers.set('Content-Security-Policy', cspHeader);
-  */
 
   return response;
 }
