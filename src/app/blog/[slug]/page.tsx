@@ -10,6 +10,15 @@ import { ArrowRight } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { format, parseISO } from 'date-fns';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import sanitizeHtml from 'sanitize-html';
+
+const sanitizeOptions = {
+  allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
+  allowedAttributes: {
+    ...sanitizeHtml.defaults.allowedAttributes,
+    img: ['src', 'alt', 'width', 'height', 'loading'],
+  },
+};
 
 export async function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({
@@ -89,7 +98,7 @@ export default function BlogPostPage({
 
           <div 
             className="prose max-w-none lg:prose-lg prose-headings:font-headline prose-headings:text-foreground prose-h3:text-2xl prose-a:text-primary hover:prose-a:text-primary/80 prose-strong:text-foreground text-muted-foreground"
-            dangerouslySetInnerHTML={{ __html: post.content }}
+            dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content, sanitizeOptions) }}
           />
 
         </div>

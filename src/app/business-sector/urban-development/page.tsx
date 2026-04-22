@@ -15,6 +15,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/ui-patterns/page-hero';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
 import Link from 'next/link';
 
 export default function UrbanDevelopmentPage() {
@@ -53,17 +55,11 @@ export default function UrbanDevelopmentPage() {
 
   return (
     <>
-      <section className="bg-primary/10 py-20 text-center">
-        <div className="container">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            Urban Development
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
-            Building the smart, sustainable, and resilient cities of tomorrow
-            through integrated technology solutions.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Urban Development"
+        description="Creating future-ready urban spaces with intelligent infrastructure and smart building solutions."
+        heroImage="/sector-urban-development.png"
+      />
 
       <section className="py-16">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
@@ -125,22 +121,11 @@ export default function UrbanDevelopmentPage() {
         </div>
       </section>
 
-      <section>
-        <div className="container py-16 text-center">
-          <h2 className="font-headline text-3xl font-bold">
-            Let's Build a Smarter City Together
-          </h2>
-          <p className="mt-4 text-lg max-w-xl mx-auto text-muted-foreground">
-            Contact our specialists to learn how our technology solutions can
-            transform your urban development projects.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <Link href="/contact">Request a Consultation</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <BottomCTA 
+          title="Let's Build a Smarter City Together"
+          description="Contact our specialists to learn how our technology solutions can transform your urban development projects."
+          primaryButtonText="Request a Consultation"
+        />
     </>
   );
 }

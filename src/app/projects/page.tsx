@@ -10,6 +10,8 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
+import { PageHero } from '@/components/ui-patterns/page-hero';
 
 export const metadata = {
   title: 'Our Projects | CYROTICS TECHNOLOGIES',
@@ -19,21 +21,14 @@ export const metadata = {
 export default function ProjectsPage() {
   return (
     <>
-      <section className="bg-primary text-primary-foreground py-20 text-center">
-        <div className="container">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            Our Portfolio
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
-            A showcase of our commitment to excellence and innovation across
-            diverse industries.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Our Portfolio"
+        description="A showcase of our commitment to excellence and innovation across diverse industries."
+        heroImage="/bg-tech-v2.png"
+      />
 
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="container">
-          {/* A full implementation would have client-side filtering controls here */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {PROJECTS.map((project) => (
               <Card
@@ -67,8 +62,6 @@ export default function ProjectsPage() {
                       </Badge>
                     ))}
                   </div>
-                  {/* A real implementation would link to a detailed project page */}
-                  {/* <Button variant="link" className="px-0 pt-4 self-start">Read Case Study</Button> */}
                 </CardContent>
               </Card>
             ))}
@@ -76,22 +69,11 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <section className="bg-primary/5">
-        <div className="container py-16 text-center">
-          <h2 className="font-headline text-3xl font-bold">
-            Let's Build Your Success Story
-          </h2>
-          <p className="mt-4 text-lg max-w-xl mx-auto text-muted-foreground">
-            Inspired by our work? Contact us to discuss how we can bring your
-            next project to life.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <Link href="/contact">Start a Project With Us</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <BottomCTA 
+          title="Let's Build Your Success Story"
+          description="Inspired by our work? Contact us to discuss how we can bring your next project to life."
+          primaryButtonText="Start a Project With Us"
+        />
     </>
   );
 }

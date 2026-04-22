@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Accordion,
   AccordionContent,
@@ -41,6 +42,12 @@ import {
   Building,
   Mail,
   HelpCircle,
+  Briefcase,
+  Users,
+  Trophy,
+  Rocket,
+  ArrowRight,
+  Sparkles,
 } from 'lucide-react';
 import {
   Carousel,
@@ -62,6 +69,10 @@ import {
   CAREER_BENEFITS,
   CAREER_FAQS,
 } from '@/lib/constants';
+import { cn } from '@/lib/utils';
+import { PageHero } from '@/components/ui-patterns/page-hero';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
+import { AnimatedSection, AnimatedItem } from '@/components/ui-patterns/animated-section';
 
 type Filters = {
   keyword: string;
@@ -162,459 +173,450 @@ export default function CareersPage() {
   
   const availableJobTypes = filters.careerLevel ? SPECIAL_JOB_TYPES[filters.careerLevel] || JOB_TYPES : JOB_TYPES;
 
-  const lifeAtCyroticsImages = [
-    { src: "https://picsum.photos/seed/work1/600/400", alt: "Team collaborating in office", hint: "team collaboration" },
-    { src: "https://picsum.photos/seed/work2/600/400", alt: "Engineer working on a server", hint: "data center" },
-    { src: "https://picsum.photos/seed/work3/600/400", alt: "Group discussion in a modern meeting room", hint: "modern office" },
-    { src: "https://picsum.photos/seed/work4/600/400", alt: "Employee presenting at a workshop", hint: "company presentation" },
-  ];
-
   return (
-    <>
-      <section className="bg-primary text-primary-foreground py-20 text-center">
-        <div className="container">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            Find Your Future at CYROTICS
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
-            Explore opportunities to innovate, grow, and make an impact with a
-            leading technology partner.
-          </p>
-        </div>
-      </section>
+    <div className="flex flex-col w-full">
+      <PageHero 
+        title="Shape the Future of Technology"
+        description="Join a global team of innovators building secure, intelligent, and scalable infrastructure for the next generation of enterprises."
+        heroImage="/career-hero.png"
+      />
 
-      <section className="py-16 text-center">
-        <div className="container max-w-4xl mx-auto">
-           <h2 className="font-headline text-3xl font-bold">
-             ⭐ Join Our Team of Innovators
-           </h2>
-            <div className="mt-6 text-muted-foreground space-y-4 text-lg">
-                <p>
-                    At Cyrotics Technologies, we believe people are our greatest strength. We are building a team of innovators, problem-solvers, and future leaders who want to make a real impact in the world of IT, Cybersecurity, Automotive Engineering, and Smart Infrastructure.
-                </p>
-                <p>
-                    Whether you are an experienced professional or just starting your journey, we welcome passionate individuals who dream big, think boldly, and are ready to grow with us.
-                </p>
-                <p className="font-semibold text-foreground">
-                    Join us, and together we’ll create solutions that move industries forward, empower businesses, and shape a smarter digital future.
-                </p>
-                 <p className="font-semibold text-primary pt-4">
-                   “Your career begins with a single opportunity — let’s build something extraordinary together.”
-                </p>
+      {/* Intro Section */}
+      <AnimatedSection className="py-20 bg-background relative overflow-hidden">
+        <div className="container relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <Badge variant="outline" className="px-4 py-1 text-brand border-brand/20 bg-brand/5">
+              Why Join CYROTICS?
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+              A Culture of <span className="text-gradient">Continuous Innovation</span>
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              At CYROTICS, we don't just solve problems; we engineer possibilities. Our team is a diverse collective of dreamers, builders, and strategists dedicated to redefining what's possible in IT, Cybersecurity, and Smart Infrastructure.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 text-left">
+              {[
+                { icon: Rocket, title: "Accelerated Growth", desc: "Fast-track your career with exposure to cutting-edge technologies and enterprise-scale projects." },
+                { icon: Users, title: "Collaborative Spirit", desc: "Work alongside industry veterans and visionary leaders in an environment that values every voice." },
+                { icon: Trophy, title: "Meaningful Impact", desc: "Build solutions that power critical infrastructure, protect global brands, and shape the digital landscape." }
+              ].map((item, i) => (
+                <div key={i} className="p-6 rounded-2xl border border-border/50 bg-secondary/20 hover:bg-secondary/30 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center mb-4">
+                    <item.icon className="h-6 w-6 text-brand" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
             </div>
+          </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section className="py-8 bg-primary/5">
-        <div className="container max-w-6xl mx-auto">
-           <Card className="w-full">
-              <CardHeader className="text-center">
-                <CardTitle className="flex items-center justify-center gap-2 text-2xl">
-                  <Search /> Find Your Next Role
-                </CardTitle>
-                 <CardDescription>
-                    Use the filters below to find the perfect job for you.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                    {/* Row 1: Keyword Search */}
-                    <div className="px-12">
-                        <Label htmlFor="keywordSearch" className="sr-only">Search by Keyword</Label>
-                        <div className="relative">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                            <Input
-                                id="keywordSearch"
-                                placeholder="Search by job title, skill, or department..."
-                                className="pl-10 h-12 text-base"
-                                value={filters.keyword}
-                                onChange={(e) =>
-                                    setFilters({ ...filters, keyword: e.target.value })
-                                }
-                            />
-                        </div>
+      {/* Find Your Next Role Section */}
+      <section className="py-24 bg-secondary/30 relative border-y border-border/50" id="jobs">
+        <div className="container">
+          <AnimatedItem>
+            <Card className="w-full shadow-2xl border-none overflow-hidden rounded-3xl">
+              <div className="bg-primary p-8 md:p-12 text-primary-foreground relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-brand/20 blur-[100px] rounded-full -mr-32 -mt-32" />
+                <div className="relative z-10">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3">
+                    <Briefcase className="h-8 w-8 text-brand" />
+                    Find Your Next Role
+                  </h2>
+                  <p className="text-primary-foreground/70 max-w-2xl text-lg">
+                    Discover opportunities that align with your expertise and aspirations. Use our precision filters to navigate our current openings.
+                  </p>
+                </div>
+              </div>
+              <CardContent className="p-8 md:p-12 space-y-8 bg-card">
+                <div className="space-y-6">
+                  {/* Keyword Search */}
+                  <div className="max-w-4xl mx-auto">
+                    <Label htmlFor="keywordSearch" className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-3 block">Keyword Search</Label>
+                    <div className="relative group">
+                      <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-brand transition-colors" />
+                      <Input
+                        id="keywordSearch"
+                        placeholder="Job title, skills, or department..."
+                        className="pl-12 h-14 text-lg border-border/50 focus:border-brand/50 focus:ring-brand/20 rounded-xl transition-all"
+                        value={filters.keyword}
+                        onChange={(e) =>
+                          setFilters({ ...filters, keyword: e.target.value })
+                        }
+                      />
                     </div>
-                    
-                    {/* Row 2: Filters */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {/* Location Filter */}
-                        <Popover>
+                  </div>
+                  
+                  {/* Filters Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {/* Location Filter */}
+                    <div className="space-y-2">
+                      <Label className="text-xs font-bold uppercase tracking-wider text-muted-foreground ml-1">Location</Label>
+                      <Popover>
                         <PopoverTrigger asChild>
-                            <Button variant="outline" className="w-full justify-between h-11">
-                            <span>
-                                {filters.locations.length > 0
-                                ? `${filters.locations.length} locations selected`
+                          <Button variant="outline" className="w-full justify-between h-12 rounded-xl border-border/50 bg-background hover:bg-secondary/50">
+                            <span className="truncate">
+                              {filters.locations.length > 0
+                                ? `${filters.locations.length} selected`
                                 : 'Select Location'}
                             </span>
-                            <ChevronDown />
-                            </Button>
+                            <MapPin className="h-4 w-4 opacity-50" />
+                          </Button>
                         </PopoverTrigger>
-                        <PopoverContent className="w-[300px] p-0" align="start">
-                            <ScrollArea className="h-72">
+                        <PopoverContent className="w-[300px] p-0 rounded-2xl shadow-2xl" align="start">
+                          <ScrollArea className="h-80">
                             <div className="p-4">
-                                {LOCATIONS.map((country) => (
-                                <Accordion
-                                    type="single"
-                                    collapsible
-                                    key={country.name}
-                                >
-                                    <AccordionItem value={country.name}>
-                                    <AccordionTrigger className="py-2">
-                                        {country.name}
+                              {LOCATIONS.map((country) => (
+                                <Accordion type="single" collapsible key={country.name} className="border-none">
+                                  <AccordionItem value={country.name} className="border-none">
+                                    <AccordionTrigger className="py-2 text-sm font-bold hover:no-underline">
+                                      {country.name}
                                     </AccordionTrigger>
-                                    <AccordionContent className="pl-4">
-                                        {country.states.map((state) => (
-                                        <Accordion
-                                            type="single"
-                                            collapsible
-                                            key={state.name}
-                                        >
-                                            <AccordionItem value={state.name}>
-                                            <AccordionTrigger className="py-2 text-sm">
-                                                {state.name}
-                                            </AccordionTrigger>
-                                            <AccordionContent className="pl-4">
-                                                {state.cities.map((city) => (
-                                                <div
-                                                    key={city}
-                                                    className="flex items-center space-x-2 py-1"
-                                                >
-                                                    <Checkbox
-                                                    id={`loc-${city}`}
-                                                    checked={filters.locations.includes(
-                                                        city
-                                                    )}
-                                                    onCheckedChange={() =>
-                                                        handleMultiSelectChange(
-                                                        'locations',
-                                                        city
-                                                        )
-                                                    }
-                                                    />
-                                                    <Label htmlFor={`loc-${city}`} className="font-normal">
-                                                    {city}
-                                                    </Label>
-                                                </div>
-                                                ))}
-                                            </AccordionContent>
-                                            </AccordionItem>
-                                        </Accordion>
-                                        ))}
+                                    <AccordionContent className="pl-4 space-y-4">
+                                      {country.states.map((state) => (
+                                        <div key={state.name} className="space-y-2">
+                                          <p className="text-[10px] font-bold text-muted-foreground/60 uppercase tracking-widest">{state.name}</p>
+                                          {state.cities.map((city) => (
+                                            <div key={city} className="flex items-center space-x-3 py-1.5">
+                                              <Checkbox
+                                                id={`loc-${city}`}
+                                                checked={filters.locations.includes(city)}
+                                                onCheckedChange={() => handleMultiSelectChange('locations', city)}
+                                                className="border-border/50 data-[state=checked]:bg-brand data-[state=checked]:border-brand"
+                                              />
+                                              <Label htmlFor={`loc-${city}`} className="text-sm font-medium cursor-pointer">
+                                                {city}
+                                              </Label>
+                                            </div>
+                                          ))}
+                                        </div>
+                                      ))}
                                     </AccordionContent>
-                                    </AccordionItem>
+                                  </AccordionItem>
                                 </Accordion>
-                                ))}
+                              ))}
                             </div>
-                            </ScrollArea>
+                          </ScrollArea>
                         </PopoverContent>
-                        </Popover>
+                      </Popover>
+                    </div>
 
-                        {/* Career Level Filter */}
-                        <Select
+                    {/* Career Level Filter */}
+                    <div className="space-y-2">
+                      <Label className="text-xs font-bold uppercase tracking-wider text-muted-foreground ml-1">Career Level</Label>
+                      <Select
                         value={filters.careerLevel}
                         onValueChange={(value) => setFilters({ ...filters, careerLevel: value, jobTypes: [] })}
-                        >
-                        <SelectTrigger className="h-11">
-                            <SelectValue placeholder="Career Level" />
+                      >
+                        <SelectTrigger className="h-12 rounded-xl border-border/50 bg-background">
+                          <SelectValue placeholder="Career Level" />
                         </SelectTrigger>
-                        <SelectContent>
-                            {CAREER_LEVELS.map((level) => (
-                            <SelectItem key={level} value={level}>
-                                {level}
+                        <SelectContent className="rounded-xl">
+                          {CAREER_LEVELS.map((level) => (
+                            <SelectItem key={level} value={level} className="rounded-lg">
+                              {level}
                             </SelectItem>
-                            ))}
+                          ))}
                         </SelectContent>
-                        </Select>
-                        
-                        {/* Job Type Filter */}
-                        <Popover>
-                        <PopoverTrigger asChild>
-                            <Button variant="outline" className="w-full justify-between h-11">
-                            <span>{filters.jobTypes.length > 0 ? `${filters.jobTypes.length} types selected` : 'Job Type'}</span>
-                            <ChevronDown />
-                            </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-[300px] p-0" align="start">
-                            <div className="p-4">
-                                {availableJobTypes.map(type => (
-                                    <div key={type} className="flex items-center space-x-2 py-1">
-                                        <Checkbox
-                                            id={`type-${type}`}
-                                            checked={filters.jobTypes.includes(type)}
-                                            onCheckedChange={() => handleMultiSelectChange('jobTypes', type)}
-                                        />
-                                        <Label htmlFor={`type-${type}`} className="font-normal">{type}</Label>
-                                    </div>
-                                ))}
-                            </div>
-                        </PopoverContent>
-                        </Popover>
-                         <div></div>
+                      </Select>
                     </div>
                     
-                    {/* Row 3: Filters */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {/* Occupation Filter */}
-                        <Popover>
+                    {/* Job Type Filter */}
+                    <div className="space-y-2">
+                      <Label className="text-xs font-bold uppercase tracking-wider text-muted-foreground ml-1">Job Type</Label>
+                      <Popover>
                         <PopoverTrigger asChild>
-                            <Button variant="outline" className="w-full justify-between h-11">
-                            <span>{filters.occupations.length > 0 ? `${filters.occupations.length} occupations selected` : 'Occupation'}</span>
-                            <ChevronDown />
-                            </Button>
+                          <Button variant="outline" className="w-full justify-between h-12 rounded-xl border-border/50 bg-background">
+                            <span className="truncate">{filters.jobTypes.length > 0 ? `${filters.jobTypes.length} selected` : 'Job Type'}</span>
+                            <ChevronDown className="h-4 w-4 opacity-50" />
+                          </Button>
                         </PopoverTrigger>
-                        <PopoverContent className="w-[300px] p-0" align="start">
-                            <ScrollArea className="h-72">
-                            <div className="p-4">
-                                {OCCUPATIONS.map(group => (
-                                <div key={group.level}>
-                                    <h4 className="font-semibold my-2">{group.level}</h4>
-                                    {group.roles.map(role => (
-                                    <div key={role} className="flex items-center space-x-2 py-1 pl-2">
-                                        <Checkbox
-                                            id={`occ-${role}`}
-                                            checked={filters.occupations.includes(role)}
-                                            onCheckedChange={() => handleMultiSelectChange('occupations', role)}
-                                        />
-                                        <Label htmlFor={`occ-${role}`} className="font-normal">{role}</Label>
-                                    </div>
-                                    ))}
-                                </div>
-                                ))}
-                                </div>
-                            </ScrollArea>
+                        <PopoverContent className="w-[300px] p-4 rounded-2xl shadow-2xl" align="start">
+                          <div className="space-y-3">
+                            {availableJobTypes.map(type => (
+                              <div key={type} className="flex items-center space-x-3 py-1">
+                                <Checkbox
+                                  id={`type-${type}`}
+                                  checked={filters.jobTypes.includes(type)}
+                                  onCheckedChange={() => handleMultiSelectChange('jobTypes', type)}
+                                />
+                                <Label htmlFor={`type-${type}`} className="text-sm font-medium cursor-pointer">{type}</Label>
+                              </div>
+                            ))}
+                          </div>
                         </PopoverContent>
-                        </Popover>
-                        
-                        {/* Segment Filter */}
-                        <Popover>
-                        <PopoverTrigger asChild>
-                            <Button variant="outline" className="w-full justify-between h-11">
-                            <span>{filters.segments.length > 0 ? `${filters.segments.length} segments selected` : 'Segment'}</span>
-                            <ChevronDown />
-                            </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-[300px] p-0" align="start">
-                            <ScrollArea className="h-72">
-                            <div className="p-4">
-                                {SEGMENTS.map(segment => (
-                                    <div key={segment} className="flex items-center space-x-2 py-1">
-                                        <Checkbox
-                                            id={`seg-${segment}`}
-                                            checked={filters.segments.includes(segment)}
-                                            onCheckedChange={() => handleMultiSelectChange('segments', segment)}
-                                        />
-                                        <Label htmlFor={`seg-${segment}`} className="font-normal">{segment}</Label>
-                                    </div>
-                                ))}
-                                </div>
-                            </ScrollArea>
-                        </PopoverContent>
-                        </Popover>
-                        
-                        {/* Experience Level Filter */}
-                        <Popover>
-                        <PopoverTrigger asChild>
-                            <Button variant="outline" className="w-full justify-between h-11">
-                            <span>{filters.experienceLevels.length > 0 ? `${filters.experienceLevels.length} levels selected` : 'Experience Level'}</span>
-                            <ChevronDown />
-                            </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-[300px] p-0" align="start">
-                            <ScrollArea className="h-72">
-                            <div className="p-4">
-                                {EXPERIENCE_LEVELS.map(level => (
-                                    <div key={level} className="flex items-center space-x-2 py-1">
-                                        <Checkbox
-                                            id={`exp-${level}`}
-                                            checked={filters.experienceLevels.includes(level)}
-                                            onCheckedChange={() => handleMultiSelectChange('experienceLevels', level)}
-                                        />
-                                        <Label htmlFor={`exp-${level}`} className="font-normal">{level}</Label>
-                                    </div>
-                                ))}
-                                </div>
-                            </ScrollArea>
-                        </PopoverContent>
-                        </Popover>
+                      </Popover>
+                    </div>
 
-                        {/* Reset Button */}
-                        <Button onClick={resetFilters} variant="secondary" className="w-full h-11">Reset Filters</Button>
+                    {/* Segment Filter */}
+                    <div className="space-y-2">
+                      <Label className="text-xs font-bold uppercase tracking-wider text-muted-foreground ml-1">Sector / Segment</Label>
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <Button variant="outline" className="w-full justify-between h-12 rounded-xl border-border/50 bg-background">
+                            <span className="truncate">{filters.segments.length > 0 ? `${filters.segments.length} selected` : 'Select Sector'}</span>
+                            <ChevronDown className="h-4 w-4 opacity-50" />
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[300px] p-0 rounded-2xl shadow-2xl" align="start">
+                          <ScrollArea className="h-72">
+                            <div className="p-4 space-y-3">
+                              {SEGMENTS.map(segment => (
+                                <div key={segment} className="flex items-center space-x-3 py-1">
+                                  <Checkbox
+                                    id={`seg-${segment}`}
+                                    checked={filters.segments.includes(segment)}
+                                    onCheckedChange={() => handleMultiSelectChange('segments', segment)}
+                                  />
+                                  <Label htmlFor={`seg-${segment}`} className="text-sm font-medium cursor-pointer">{segment}</Label>
+                                </div>
+                              ))}
+                            </div>
+                          </ScrollArea>
+                        </PopoverContent>
+                      </Popover>
                     </div>
-                     <div className="pt-4 flex flex-wrap items-center justify-center gap-2">
-                        <span className="text-sm font-medium mr-2">Quick Filters:</span>
-                        {quickSegments.map(segment => (
-                            <Badge
-                                key={segment}
-                                variant={filters.segments.includes(segment) ? "default" : "secondary"}
-                                onClick={() => handleQuickSegmentFilter(segment)}
-                                className="cursor-pointer"
-                            >
-                                {segment}
-                            </Badge>
-                        ))}
+                  </div>
+
+                  {/* Reset & Quick Filters */}
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-4 border-t border-border/50">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mr-2">Quick Access:</span>
+                      {quickSegments.map(segment => (
+                        <button
+                          key={segment}
+                          onClick={() => handleQuickSegmentFilter(segment)}
+                          className={cn(
+                            "px-4 py-1.5 rounded-full text-xs font-bold transition-all border",
+                            filters.segments.includes(segment) 
+                              ? "bg-brand border-brand text-white shadow-lg shadow-brand/20" 
+                              : "bg-secondary/50 border-border/50 text-muted-foreground hover:border-brand/50 hover:text-brand"
+                          )}
+                        >
+                          {segment}
+                        </button>
+                      ))}
                     </div>
+                    <Button onClick={resetFilters} variant="ghost" className="text-xs font-bold uppercase tracking-widest hover:text-destructive hover:bg-destructive/5">
+                      Reset All Filters
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Job Results List */}
+                <div className="pt-12 space-y-6">
+                  <div className="flex items-center justify-between mb-8">
+                    <h3 className="text-xl font-bold flex items-center gap-2">
+                      Available Positions
+                      <Badge variant="secondary" className="ml-2 bg-brand/10 text-brand border-none px-3">
+                        {filteredJobs.length}
+                      </Badge>
+                    </h3>
+                  </div>
+
+                  <div className="grid gap-4">
+                    <AnimatePresence mode="popLayout">
+                      {filteredJobs.length > 0 ? (
+                        filteredJobs.map((job, idx) => (
+                          <motion.div 
+                            key={job.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            transition={{ delay: idx * 0.05 }}
+                          >
+                            <Card className="group hover:border-brand/50 hover:shadow-xl hover:shadow-brand/5 transition-all duration-300 border-border/50 overflow-hidden">
+                              <CardContent className="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                                <div className="space-y-4 max-w-xl">
+                                  <div className="flex flex-wrap gap-2">
+                                    <Badge variant="outline" className="text-[10px] uppercase font-bold text-muted-foreground group-hover:text-brand transition-colors">
+                                      {job.department}
+                                    </Badge>
+                                    <Badge variant="outline" className="text-[10px] uppercase font-bold text-muted-foreground">
+                                      {job.type}
+                                    </Badge>
+                                  </div>
+                                  <div>
+                                    <h4 className="text-xl md:text-2xl font-bold group-hover:text-brand transition-colors mb-2">
+                                      {job.title}
+                                    </h4>
+                                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                                      <span className="flex items-center gap-1.5">
+                                        <MapPin className="h-4 w-4 text-brand" /> {job.location}
+                                      </span>
+                                      <span className="flex items-center gap-1.5">
+                                        <Building className="h-4 w-4 text-brand" /> {job.segment}
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="flex items-center gap-4 border-t md:border-t-0 pt-6 md:pt-0">
+                                  <div className="text-right hidden md:block mr-4">
+                                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Experience</p>
+                                    <p className="text-sm font-semibold">{job.experienceLevel}</p>
+                                  </div>
+                                  <Button className="rounded-xl h-12 px-8 bg-primary hover:bg-brand text-white font-bold group-hover:shadow-lg group-hover:shadow-brand/20 transition-all">
+                                    Apply Now
+                                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                  </Button>
+                                </div>
+                              </CardContent>
+                            </Card>
+                          </motion.div>
+                        ))
+                      ) : (
+                        <motion.div 
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          className="py-20 text-center space-y-6"
+                        >
+                          <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto">
+                            <Search className="h-10 w-10 text-muted-foreground" />
+                          </div>
+                          <div className="space-y-2">
+                            <h3 className="text-2xl font-bold">No Matches Found</h3>
+                            <p className="text-muted-foreground max-w-md mx-auto">
+                              Adjust your filters or keywords to explore other opportunities within our team.
+                            </p>
+                          </div>
+                          <Button onClick={resetFilters} variant="outline" className="rounded-full">
+                            Clear All Filters
+                          </Button>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 </div>
               </CardContent>
-           </Card>
+            </Card>
+          </AnimatedItem>
         </div>
       </section>
 
-      {/* Job Listings */}
-      <section className="py-16">
-        <div className="container max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">
-             Current Job Openings ({filteredJobs.length})
-          </h2>
-          <div className="space-y-4">
-            {filteredJobs.length > 0 ? (
-              filteredJobs.map((job) => (
-                <Card key={job.id} className="hover:shadow-md transition-shadow">
-                  <CardContent className="p-6 grid md:grid-cols-5 gap-4 items-center">
-                      <div className="md:col-span-3">
-                          <h3 className="text-xl font-semibold text-primary">{job.title}</h3>
-                          <div className="text-sm text-muted-foreground flex flex-wrap gap-x-4 gap-y-1 mt-2">
-                             <span className="flex items-center gap-1.5"><Building /> {job.department}</span>
-                              <span className="flex items-center gap-1.5"><MapPin /> {job.location}</span>
-                          </div>
-                      </div>
-                       <div className="md:col-span-2 flex flex-col md:items-end gap-2">
-                         <div className="flex flex-wrap gap-2 justify-end">
-                            <Badge variant="outline">{job.experienceLevel}</Badge>
-                            <Badge variant="secondary">{job.type}</Badge>
-                          </div>
-                         <Button className="mt-2 w-full md:w-auto">Apply Now</Button>
-                      </div>
-                  </CardContent>
-                </Card>
-              ))
-            ) : (
-              <Card>
-                <CardContent className="p-10 text-center">
-                  <p className="text-lg text-muted-foreground">
-                    ⚠️ Oops! We couldn’t find any matches. Try searching again with different filters.
-                  </p>
-                </CardContent>
-              </Card>
-            )}
-          </div>
-        </div>
-      </section>
-
-       {/* Life at Cyrotics */}
-      <section className="py-16 bg-primary/5">
+      {/* Life at CYROTICS Gallery */}
+      <section className="py-32 bg-background">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">Life at Cyrotics</h2>
-            <p className="text-muted-foreground text-lg">
-              We are a team of passionate innovators dedicated to solving complex challenges. Our culture is built on collaboration, continuous learning, and a shared commitment to excellence. We believe in empowering our people to grow, take ownership, and make a real impact.
-            </p>
-          </div>
-          <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {lifeAtCyroticsImages.map((image, index) => (
-              <div key={index} className="overflow-hidden rounded-lg shadow-md aspect-w-4 aspect-h-3">
-                 <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={600}
-                    height={450}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                    data-ai-hint={image.hint}
-                 />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            <AnimatedItem direction="left">
+              <Badge className="mb-4 bg-brand/10 text-brand border-none px-4 py-1">Inside CYROTICS</Badge>
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+                Where Technology Meets <span className="text-gradient">Passion</span>
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Join a workplace that celebrates creativity, embraces complexity, and rewards initiative. From collaborative whiteboarding sessions to global team-building events, we foster an environment where every individual can thrive and lead.
+              </p>
+            </AnimatedItem>
+            <AnimatedItem direction="right" className="grid grid-cols-2 gap-4">
+              <div className="space-y-4 pt-12">
+                <div className="relative overflow-hidden rounded-3xl aspect-[4/5] group">
+                  <Image src="/career-1.png" alt="Office Collaboration" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-end items-end">
+                    <p className="text-white font-bold text-lg">Modern Collaboration</p>
+                  </div>
+                </div>
               </div>
-            ))}
+              <div className="space-y-4">
+                <div className="relative overflow-hidden rounded-3xl aspect-[4/5] group">
+                  <Image src="/career-2.png" alt="Tech Infrastructure" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-end items-end">
+                    <p className="text-white font-bold text-lg">Engineering Future</p>
+                  </div>
+                </div>
+              </div>
+            </AnimatedItem>
           </div>
-        </div>
-      </section>
-      
-       {/* Employee Testimonials */}
-       <section className="py-16">
-        <div className="container max-w-4xl mx-auto">
-           <h2 className="text-center font-headline text-3xl font-bold mb-12">
-            What Our Team Says
-          </h2>
-           <Carousel opts={{ loop: true }} className="w-full">
-            <CarouselContent>
-              {EMPLOYEE_TESTIMONIALS.map((testimonial, index) => (
-                <CarouselItem key={index}>
-                  <Card className="border-0 shadow-none bg-transparent">
-                    <CardContent className="text-center p-4">
-                       <blockquote className="text-lg italic text-muted-foreground">
-                        "{testimonial.quote}"
-                      </blockquote>
-                      <p className="mt-4 font-semibold text-primary">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="-left-4 md:-left-12" />
-            <CarouselNext className="-right-4 md:-right-12" />
-          </Carousel>
         </div>
       </section>
 
       {/* Benefits & Perks */}
-      <section className="py-16 bg-primary/5">
+      <section className="py-32 bg-secondary/20 relative">
         <div className="container">
-            <h2 className="text-center font-headline text-3xl font-bold mb-12">
-                Grow With Us: Benefits & Perks
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {CAREER_BENEFITS.map(benefit => (
-                <Card key={benefit.title} className="text-center">
-                    <CardHeader>
-                      <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit">
-                          <benefit.icon className="h-8 w-8 text-primary" />
-                      </div>
-                      <CardTitle className="pt-4 text-xl">{benefit.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">{benefit.description}</p>
-                    </CardContent>
+          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
+            <h2 className="text-4xl font-bold">Empowering Our People</h2>
+            <p className="text-xl text-muted-foreground">
+              We provide the environment, resources, and support you need to excel both professionally and personally.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {CAREER_BENEFITS.map((benefit, i) => (
+              <AnimatedItem key={benefit.title} delay={i * 0.1}>
+                <Card className="h-full border-border/50 hover:border-brand/30 hover:shadow-xl transition-all p-8 rounded-3xl group">
+                  <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-6 group-hover:bg-brand group-hover:text-white transition-all">
+                    <benefit.icon className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">{benefit.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {benefit.description}
+                  </p>
                 </Card>
+              </AnimatedItem>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-32 bg-background relative overflow-hidden">
+        <div className="container">
+          <h2 className="text-4xl font-bold text-center mb-20">Voices from the Team</h2>
+          <Carousel opts={{ loop: true, align: 'center' }} className="w-full max-w-5xl mx-auto">
+            <CarouselContent className="-ml-4">
+              {EMPLOYEE_TESTIMONIALS.map((testimonial, idx) => (
+                <CarouselItem key={idx} className="pl-4 md:basis-full lg:basis-full">
+                  <div className="p-8 md:p-16 rounded-[40px] bg-secondary/30 relative">
+                    <Sparkles className="absolute top-8 left-8 h-12 w-12 text-brand/20" />
+                    <div className="relative z-10 text-center space-y-8">
+                      <p className="text-2xl md:text-3xl font-medium italic leading-snug">
+                        "{testimonial.quote}"
+                      </p>
+                      <div className="space-y-1">
+                        <p className="text-xl font-bold text-brand">{testimonial.name}</p>
+                        <p className="text-muted-foreground font-medium">{testimonial.role}</p>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
               ))}
+            </CarouselContent>
+            <div className="flex justify-center gap-4 mt-12">
+              <CarouselPrevious className="static translate-y-0 h-12 w-12 rounded-full border-border/50" />
+              <CarouselNext className="static translate-y-0 h-12 w-12 rounded-full border-border/50" />
             </div>
+          </Carousel>
         </div>
       </section>
 
-        {/* Quick Apply & FAQ */}
-      <section className="py-16">
-        <div className="container grid lg:grid-cols-2 gap-16 items-start">
-            {/* Quick Apply */}
-            <div className="bg-primary/10 p-8 rounded-lg text-center">
-                 <h3 className="font-headline text-2xl font-bold">Don't See a Fit?</h3>
-                 <p className="mt-2 text-muted-foreground">
-                    We are always looking for talented individuals. If you believe you have what it takes to be part of our team, send us your resume.
-                 </p>
-                 <Button asChild size="lg" className="mt-6">
-                    <Link href="mailto:career@cyrotics.in">
-                        <Mail className="mr-2" /> Submit Your Resume
-                    </Link>
-                 </Button>
-            </div>
-
-             {/* FAQ */}
-             <div className="max-w-4xl">
-                 <h2 className="font-headline text-3xl font-bold flex items-center justify-center lg:justify-start gap-3 mb-8">
-                     <HelpCircle className="h-8 w-8 text-primary" />
-                    Frequently Asked Questions
-                </h2>
-                <Accordion type="single" collapsible className="w-full">
-                    {CAREER_FAQS.map((faq, index) => (
-                    <AccordionItem value={`item-${index}`} key={index}>
-                        <AccordionTrigger className="text-left hover:no-underline text-lg font-semibold">
-                        {faq.question}
-                        </AccordionTrigger>
-                        <AccordionContent className="pt-2 text-base text-muted-foreground">
-                        {faq.answer}
-                        </AccordionContent>
-                    </AccordionItem>
-                    ))}
-                </Accordion>
-            </div>
+      {/* FAQ Section */}
+      <section className="py-32 bg-secondary/10">
+        <div className="container max-w-4xl">
+          <div className="text-center mb-16 space-y-4">
+            <HelpCircle className="h-12 w-12 text-brand mx-auto mb-4" />
+            <h2 className="text-4xl font-bold">Hiring Process & FAQ</h2>
+            <p className="text-lg text-muted-foreground">Everything you need to know about starting your career with us.</p>
+          </div>
+          <Accordion type="single" collapsible className="space-y-4">
+            {CAREER_FAQS.map((faq, index) => (
+              <AccordionItem value={`faq-${index}`} key={index} className="border border-border/50 bg-background px-6 rounded-2xl overflow-hidden">
+                <AccordionTrigger className="text-lg font-bold hover:no-underline py-6">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-lg pb-6 leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
-    </>
+
+      <BottomCTA 
+        title="Didn't Find Your Perfect Role?"
+        description="We are always looking for exceptional talent. If you are passionate about technology and want to make an impact, send us your profile."
+        primaryButtonText="Submit Your Resume"
+        primaryButtonHref="mailto:career@cyrotics.in"
+      />
+    </div>
   );
 }

@@ -4,47 +4,88 @@
 
 @layer base {
   :root {
-    --background: 206 28% 95%;
-    --foreground: 224 71% 4%;
+    /* Base Neutral Colors (Lighter, cleaner SaaS look) */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 224 71% 4%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
-    --primary: 207 54% 43%;
-    --primary-foreground: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Primary (Deep Indigo/Slate) */
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+    
+    /* Secondary (Soft Neutral) */
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222 47% 11%;
+    
+    /* Muted */
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 211 100% 73%;
-    --accent-foreground: 224 71% 4%;
+    --muted-foreground: 215 16% 47%;
+    
+    /* Accent (Subtle highlight) */
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11%;
+    
+    /* Destructive */
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* Border & Inputs */
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 207 54% 43%;
-    --radius: 0.5rem;
+    --ring: 222 47% 11%;
+    
+    /* Radius */
+    --radius: 0.75rem;
+    
+    /* Custom SaaS Accents (Cyan/Electric Blue) */
+    --brand: 199 89% 48%;
+    --brand-rgb: 0, 149, 255;
+    --brand-foreground: 0 0% 100%;
+    --brand-orange: 24 98% 50%;
   }
+
   .dark {
-    --background: 220 13% 10%;
-    --foreground: 210 20% 98%;
-    --card: 220 13% 14%;
-    --card-foreground: 210 20% 98%;
-    --popover: 220 13% 10%;
-    --popover-foreground: 210 20% 98%;
-    --primary: 207 54% 43%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 13% 20%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 220 13% 20%;
-    --muted-foreground: 210 20% 60%;
-    --accent: 207 54% 35%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 220 13% 20%;
-    --input: 220 13% 20%;
-    --ring: 207 54% 43%;
+    /* ... existing dark mode vars ... */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Primary (White text in dark mode) */
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    
+    /* Secondary (Darker slate) */
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    
+    /* Muted */
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    
+    /* Accent */
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* Destructive */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Border & Inputs */
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    
+    /* Custom SaaS Accents (Brighter for dark mode visibility) */
+    --brand: 199 89% 55%;
+    --brand-rgb: 0, 170, 255;
+    --brand-foreground: 0 0% 100%;
+    --brand-orange: 24 98% 55%;
   }
 }
 
@@ -53,6 +94,30 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply font-body bg-background text-foreground tracking-tight;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline tracking-tighter;
   }
 }
+
+/* Glassmorphism & Modern Utilities */
+@layer utilities {
+  .glass {
+    @apply bg-background/60 backdrop-blur-xl border border-white/20 shadow-sm;
+  }
+  .dark .glass {
+    @apply bg-zinc-950/60 backdrop-blur-xl border-zinc-800/50 shadow-sm;
+  }
+  
+  /* Premium text gradients */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand to-cyan-500;
+  }
+  .dark .text-gradient {
+    @apply bg-gradient-to-r from-brand to-cyan-400;
+  }
+}
+

@@ -1,19 +1,17 @@
+'use client';
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
 import { Handshake, Rocket, Trophy, Briefcase, TrendingUp, CheckCircle, Target, Eye } from 'lucide-react';
 import Link from 'next/link';
-
-export const metadata = {
-  title: 'About Us | CYROTICS TECHNOLOGIES',
-  description: 'Learn about our mission to empower businesses with robust technology solutions. Meet the leadership team driving our commitment to innovation, reliability, and customer success.',
-};
+import { PageHero } from '@/components/ui-patterns/page-hero';
+import { AnimatedSection, AnimatedItem } from '@/components/ui-patterns/animated-section';
 
 const whoWeAreItems = [
     'IT Infrastructure & Networking',
@@ -42,7 +40,7 @@ const values = [
     title: 'Innovation',
     description: 'We think beyond boundaries and create future-ready solutions.',
   },
-    {
+  {
     icon: Briefcase,
     title: 'Professionalism',
     description: 'We deliver with discipline, responsibility, and a customer-first mindset.',
@@ -65,139 +63,167 @@ const differentiators = [
 
 export default function AboutUsPage() {
   return (
-    <>
-      <section className="bg-primary text-primary-foreground py-20 text-center">
-        <div className="container">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            About Us
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
-             At Cyrotics Technologies (OPC) Private Limited, we are driven by innovation, powered by passion, and committed to transforming the future of technology—one project at a time.
-          </p>
-        </div>
-      </section>
+    <main className="w-full bg-background overflow-hidden">
+      {/* HERO SECTION */}
+      <PageHero
+        title="Engineering the Future"
+        description="At Cyrotics Technologies, we are driven by innovation, powered by passion, and committed to transforming the future of technology—one project at a time."
+        gradientFrom="from-white/20"
+        gradientPosition="top_right"
+      />
 
-      <section className="py-12 sm:py-16 lg:py-20">
-        <div className="container max-w-4xl mx-auto text-center">
-             <p className="text-muted-foreground text-lg">
+      {/* INTRODUCTION */}
+      <section className="py-24 sm:py-32">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 text-center">
+             <AnimatedSection className="text-muted-foreground text-xl md:text-2xl leading-relaxed font-light">
                 Founded with a vision to deliver next-generation IT & ELV Infrastructure solutions, we have grown into a trusted partner for government institutions, medical colleges, airports, commercial complexes, data centers, and leading private organizations across India.
-             </p>
-             <blockquote className="mt-8 text-2xl font-semibold text-primary italic border-l-4 border-primary pl-6 text-left">
+             </AnimatedSection>
+             <AnimatedSection className="mt-16 text-2xl md:text-3xl font-semibold text-foreground italic border-l-4 border-brand pl-8 text-left bg-zinc-50 dark:bg-zinc-900/50 p-8 rounded-r-3xl shadow-sm">
                 “Technology should empower progress, inspire growth, and create a smarter, safer, and more connected world.”
-             </blockquote>
+             </AnimatedSection>
         </div>
       </section>
 
-       <section className="py-12 sm:py-16 lg:py-20 bg-primary/5">
-        <div className="container grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="font-headline text-3xl font-bold">Who We Are</h2>
-             <p className="mt-4 text-muted-foreground">
+      {/* WHO WE ARE */}
+      <section className="py-24 sm:py-32 bg-zinc-50 dark:bg-zinc-900/30">
+        <div className="container px-4 sm:px-6 grid lg:grid-cols-2 gap-16 items-center">
+          <AnimatedSection>
+            <h2 className="font-headline text-4xl sm:text-5xl font-bold tracking-tight">Who We Are</h2>
+             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
                 We are a multidisciplinary technology company specializing in a wide range of services. Our team consists of highly skilled engineers, innovators, and industry experts who bring deep technical knowledge and unmatched dedication to every project.
             </p>
-          </div>
-          <div>
-            <ul className="space-y-3">
-                {whoWeAreItems.map(item => (
-                     <li key={item} className="flex items-center gap-3">
-                        <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
-                        <span className="text-muted-foreground font-medium">{item}</span>
-                    </li>
-                ))}
-            </ul>
-          </div>
+          </AnimatedSection>
+          <AnimatedSection stagger className="grid sm:grid-cols-2 gap-4">
+              {whoWeAreItems.map((item) => (
+                  <AnimatedItem 
+                    key={item} 
+                    className="flex items-start gap-3 p-4 bg-background rounded-2xl border shadow-sm hover:shadow-md transition-shadow"
+                  >
+                      <CheckCircle className="h-6 w-6 text-brand flex-shrink-0" />
+                      <span className="text-sm font-medium text-foreground">{item}</span>
+                  </AnimatedItem>
+              ))}
+          </AnimatedSection>
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-20">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-             <Card>
-                 <CardHeader className="flex-row items-center gap-4">
-                    <Target className="h-12 w-12 text-primary" />
-                    <CardTitle className="font-headline text-3xl">Our Mission</CardTitle>
-                 </CardHeader>
-                 <CardContent>
-                     <p className="text-muted-foreground text-lg">To empower organizations with intelligent, secure, and scalable technology solutions that simplify operations, enhance communication, and enable long-term digital transformation.</p>
-                 </CardContent>
-             </Card>
-              <Card>
-                 <CardHeader className="flex-row items-center gap-4">
-                    <Eye className="h-12 w-12 text-primary" />
-                    <CardTitle className="font-headline text-3xl">Our Vision</CardTitle>
-                 </CardHeader>
-                 <CardContent>
-                     <p className="text-muted-foreground text-lg">To become India’s most trusted technology solutions provider by delivering world-class engineering, uncompromising quality, and customer-centric innovation.</p>
-                 </CardContent>
-             </Card>
-          </div>
+      {/* MISSION & VISION */}
+      <section className="py-24 sm:py-32">
+        <div className="container px-4 sm:px-6">
+          <AnimatedSection stagger className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+             <AnimatedItem>
+               <Card className="h-full border-none shadow-xl bg-gradient-to-br from-background to-zinc-50 dark:to-zinc-900/50 p-6 sm:p-10 rounded-3xl overflow-hidden relative group">
+                   <div className="absolute top-0 right-0 p-8 opacity-5 transform group-hover:scale-110 transition-transform duration-500">
+                     <Target className="w-48 h-48" />
+                   </div>
+                   <CardHeader className="p-0 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-brand/10 flex items-center justify-center mb-6 text-brand">
+                        <Target className="h-8 w-8" />
+                      </div>
+                      <CardTitle className="font-headline text-3xl sm:text-4xl">Our Mission</CardTitle>
+                   </CardHeader>
+                   <CardContent className="p-0 relative z-10">
+                       <p className="text-muted-foreground text-lg leading-relaxed">To empower organizations with intelligent, secure, and scalable technology solutions that simplify operations, enhance communication, and enable long-term digital transformation.</p>
+                   </CardContent>
+               </Card>
+             </AnimatedItem>
+             <AnimatedItem>
+               <Card className="h-full border-none shadow-xl bg-gradient-to-br from-background to-zinc-50 dark:to-zinc-900/50 p-6 sm:p-10 rounded-3xl overflow-hidden relative group">
+                   <div className="absolute top-0 right-0 p-8 opacity-5 transform group-hover:scale-110 transition-transform duration-500">
+                     <Eye className="w-48 h-48" />
+                   </div>
+                   <CardHeader className="p-0 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-brand/10 flex items-center justify-center mb-6 text-brand">
+                        <Eye className="h-8 w-8" />
+                      </div>
+                      <CardTitle className="font-headline text-3xl sm:text-4xl">Our Vision</CardTitle>
+                   </CardHeader>
+                   <CardContent className="p-0 relative z-10">
+                       <p className="text-muted-foreground text-lg leading-relaxed">To become India’s most trusted technology solutions provider by delivering world-class engineering, uncompromising quality, and customer-centric innovation.</p>
+                   </CardContent>
+               </Card>
+             </AnimatedItem>
+          </AnimatedSection>
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-20 bg-primary/5">
-        <div className="container">
-          <h2 className="text-center font-headline text-3xl font-bold mb-12">Our Core Values</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+      {/* CORE VALUES */}
+      <section className="py-24 sm:py-32 bg-zinc-50 dark:bg-zinc-900/30 border-y">
+        <div className="container px-4 sm:px-6">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="font-headline text-4xl sm:text-5xl font-bold tracking-tight">Core Values</h2>
+            <p className="mt-4 text-lg text-muted-foreground">The principles that guide every decision we make.</p>
+          </AnimatedSection>
+          
+          <AnimatedSection stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {values.map((item) => (
-              <Card key={item.title} className="text-center">
-                <CardHeader>
-                  <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit">
-                    <item.icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <CardTitle className="font-headline text-xl pt-4">
-                    {item.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
-                </CardContent>
-              </Card>
+              <AnimatedItem key={item.title}>
+                <Card className="h-full text-center border-none shadow-sm hover:shadow-md transition-shadow rounded-3xl bg-background p-6">
+                  <CardHeader className="p-0 mb-4">
+                    <div className="mx-auto bg-brand/10 p-4 rounded-2xl w-fit text-brand">
+                      <item.icon className="h-6 w-6" />
+                    </div>
+                    <CardTitle className="font-headline text-xl pt-4">
+                      {item.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0">
+                    <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                  </CardContent>
+                </Card>
+              </AnimatedItem>
             ))}
-          </div>
+          </AnimatedSection>
         </div>
       </section>
       
-       <section className="py-12 sm:py-16 lg:py-20">
-        <div className="container grid md:grid-cols-2 gap-12 items-center">
-            <div>
+       {/* DIFFERENTIATORS */}
+       <section className="py-24 sm:py-32">
+        <div className="container px-4 sm:px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <AnimatedSection>
+              <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl">
                 <Image
-                  src="https://picsum.photos/seed/teamwork/600/400"
-                  alt="A team of professionals collaborating on a project"
-                  width={600}
-                  height={400}
-                  className="rounded-lg shadow-md"
-                  data-ai-hint="team collaboration"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                  alt="Team collaboration"
+                  fill
+                  className="object-cover"
                 />
-            </div>
-            <div>
-                 <h2 className="font-headline text-3xl font-bold">What Sets Us Apart</h2>
-                <ul className="mt-6 space-y-4">
-                    {differentiators.map(item => (
-                         <li key={item} className="flex items-center gap-3">
-                            <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
-                            <span className="text-muted-foreground text-lg">{item}</span>
-                        </li>
+              </div>
+            </AnimatedSection>
+            <AnimatedSection stagger>
+                 <h2 className="font-headline text-4xl sm:text-5xl font-bold tracking-tight">What Sets Us Apart</h2>
+                <ul className="mt-8 space-y-6">
+                    {differentiators.map((item) => (
+                         <AnimatedItem key={item} className="flex items-start gap-4">
+                            <div className="mt-1 bg-brand/10 p-1 rounded-full text-brand">
+                              <CheckCircle className="h-5 w-5 flex-shrink-0" />
+                            </div>
+                            <span className="text-foreground font-medium text-lg">{item}</span>
+                        </AnimatedItem>
                     ))}
                 </ul>
-            </div>
+            </AnimatedSection>
         </div>
       </section>
 
-      <section className="bg-primary text-primary-foreground">
-        <div className="container py-16 text-center">
-          <h2 className="font-headline text-3xl font-bold">
-            A Partner You Can Trust
-          </h2>
-          <p className="mt-4 text-lg max-w-3xl mx-auto">
-            At Cyrotics Technologies, we don’t just deliver projects—we build long-term partnerships. With the right technology and the right people, every organization can unlock limitless possibilities.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/contact">Get In Touch</Link>
-            </Button>
-          </div>
+      {/* CTA */}
+      <section className="bg-brand">
+        <div className="container px-4 sm:px-6 py-24 text-center">
+          <AnimatedSection className="max-w-3xl mx-auto">
+            <h2 className="font-headline text-4xl sm:text-5xl font-bold text-white tracking-tight">
+              A Partner You Can Trust
+            </h2>
+            <p className="mt-6 text-xl text-white/80 leading-relaxed">
+              At Cyrotics Technologies, we don’t just deliver projects—we build long-term partnerships. With the right technology and the right people, every organization can unlock limitless possibilities.
+            </p>
+            <div className="mt-10">
+              <Button asChild size="lg" className="rounded-full px-8 h-14 bg-white text-brand hover:bg-zinc-100 font-semibold transition-transform hover:scale-105">
+                <Link href="/contact">Get In Touch</Link>
+              </Button>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
-    </>
+    </main>
   );
 }

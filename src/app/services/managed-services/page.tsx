@@ -2,6 +2,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/ui-patterns/page-hero';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
 import {
   Card,
   CardContent,
@@ -27,27 +29,11 @@ export default function ManagedServicesPage() {
 
   return (
     <>
-      <section className="relative bg-primary/10 pt-32 pb-16 md:pt-40 md:pb-24">
-        <div className="absolute inset-0">
-          <Image
-            src="/Managed-Services.png"
-            alt={service.title}
-            fill
-            className="object-cover"
-            priority
-            data-ai-hint={service.imageHint}
-          />
-          <div className="absolute inset-0 bg-black/60" />
-        </div>
-        <div className="container relative text-primary-foreground text-center">
-          <h1 className="mt-4 font-headline text-4xl md:text-5xl lg:text-6xl font-bold">
-            {service.title}
-          </h1>
-          <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto">
-            {service.description}
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title={`${service.title}`}
+        description={service.description}
+        heroImage={service.imageUrl}
+      />
 
       <section className="py-16 md:py-24 bg-primary/5">
         <div className="container">
@@ -74,23 +60,11 @@ export default function ManagedServicesPage() {
         </div>
       </section>
 
-      <section className="bg-primary text-primary-foreground">
-        <div className="container py-16 text-center">
-          <h2 className="font-headline text-3xl font-bold">
-            Ready to Optimize Your IT Operations?
-          </h2>
-          <p className="mt-4 text-lg max-w-2xl mx-auto">
-            Our experts are ready to provide proactive and predictive managed services to keep your IT ecosystem running smoothly.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/contact">
-                Contact a Managed Services Specialist <ArrowRight />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <BottomCTA 
+          title="Ready to Optimize Your IT Operations?"
+          description="Our experts are ready to provide proactive and predictive managed services to keep your IT ecosystem running smoothly."
+          primaryButtonText="Contact a Managed Services Specialist"
+        />
     </>
   );
 }

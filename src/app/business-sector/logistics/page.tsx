@@ -13,6 +13,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/ui-patterns/page-hero';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
 import Link from 'next/link';
 
 export default function LogisticsPage() {
@@ -41,16 +43,11 @@ export default function LogisticsPage() {
 
   return (
     <>
-      <section className="bg-primary/10 py-20 text-center">
-        <div className="container">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            Logistics & Supply Chain
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
-            Driving efficiency, visibility, and resilience in your supply chain with intelligent technology solutions.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Logistics"
+        description="Streamlining supply chains and warehousing with automated tracking and intelligent logistics management."
+        heroImage="/sector-logistics.png"
+      />
 
       <section className="py-16">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
@@ -104,21 +101,11 @@ export default function LogisticsPage() {
         </div>
       </section>
       
-      <section>
-        <div className="container py-16 text-center">
-          <h2 className="font-headline text-3xl font-bold">
-            Transform Your Supply Chain
-          </h2>
-          <p className="mt-4 text-lg max-w-xl mx-auto text-muted-foreground">
-            Let's discuss how our technology can bring greater efficiency and visibility to your logistics operations.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <Link href="/contact">Get in Touch</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <BottomCTA 
+          title="Transform Your Supply Chain"
+          description="Let's discuss how our technology can bring greater efficiency and visibility to your logistics operations."
+          primaryButtonText="Get in Touch"
+        />
     </>
   );
 }

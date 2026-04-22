@@ -22,8 +22,8 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['var(--font-inter)', 'sans-serif'],
+        headline: ['var(--font-space-grotesk)', 'sans-serif'],
         code: ['"Source Code Pro"', 'monospace'],
       },
       colors: {
@@ -60,6 +60,11 @@ const config: Config = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        brand: {
+          DEFAULT: 'hsl(var(--brand))',
+          foreground: 'hsl(var(--brand-foreground))',
+          orange: 'hsl(var(--brand-orange))',
+        },
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',
@@ -82,6 +87,12 @@ const config: Config = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      boxShadow: {
+        'soft': '0 4px 40px -2px rgba(0, 0, 0, 0.05)',
+        'soft-dark': '0 4px 40px -2px rgba(0, 0, 0, 0.3)',
+        'premium': '0 10px 40px -10px rgba(0, 0, 0, 0.08), 0 0 10px -2px rgba(0, 0, 0, 0.02)',
+        'premium-dark': '0 10px 40px -10px rgba(0, 0, 0, 0.4), 0 0 10px -2px rgba(0, 0, 0, 0.1)',
       },
       keyframes: {
         'accordion-down': {

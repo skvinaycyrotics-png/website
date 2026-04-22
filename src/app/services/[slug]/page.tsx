@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { SERVICES } from '@/lib/constants';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/ui-patterns/page-hero';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
 import {
   Card,
   CardContent,
@@ -67,30 +69,11 @@ export default async function ServiceDetailPage({
 
   return (
     <>
-      <section className="relative bg-primary/10 pt-32 pb-16 md:pt-40 md:pb-24">
-        <div className="absolute inset-0">
-          <Image
-            src={service.imageUrl}
-            alt={service.title}
-            fill
-            className="object-cover"
-            priority
-            data-ai-hint={service.imageHint}
-          />
-          <div className="absolute inset-0 bg-black/60" />
-        </div>
-        <div className="container relative text-primary-foreground text-center">
-          <Badge variant="secondary" className="text-sm">
-            {service.category}
-          </Badge>
-          <h1 className="mt-4 font-headline text-4xl md:text-5xl lg:text-6xl font-bold">
-            {service.title}
-          </h1>
-          <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto">
-            {service.description}
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title={`${service.title}`}
+        description={service.description}
+        heroImage={service.imageUrl}
+      />
 
       <section className="py-16 md:py-24">
         <div className="container grid lg:grid-cols-3 gap-12 items-start">
@@ -134,24 +117,11 @@ export default async function ServiceDetailPage({
         </div>
       </section>
 
-      <section className="bg-primary text-primary-foreground">
-        <div className="container py-16 text-center">
-          <h2 className="font-headline text-3xl font-bold">
-            Ready to implement {service.title}?
-          </h2>
-          <p className="mt-4 text-lg max-w-2xl mx-auto">
-            Our specialists are on hand to discuss how we can tailor this
-            solution to your precise needs.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/contact">
-                Contact a Specialist <ArrowRight />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <BottomCTA 
+          title={`Ready to implement ${service.title}?`}
+          description="Our specialists are on hand to discuss how we can tailor this solution to your precise needs."
+          primaryButtonText="Contact a Specialist"
+        />
     </>
   );
 }

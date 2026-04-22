@@ -13,6 +13,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/ui-patterns/page-hero';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
 import Link from 'next/link';
 
 export default function PsuPage() {
@@ -41,16 +43,11 @@ export default function PsuPage() {
 
   return (
     <>
-      <section className="bg-primary/10 py-20 text-center">
-        <div className="container">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            Public Sector Undertakings (PSUs)
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
-            Empowering government entities with secure, scalable, and efficient technology infrastructure to drive digital governance.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Public Sector Undertakings"
+        description="Supporting national enterprises with robust IT infrastructure and secure digital transformation services."
+        heroImage="/sector-public-sector-undertakings.png"
+      />
 
       <section className="py-16">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
@@ -104,21 +101,11 @@ export default function PsuPage() {
         </div>
       </section>
       
-      <section>
-        <div className="container py-16 text-center">
-          <h2 className="font-headline text-3xl font-bold">
-            Ready to Modernize Your Infrastructure?
-          </h2>
-          <p className="mt-4 text-lg max-w-xl mx-auto text-muted-foreground">
-            Contact us to learn how we can help your organization meet its technology goals while adhering to public sector standards.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <Link href="/contact">Consult with Our Experts</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <BottomCTA 
+          title="Ready to Modernize Your Infrastructure?"
+          description="Contact us to learn how we can help your organization meet its technology goals while adhering to public sector standards."
+          primaryButtonText="Consult with Our Experts"
+        />
     </>
   );
 }

@@ -13,6 +13,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/ui-patterns/page-hero';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
 import Link from 'next/link';
 
 export default function EnergyPage() {
@@ -41,16 +43,11 @@ export default function EnergyPage() {
 
   return (
     <>
-      <section className="bg-primary/10 py-20 text-center">
-        <div className="container">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            Energy
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
-            Powering a sustainable future with renewable energy solutions and robust infrastructure for the energy sector.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Energy"
+        description="Optimizing energy production and distribution with intelligent grid management and sustainable technology solutions."
+        heroImage="/sector-energy.png"
+      />
 
       <section className="py-16">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
@@ -104,21 +101,11 @@ export default function EnergyPage() {
         </div>
       </section>
       
-      <section>
-        <div className="container py-16 text-center">
-          <h2 className="font-headline text-3xl font-bold">
-            Harness the Power of Renewable Energy
-          </h2>
-          <p className="mt-4 text-lg max-w-xl mx-auto text-muted-foreground">
-            Contact us today for a consultation on how our solar and infrastructure solutions can benefit your organization.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <Link href="/contact">Go Green with Cyrotics</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <BottomCTA 
+          title="Harness the Power of Renewable Energy"
+          description="Contact us today for a consultation on how our solar and infrastructure solutions can benefit your organization."
+          primaryButtonText="Go Green with Cyrotics"
+        />
     </>
   );
 }

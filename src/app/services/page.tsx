@@ -8,6 +8,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/ui-patterns/page-hero';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
 import { SERVICES } from '@/lib/constants';
 import {
   Accordion,
@@ -25,17 +27,11 @@ export const metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-primary text-primary-foreground py-20 text-center">
-        <div className="container">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            Our Technology Solutions
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
-            End-to-end services designed to build, manage, and secure your
-            enterprise technology landscape.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Our Technology Solutions"
+        description="End-to-end services designed to build, manage, and secure your enterprise technology landscape."
+        heroImage="/sector-overview.png"
+      />
 
       <section className="py-12 sm:py-16 lg:py-20">
         <div className="container">
@@ -92,22 +88,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-primary/5">
-        <div className="container py-16 text-center">
-          <h2 className="font-headline text-3xl font-bold">
-            Have a specific requirement?
-          </h2>
-          <p className="mt-4 text-lg max-w-xl mx-auto text-muted-foreground">
-            Our experts are ready to understand your challenges and design a
-            custom solution that fits your needs.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <Link href="/contact">Request a Free Consultation</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <BottomCTA 
+          title="Have a specific requirement?"
+          description="Our experts are ready to understand your challenges and design a custom solution that fits your needs."
+          primaryButtonText="Request a Free Consultation"
+        />
     </>
   );
 }

@@ -12,6 +12,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/ui-patterns/page-hero';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
 import Link from 'next/link';
 
 export const metadata = {
@@ -45,16 +47,11 @@ export default function DefencePage() {
 
   return (
     <>
-      <section className="bg-primary/10 py-20 text-center">
-        <div className="container">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            Defence & National Security
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
-            Engineering secure, reliable, and mission-critical technology solutions for national defence.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Defence"
+        description="Secure, resilient, and mission-critical technology solutions for national security and defense infrastructure."
+        heroImage="/sector-defence.png"
+      />
 
       <section className="py-16">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
@@ -108,21 +105,11 @@ export default function DefencePage() {
         </div>
       </section>
       
-      <section>
-        <div className="container py-16 text-center">
-          <h2 className="font-headline text-3xl font-bold">
-            Partnering for a Secure Nation
-          </h2>
-          <p className="mt-4 text-lg max-w-xl mx-auto text-muted-foreground">
-            Contact us to discuss how our expertise in secure and resilient infrastructure can support your defence projects.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <Link href="/contact">Engage with Our Experts</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <BottomCTA 
+          title="Partnering for a Secure Nation"
+          description="Contact us to discuss how our expertise in secure and resilient infrastructure can support your defence projects."
+          primaryButtonText="Engage with Our Experts"
+        />
     </>
   );
 }

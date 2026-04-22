@@ -1,0 +1,117 @@
+# Contact Form System — Email Notifications & Spam Protection
+
+## Background
+
+The project already has a comprehensive contact form system:
+- **Frontend**: Rich multi-section form in `src/app/contact/contact-forms.tsx` with Zod validation, collapsible sections, and many fields (name, email, phone, company, subject, message, etc.)
+- **Backend (Server Action)**: `src/app/actions.ts` → `submitContactForm()` validates with Zod and inserts into a **SQLite** database via `better-sqlite3` (`src/lib/db.ts`)
+- **Backend (API Route)**: `src/app/api/contact/route.ts` has a `POST` handler that uses Prisma's `ContactService`, but the form itself uses the server action, not this API route.
+
+**What's missing:**
+1. ✉️ Email notification to the official CYROTICS email when a form is submitted
+2. ✉️ Auto-reply confirmation email to the user
+3. 🛡️ Spam protection (rate limiting)
+
+---
+
+## Open Questions
+
+> [!IMPORTANT]
+> **SMTP Credentials Required**: To send emails, I need SMTP server details. Please provide:
+> - **SMTP Host** (e.g., `smtp.gmail.com`, `smtp.office365.com`, or your company mail server)
+> - **SMTP Port** (usually `587` for TLS or `465` for SSL)
+> - **SMTP Username** (e.g., `noreply@cyrotics.in`)
+> - **SMTP Password** (app password or mail server password)
+> - **Official notification email** — which email should receive the inquiry alerts? (e.g., `info@cyrotics.in`)
+
+> [!NOTE]
+> If you don't have SMTP credentials ready, I can set up everything with environment variable placeholders so it works the moment you fill in the `.env` values.
+
+---
+
+## Proposed Changes
+
+### 1. Email Service
+
+#### [NEW] `src/lib/email.ts`
+Create a Nodemailer-based email utility:
+- Configure SMTP transporter from environment variables
+- `sendNotificationEmail(data)` — sends a styled HTML email with full form details to the official CYROTICS email
+- `sendAutoReplyEmail(data)` — sends a professional confirmation email to the user acknowledging their inquiry
+- Graceful error handling — email failures should be logged but **not** block form submission (the DB save is the critical path)
+
+---
+
+### 2. Server Action Update
+
+#### [MODIFY] [actions.ts](file:///c:/Users/EDAG-LAB/Downloads/project/src/app/actions.ts)
+After the successful database insert (`stmt.run(dbData)`):
+- Call `sendNotificationEmail()` with the validated form data
+- Call `sendAutoReplyEmail()` with the user's email and name
+- Both calls will be fire-and-forget (non-blocking) so form submission remains fast
+
+---
+
+### 3. Spam Protection — Rate Limiting
+
+#### [NEW] `src/lib/rate-limit.ts`
+In-memory rate limiter (no external dependencies):
+- Track submissions by IP address using a `Map<string, { count, resetTime }>`
+- Limit: **3 submissions per 15 minutes** per IP
+- Auto-cleanup of expired entries
+- Returns `{ success: boolean, remaining: number }`
+
+#### [MODIFY] [actions.ts](file:///c:/Users/EDAG-LAB/Downloads/project/src/app/actions.ts)
+- Import the rate limiter
+- Check rate limit before processing the form
+- Return a clear error message if rate limit is exceeded
+
+---
+
+### 4. Environment Variables
+
+#### [MODIFY] [.env](file:///c:/Users/EDAG-LAB/Downloads/project/.env)
+Add placeholder variables:
+```env
+# Email Configuration (Nodemailer)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=noreply@cyrotics.in
+SMTP_PASS=your-app-password
+NOTIFICATION_EMAIL=info@cyrotics.in
+```
+
+---
+
+### 5. Dependencies
+
+#### [MODIFY] package.json
+- Install `nodemailer` and `@types/nodemailer`
+
+---
+
+## Summary of Files
+
+| File | Action | Purpose |
+|------|--------|---------|
+| `src/lib/email.ts` | **NEW** | Nodemailer email service (notification + auto-reply) |
+| `src/lib/rate-limit.ts` | **NEW** | In-memory IP-based rate limiter |
+| `src/app/actions.ts` | **MODIFY** | Wire up email sending + rate limiting after DB insert |
+| `.env` | **MODIFY** | Add SMTP placeholder env vars |
+| `package.json` | **MODIFY** | Add `nodemailer` dependency |
+
+---
+
+## Verification Plan
+
+### Automated Tests
+1. Install nodemailer and verify the build succeeds (`npm run dev`)
+2. Submit a test form on the contact page and verify:
+   - DB insert still works
+   - Rate limiting kicks in after 3 rapid submissions
+   - No runtime errors in the console
+
+### Manual Verification
+- Once you provide SMTP credentials, test that:
+  - Notification email arrives at the official inbox with full form details
+  - Auto-reply email arrives at the user's email with a professional confirmation

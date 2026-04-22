@@ -16,6 +16,8 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import Link from 'next/link';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
+import { PageHero } from '@/components/ui-patterns/page-hero';
 
 export const metadata = {
   title: 'Trust & Compliance | CYROTICS TECHNOLOGIES',
@@ -84,16 +86,11 @@ const pillars = [
 export default function TrustAndCompliancePage() {
   return (
     <>
-      <section className="bg-primary/5 py-20 text-center">
-        <div className="container">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            Trust & Compliance
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
-            Building Confidence Through Transparency, Security & Governance
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Trust & Compliance"
+        description="Building Confidence Through Transparency, Security & Governance"
+        heroImage="/bg-tech-v2.png"
+      />
 
       <section className="py-16">
         <div className="container max-w-4xl text-center">
@@ -184,6 +181,12 @@ export default function TrustAndCompliancePage() {
           </div>
         </div>
       </section>
+
+      <BottomCTA 
+        title="Commitment to Excellence"
+        description="We are dedicated to maintaining the highest standards of trust and compliance in every project we undertake."
+        primaryButtonText="Contact Our Compliance Team"
+      />
     </>
   );
 }

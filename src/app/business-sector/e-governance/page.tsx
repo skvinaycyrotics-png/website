@@ -12,6 +12,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/ui-patterns/page-hero';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
 import Link from 'next/link';
 
 export const metadata = {
@@ -45,16 +47,11 @@ export default function EGovernancePage() {
 
   return (
     <>
-      <section className="bg-primary/10 py-20 text-center">
-        <div className="container">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            E-Governance
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
-            Facilitating transparent, efficient, and citizen-centric public services through digital transformation.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="E-Governance"
+        description="Transforming public service delivery with transparent, efficient, and citizen-centric digital governance solutions."
+        heroImage="/sector-e-governance.png"
+      />
 
       <section className="py-16">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
@@ -108,21 +105,11 @@ export default function EGovernancePage() {
         </div>
       </section>
       
-      <section>
-        <div className="container py-16 text-center">
-          <h2 className="font-headline text-3xl font-bold">
-            Modernize Your Public Services
-          </h2>
-          <p className="mt-4 text-lg max-w-xl mx-auto text-muted-foreground">
-            Let's work together to build the digital infrastructure for a more connected and efficient government.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <Link href="/contact">Consult with Our E-Gov Experts</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <BottomCTA 
+          title="Modernize Your Public Services"
+          description="Let's work together to build the digital infrastructure for a more connected and efficient government."
+          primaryButtonText="Consult with Our E-Gov Experts"
+        />
     </>
   );
 }

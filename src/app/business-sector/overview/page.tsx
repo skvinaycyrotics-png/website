@@ -16,6 +16,8 @@ import {
   Database
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/ui-patterns/page-hero';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
 import {
   Card,
   CardContent,
@@ -57,16 +59,11 @@ const industries = [
 export default function BusinessSectorsOverviewPage() {
   return (
     <>
-      <section className="bg-primary/5 py-20">
-        <div className="container text-center">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-             Engineering the Future of IT, Infrastructure, and Intelligent Systems
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-4xl mx-auto text-muted-foreground">
-            Cyrotics Technologies is a fast-growing technology solutions provider delivering cutting-edge services across IT Infrastructure, Networking, Cybersecurity, ELV & Smart Solutions, IoT & Automation, Software Development, and Mobility & Automotive Engineering.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Business Sectors Overview"
+        description="Engineering the future of IT, infrastructure, and intelligent systems across diverse industries."
+        heroImage="/sector-overview.png"
+      />
 
       <section className="py-16">
         <div className="container">
@@ -114,21 +111,11 @@ export default function BusinessSectorsOverviewPage() {
         </div>
       </section>
 
-       <section className="bg-primary text-primary-foreground">
-        <div className="container py-16 text-center">
-          <h2 className="font-headline text-3xl font-bold">
-            Let's Build the Future Together
-          </h2>
-          <p className="mt-4 text-lg max-w-xl mx-auto">
-            Cyrotics Technologies is more than a service provider—we are your strategic partner for digital transformation, engineering innovation, and long-term operational growth.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/contact">Request a Consultation</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+       <BottomCTA 
+          title="Let's Build the Future Together"
+          description="Cyrotics Technologies is more than a service provider—we are your strategic partner for digital transformation, engineering innovation, and long-term operational growth."
+          primaryButtonText="Request a Consultation"
+        />
     </>
   );
 }

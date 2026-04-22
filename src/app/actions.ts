@@ -1,7 +1,11 @@
 'use server';
 
 import { z } from 'zod';
+import { headers } from 'next/headers';
 import { expertMatchTool } from '@/ai/flows/expert-match-tool';
+import db from '@/lib/db';
+import { sendNotificationEmail, sendAutoReplyEmail } from '@/lib/email';
+import { rateLimit } from '@/lib/rate-limit';
 
 const contactFormSchema = z.object({
   salutation: z.string().optional(),
@@ -35,6 +39,21 @@ const contactFormSchema = z.object({
 
 export async function submitContactForm(prevState: any, formData: FormData) {
   try {
+    // ── Rate Limiting ──────────────────────────────────────
+    const headersList = await headers();
+    const forwarded = headersList.get('x-forwarded-for');
+    const ip = forwarded ? forwarded.split(',')[0].trim() : 'unknown';
+    const limiter = rateLimit(ip);
+
+    if (!limiter.success) {
+      return {
+        type: 'error',
+        message: `Too many submissions. Please try again in ${Math.ceil(limiter.retryAfterSeconds / 60)} minute(s).`,
+        errors: {},
+      };
+    }
+
+    // ── Validation ─────────────────────────────────────────
     const validatedFields = contactFormSchema.safeParse({
       salutation: formData.get('salutation'),
       firstName: formData.get('firstName'),
@@ -73,34 +92,57 @@ export async function submitContactForm(prevState: any, formData: FormData) {
       };
     }
     
-    const { firstName, lastName, email, phone, company, message, subject, department, countryCode } = validatedFields.data;
-    const fullPhone = `${countryCode} ${phone}`;
-    const recipient = department === 'Sales Team' ? 'sales@cyrotics.in' : 
-                      department === 'Support Team' ? 'support@cyrotics.in' : 
-                      'info@cyrotics.in';
+    // Save to database instead of returning mailto link
+    const stmt = db.prepare(`
+      INSERT INTO inquiries (
+        salutation, firstName, lastName, email, countryCode, phone, company,
+        designation, country, city, address, pincode, subject, department,
+        projectType, projectLocation, projectBudget, priority, contactMethod,
+        contactTime, howDidYouHear, nda, message, dataProcessingConsent,
+        privacyPolicyConsent, newsletter
+      ) VALUES (
+        @salutation, @firstName, @lastName, @email, @countryCode, @phone, @company,
+        @designation, @country, @city, @address, @pincode, @subject, @department,
+        @projectType, @projectLocation, @projectBudget, @priority, @contactMethod,
+        @contactTime, @howDidYouHear, @nda, @message, @dataProcessingConsent,
+        @privacyPolicyConsent, @newsletter
+      )
+    `);
 
-    // Constructing a detailed mailto link as a fallback
-    const mailto = `mailto:${recipient}?subject=${encodeURIComponent(`[${subject}] New Inquiry from ${firstName} ${lastName}`)}&body=${encodeURIComponent(
-        Object.entries({...validatedFields.data, phone: fullPhone})
-            .map(([key, value]) => {
-                if (value) {
-                    if (Array.isArray(value)) {
-                        return `${key}: ${value.join(', ')}`;
-                    }
-                    return `${key}: ${value}`;
-                }
-                return null;
-            })
-            .filter(Boolean)
-            .join('\n')
-    )}`;
+    const dbData = {
+      ...validatedFields.data,
+      projectType: Array.isArray(validatedFields.data.projectType) 
+        ? validatedFields.data.projectType.join(', ') 
+        : validatedFields.data.projectType || null,
+      salutation: validatedFields.data.salutation || null,
+      company: validatedFields.data.company || null,
+      designation: validatedFields.data.designation || null,
+      address: validatedFields.data.address || null,
+      pincode: validatedFields.data.pincode || null,
+      department: validatedFields.data.department || null,
+      projectLocation: validatedFields.data.projectLocation || null,
+      projectBudget: validatedFields.data.projectBudget || null,
+      priority: validatedFields.data.priority || null,
+      contactMethod: validatedFields.data.contactMethod || null,
+      contactTime: validatedFields.data.contactTime || null,
+      howDidYouHear: validatedFields.data.howDidYouHear || null,
+      nda: validatedFields.data.nda || null,
+      newsletter: validatedFields.data.newsletter || null,
+    };
 
+    stmt.run(dbData);
+
+    // ── Send Emails (fire-and-forget) ────────────────────
+    sendNotificationEmail(dbData).catch((err) =>
+      console.error('[Email] Notification failed:', err)
+    );
+    sendAutoReplyEmail(dbData).catch((err) =>
+      console.error('[Email] Auto-reply failed:', err)
+    );
 
     return {
       type: 'success',
-      message:
-        "Your data has been validated. Please click the link below to send your inquiry via email.",
-      mailto: mailto
+      message: 'Your inquiry has been submitted successfully! Our team will contact you soon.',
     };
   } catch (e) {
     console.error(e);

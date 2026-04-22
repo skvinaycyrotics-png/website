@@ -14,6 +14,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/ui-patterns/page-hero';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
 import Link from 'next/link';
 
 export default function TelecomPage() {
@@ -42,16 +44,11 @@ export default function TelecomPage() {
 
   return (
     <>
-      <section className="bg-primary/10 py-20 text-center">
-        <div className="container">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            Telecom
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
-            Powering the next generation of communication with robust, scalable, and secure network infrastructure.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Telecom"
+        description="Powering the next generation of communication with robust, scalable, and secure network infrastructure."
+        heroImage="/sector-telecom.png"
+      />
 
       <section className="py-16">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
@@ -106,21 +103,11 @@ export default function TelecomPage() {
         </div>
       </section>
       
-      <section>
-        <div className="container py-16 text-center">
-          <h2 className="font-headline text-3xl font-bold">
-            Build Your Network for Tomorrow
-          </h2>
-          <p className="mt-4 text-lg max-w-xl mx-auto text-muted-foreground">
-            Partner with us to build a telecom infrastructure that is ready for the future of communication. Contact our experts today.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <Link href="/contact">Discuss Your Project</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <BottomCTA 
+          title="Build Your Network for Tomorrow"
+          description="Partner with us to build a telecom infrastructure that is ready for the future of communication. Contact our experts today."
+          primaryButtonText="Discuss Your Project"
+        />
     </>
   );
 }

@@ -13,6 +13,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/ui-patterns/page-hero';
+import { BottomCTA } from '@/components/ui-patterns/bottom-cta';
 import Link from 'next/link';
 
 export default function EducationPage() {
@@ -41,16 +43,11 @@ export default function EducationPage() {
 
   return (
     <>
-      <section className="bg-primary/10 py-20 text-center">
-        <div className="container">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold">
-            Education
-          </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
-            Creating modern, connected, and secure learning environments for the next generation of innovators.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Education"
+        description="Empowering the next generation with smart campus infrastructure and advanced digital learning ecosystems."
+        heroImage="/sector-education.png"
+      />
 
       <section className="py-16">
         <div className="container grid md:grid-cols-2 gap-12 items-center">
@@ -104,21 +101,11 @@ export default function EducationPage() {
         </div>
       </section>
       
-      <section>
-        <div className="container py-16 text-center">
-          <h2 className="font-headline text-3xl font-bold">
-            Build a Campus for the Future
-          </h2>
-          <p className="mt-4 text-lg max-w-xl mx-auto text-muted-foreground">
-            Let's work together to create a learning environment that inspires and empowers your students.
-          </p>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <Link href="/contact">Speak to an Education Expert</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <BottomCTA 
+          title="Build a Campus for the Future"
+          description="Let's work together to create a learning environment that inspires and empowers your students."
+          primaryButtonText="Speak to an Education Expert"
+        />
     </>
   );
 }

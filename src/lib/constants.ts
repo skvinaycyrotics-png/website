@@ -102,11 +102,18 @@ export const NAV_LINKS: NavLink[] = [
     label: 'Services',
     subLinks: [
       { href: '/services/data-center-infrastructure-solutions', label: 'Data Center Infrastructure', icon: Server },
+      { href: '/services/cloud-hybrid-it-solutions', label: 'Cloud & Hybrid IT Solutions', icon: CloudCog },
+      { href: '/services/scalable-storage-architecture', label: 'Scalable Storage Architecture', icon: Database },
       { href: '/services/nextgen-cybersecurity-shield', label: 'NextGen Cybersecurity Shield', icon: Shield },
       { href: '/services/audio-visual-communication', label: 'Audio-Visual & Communication', icon: MonitorSpeaker },
+      { href: '/services/consulting-services', label: 'IT Strategy & Advisory', icon: Briefcase },
       { href: '/services/unified-communications', label: 'Unified Communications (UC)', icon: Users },
       { href: '/services/security-surveillance', label: 'Security & Surveillance', icon: Cctv },
       { href: '/services/managed-services', label: 'Managed Services', icon: ServerCog },
+      { href: '/services/software-development', label: 'Software Development', icon: Code },
+      { href: '/services/ai-ml-solutions', label: 'AI & ML Solutions', icon: BrainCircuit },
+      { href: '/services/smart-factory-building-infra', label: 'Smart Factory & Building', icon: Building },
+      { href: '/services/intelligent-urban-ecosystems', label: 'Smart City Infrastructure', icon: Building2 },
       { href: '/services/renewable-energy', label: 'Renewable Energy', icon: Sun },
     ],
   },
@@ -125,6 +132,10 @@ export const NAV_LINKS: NavLink[] = [
           { href: '/business-sector/education', label: 'Education', icon: GraduationCap },
           { href: '/business-sector/health-pharmacy', label: 'Health & Pharmacy', icon: HeartPulse },
           { href: '/business-sector/energy', label: 'Energy', icon: Sun },
+          { href: '/business-sector/manufacturing-units', label: 'Manufacturing Units', icon: Factory },
+          { href: '/business-sector/mobility-automotive-engineering', label: 'Mobility & Automation', icon: Car },
+          { href: '/business-sector/processing-units', label: 'Processing Units', icon: Combine },
+          { href: '/business-sector/urban-development', label: 'Urban Development', icon: Map },
         ],
       },
       {
@@ -135,6 +146,7 @@ export const NAV_LINKS: NavLink[] = [
           { href: '/business-sector/defence', label: 'Defence', icon: ShieldHalf },
           { href: '/business-sector/e-governance', label: 'E-Governance', icon: Globe },
           { href: '/business-sector/public-sector-undertakings', label: 'Public Sector Undertakings', icon: Building },
+          { href: '/business-sector/smart-city', label: 'Smart City', icon: Building2 },
         ],
       },
     ],
@@ -152,11 +164,18 @@ export const PRIMARY_NAV_LINKS: NavLink[] = [
     icon: Briefcase,
     subLinks: [
       { href: '/services/data-center-infrastructure-solutions', label: 'Data Center Infrastructure', icon: Server },
+      { href: '/services/cloud-hybrid-it-solutions', label: 'Cloud & Hybrid IT Solutions', icon: CloudCog },
+      { href: '/services/scalable-storage-architecture', label: 'Scalable Storage Architecture', icon: Database },
       { href: '/services/nextgen-cybersecurity-shield', label: 'NextGen Cybersecurity Shield', icon: Shield },
       { href: '/services/audio-visual-communication', label: 'Audio-Visual & Communication', icon: MonitorSpeaker },
+      { href: '/services/consulting-services', label: 'IT Strategy & Advisory', icon: Briefcase },
       { href: '/services/unified-communications', label: 'Unified Communications (UC)', icon: Users },
       { href: '/services/security-surveillance', label: 'Security & Surveillance', icon: Cctv },
       { href: '/services/managed-services', label: 'Managed Services', icon: ServerCog },
+      { href: '/services/software-development', label: 'Software Development', icon: Code },
+      { href: '/services/ai-ml-solutions', label: 'AI & ML Solutions', icon: BrainCircuit },
+      { href: '/services/smart-factory-building-infra', label: 'Smart Factory & Building', icon: Building },
+      { href: '/services/intelligent-urban-ecosystems', label: 'Smart City Infrastructure', icon: Building2 },
       { href: '/services/renewable-energy', label: 'Renewable Energy', icon: Sun },
     ],
   },
@@ -176,6 +195,10 @@ export const PRIMARY_NAV_LINKS: NavLink[] = [
           { href: '/business-sector/education', label: 'Education', icon: GraduationCap },
           { href: '/business-sector/health-pharmacy', label: 'Health & Pharmacy', icon: HeartPulse },
           { href: '/business-sector/energy', label: 'Energy', icon: Sun },
+          { href: '/business-sector/manufacturing-units', label: 'Manufacturing Units', icon: Factory },
+          { href: '/business-sector/mobility-automotive-engineering', label: 'Mobility & Automation', icon: Car },
+          { href: '/business-sector/processing-units', label: 'Processing Units', icon: Combine },
+          { href: '/business-sector/urban-development', label: 'Urban Development', icon: Map },
         ],
       },
       {
@@ -186,6 +209,7 @@ export const PRIMARY_NAV_LINKS: NavLink[] = [
           { href: '/business-sector/defence', label: 'Defence', icon: ShieldHalf },
           { href: '/business-sector/e-governance', label: 'E-Governance', icon: Globe },
           { href: '/business-sector/public-sector-undertakings', label: 'Public Sector Undertakings', icon: Building },
+          { href: '/business-sector/smart-city', label: 'Smart City', icon: Building2 },
         ],
       },
     ],
@@ -208,11 +232,11 @@ export const SERVICES: Service[] = [
     title: 'Data Center Infrastructure Solutions',
     category: 'Data Center Infrastructure',
     shortDescription:
-      'We architect and manage resilient IT infrastructures that power enterprise success. From modernizing data centers to transforming networks, our solutions ensure high availability, performance, and scalability.',
+      'We architect resilient, 99.999% available data centers. From modernization to ultra-fast networking, our solutions provide the high-performance foundation your enterprise demands.',
     description:
-      'We architect and manage resilient IT infrastructures that power enterprise success. From modernizing data centers to transforming networks, our solutions ensure high availability, performance, and scalability.',
+      'We engineer mission-critical, future-ready data centers designed for 99.999% availability. Our solutions blend high-density computing, intelligent thermal management, and ultra-fast networking to provide the high-performance foundation your enterprise demands.',
     icon: Server,
-    imageUrl: 'https://picsum.photos/seed/infra/1200/800',
+    imageUrl: '/data-center.png',
     imageHint: 'data center servers',
     features: [
       {
@@ -260,11 +284,11 @@ export const SERVICES: Service[] = [
     title: 'Cloud & Hybrid IT Solutions',
     category: 'Cloud & Hybrid IT Solutions',
     shortDescription:
-      'Empowering enterprises with secure, scalable, and intelligent cloud and hybrid IT infrastructures designed for performance, resilience, and future growth.',
+      'Accelerate transformation with secure, frictionless hybrid cloud architectures. We bridge legacy reliability with cloud-native agility for infinite scalability and security.',
     description:
-      'We design and implement Cloud and Hybrid IT solutions that seamlessly integrate on-premise systems with public and private cloud environments—enabling innovation without compromise.',
+      'Accelerate your digital transformation with secure, frictionless hybrid cloud architectures. We bridge the gap between legacy reliability and cloud-native agility, ensuring your data is always accessible, infinitely scalable, and protected by enterprise-grade security.',
     icon: CloudCog,
-    imageUrl: 'https://picsum.photos/seed/cloud-hybrid/1200/800',
+    imageUrl: '/Cloud-&-Hybrid.png',
     imageHint: 'hybrid cloud network',
     features: [
       {
@@ -305,10 +329,10 @@ export const SERVICES: Service[] = [
     slug: 'scalable-storage-architecture',
     title: 'Scalable Storage Architecture',
     category: 'Data Center & Cloud Infrastructure Solutions',
-    shortDescription: 'Secure, scalable, and high-performance storage solutions for data centers, hospitals, airports, and government institutions, powering your critical IT infrastructure.',
-    description: 'Enterprise-Grade Storage Solutions for Data Centers, Hospitals, Airports & Government Institutions. We design and deploy secure, scalable, high-performance storage for your critical IT infrastructure.',
+    shortDescription: 'Petabyte-scale storage architectures designed for mission-critical workloads. High-performance, secure, and instantaneously accessible across your global infrastructure.',
+    description: 'High-performance, petabyte-scale storage architectures designed for the most demanding workloads. From NVMe-powered all-flash arrays to multi-tier archival systems, we ensure your mission-critical data remains secure, redundant, and instantaneously accessible across your global infrastructure.',
     icon: Database,
-    imageUrl: 'https://picsum.photos/seed/storage/1200/800',
+    imageUrl: '/Storage.png',
     imageHint: 'data storage array',
     features: [
       {
@@ -369,11 +393,11 @@ export const SERVICES: Service[] = [
     slug: 'nextgen-cybersecurity-shield',
     title: 'NextGen Cybersecurity Shield',
     category: 'NextGen Cybersecurity Shield',
-    shortDescription: 'Defend your digital assets with our advanced, multi-layered cybersecurity services, powered by AI and a Zero Trust framework to protect against evolving threats.',
+    shortDescription: 'Fortify your enterprise with an AI-driven cybersecurity ecosystem. Zero-Trust aligned defense providing real-time threat intelligence and proactive mitigation.',
     description:
-      'Defend your digital assets with our advanced, multi-layered cybersecurity services. We leverage AI-driven threat intelligence, proactive monitoring, and a Zero Trust framework to protect your infrastructure, data, and users against evolving cyber threats.',
+      'Fortify your enterprise with an impenetrable, AI-driven cybersecurity ecosystem. Our Zero-Trust aligned defense strategy provides multi-layered protection, real-time threat intelligence, and proactive mitigation to safeguard your critical infrastructure against the most sophisticated global cyber threats.',
     icon: ShieldCheck,
-    imageUrl: 'https://picsum.photos/seed/cybersec/1200/800',
+    imageUrl: '/Cyber.png',
     imageHint: 'cyber security',
     features: [
       {
@@ -400,11 +424,11 @@ export const SERVICES: Service[] = [
     title: 'Audio-Visual & Communication',
     category: 'Audio-Visual & Communication',
     shortDescription:
-      'Enhance communication and collaboration with our state-of-the-art audio-visual solutions. We create immersive experiences for boardrooms, auditoriums, and public spaces.',
+      'Transform connectivity with immersive, high-impact AV environments. State-of-the-art boardrooms and command centers delivering a premium communication experience.',
     description:
-      'Enhance communication and collaboration with our state-of-the-art audio-visual solutions. We create immersive experiences for boardrooms, auditoriums, and public spaces.',
+      'Transform how your organization connects and collaborates with high-impact, immersive audio-visual environments. We design state-of-the-art executive boardrooms, global command centers, and public-facing displays that deliver crystal-clear communication and a premium user experience.',
     icon: MonitorSpeaker,
-    imageUrl: 'https://picsum.photos/seed/av/1200/800',
+    imageUrl: '/Audio-Visual-&-Communication.png',
     imageHint: 'conference room',
     features: [
       {
@@ -439,11 +463,11 @@ export const SERVICES: Service[] = [
     title: 'IT Strategy & Advisory',
     category: 'IT Strategy & Advisory',
     shortDescription:
-      'Strategic IT Consulting for a Smarter, Secure & Scalable Future. We help you plan, design, modernize, and transform your IT ecosystems with confidence.',
+      'Navigate digital transformation with senior-level IT advisory. We provide the technical roadmap and governance required to align technology with your corporate vision.',
     description:
-      'Strategic IT Consulting for a Smarter, Secure & Scalable Future. We help you plan, design, modernize, and transform your IT ecosystems with confidence.',
+      'Navigate the complexities of digital transformation with our senior-level IT advisory and strategic consulting. We provide the technical roadmap, risk-assessment frameworks, and operational governance required to align your technology investments with your long-term corporate vision.',
     icon: Briefcase,
-    imageUrl: 'https://picsum.photos/seed/consulting/1200/800',
+    imageUrl: '/IT-Strategy-&-Advisory.png',
     imageHint: 'business consulting meeting',
     features: [
       {
@@ -479,11 +503,11 @@ export const SERVICES: Service[] = [
     title: 'Unified Communications (UC)',
     category: 'Audio-Visual & Communication',
     shortDescription:
-      'Integrates all communication tools into a single, easy-to-use platform, enabling teams to collaborate efficiently from anywhere.',
+      'Unify your global workforce with seamless, HD communication platforms. Integrate voice, video, and messaging into a single, synchronized intuitive ecosystem.',
     description:
-      'Unified Communications (UC) integrates all communication tools into a single, easy-to-use platform, enabling teams to collaborate efficiently from anywhere. Whether your workforce is on-site, remote, or distributed across multiple locations, UC ensures smooth communication without the complexity of switching between multiple applications.',
+      'Unify your global workforce with seamless, high-definition communication platforms. We integrate voice, video, messaging, and real-time collaboration into a single, intuitive ecosystem that empowers your team to work with total synchronization from any location.',
     icon: Users,
-    imageUrl: 'https://picsum.photos/seed/uc/1200/800',
+    imageUrl: '/Unified-Communications-(UC).png',
     imageHint: 'team collaboration video call',
     features: [
       {
@@ -525,11 +549,11 @@ export const SERVICES: Service[] = [
     title: 'Security & Surveillance',
     category: 'CCTV & ELV Systems',
     shortDescription:
-      'Protect your assets, people, and operations with our comprehensive security solutions. We design and deploy integrated systems for surveillance, access control, and fire detection, providing a unified security posture.',
+      'Secure perimeters with AI-powered surveillance and integrated security frameworks. Real-time situational awareness and advanced biometric access control.',
     description:
-      'Protect your assets, people, and operations with our comprehensive security solutions. We design and deploy integrated systems for surveillance, access control, and fire detection, providing a unified security posture.',
+      'Secure your physical and digital perimeters with intelligent, AI-powered surveillance and integrated security frameworks. Our high-definition systems provide real-time situational awareness, advanced biometric access control, and automated threat detection for maximum operational safety.',
     icon: Cctv,
-    imageUrl: 'https://picsum.photos/seed/security/1200/800',
+    imageUrl: '/Security-&-Surveillance.png',
     imageHint: 'security camera',
     features: [
       {
@@ -563,10 +587,10 @@ export const SERVICES: Service[] = [
     slug: 'managed-services',
     title: 'Managed Services',
     category: 'Managed Services',
-    shortDescription: 'Proactive, predictive, and always-on managed services to keep your IT ecosystem secure, optimized, and operational.',
-    description: 'Our Managed Services are designed to keep your IT ecosystem secure, optimized, and always operational—so you can focus on innovation while we manage complexity.',
+    shortDescription: 'Experience peace of mind with 24/7 proactive managed services. We provide continuous optimization of your IT landscape while you focus on driving innovation.',
+    description: 'Experience total peace of mind with our "Always-On" proactive managed services. We provide 24/7 monitoring, rapid-response incident management, and continuous optimization of your entire IT landscape, ensuring peak performance while you focus on driving business innovation.',
     icon: ServerCog,
-    imageUrl: 'https://picsum.photos/seed/managed/1200/800',
+    imageUrl: '/Managed-Services.png',
     imageHint: 'managed services control room',
     features: [
       {
@@ -608,11 +632,11 @@ export const SERVICES: Service[] = [
     title: 'Software Development',
     category: 'Software Development',
     shortDescription:
-      'From enterprise applications to cloud-native solutions, our software development services are tailored to your unique business needs, driving innovation and efficiency.',
+      'High-performance, custom-engineered software solutions for complex enterprise challenges. Robust, secure, and ready to scale with a world-class user experience.',
     description:
-      'From enterprise applications to cloud-native solutions, our software development services are tailored to your unique business needs, driving innovation and efficiency.',
+      'We build high-performance, custom-engineered software solutions that solve complex enterprise challenges. Our cloud-native development approach ensures your applications are robust, secure, and ready to scale with your business while delivering a world-class user experience.',
     icon: Code,
-    imageUrl: 'https://picsum.photos/seed/software/1200/800',
+    imageUrl: '/Software-Development.png',
     imageHint: 'code editor',
     features: [
       {
@@ -641,10 +665,10 @@ export const SERVICES: Service[] = [
     slug: 'ai-ml-solutions',
     title: 'AI & ML Solutions',
     category: 'Software Development',
-    shortDescription: 'Empower your business with our custom AI and Machine Learning solutions, from predictive analytics to intelligent automation.',
-    description: 'At Cyrotics Technologies, we believe the future belongs to organizations that can think smarter, act faster, and innovate continuously. Our AI & ML solutions empower businesses to move beyond traditional automation and unlock real-time intelligence, predictive accuracy, and decision-making capabilities that scale effortlessly.',
+    shortDescription: 'Unlock real-time intelligence with bespoke AI ecosystems. Predictive accuracy and cognitive workflows that transform strategic decision-making.',
+    description: 'Unlock the power of real-time intelligence with our bespoke AI and Machine Learning ecosystems. We move beyond simple automation to deliver predictive accuracy, deep-data insights, and cognitive workflows that transform how your organization makes strategic decisions in a data-driven world.',
     icon: BrainCircuit,
-    imageUrl: 'https://picsum.photos/seed/ai-ml/1200/800',
+    imageUrl: '/AL-&-ML-Solutions.png',
     imageHint: 'artificial intelligence brain',
     features: [
       {
@@ -686,11 +710,11 @@ export const SERVICES: Service[] = [
     title: 'Smart Factory & Building',
     category: 'Smart Factory & Building',
     shortDescription:
-      'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
+      'Redefine efficiency with fully automated facility infrastructure. Integrate HVAC, lighting, and energy into a centralized, data-driven smart platform.',
     description:
-      'Transform your building into a smart, responsive, and sustainable environment. Our solutions integrate HVAC, lighting, security, and energy systems into a single, intelligent platform.',
+      'Redefine operational efficiency with intelligent, sustainable, and fully automated facility infrastructure. We integrate HVAC, smart lighting, and energy management into a centralized, data-driven platform that reduces costs while creating a superior, responsive environment.',
     icon: Building,
-    imageUrl: 'https://picsum.photos/seed/building/1200/800',
+    imageUrl: '/Smart-Factory-&-Building.png',
     imageHint: 'modern architecture',
     features: [
       {
@@ -724,11 +748,11 @@ export const SERVICES: Service[] = [
     slug: 'intelligent-urban-ecosystems',
     title: 'Smart City Infrastructure',
     category: 'Smart City Infrastructure',
-    shortDescription: 'Empower urban environments with our integrated smart city solutions, enhancing public safety, traffic management, and resource efficiency through IoT and data analytics.',
+    shortDescription: 'Engineer future-ready urban living with IoT-driven smart city ecosystems. Centralized digital fabrics enhancing public safety and resource efficiency.',
     description:
-      'We empower urban environments by designing and deploying integrated smart city solutions. From intelligent traffic management to city-wide surveillance and smart lighting, we use IoT, data analytics, and robust network infrastructure to create safer, more efficient, and sustainable cities.',
+      'Engineer the future of urban living with intelligent, IoT-driven smart city ecosystems. We integrate city-wide surveillance, adaptive traffic management, and smart utility grids into a secure, centralized digital fabric that enhances public safety and maximizes resource efficiency.',
     icon: Building2,
-    imageUrl: 'https://picsum.photos/seed/city/1200/800',
+    imageUrl: '/Smart-City-Infrastructure.png',
     imageHint: 'smart city',
     features: [
       {
@@ -755,11 +779,11 @@ export const SERVICES: Service[] = [
     title: 'Renewable Energy',
     category: 'Renewable Energy',
     shortDescription:
-      'Harness the power of the sun with our end-to-end solar energy solutions. We help businesses reduce their carbon footprint and energy costs with reliable and efficient solar power systems.',
+      'Transition to sustainability with enterprise-grade solar energy solutions. High-efficiency turnkey infrastructure delivering significant operational savings.',
     description:
-      'Harness the power of the sun with our end-to-end solar energy solutions. We help businesses reduce their carbon footprint and energy costs with reliable and efficient solar power systems.',
+      'Transition to a sustainable future with high-efficiency, enterprise-grade renewable energy solutions. We provide turnkey solar infrastructure and intelligent energy storage systems that drastically reduce your carbon footprint while delivering significant long-term operational cost savings.',
     icon: Sun,
-    imageUrl: 'https://picsum.photos/seed/solar/1200/800',
+    imageUrl: '/Renewable-Energy.png',
     imageHint: 'solar panels',
     features: [
       {
