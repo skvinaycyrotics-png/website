@@ -1,9 +1,31 @@
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   output: 'export',
   trailingSlash: true,
   compress: true,
+
+  /* Disable unfinished backend/auth pages */
+  async redirects() {
+    return [
+      {
+        source: '/admin',
+        destination: '/',
+        permanent: false,
+      },
+      {
+        source: '/login',
+        destination: '/',
+        permanent: false,
+      },
+      {
+        source: '/register',
+        destination: '/',
+        permanent: false,
+      },
+    ];
+  },
+
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
