@@ -1,7 +1,20 @@
 'use client';
 
 import { useActionState, useState } from 'react';
-import { findExpert } from '@/app/actions';
+// import { findExpert } from '@/app/actions';
+
+// Mock action for frontend-only mode
+async function findExpert(prevState: any, formData: FormData) {
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  return {
+    type: 'success',
+    data: {
+      expertName: 'Dr. Sarah Mitchell',
+      expertContact: 'sarah.m@cyrotics.in',
+      justification: 'Based on your requirement, Dr. Sarah Mitchell is our leading specialist in enterprise infrastructure and secure networking.'
+    }
+  };
+}
 import {
   BrainCircuit,
   UserCheck,

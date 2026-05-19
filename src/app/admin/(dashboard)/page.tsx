@@ -9,10 +9,13 @@ import {
   TrendingUp, 
   Clock, 
   ArrowUpRight,
-  ShieldCheck
+  ShieldCheck,
+  ChevronRight
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { useToast } from '@/hooks/use-toast';
 
 const STATS = [
   { label: 'Total Jobs', value: '12', icon: Briefcase, color: 'text-blue-500', bg: 'bg-blue-500/10' },
@@ -28,106 +31,184 @@ const RECENT_ACTIVITY = [
 ];
 
 export default function AdminDashboard() {
+  const { toast } = useToast();
+
+  const handleProtocolAction = (protocol: string) => {
+    toast({
+      title: "Protocol Execution",
+      description: `Executing ${protocol} sequence on global cluster...`,
+    });
+  };
+
   return (
-    <div className="p-8 space-y-8 max-w-7xl mx-auto">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight">Admin Dashboard</h1>
-          <p className="text-muted-foreground mt-1">Welcome back. Here is what's happening with the CYROTICS ecosystem today.</p>
+    <div className="p-12 space-y-12 max-w-7xl mx-auto">
+      {/* Page Header */}
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex flex-col md:flex-row md:items-end justify-between gap-8 pb-10 border-b border-slate-200 dark:border-white/5"
+      >
+        <div className="space-y-6">
+          <div className="flex items-center gap-4">
+            <span className="flex h-2 w-2 rounded-full bg-brand animate-pulse shadow-[0_0_10px_rgba(var(--brand-rgb),0.8)]" />
+            <span className="text-[11px] font-black tracking-widest text-brand/80 font-headline whitespace-nowrap">Authorized Node: 0x77AF</span>
+          </div>
+          <h1 className="text-7xl font-bold text-slate-900 dark:text-white tracking-tighter drop-shadow-2xl leading-none">
+            Admin <span className="text-brand">Portal</span>
+          </h1>
+          <p className="text-slate-500 dark:text-slate-400 text-xl font-medium max-w-2xl leading-relaxed">
+            Centralized infrastructure management and global operational oversight.
+          </p>
         </div>
-        <Button className="rounded-xl h-12 px-6 bg-brand hover:bg-brand/90 text-white font-bold transition-all">
-          Generate System Report
-        </Button>
-      </div>
+        <div className="flex gap-4 pb-2">
+          <Button 
+            onClick={() => handleProtocolAction("System Health Audit")}
+            className="h-16 px-10 bg-brand hover:bg-brand-dark text-white rounded-2xl font-black uppercase tracking-[0.2em] shadow-2xl shadow-brand/20 transition-all active:scale-95 border-b-4 border-brand-dark/30"
+          >
+            System Report
+          </Button>
+        </div>
+      </motion.div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {STATS.map((stat, idx) => (
           <motion.div
             key={stat.label}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.1 }}
+            transition={{ delay: idx * 0.1, duration: 0.8 }}
+            onClick={() => handleProtocolAction(`${stat.label} Deep Dive`)}
+            className="cursor-pointer"
           >
-            <Card className="border-border/50 hover:border-brand/30 transition-all duration-300 group">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div className={cn("p-3 rounded-2xl transition-colors", stat.bg)}>
-                    <stat.icon className={cn("h-6 w-6", stat.color)} />
-                  </div>
-                  <div className="flex items-center gap-1 text-xs font-bold text-emerald-500 bg-emerald-500/10 px-2 py-1 rounded-full">
-                    <TrendingUp className="h-3 w-3" />
-                    +12%
-                  </div>
+            <div className="glass-card p-10 rounded-[3.5rem] group hover:border-brand/40 transition-all duration-700 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_50px_rgba(var(--brand-rgb),0.1)]">
+              <div className="flex items-center justify-between mb-12">
+                <div className={cn("p-6 rounded-3xl transition-all duration-700 group-hover:scale-110 shadow-2xl border border-white/20", stat.bg)}>
+                  <stat.icon className={cn("h-9 w-9", stat.color)} />
                 </div>
-                <div className="mt-4">
-                  <p className="text-sm font-medium text-muted-foreground">{stat.label}</p>
-                  <h3 className="text-3xl font-bold mt-1 tracking-tight">{stat.value}</h3>
+                <div className="h-12 w-12 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0">
+                  <ArrowUpRight className="h-6 w-6 text-brand" />
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+              <p className="text-[11px] font-black font-headline uppercase tracking-[0.3em] mb-3 text-slate-500 dark:text-slate-400">{stat.label}</p>
+              <h3 className="text-6xl font-black font-headline text-slate-900 dark:text-white tracking-tighter leading-none">{stat.value}</h3>
+              <div className="mt-6 flex items-center gap-2.5 text-[11px] font-black font-headline text-emerald-500 bg-emerald-500/10 px-4 py-2 rounded-full w-fit border border-emerald-500/20 uppercase tracking-widest">
+                <TrendingUp className="h-3.5 w-3.5" />
+                +12.5% Rise
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* Recent Activity */}
-        <Card className="lg:col-span-2 border-border/50">
-          <CardHeader>
-            <CardTitle className="text-xl font-bold flex items-center gap-2">
-              <Clock className="h-5 w-5 text-brand" />
-              Recent Activity
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
+        <div className="lg:col-span-2 glass-card rounded-[4rem] overflow-hidden flex flex-col bg-white/40 dark:bg-slate-900/40 backdrop-blur-3xl shadow-2xl border-white/20 dark:border-white/5">
+          <div className="p-12 border-b border-slate-200 dark:border-white/5 flex items-center justify-between bg-white/10">
+            <h2 className="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tighter flex items-center gap-5">
+              <Clock className="h-7 w-7 text-brand" />
+              Operations Pulse
+            </h2>
+            <div className="flex gap-3">
+              <Button onClick={() => handleProtocolAction("Filter Applied")} variant="outline" className="h-12 px-6 rounded-2xl text-[11px] font-black uppercase tracking-widest border-slate-200 dark:border-white/10 hover:bg-brand/5 hover:text-brand transition-all">Filter</Button>
+              <Button onClick={() => handleProtocolAction("Data Export Sync")} variant="outline" className="h-12 px-6 rounded-2xl text-[11px] font-black uppercase tracking-widest border-slate-200 dark:border-white/10 hover:bg-brand/5 hover:text-brand transition-all">Export</Button>
+            </div>
+          </div>
+          <div className="p-12 space-y-10 flex-1">
             {RECENT_ACTIVITY.map((activity, idx) => (
-              <div key={idx} className="flex items-center justify-between group cursor-pointer p-2 rounded-xl hover:bg-secondary/50 transition-colors">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center">
-                    <activity.icon className="h-5 w-5 text-muted-foreground" />
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 + (idx * 0.1) }}
+                onClick={() => handleProtocolAction(`Audit: ${activity.action}`)}
+                className="flex items-center justify-between group cursor-pointer p-8 rounded-[2.5rem] bg-white/50 dark:bg-slate-950/40 hover:bg-white dark:hover:bg-slate-900 transition-all duration-500 border border-slate-100 dark:border-white/5 hover:border-brand/30 shadow-sm hover:shadow-2xl hover:translate-x-2"
+              >
+                <div className="flex items-center gap-10">
+                  <div className="w-20 h-20 rounded-[2rem] bg-slate-50 dark:bg-slate-800 flex items-center justify-center border border-slate-100 dark:border-white/5 group-hover:border-brand/20 transition-all duration-500 shadow-inner group-hover:bg-brand/5">
+                    <activity.icon className="h-9 w-9 text-slate-400 group-hover:text-brand transition-all duration-500 group-hover:scale-110" />
                   </div>
-                  <div>
-                    <p className="text-sm font-bold">{activity.action}</p>
-                    <p className="text-xs text-muted-foreground">{activity.item}</p>
+                  <div className="space-y-1.5">
+                    <p className="text-xl font-black text-slate-900 dark:text-white tracking-tight uppercase group-hover:text-brand transition-all duration-500">{activity.action}</p>
+                    <p className="text-base text-slate-500 dark:text-slate-400 font-medium">{activity.item}</p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs text-muted-foreground mb-1">{activity.time}</p>
-                  <ArrowUpRight className="h-4 w-4 text-brand opacity-0 group-hover:opacity-100 transition-opacity ml-auto" />
+                  <p className="text-[12px] font-black text-slate-400 uppercase tracking-[0.3em] group-hover:text-brand/60 transition-colors">{activity.time}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-            <Button variant="ghost" className="w-full text-brand font-bold">View All Activity</Button>
-          </CardContent>
-        </Card>
+            <Button 
+              onClick={() => handleProtocolAction("Full Log Synchronization")}
+              className="w-full h-18 py-8 bg-slate-900 dark:bg-brand/10 hover:bg-brand text-white dark:text-brand hover:text-white font-black uppercase tracking-[0.3em] rounded-[2rem] transition-all border border-white/5 mt-8 shadow-2xl group overflow-hidden relative"
+            >
+              <span className="relative z-10">Audit Operations Log</span>
+              <div className="absolute inset-0 bg-brand translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+            </Button>
+          </div>
+        </div>
 
-        {/* Quick Actions */}
-        <Card className="border-border/50 bg-brand/5 border-brand/10">
-          <CardHeader>
-            <CardTitle className="text-xl font-bold">Quick Actions</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <Button variant="outline" className="w-full justify-start h-12 rounded-xl border-border/50 gap-3">
-              <Briefcase className="h-4 w-4" /> Add New Job
-            </Button>
-            <Button variant="outline" className="w-full justify-start h-12 rounded-xl border-border/50 gap-3">
-              <Layers className="h-4 w-4" /> Post New Project
-            </Button>
-            <Button variant="outline" className="w-full justify-start h-12 rounded-xl border-border/50 gap-3">
-              <MessageSquare className="h-4 w-4" /> Review Testimonials
-            </Button>
-            <div className="pt-4 mt-4 border-t border-brand/10">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand/60 text-center">System Status: Optimal</p>
+        {/* Quick Protocols */}
+        <div className="space-y-12">
+          <div className="glass-card p-12 rounded-[4rem] border-brand/20 bg-brand/5 relative overflow-hidden group shadow-2xl">
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand/10 blur-[80px] rounded-full group-hover:bg-brand/20 transition-all duration-700" />
+            <h2 className="text-3xl font-black text-slate-900 dark:text-white uppercase tracking-tighter mb-12">Protocol Deck</h2>
+            <div className="space-y-5 relative z-10">
+              {[
+                { label: 'Add New Job', icon: Briefcase },
+                { label: 'Post New Project', icon: Layers },
+                { label: 'Review Feedback', icon: MessageSquare },
+              ].map((action, i) => (
+                <Button 
+                  key={i} 
+                  variant="outline" 
+                  onClick={() => handleProtocolAction(action.label)}
+                  className="w-full justify-between h-20 rounded-[2rem] border-slate-200 dark:border-white/10 bg-white/80 dark:bg-slate-950/70 hover:bg-brand hover:text-white hover:border-brand transition-all duration-500 group/btn px-10 text-left shadow-lg hover:shadow-brand/20"
+                >
+                  <div className="flex items-center gap-6">
+                    <action.icon className="h-6 w-6 text-brand group-hover/btn:text-white transition-all duration-500 group-hover/btn:scale-110" />
+                    <span className="font-black tracking-[0.1em] uppercase text-sm">{action.label}</span>
+                  </div>
+                  <ChevronRight className="h-5 w-5 opacity-30 group-hover/btn:opacity-100 transition-all translate-x-2 group-hover/btn:translate-x-0" />
+                </Button>
+              ))}
             </div>
-          </CardContent>
-        </Card>
+            <div className="pt-12 mt-12 border-t border-slate-200 dark:border-white/10">
+              <div className="flex items-center justify-between mb-6 px-3">
+                <span className="text-[11px] font-black uppercase tracking-[0.3em] text-slate-500">Infrastructure Node</span>
+                <span className="text-[11px] font-black uppercase tracking-[0.3em] text-emerald-500">Operational</span>
+              </div>
+              <div className="w-full h-3 bg-slate-200 dark:bg-slate-900 rounded-full overflow-hidden shadow-inner">
+                <motion.div 
+                  initial={{ width: 0 }}
+                  animate={{ width: '100%' }}
+                  transition={{ duration: 2, ease: "circOut" }}
+                  className="h-full bg-brand shadow-[0_0_15px_rgba(var(--brand-rgb),0.5)]"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <div className="glass-card p-10 rounded-[3.5rem] border-amber-500/20 bg-amber-500/5 relative overflow-hidden group shadow-2xl backdrop-blur-md">
+            <div className="flex items-center gap-6 mb-8">
+              <div className="p-5 rounded-3xl bg-amber-500 text-white shadow-2xl shadow-amber-500/30 group-hover:scale-110 transition-transform duration-500">
+                <ShieldCheck className="h-8 w-8" />
+              </div>
+              <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight leading-none">Security Alert</h3>
+            </div>
+            <p className="text-base text-slate-500 dark:text-slate-400 font-medium mb-10 leading-relaxed">
+              Two account authorization requests are currently pending in the nexus pool.
+            </p>
+            <Button 
+              onClick={() => handleProtocolAction("Security Batch Verification")}
+              className="w-full h-16 bg-amber-500 hover:bg-amber-600 text-white font-black rounded-2xl shadow-2xl shadow-amber-500/20 transition-all active:scale-95 uppercase tracking-[0.2em] text-xs border-b-4 border-amber-700/30"
+            >
+              Verify Requests
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-// Utility function (inline if not imported)
-function cn(...inputs: any[]) {
-  return inputs.filter(Boolean).join(' ');
-}

@@ -16,6 +16,7 @@ import { Button } from '../ui/button';
 import { Separator } from '../ui/separator';
 import { socialLinks, footerQuickLinks, companyAddress } from '@/lib/constants';
 import { useEffect, useState, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 const legalLinks = [
@@ -28,7 +29,7 @@ const legalLinks = [
 ]
 
 export function Footer() {
-  const year = new Date().getFullYear();
+  const pathname = usePathname();
   const [showScroll, setShowScroll] = useState(false);
   const footerRef = useRef<HTMLElement>(null);
 
@@ -39,6 +40,12 @@ export function Footer() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  if (pathname.startsWith('/portal') || pathname.startsWith('/admin')) {
+    return null;
+  }
+
+  const year = new Date().getFullYear();
 
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

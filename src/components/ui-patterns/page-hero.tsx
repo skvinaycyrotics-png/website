@@ -81,11 +81,6 @@ export function PageHero({
             />
           </motion.div>
           
-          {/* Animated Tech Particles overlay */}
-          <div className="absolute inset-0 z-10 pointer-events-none opacity-40">
-            <TechBackground />
-          </div>
-
           <div className="absolute inset-0 z-20 bg-gradient-to-b from-[#0a1628]/60 via-[#0a1628]/40 to-[#0a1628]/80"></div>
         </>
       )}
@@ -117,8 +112,8 @@ export function PageHero({
           </h1>
           {description && (
             <p className={cn(
-              "mt-6 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed",
-              hasImage ? "text-white/80" : "text-muted-foreground"
+              "mt-6 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium",
+              hasImage ? "text-white" : "text-foreground"
             )}>
               {description}
             </p>

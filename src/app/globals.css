@@ -4,88 +4,73 @@
 
 @layer base {
   :root {
-    /* Base Neutral Colors (Lighter, cleaner SaaS look) */
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    /* Pure Light Enterprise Palette */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 5%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 222 47% 5%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 222 47% 5%;
     
-    /* Primary (Deep Indigo/Slate) */
-    --primary: 222 47% 11%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
     
-    /* Secondary (Soft Neutral) */
     --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary-foreground: 222 47% 5%;
     
-    /* Muted */
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215 16% 47%;
+    --muted-foreground: 215 16% 35%;
     
-    /* Accent (Subtle highlight) */
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
     
-    /* Destructive */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     
-    /* Border & Inputs */
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222 47% 11%;
+    --ring: 199 89% 48%;
     
-    /* Radius */
-    --radius: 0.75rem;
+    --radius: 1rem;
     
-    /* Custom SaaS Accents (Cyan/Electric Blue) */
+    /* Brand Colors */
     --brand: 199 89% 48%;
-    --brand-rgb: 0, 149, 255;
-    --brand-foreground: 0 0% 100%;
-    --brand-orange: 24 98% 50%;
+    --brand-light: 199 89% 60%;
+    --brand-dark: 222 47% 11%;
   }
 
   .dark {
-    /* ... existing dark mode vars ... */
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
     
-    /* Primary (White text in dark mode) */
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --card: 222 47% 6%;
+    --card-foreground: 210 40% 98%;
     
-    /* Secondary (Darker slate) */
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --popover: 222 47% 6%;
+    --popover-foreground: 210 40% 98%;
     
-    /* Muted */
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
     
-    /* Accent */
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --secondary: 222 47% 12%;
+    --secondary-foreground: 210 40% 98%;
     
-    /* Destructive */
+    --muted: 222 47% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --accent: 199 89% 48%;
+    --accent-foreground: 210 40% 98%;
+    
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 210 40% 98%;
     
-    /* Border & Inputs */
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    
-    /* Custom SaaS Accents (Brighter for dark mode visibility) */
-    --brand: 199 89% 55%;
-    --brand-rgb: 0, 170, 255;
-    --brand-foreground: 0 0% 100%;
-    --brand-orange: 24 98% 55%;
+    --border: 222 47% 12%;
+    --input: 222 47% 12%;
+    --ring: 199 89% 48%;
+
+    --brand-dark: 210 40% 98%; /* Inverse for headlines in dark mode */
   }
 }
 
@@ -94,30 +79,34 @@
     @apply border-border;
   }
   body {
-    @apply font-body bg-background text-foreground tracking-tight;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    @apply font-body bg-background text-foreground antialiased subpixel-antialiased;
+    background-image: radial-gradient(at 0% 0%, hsla(199, 89%, 48%, 0.05) 0px, transparent 50%),
+                      radial-gradient(at 100% 100%, hsla(199, 89%, 48%, 0.05) 0px, transparent 50%);
   }
   
+  h1, h2, h3, h4, h5, h6, button, label {
+    font-family: var(--font-space-grotesk), sans-serif;
+    @apply font-bold tracking-tight;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline tracking-tighter;
+    @apply text-slate-900 dark:text-white tracking-tighter;
   }
 }
 
-/* Glassmorphism & Modern Utilities */
 @layer utilities {
-  .glass {
-    @apply bg-background/60 backdrop-blur-xl border border-white/20 shadow-sm;
-  }
-  .dark .glass {
-    @apply bg-zinc-950/60 backdrop-blur-xl border-zinc-800/50 shadow-sm;
+  .glass-light {
+    @apply bg-white/70 dark:bg-slate-900/60 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
   }
   
-  /* Premium text gradients */
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand to-cyan-500;
+  .glass-card {
+    @apply bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border border-white/20 dark:border-white/5 shadow-xl transition-all hover:shadow-2xl hover:border-brand/20;
   }
-  .dark .text-gradient {
-    @apply bg-gradient-to-r from-brand to-cyan-400;
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand to-cyan-600;
   }
 }
-

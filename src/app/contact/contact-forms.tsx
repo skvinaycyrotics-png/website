@@ -17,7 +17,16 @@ import {
 import { Checkbox } from '@/components/ui/checkbox';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { submitContactForm } from '@/app/actions';
+// import { submitContactForm } from '@/app/actions';
+
+// Mock action for frontend-only mode
+async function submitContactForm(prevState: any, formData: FormData) {
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  return {
+    type: 'success',
+    message: 'Thank you! Your inquiry has been simulated as successfully sent. In a live environment, this would be sent to our backend.'
+  };
+}
 import { useToast } from '@/hooks/use-toast';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Loader2, ChevronDown, User, HelpCircle, HardHat, List, Info, Shield, Check } from 'lucide-react';

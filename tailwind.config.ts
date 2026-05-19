@@ -64,6 +64,8 @@ const config: Config = {
           DEFAULT: 'hsl(var(--brand))',
           foreground: 'hsl(var(--brand-foreground))',
           orange: 'hsl(var(--brand-orange))',
+          dark: 'hsl(var(--brand-dark))',
+          light: 'hsl(var(--brand-light))',
         },
         chart: {
           '1': 'hsl(var(--chart-1))',

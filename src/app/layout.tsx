@@ -1,8 +1,6 @@
 
 import type { Metadata } from 'next';
 import './globals.css';
-import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ClientToaster } from '@/components/client-toaster';
 import { LayoutClient } from '@/components/layout-client';
@@ -33,19 +31,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`scroll-smooth ${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
-      <body className="font-body antialiased bg-background" suppressHydrationWarning>
+      <body className="font-body antialiased subpixel-antialiased" suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen flex-col relative z-0">
-            <LayoutClient />
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
+          <LayoutClient>
+            {children}
+          </LayoutClient>
           <ClientToaster />
         </ThemeProvider>
       </body>

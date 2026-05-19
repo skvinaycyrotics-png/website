@@ -91,7 +91,7 @@ export default function Home() {
               <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
                 Our Capabilities
               </h2>
-              <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+              <p className="mt-4 max-w-2xl text-lg text-foreground/80 font-medium">
                 Comprehensive infrastructure solutions tailored for modern enterprises.
               </p>
             </div>
@@ -126,7 +126,7 @@ export default function Home() {
                 <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
                   Why Leading Brands Trust Us
                 </h2>
-                <p className="mt-6 text-lg text-muted-foreground">
+                <p className="mt-6 text-lg text-foreground/90 font-medium">
                   Our commitment to quality, expertise, and nationwide execution sets us apart. We don't just build infrastructure; we build resilient foundations for the future.
                 </p>
 
@@ -196,7 +196,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-black/20 transition-opacity group-hover:opacity-0" />
                   </div>
                   <h3 className="font-headline text-2xl font-bold mb-2 group-hover:text-brand transition-colors">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4">{project.shortDescription}</p>
+                  <p className="text-foreground/90 mb-4 font-medium">{project.shortDescription}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.slice(0, 3).map((tag) => (
                       <Badge key={tag} variant="secondary" className="rounded-full bg-zinc-100 dark:bg-zinc-800 text-xs px-3 py-1">

@@ -300,6 +300,10 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  if (pathname.startsWith('/portal') || pathname.startsWith('/admin')) {
+    return null;
+  }
+
   const handleMouseMove = (e: React.MouseEvent) => {
     const { currentTarget, clientX, clientY } = e;
     const { left, top } = currentTarget.getBoundingClientRect();
