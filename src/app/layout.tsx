@@ -22,6 +22,8 @@ export const metadata: Metadata = {
   title: 'CYROTICS TECHNOLOGIES | Technology Infrastructure & Security',
   description:
     'Your trusted partner for integrated infrastructure, security, and smart technology solutions. We specialize in data centers, cybersecurity, and cloud transformation.',
+  icons: {
+    icon: '/favicon.ico',
 };
 
 export default function RootLayout({
