@@ -57,7 +57,6 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-};
 
   openGraph: {
     title: 'CYROTICS TECHNOLOGIES',
