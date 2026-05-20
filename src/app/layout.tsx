@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
+
 import { ThemeProvider } from '@/components/theme-provider';
 import { ClientToaster } from '@/components/client-toaster';
 import { LayoutClient } from '@/components/layout-client';
+
 import { Inter, Space_Grotesk } from 'next/font/google';
 
 const inter = Inter({
@@ -20,19 +22,44 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.cyrotics.in'),
 
-  title: 'CYROTICS TECHNOLOGIES | Technology Infrastructure & Security',
+  title: {
+    default:
+      'Cyrotics — AI Automation, Cybersecurity & Enterprise Technology Solutions',
+
+    template: '%s | Cyrotics',
+  },
 
   description:
-    'Your trusted partner for integrated infrastructure, security, and smart technology solutions. We specialize in data centers, cybersecurity, cloud transformation, networking, CCTV, and enterprise infrastructure.',
+    'Cyrotics delivers enterprise AI automation, cybersecurity, cloud transformation, smart infrastructure, software engineering, DevOps, networking, surveillance, and intelligent digital transformation solutions.',
+
+  applicationName: 'Cyrotics',
+
+  authors: [
+    {
+      name: 'Cyrotics',
+      url: 'https://www.cyrotics.in',
+    },
+  ],
+
+  creator: 'Cyrotics',
+
+  publisher: 'Cyrotics',
+
+  generator: 'Next.js',
+
+  referrer: 'origin-when-cross-origin',
 
   keywords: [
-    'CYROTICS TECHNOLOGIES',
+    'Cyrotics',
+    'AI Automation',
+    'Enterprise AI Solutions',
+    'Cybersecurity',
+    'Cloud Transformation',
     'IT Infrastructure',
     'Data Center Solutions',
     'Networking Solutions',
     'CCTV Solutions',
     'Access Control',
-    'Cybersecurity',
     'Cloud Services',
     'Fire Alarm Systems',
     'System Integrator',
@@ -44,46 +71,62 @@ export const metadata: Metadata = {
     'NextGen Cybersecurity Shield',
     'Audio-Visual & Communication',
     'IT Strategy & Advisory',
-    'Unified Communications (UC)',
+    'Unified Communications',
     'Security & Surveillance',
     'Managed Services',
     'Software Development',
     'AI & ML Solutions',
-    'Smart Factory & Building',
+    'Smart Factory',
+    'Smart Building',
     'Smart City Infrastructure',
     'Renewable Energy',
+    'Next.js Development',
+    'DevOps Solutions',
+    'Enterprise SaaS',
+    'Digital Transformation',
   ],
+
+  category: 'technology',
 
   icons: {
     icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
 
   openGraph: {
-    title: 'CYROTICS TECHNOLOGIES',
+    title:
+      'Cyrotics — AI Automation, Cybersecurity & Enterprise Technology Solutions',
+
     description:
-      'Integrated infrastructure, security, and smart technology solutions for enterprises and businesses.',
+      'Enterprise-grade AI automation, cybersecurity, cloud engineering, networking, surveillance, software development, and digital transformation solutions.',
 
     url: 'https://www.cyrotics.in',
-    siteName: 'CYROTICS TECHNOLOGIES',
+
+    siteName: 'Cyrotics',
 
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'CYROTICS TECHNOLOGIES',
+        alt: 'Cyrotics Technologies',
       },
     ],
 
     locale: 'en_US',
+
     type: 'website',
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'CYROTICS TECHNOLOGIES',
+
+    title:
+      'Cyrotics — AI Automation, Cybersecurity & Enterprise Technology Solutions',
+
     description:
-      'Technology Infrastructure & Security Solutions Company.',
+      'Enterprise-grade AI automation, cybersecurity, cloud engineering, networking, surveillance, software development, and digital transformation solutions.',
 
     images: ['/og-image.png'],
   },
@@ -91,6 +134,22 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+
+  alternates: {
+    canonical: 'https://www.cyrotics.in',
+  },
+
+  verification: {
+    google: 'ADD_YOUR_GOOGLE_SEARCH_CONSOLE_CODE',
   },
 };
 
@@ -106,7 +165,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className="font-body antialiased subpixel-antialiased"
+        className="font-body antialiased subpixel-antialiased bg-background text-foreground"
         suppressHydrationWarning
       >
         <ThemeProvider
