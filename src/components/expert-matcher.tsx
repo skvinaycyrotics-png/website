@@ -3,16 +3,29 @@
 import { useActionState, useState } from 'react';
 // import { findExpert } from '@/app/actions';
 
+type ExpertMatcherState = {
+  type: 'success' | 'error' | '';
+  message: string;
+  errors: Record<string, string[]> | null;
+  data: {
+    expertName: string;
+    expertContact: string;
+    justification: string;
+  } | null;
+};
+
 // Mock action for frontend-only mode
-async function findExpert(prevState: any, formData: FormData) {
+async function findExpert(prevState: ExpertMatcherState, formData: FormData): Promise<ExpertMatcherState> {
   await new Promise(resolve => setTimeout(resolve, 1000));
   return {
     type: 'success',
+    message: '',
+    errors: null,
     data: {
       expertName: 'Dr. Sarah Mitchell',
       expertContact: 'sarah.m@cyrotics.in',
-      justification: 'Based on your requirement, Dr. Sarah Mitchell is our leading specialist in enterprise infrastructure and secure networking.'
-    }
+      justification: 'Based on your requirement, Dr. Sarah Mitchell is our leading specialist in enterprise infrastructure and secure networking.',
+    },
   };
 }
 import {
@@ -36,7 +49,7 @@ import {
 import { Alert, AlertDescription, AlertTitle } from './ui/alert';
 import { useFormStatus } from 'react-dom';
 
-const initialState = {
+const initialState: ExpertMatcherState = {
   type: '',
   message: '',
   errors: null,
@@ -59,7 +72,7 @@ function SubmitButton() {
 }
 
 export default function ExpertMatcher() {
-  const [state, formAction] = useActionState(findExpert, initialState);
+  const [state, formAction] = useActionState<ExpertMatcherState, FormData>(findExpert, initialState);
 
   return (
     <Card className="max-w-2xl mx-auto shadow-2xl">

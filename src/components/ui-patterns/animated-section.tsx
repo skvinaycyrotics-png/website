@@ -20,7 +20,7 @@ export const fadeUpVariant = {
     opacity: 1, 
     y: 0, 
     transition: { 
-      type: 'spring', 
+      type: 'spring' as const, 
       stiffness: 70, 
       damping: 20, 
       mass: 1 
@@ -34,7 +34,7 @@ export const scaleUpVariant = {
     opacity: 1, 
     scale: 1, 
     transition: { 
-      type: 'spring', 
+      type: 'spring' as const, 
       stiffness: 70, 
       damping: 20 
     } 
@@ -59,6 +59,29 @@ interface AnimatedSectionProps extends HTMLMotionProps<'div'> {
   once?: boolean;
 }
 
+const buildFadeVariant = (direction: 'left' | 'right' | 'up' | 'down' = 'up', delay = 0) => ({
+  hidden: {
+    opacity: 0,
+    x: direction === 'left' ? -40 : direction === 'right' ? 40 : 0,
+    y: direction === 'up' ? 40 : direction === 'down' ? -40 : 0,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: 'easeOut' as const,
+      delay,
+    },
+  },
+});
+
+interface AnimatedItemProps extends HTMLMotionProps<'div'> {
+  direction?: 'left' | 'right' | 'up' | 'down';
+  delay?: number;
+}
+
 export function AnimatedSection({
   children,
   stagger = false,
@@ -79,9 +102,9 @@ export function AnimatedSection({
   );
 }
 
-export function AnimatedItem({ children, ...props }: HTMLMotionProps<'div'>) {
+export function AnimatedItem({ children, direction = 'up', delay = 0, ...props }: AnimatedItemProps) {
   return (
-    <motion.div variants={fadeUpVariant} {...props}>
+    <motion.div variants={buildFadeVariant(direction, delay)} {...props}>
       {children}
     </motion.div>
   );

@@ -111,7 +111,7 @@ function LoginContent() {
             <div className="space-y-3">
               <div className="flex items-center justify-between ml-1">
                 <Label className="text-xs font-black uppercase tracking-[0.2em] text-slate-800 dark:text-slate-200">Security Password</Label>
-                <Link href="/forgot-password" size="sm" className="text-[10px] font-black uppercase text-brand hover:text-brand-dark transition-colors tracking-widest">
+                <Link href="/forgot-password" className="text-[10px] font-black uppercase text-brand hover:text-brand-dark transition-colors tracking-widest">
                   Reset Password
                 </Link>
               </div>

@@ -19,12 +19,21 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 // import { submitContactForm } from '@/app/actions';
 
+type ContactFormState = {
+  type: 'success' | 'error' | '';
+  message: string;
+  errors: Record<string, string[]>;
+  mailto: string | null;
+};
+
 // Mock action for frontend-only mode
-async function submitContactForm(prevState: any, formData: FormData) {
+async function submitContactForm(prevState: ContactFormState, formData: FormData): Promise<ContactFormState> {
   await new Promise(resolve => setTimeout(resolve, 1000));
   return {
     type: 'success',
-    message: 'Thank you! Your inquiry has been simulated as successfully sent. In a live environment, this would be sent to our backend.'
+    message: 'Thank you! Your inquiry has been simulated as successfully sent. In a live environment, this would be sent to our backend.',
+    errors: {},
+    mailto: null,
   };
 }
 import { useToast } from '@/hooks/use-toast';
@@ -84,8 +93,13 @@ function FormSection({
 }
 
 export default function ContactForms() {
-  const initialState = { message: null, errors: {}, type: '', mailto: null };
-  const [state, dispatch] = useActionState(submitContactForm, initialState);
+  const initialState: ContactFormState = {
+    type: '',
+    message: '',
+    errors: {},
+    mailto: null,
+  };
+  const [state, dispatch] = useActionState<ContactFormState, FormData>(submitContactForm, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const [showMailto, setShowMailto] = useState(false);

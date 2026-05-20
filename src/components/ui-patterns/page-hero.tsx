@@ -13,7 +13,7 @@ export const fadeUpVariant = {
     opacity: 1, 
     y: 0, 
     transition: { 
-      type: 'spring', 
+      type: 'spring' as const, 
       stiffness: 60, 
       damping: 20, 
       mass: 1 
