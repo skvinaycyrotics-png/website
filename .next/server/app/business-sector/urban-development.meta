@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/business-sector/layout,_N_T_/business-sector/urban-development/layout,_N_T_/business-sector/urban-development/page,_N_T_/business-sector/urban-development/"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/business-sector/urban-development/__PAGE__",
+    "/business-sector/urban-development",
+    "/business-sector",
+    "/_index",
+    "/_head"
+  ]
+}

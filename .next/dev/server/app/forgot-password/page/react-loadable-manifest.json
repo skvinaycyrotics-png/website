@@ -1,0 +1,23 @@
+{
+  "[project]/src/components/cookie-consent.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/cookie-consent.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/src_components_cookie-consent_tsx_1ca6280f._.js",
+      "static/chunks/src_components_cookie-consent_tsx_6569bb7f._.js"
+    ]
+  },
+  "[project]/src/components/layout/SupportDesk.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/layout/SupportDesk.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/src_components_layout_SupportDesk_tsx_65eaf91d._.js",
+      "static/chunks/src_components_layout_SupportDesk_tsx_6569bb7f._.js"
+    ]
+  },
+  "[project]/src/components/ui-patterns/animated-bg.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/ui-patterns/animated-bg.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_fde49d48._.js",
+      "static/chunks/src_components_ui-patterns_animated-bg_tsx_6569bb7f._.js"
+    ]
+  }
+}

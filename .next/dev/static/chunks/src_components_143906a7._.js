@@ -1,0 +1,76 @@
+(globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
+"[project]/src/components/ui-patterns/animated-bg.tsx [app-client] (ecmascript, next/dynamic entry, async loader)", ((__turbopack_context__) => {
+
+__turbopack_context__.v((parentImport) => {
+    return Promise.all([
+  "static/chunks/node_modules_3d3af7af._.js",
+  "static/chunks/src_components_ui-patterns_animated-bg_tsx_5bf01bb1._.js",
+  "static/chunks/src_components_ui-patterns_animated-bg_tsx_71979907._.js"
+].map((chunk) => __turbopack_context__.l(chunk))).then(() => {
+        return parentImport("[project]/src/components/ui-patterns/animated-bg.tsx [app-client] (ecmascript, next/dynamic entry)");
+    });
+});
+}),
+"[project]/src/components/layout/SupportDesk.tsx [app-client] (ecmascript, next/dynamic entry, async loader)", ((__turbopack_context__) => {
+
+__turbopack_context__.v((parentImport) => {
+    return Promise.all([
+  "static/chunks/node_modules_50a2050a._.js",
+  "static/chunks/src_components_c16d44a4._.js",
+  "static/chunks/src_components_layout_SupportDesk_tsx_71979907._.js"
+].map((chunk) => __turbopack_context__.l(chunk))).then(() => {
+        return parentImport("[project]/src/components/layout/SupportDesk.tsx [app-client] (ecmascript, next/dynamic entry)");
+    });
+});
+}),
+"[project]/src/components/cookie-consent.tsx [app-client] (ecmascript, next/dynamic entry, async loader)", ((__turbopack_context__) => {
+
+__turbopack_context__.v((parentImport) => {
+    return Promise.all([
+  "static/chunks/_578a9802._.js",
+  "static/chunks/src_components_cookie-consent_tsx_71979907._.js"
+].map((chunk) => __turbopack_context__.l(chunk))).then(() => {
+        return parentImport("[project]/src/components/cookie-consent.tsx [app-client] (ecmascript, next/dynamic entry)");
+    });
+});
+}),
+"[project]/src/components/layout/header.tsx [app-client] (ecmascript, next/dynamic entry, async loader)", ((__turbopack_context__) => {
+
+__turbopack_context__.v((parentImport) => {
+    return Promise.all([
+  "static/chunks/src_2f140885._.js",
+  "static/chunks/node_modules_next_f0eb4049._.js",
+  "static/chunks/node_modules_lucide-react_dist_esm_icons_71afe6ee._.js",
+  "static/chunks/node_modules_motion-dom_dist_es_a4d97f1b._.js",
+  "static/chunks/node_modules_framer-motion_dist_es_8acc8773._.js",
+  "static/chunks/node_modules_d7e8bcdc._.js",
+  "static/chunks/src_components_layout_header_tsx_71979907._.js"
+].map((chunk) => __turbopack_context__.l(chunk))).then(() => {
+        return parentImport("[project]/src/components/layout/header.tsx [app-client] (ecmascript, next/dynamic entry)");
+    });
+});
+}),
+"[project]/src/components/layout/footer.tsx [app-client] (ecmascript, next/dynamic entry, async loader)", ((__turbopack_context__) => {
+
+__turbopack_context__.v((parentImport) => {
+    return Promise.all([
+  "static/chunks/src_dda09d68._.js",
+  "static/chunks/node_modules_b859e8a0._.js",
+  "static/chunks/src_components_layout_footer_tsx_71979907._.js"
+].map((chunk) => __turbopack_context__.l(chunk))).then(() => {
+        return parentImport("[project]/src/components/layout/footer.tsx [app-client] (ecmascript, next/dynamic entry)");
+    });
+});
+}),
+"[project]/src/components/ui-patterns/tech-background.tsx [app-client] (ecmascript, next/dynamic entry, async loader)", ((__turbopack_context__) => {
+
+__turbopack_context__.v((parentImport) => {
+    return Promise.all([
+  "static/chunks/src_components_ui-patterns_tech-background_tsx_1500b841._.js",
+  "static/chunks/src_components_ui-patterns_tech-background_tsx_71979907._.js"
+].map((chunk) => __turbopack_context__.l(chunk))).then(() => {
+        return parentImport("[project]/src/components/ui-patterns/tech-background.tsx [app-client] (ecmascript, next/dynamic entry)");
+    });
+});
+}),
+]);

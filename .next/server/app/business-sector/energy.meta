@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/business-sector/layout,_N_T_/business-sector/energy/layout,_N_T_/business-sector/energy/page,_N_T_/business-sector/energy/"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/business-sector/energy/__PAGE__",
+    "/business-sector/energy",
+    "/business-sector",
+    "/_index",
+    "/_head"
+  ]
+}

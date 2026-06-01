@@ -1,0 +1,526 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/",
+      "destination": "/:file",
+      "internal": true,
+      "priority": true,
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-nextjs-data"
+        }
+      ],
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+))/$"
+    },
+    {
+      "source": "/:notfile((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+)",
+      "destination": "/:notfile/",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+))$"
+    },
+    {
+      "source": "/admin",
+      "destination": "/",
+      "statusCode": 307,
+      "regex": "^(?!/_next)/admin(?:/)?$"
+    },
+    {
+      "source": "/login",
+      "destination": "/",
+      "statusCode": 307,
+      "regex": "^(?!/_next)/login(?:/)?$"
+    },
+    {
+      "source": "/register",
+      "destination": "/",
+      "statusCode": 307,
+      "regex": "^(?!/_next)/register(?:/)?$"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-DNS-Prefetch-Control",
+          "value": "on"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), browsing-topics=(), payment=(), usb=()"
+        },
+        {
+          "key": "Cross-Origin-Embedder-Policy",
+          "value": "credentialless"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Origin-Agent-Cluster",
+          "value": "?1"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' https: blob:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: blob: https:; font-src 'self' data: https:; connect-src 'self' https: wss:; media-src 'self' https: blob:; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests;"
+        }
+      ],
+      "regex": "^(?:/(.*))(?:/)?$"
+    },
+    {
+      "source": "/:all*(svg|jpg|jpeg|png|gif|webp|avif|ico|ttf|woff|woff2)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ],
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(svg|jpg|jpeg|png|gif|webp|avif|ico|ttf|woff|woff2)(?:/)?$"
+    },
+    {
+      "source": "/:all*(js|css)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ],
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(js|css)(?:/)?$"
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ],
+      "regex": "^/sw\\.js(?:/)?$"
+    }
+  ],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/blog/[slug]",
+      "regex": "^/blog/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/blog/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/services/[slug]",
+      "regex": "^/services/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/services/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/admin",
+      "regex": "^/admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin(?:/)?$"
+    },
+    {
+      "page": "/admin/jobs",
+      "regex": "^/admin/jobs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/jobs(?:/)?$"
+    },
+    {
+      "page": "/admin/login",
+      "regex": "^/admin/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/login(?:/)?$"
+    },
+    {
+      "page": "/blog",
+      "regex": "^/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/business-sector/defence",
+      "regex": "^/business\\-sector/defence(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business\\-sector/defence(?:/)?$"
+    },
+    {
+      "page": "/business-sector/e-governance",
+      "regex": "^/business\\-sector/e\\-governance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business\\-sector/e\\-governance(?:/)?$"
+    },
+    {
+      "page": "/business-sector/education",
+      "regex": "^/business\\-sector/education(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business\\-sector/education(?:/)?$"
+    },
+    {
+      "page": "/business-sector/energy",
+      "regex": "^/business\\-sector/energy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business\\-sector/energy(?:/)?$"
+    },
+    {
+      "page": "/business-sector/health-pharmacy",
+      "regex": "^/business\\-sector/health\\-pharmacy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business\\-sector/health\\-pharmacy(?:/)?$"
+    },
+    {
+      "page": "/business-sector/logistics",
+      "regex": "^/business\\-sector/logistics(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business\\-sector/logistics(?:/)?$"
+    },
+    {
+      "page": "/business-sector/manufacturing-units",
+      "regex": "^/business\\-sector/manufacturing\\-units(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business\\-sector/manufacturing\\-units(?:/)?$"
+    },
+    {
+      "page": "/business-sector/mobility-automotive-engineering",
+      "regex": "^/business\\-sector/mobility\\-automotive\\-engineering(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business\\-sector/mobility\\-automotive\\-engineering(?:/)?$"
+    },
+    {
+      "page": "/business-sector/overview",
+      "regex": "^/business\\-sector/overview(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business\\-sector/overview(?:/)?$"
+    },
+    {
+      "page": "/business-sector/processing-units",
+      "regex": "^/business\\-sector/processing\\-units(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business\\-sector/processing\\-units(?:/)?$"
+    },
+    {
+      "page": "/business-sector/public-sector-undertakings",
+      "regex": "^/business\\-sector/public\\-sector\\-undertakings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business\\-sector/public\\-sector\\-undertakings(?:/)?$"
+    },
+    {
+      "page": "/business-sector/smart-city",
+      "regex": "^/business\\-sector/smart\\-city(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business\\-sector/smart\\-city(?:/)?$"
+    },
+    {
+      "page": "/business-sector/telecom",
+      "regex": "^/business\\-sector/telecom(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business\\-sector/telecom(?:/)?$"
+    },
+    {
+      "page": "/business-sector/urban-development",
+      "regex": "^/business\\-sector/urban\\-development(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/business\\-sector/urban\\-development(?:/)?$"
+    },
+    {
+      "page": "/careers",
+      "regex": "^/careers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/careers(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/cookies-policy",
+      "regex": "^/cookies\\-policy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/cookies\\-policy(?:/)?$"
+    },
+    {
+      "page": "/faqs",
+      "regex": "^/faqs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/faqs(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/forgot-password",
+      "regex": "^/forgot\\-password(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/forgot\\-password(?:/)?$"
+    },
+    {
+      "page": "/legal-terms",
+      "regex": "^/legal\\-terms(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/legal\\-terms(?:/)?$"
+    },
+    {
+      "page": "/login",
+      "regex": "^/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/login(?:/)?$"
+    },
+    {
+      "page": "/portal",
+      "regex": "^/portal(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/portal(?:/)?$"
+    },
+    {
+      "page": "/portal/projects",
+      "regex": "^/portal/projects(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/portal/projects(?:/)?$"
+    },
+    {
+      "page": "/portal/support",
+      "regex": "^/portal/support(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/portal/support(?:/)?$"
+    },
+    {
+      "page": "/privacy-policy",
+      "regex": "^/privacy\\-policy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/privacy\\-policy(?:/)?$"
+    },
+    {
+      "page": "/projects",
+      "regex": "^/projects(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/projects(?:/)?$"
+    },
+    {
+      "page": "/refund-policy",
+      "regex": "^/refund\\-policy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/refund\\-policy(?:/)?$"
+    },
+    {
+      "page": "/register",
+      "regex": "^/register(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/register(?:/)?$"
+    },
+    {
+      "page": "/reset-password",
+      "regex": "^/reset\\-password(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/reset\\-password(?:/)?$"
+    },
+    {
+      "page": "/roi-calculator",
+      "regex": "^/roi\\-calculator(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/roi\\-calculator(?:/)?$"
+    },
+    {
+      "page": "/services",
+      "regex": "^/services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services(?:/)?$"
+    },
+    {
+      "page": "/services/ai-ml-solutions",
+      "regex": "^/services/ai\\-ml\\-solutions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/ai\\-ml\\-solutions(?:/)?$"
+    },
+    {
+      "page": "/services/audio-visual-communication",
+      "regex": "^/services/audio\\-visual\\-communication(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/audio\\-visual\\-communication(?:/)?$"
+    },
+    {
+      "page": "/services/automotive-engineering",
+      "regex": "^/services/automotive\\-engineering(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/automotive\\-engineering(?:/)?$"
+    },
+    {
+      "page": "/services/cloud-hybrid-it-solutions",
+      "regex": "^/services/cloud\\-hybrid\\-it\\-solutions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/cloud\\-hybrid\\-it\\-solutions(?:/)?$"
+    },
+    {
+      "page": "/services/consulting-services",
+      "regex": "^/services/consulting\\-services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/consulting\\-services(?:/)?$"
+    },
+    {
+      "page": "/services/data-center-infrastructure-solutions",
+      "regex": "^/services/data\\-center\\-infrastructure\\-solutions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/data\\-center\\-infrastructure\\-solutions(?:/)?$"
+    },
+    {
+      "page": "/services/intelligent-urban-ecosystems",
+      "regex": "^/services/intelligent\\-urban\\-ecosystems(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/intelligent\\-urban\\-ecosystems(?:/)?$"
+    },
+    {
+      "page": "/services/managed-services",
+      "regex": "^/services/managed\\-services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/managed\\-services(?:/)?$"
+    },
+    {
+      "page": "/services/nextgen-cybersecurity-shield",
+      "regex": "^/services/nextgen\\-cybersecurity\\-shield(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/nextgen\\-cybersecurity\\-shield(?:/)?$"
+    },
+    {
+      "page": "/services/renewable-energy",
+      "regex": "^/services/renewable\\-energy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/renewable\\-energy(?:/)?$"
+    },
+    {
+      "page": "/services/scalable-storage-architecture",
+      "regex": "^/services/scalable\\-storage\\-architecture(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/scalable\\-storage\\-architecture(?:/)?$"
+    },
+    {
+      "page": "/services/security-surveillance",
+      "regex": "^/services/security\\-surveillance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/security\\-surveillance(?:/)?$"
+    },
+    {
+      "page": "/services/smart-factory-building-infra",
+      "regex": "^/services/smart\\-factory\\-building\\-infra(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/smart\\-factory\\-building\\-infra(?:/)?$"
+    },
+    {
+      "page": "/services/software-development",
+      "regex": "^/services/software\\-development(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/software\\-development(?:/)?$"
+    },
+    {
+      "page": "/services/unified-communications",
+      "regex": "^/services/unified\\-communications(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/unified\\-communications(?:/)?$"
+    },
+    {
+      "page": "/sitemap",
+      "regex": "^/sitemap(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sitemap(?:/)?$"
+    },
+    {
+      "page": "/terms-of-service",
+      "regex": "^/terms\\-of\\-service(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/terms\\-of\\-service(?:/)?$"
+    },
+    {
+      "page": "/trust-and-compliance",
+      "regex": "^/trust\\-and\\-compliance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/trust\\-and\\-compliance(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

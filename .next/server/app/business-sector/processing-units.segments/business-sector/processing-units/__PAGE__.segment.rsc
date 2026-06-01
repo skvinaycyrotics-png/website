@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[58963,["/_next/static/chunks/044f3e44aebf39b5.js","/_next/static/chunks/d5e411a0f6cbe764.js","/_next/static/chunks/c7b34f4acde7e484.js","/_next/static/chunks/0bac13e2d41a06de.js","/_next/static/chunks/c6a40b8aab164540.js"],"BottomCTA"]
+3:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"YW1JwmHIBNj3AEnpF4FMj","rsc":["$","$1","c",{"children":[["$","$L2",null,{"title":"Optimizing Your Operations","description":"CYROTICS Technologies provides specialized solutions for processing units across various sectors, including food processing, pharmaceuticals, and chemicals. We help businesses automate their operations, improve quality control, and ensure a safe and compliant environment.","primaryButtonText":"Request a Consultation"}],[["$","script","script-0",{"src":"/_next/static/chunks/c7b34f4acde7e484.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/0bac13e2d41a06de.js","async":true}],["$","script","script-2",{"src":"/_next/static/chunks/c6a40b8aab164540.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

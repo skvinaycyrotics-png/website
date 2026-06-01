@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/business-sector/layout,_N_T_/business-sector/overview/layout,_N_T_/business-sector/overview/page,_N_T_/business-sector/overview/"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/business-sector/overview/__PAGE__",
+    "/business-sector/overview",
+    "/business-sector",
+    "/_index",
+    "/_head"
+  ]
+}

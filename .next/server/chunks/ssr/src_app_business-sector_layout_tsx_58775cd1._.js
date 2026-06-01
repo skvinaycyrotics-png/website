@@ -1,0 +1,3 @@
+module.exports=[33527,a=>{"use strict";var b=a.i(7997);function c({children:a}){return(0,b.jsx)(b.Fragment,{children:a})}a.s(["default",()=>c,"metadata",0,{title:"Business Sectors | CYROTICS TECHNOLOGIES",description:"Delivering specialized technology solutions for Urban Development, Public Sector, Telecom, Logistics, Healthcare, Education, Energy, and Mobility."}])}];
+
+//# sourceMappingURL=src_app_business-sector_layout_tsx_58775cd1._.js.map

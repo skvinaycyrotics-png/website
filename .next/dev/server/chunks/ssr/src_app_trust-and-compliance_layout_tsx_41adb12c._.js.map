@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/EDAG-LAB/Downloads/project/src/app/trust-and-compliance/layout.tsx"],"sourcesContent":["\nimport { ReactNode } from 'react';\n\nexport default function TrustAndComplianceLayout({\n  children,\n}: {\n  children: ReactNode;\n}) {\n  return <>{children}</>;\n}\n"],"names":[],"mappings":";;;;;;AAGe,SAAS,yBAAyB,EAC/C,QAAQ,EAGT;IACC,qBAAO;kBAAG;;AACZ"}}]
+}
