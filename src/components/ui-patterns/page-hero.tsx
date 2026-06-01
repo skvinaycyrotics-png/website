@@ -20,7 +20,8 @@ export const fadeUpVariant = {
   },
 };
 
-interface PageHeroProps extends React.HTMLAttributes<HTMLDivElement> {
+// FIXED: Added Omit configuration block here to resolve standard HTML attribute inheritance conflicts
+interface PageHeroProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
   title: React.ReactNode;
   description?: React.ReactNode;
   icon?: LucideIcon;
