@@ -47,14 +47,14 @@ const CursorHighlight = ({ mouseX, mouseY, opacity }: { mouseX: any, mouseY: any
   );
 };
 
-// ========== 2. NavIndicator (Fixed active + hover) ==========
+// ========== 2. NavIndicator (uses relative coordinates) ==========
 const NavIndicator = ({ 
   hoverRect, 
   activeRect, 
   isHovering 
 }: { 
-  hoverRect: DOMRect | null, 
-  activeRect: DOMRect | null,
+  hoverRect: { left: number; width: number } | null, 
+  activeRect: { left: number; width: number } | null,
   isHovering: boolean 
 }) => {
   const targetRect = isHovering && hoverRect ? hoverRect : activeRect;
@@ -85,7 +85,7 @@ const NavItem = ({
 }: { 
   link: NavLink, 
   pathname: string, 
-  onHover: (rect: DOMRect | null) => void,
+  onHover: (rect: { left: number; width: number } | null) => void,
   isHovered: boolean,
   isActive: boolean
 }) => {
@@ -99,6 +99,19 @@ const NavItem = ({
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
 
   const ref = useRef<HTMLAnchorElement>(null);
+  const navRef = useRef<HTMLElement | null>(null);
+
+  // Helper to get relative position
+  const getRelativeRect = (anchor: HTMLAnchorElement) => {
+    const anchorRect = anchor.getBoundingClientRect();
+    const navElement = anchor.closest('nav');
+    if (!navElement) return null;
+    const navRect = navElement.getBoundingClientRect();
+    return {
+      left: anchorRect.left - navRect.left,
+      width: anchorRect.width,
+    };
+  };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (!ref.current) return;
@@ -123,7 +136,8 @@ const NavItem = ({
 
   const handleMouseEnter = (e: React.MouseEvent) => {
     if (ref.current) {
-      onHover(ref.current.getBoundingClientRect());
+      const relative = getRelativeRect(ref.current);
+      if (relative) onHover(relative);
     }
   };
 
@@ -281,39 +295,48 @@ export function Header() {
   const [isMounted, setIsMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
-  const [hoverRect, setHoverRect] = useState<DOMRect | null>(null);
-  const [activeRect, setActiveRect] = useState<DOMRect | null>(null);
+  const [hoverRect, setHoverRect] = useState<{ left: number; width: number } | null>(null);
+  const [activeRect, setActiveRect] = useState<{ left: number; width: number } | null>(null);
   
   const pathname = usePathname();
+  const navRef = useRef<HTMLElement>(null);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const highlightOpacity = useMotionValue(0);
 
-  // Measure active link position on path change
+  // Measure active link position relative to nav container
+  const measureActiveLink = () => {
+    if (!navRef.current) return;
+    
+    // Find the active link inside the nav
+    const activeAnchor = Array.from(navRef.current.querySelectorAll('a')).find((anchor) => {
+      const href = anchor.getAttribute('href');
+      if (!href) return false;
+      if (pathname === '/') return href === '/';
+      // Exact match or startsWith for subpages (but avoid false matches like /services vs /services/consulting)
+      if (href === '/') return false;
+      return href === pathname || (pathname.startsWith(href) && href !== '/');
+    });
+
+    if (activeAnchor) {
+      const anchorRect = activeAnchor.getBoundingClientRect();
+      const navRect = navRef.current.getBoundingClientRect();
+      setActiveRect({
+        left: anchorRect.left - navRect.left,
+        width: anchorRect.width,
+      });
+    } else {
+      setActiveRect(null);
+    }
+  };
+
+  // Re-measure when pathname changes, window resizes, or scrolls
   useEffect(() => {
     if (!isMounted) return;
-
-    const measureActiveLink = () => {
-      const activeAnchor = Array.from(document.querySelectorAll('nav a')).find((anchor) => {
-        const href = anchor.getAttribute('href');
-        if (!href) return false;
-        if (pathname === '/') return href === '/';
-        return href === pathname || (href !== '/' && pathname.startsWith(href));
-      });
-
-      if (activeAnchor) {
-        setActiveRect(activeAnchor.getBoundingClientRect());
-      } else {
-        setActiveRect(null);
-      }
-    };
-
     measureActiveLink();
-
     window.addEventListener('resize', measureActiveLink);
     window.addEventListener('scroll', measureActiveLink);
-    
     return () => {
       window.removeEventListener('resize', measureActiveLink);
       window.removeEventListener('scroll', measureActiveLink);
@@ -372,7 +395,10 @@ export function Header() {
         
         {isMounted && (
           <>
-            <nav className="ml-auto hidden items-center gap-1 md:flex relative px-4 py-1 rounded-2xl bg-secondary/20 border border-white/5 group">
+            <nav 
+              ref={navRef}
+              className="ml-auto hidden items-center gap-1 md:flex relative px-4 py-1 rounded-2xl bg-secondary/20 border border-white/5 group"
+            >
               <CursorHighlight mouseX={mouseX} mouseY={mouseY} opacity={highlightOpacity} />
               
               {PRIMARY_NAV_LINKS.map((link) => (
@@ -382,7 +408,7 @@ export function Header() {
                   pathname={pathname}
                   isActive={pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))}
                   isHovered={hoveredLink === link.href}
-                  onHover={(rect: DOMRect | null) => {
+                  onHover={(rect) => {
                     setHoveredLink(rect ? link.href : null);
                     setHoverRect(rect);
                   }}
@@ -407,7 +433,7 @@ export function Header() {
               </Button>
             </div>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu (unchanged, omitted for brevity - keep your existing mobile menu) */}
             <div className="ml-auto flex items-center md:hidden gap-2 relative z-20">
               <ThemeToggle />
               <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
