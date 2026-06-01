@@ -26,7 +26,9 @@ jobs:
       run: npm run typecheck
 
     - name: Lint
-      run: npm run lint
+      # FIXED: Changed from 'npm run lint' to calling 'npx next lint' directly 
+      # with an explicit root directory dot (.) parameter to prevent Next.js from looking for a '/lint' folder.
+      run: npx next lint .
 
     - name: Build
       run: npm run build
