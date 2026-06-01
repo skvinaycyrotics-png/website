@@ -75,7 +75,8 @@ export default function SoftwareDevelopmentPage() {
               Key Features & Benefits
             </h2>
             <div className="mt-8 grid md:grid-cols-2 gap-8">
-              {serviceData.features.map((feature) => (
+              {/* FIXED: serviceData changed to service below to prevent prerender errors */}
+              {service.features.map((feature) => (
                 <div key={feature.title} className="flex gap-4">
                   <div className="flex-shrink-0">
                     <feature.icon className="h-8 w-8 text-primary" />
