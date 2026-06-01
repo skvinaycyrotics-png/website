@@ -13,6 +13,8 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+// FIXED: Added missing Button component imports below
+import { Button } from '@/components/ui/button';
 
 const stats = [
   { 
