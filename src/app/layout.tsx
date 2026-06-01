@@ -4,6 +4,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ClientToaster } from '@/components/client-toaster';
 import { LayoutClient } from '@/components/layout-client';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { Inter, Space_Grotesk } from 'next/font/google';
 
@@ -84,6 +85,19 @@ export const metadata: Metadata = {
     'DevOps Solutions',
     'Enterprise SaaS',
     'Digital Transformation',
+    // Targeted Intent Commercial Keywords Added Here:
+    'Data center builders',
+    'Data center modifications',
+    'data center transformations',
+    'Network builders',
+    'Network modifications',
+    'Network transformations',
+    'Audio Visuals center builders',
+    'Audio Visuals modifications',
+    'Audio Visuals transformations',
+    'Software builders',
+    'Software modifications',
+    'Software transformations'
   ],
 
   category: 'technology',
@@ -178,6 +192,10 @@ export default function RootLayout({
 
           <ClientToaster />
         </ThemeProvider>
+        
+        {/* Google Analytics Script Delivery Platform */}
+        {/* Replace G-XXXXXXXXXX with your actual Google tracking token inside your dashboard settings */}
+        <GoogleAnalytics gaId="G-XXXXXXXXXX" />
       </body>
     </html>
   );
