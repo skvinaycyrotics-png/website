@@ -135,12 +135,13 @@ export default function ContactClient() {
                     className="w-full h-[180px] rounded-xl relative overflow-hidden bg-zinc-950 flex flex-col items-center justify-center p-4 text-center cursor-pointer hover:opacity-95 transition-all group"
                     onClick={() => window.open(mapUrl, '_blank', 'noopener,noreferrer')}
                   >
-                    {/* Pure Local CSS Abstract Mapping Grid Pattern */}
-                    <div className="absolute inset-0 opacity-20 pointer-events-none" 
-                         style={{ 
-                           backgroundImage: 'radial-gradient(circle, #3b82f6 1.5px, transparent 1.5px), linear-gradient(to right, #334155 1px, transparent 1px), linear-gradient(to bottom, #334155 1px, transparent 1px)',
-                           backgroundSize: '24px 24px, 48px 48px, 48px 48px'
-                         }} 
+                    {/* Fixed inline CSS properties with clean string syntax */}
+                    <div 
+                      className="absolute inset-0 opacity-20 pointer-events-none" 
+                      style={{ 
+                        backgroundImage: 'radial-gradient(circle, #3b82f6 1.5px, transparent 1.5px), linear-gradient(to right, #334155 1px, transparent 1px), linear-gradient(to bottom, #334155 1px, transparent 1px)',
+                        backgroundSize: '24px 24px, 48px 48px, 48px 48px'
+                      }} 
                     />
                     
                     {/* Subtle Radar Wave Animation */}
@@ -190,5 +191,3 @@ export default function ContactClient() {
             </AnimatedSection>
           </div>
         </div>
-      </section>
-    </main>
