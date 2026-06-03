@@ -1,9 +1,5 @@
 'use client';
 
-// ─────────────────────────────────────────────────────────────────────────────
-// All contact page UI — completely updated with a bulletproof local CSS map card
-// ─────────────────────────────────────────────────────────────────────────────
-
 import { Phone, Mail, MapPin, Send, Clock, Globe } from 'lucide-react';
 import ContactForms from './contact-forms';
 import { companyAddress } from '@/lib/constants';
@@ -15,10 +11,7 @@ export default function ContactClient() {
   const mapUrl = `https://google.com{encodeURIComponent(companyAddress.full)}`;
 
   return (
-    <main
-        className="w-full bg-transparent overflow-hidden"
-        role="main"
-    >   
+    <main className="w-full bg-transparent overflow-hidden" role="main">   
       {/* COMPACT HERO */}
       <PageHero
         title="Get in Touch"
@@ -129,13 +122,12 @@ export default function ContactClient() {
                   </div>
                 </div>
 
-                {/* BULLETPROOF LOCAL INTERACTIVE MAP CARD (No External Connections) */}
+                {/* BULLETPROOF LOCAL INTERACTIVE MAP CARD */}
                 <div className="overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 space-y-4 shadow-sm">
                   <div 
                     className="w-full h-[180px] rounded-xl relative overflow-hidden bg-zinc-950 flex flex-col items-center justify-center p-4 text-center cursor-pointer hover:opacity-95 transition-all group"
                     onClick={() => window.open(mapUrl, '_blank', 'noopener,noreferrer')}
                   >
-                    {/* Fixed inline CSS properties with clean string syntax */}
                     <div 
                       className="absolute inset-0 opacity-20 pointer-events-none" 
                       style={{ 
@@ -144,7 +136,6 @@ export default function ContactClient() {
                       }} 
                     />
                     
-                    {/* Subtle Radar Wave Animation */}
                     <div className="absolute h-24 w-24 rounded-full bg-brand/20 animate-ping pointer-events-none" />
 
                     <div className="bg-brand text-white p-3.5 rounded-full shadow-xl relative z-10 group-hover:scale-110 transition-transform">
@@ -191,3 +182,7 @@ export default function ContactClient() {
             </AnimatedSection>
           </div>
         </div>
+      </section>
+    </main>
+  );
+}
