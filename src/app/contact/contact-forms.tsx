@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, useFormStatus } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Card,
   CardContent,
@@ -49,7 +49,6 @@ export default function ContactForms() {
       city: formData.get('city'),
     };
 
-    // Client-side validation fallback
     if (!data.firstName || !data.lastName || !data.email || !data.phone) {
       setErrors({
         firstName: !data.firstName ? 'First name is required' : '',
@@ -62,12 +61,12 @@ export default function ContactForms() {
     }
 
     try {
-      // REPLACE THIS URL with your actual API endpoint (e.g., Formspree, Resend API endpoint, etc.)
+      // Send data to your form processing API endpoint
       const response = await fetch('https://web3forms.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: "YOUR_ACCESS_KEY_HERE", // If using Web3Forms / Formspree
+          access_key: "YOUR_ACCESS_KEY_HERE",
           ...data
         }),
       });
