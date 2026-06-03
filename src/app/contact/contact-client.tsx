@@ -1,8 +1,7 @@
 'use client';
 
 // ─────────────────────────────────────────────────────────────────────────────
-// All contact page UI — moved here from page.tsx so that page.tsx can be a
-// server component and export metadata. No logic changes from original.
+// All contact page UI — completely updated with a bulletproof local CSS map card
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { Phone, Mail, MapPin, Send, Clock, Globe } from 'lucide-react';
@@ -13,7 +12,7 @@ import { PageHero } from '@/components/ui-patterns/page-hero';
 import { Button } from '@/components/ui/button';
 
 export default function ContactClient() {
-  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress.full)}`;
+  const mapUrl = `https://google.com{encodeURIComponent(companyAddress.full)}`;
 
   return (
     <main
@@ -130,26 +129,38 @@ export default function ContactClient() {
                   </div>
                 </div>
 
-                {/* NON-BLOCKING INTERACTIVE MAP CARD (Replaces the broken iframe block) */}
+                {/* BULLETPROOF LOCAL INTERACTIVE MAP CARD (No External Connections) */}
                 <div className="overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 space-y-4 shadow-sm">
                   <div 
-                    className="w-full h-[180px] rounded-xl relative overflow-hidden bg-cover bg-center border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center p-4 text-center cursor-pointer hover:opacity-90 transition-opacity"
-                    style={{ 
-                      backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('https://unsplash.com')` 
-                    }}
+                    className="w-full h-[180px] rounded-xl relative overflow-hidden bg-zinc-950 flex flex-col items-center justify-center p-4 text-center cursor-pointer hover:opacity-95 transition-all group"
                     onClick={() => window.open(mapUrl, '_blank', 'noopener,noreferrer')}
                   >
-                    <div className="bg-brand text-white p-3 rounded-full shadow-lg animate-bounce">
-                      <MapPin className="h-5 w-5" />
+                    {/* Pure Local CSS Abstract Mapping Grid Pattern */}
+                    <div className="absolute inset-0 opacity-20 pointer-events-none" 
+                         style={{ 
+                           backgroundImage: 'radial-gradient(circle, #3b82f6 1.5px, transparent 1.5px), linear-gradient(to right, #334155 1px, transparent 1px), linear-gradient(to bottom, #334155 1px, transparent 1px)',
+                           backgroundSize: '24px 24px, 48px 48px, 48px 48px'
+                         }} 
+                    />
+                    
+                    {/* Subtle Radar Wave Animation */}
+                    <div className="absolute h-24 w-24 rounded-full bg-brand/20 animate-ping pointer-events-none" />
+
+                    <div className="bg-brand text-white p-3.5 rounded-full shadow-xl relative z-10 group-hover:scale-110 transition-transform">
+                      <MapPin className="h-6 w-6 text-white fill-white/20" />
                     </div>
-                    <p className="text-xs text-slate-300 font-medium mt-3 max-w-[240px]">
+                    
+                    <p className="text-xs text-zinc-200 font-semibold mt-4 relative z-10 tracking-wide drop-shadow-md">
                       {companyAddress.line2 || 'Molarband Extension, New Delhi'}
+                    </p>
+                    <p className="text-[10px] text-zinc-400 mt-1 relative z-10 max-w-[200px] font-medium">
+                      Click card to open navigation
                     </p>
                   </div>
 
                   <div className="space-y-2">
                     <p className="text-[11px] text-muted-foreground leading-relaxed">
-                      Our location is verified on Google Platforms. Click below to view real-time traffic and routing maps safely on your device.
+                      Our corporate headquarters location is fully verified. Select the connection link below to pull active mapping routes securely.
                     </p>
                     <Button 
                       variant="outline" 
@@ -181,5 +192,3 @@ export default function ContactClient() {
         </div>
       </section>
     </main>
-  );
-}
