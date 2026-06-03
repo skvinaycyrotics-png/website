@@ -21,7 +21,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 // Single source of truth for your website URL
-export const SITE_URL = 'https://www.cyrotics.in';
+export const SITE_URL = 'https://cyrotics.in';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -43,6 +43,11 @@ export const metadata: Metadata = {
       url: SITE_URL,
     },
   ],
+
+  // Injects strict security policy flags directly to fix blocked maps / iframes
+  other: {
+    'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src 'self' https://www.google.com https://maps.google.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline';",
+  },
 
   creator: 'Cyrotics',
   publisher: 'Cyrotics',
@@ -168,7 +173,7 @@ export default function RootLayout({
           <ClientToaster />
         </ThemeProvider>
 
-        <GoogleAnalytics gaId="G-XXXXXXXXXX" />
+        <GoogleAnalytics gaId="G-MH5RDM6NCY" />
       </body>
     </html>
   );
