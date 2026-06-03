@@ -10,9 +10,9 @@ import ContactForms from './contact-forms';
 import { companyAddress } from '@/lib/constants';
 import { AnimatedSection } from '@/components/ui-patterns/animated-section';
 import { PageHero } from '@/components/ui-patterns/page-hero';
+import { Button } from '@/components/ui/button';
 
 export default function ContactClient() {
-  const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(companyAddress.full)}&t=&z=14&ie=UTF8&iwloc=&output=embed`;
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress.full)}`;
 
   return (
@@ -130,18 +130,36 @@ export default function ContactClient() {
                   </div>
                 </div>
 
-                {/* MAP */}
-                <div className="overflow-hidden rounded-2xl shadow-md border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900">
-                  <iframe
-                    title="Cyrotics Office Location Map"
-                    width="100%"
-                    height="220"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                    sandbox="allow-scripts allow-same-origin allow-popups"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    src={mapEmbedUrl}
-                  />
+                {/* NON-BLOCKING INTERACTIVE MAP CARD (Replaces the broken iframe block) */}
+                <div className="overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 space-y-4 shadow-sm">
+                  <div 
+                    className="w-full h-[180px] rounded-xl relative overflow-hidden bg-cover bg-center border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center p-4 text-center cursor-pointer hover:opacity-90 transition-opacity"
+                    style={{ 
+                      backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('https://unsplash.com')` 
+                    }}
+                    onClick={() => window.open(mapUrl, '_blank', 'noopener,noreferrer')}
+                  >
+                    <div className="bg-brand text-white p-3 rounded-full shadow-lg animate-bounce">
+                      <MapPin className="h-5 w-5" />
+                    </div>
+                    <p className="text-xs text-slate-300 font-medium mt-3 max-w-[240px]">
+                      {companyAddress.line2 || 'Molarband Extension, New Delhi'}
+                    </p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <p className="text-[11px] text-muted-foreground leading-relaxed">
+                      Our location is verified on Google Platforms. Click below to view real-time traffic and routing maps safely on your device.
+                    </p>
+                    <Button 
+                      variant="outline" 
+                      className="w-full text-xs font-semibold py-4 flex items-center justify-center gap-2 border-zinc-200 dark:border-zinc-800 bg-transparent text-foreground hover:bg-zinc-50 dark:hover:bg-zinc-800"
+                      onClick={() => window.open(mapUrl, '_blank', 'noopener,noreferrer')}
+                    >
+                      <MapPin className="h-3.5 w-3.5 text-brand" />
+                      Open in Google Maps
+                    </Button>
+                  </div>
                 </div>
 
                 {/* QUICK INFO */}
