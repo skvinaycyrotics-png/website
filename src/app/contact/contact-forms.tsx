@@ -1,167 +1,374 @@
+
 'use client';
 
-// ─────────────────────────────────────────────────────────────────────────────
-// All contact page UI — moved here from page.tsx so that page.tsx can be a
-// server component and export metadata. No logic changes from original.
-// ─────────────────────────────────────────────────────────────────────────────
+import { useFormStatus } from 'react-dom';
+import { useEffect, useRef, useState, useActionState } from 'react';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Checkbox } from '@/components/ui/checkbox';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { submitContactForm } from '@/app/actions';
+import { useToast } from '@/hooks/use-toast';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Mail, Loader2, ChevronDown, User, MailIcon, Phone, Building, Briefcase, MapPin, Code, DollarSign, Calendar, Clock, Info, Shield, Check, List, HelpCircle, HardHat } from 'lucide-react';
+import {
+  CONTACT_SUBJECTS,
+  DEPARTMENTS,
+  PROJECT_TYPES,
+  BUDGET_RANGES,
+  PRIORITY_LEVELS,
+  CONTACT_METHODS,
+  CONTACT_TIMES,
+  HEAR_ABOUT_US_OPTIONS,
+  SALUTATIONS,
+  COUNTRY_CODES,
+} from '@/lib/constants';
 
-import { Phone, Mail, MapPin, Send, Clock, Globe } from 'lucide-react';
-import ContactForms from './contact-forms';
-import { companyAddress } from '@/lib/constants';
-import { AnimatedSection } from '@/components/ui-patterns/animated-section';
-import { PageHero } from '@/components/ui-patterns/page-hero';
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <Button type="submit" disabled={pending} className="w-full text-lg py-6">
+      {pending ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Submitting...</> : 'Schedule a Consultation'}
+    </Button>
+  );
+}
 
-export default function ContactClient() {
-  const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(companyAddress.full)}&t=&z=14&ie=UTF8&iwloc=&output=embed`;
-  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyAddress.full)}`;
+export default function ContactForms() {
+  const initialState = { message: null, errors: {}, type: '', mailto: null };
+  const [state, dispatch] = useActionState(submitContactForm, initialState);
+  const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
+  const [showMailto, setShowMailto] = useState(false);
+  const [subject, setSubject] = useState('');
+
+  const showProjectDetails = subject === 'Sales / New Project' || subject === 'Technical Support';
+
+  useEffect(() => {
+    if (state.type === 'success' && state.mailto) {
+      toast({
+        title: 'Ready to Send!',
+        description: state.message,
+      });
+      setShowMailto(true);
+      formRef.current?.reset();
+      setSubject('');
+    } else if (state.type === 'error' && state.message && !state.errors) {
+       toast({
+        variant: 'destructive',
+        title: 'Error',
+        description: state.message,
+      });
+      setShowMailto(false);
+    } else {
+      setShowMailto(false);
+    }
+  }, [state, toast]);
 
   return (
-    <main
-        className="w-full bg-transparent overflow-hidden"
-        role="main"
-    >   
-      {/* COMPACT HERO */}
-      <PageHero
-        title="Get in Touch"
-        description="We're here to answer your questions and help you find the right technology solution for your enterprise."
-        icon={Send}
-        heroImage="/bg-tech-v2.png"
-      />
-
-      {/* TWO-COLUMN CONTACT LAYOUT */}
-      <section className="pb-16 sm:pb-20 relative">
-        <div className="container px-4 sm:px-6">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-
-            {/* LEFT: FORM */}
-            <AnimatedSection
-              className="lg:col-span-7 xl:col-span-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-            >
-              <div className="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg border border-zinc-200 dark:border-zinc-800 p-5 sm:p-8">
-                <ContactForms />
-              </div>
-            </AnimatedSection>
-
-            {/* RIGHT: INFO + MAP (Sticky Sidebar) */}
-            <AnimatedSection
-              className="lg:col-span-5 xl:col-span-4 lg:sticky lg:top-24"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.15 }}
-            >
-              <div className="space-y-5">
-                {/* CONTACT INFO CARD */}
-                <div className="bg-brand text-white rounded-2xl shadow-lg p-6 overflow-hidden relative">
-                  <div className="absolute -right-6 -top-6 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-                  <h2 className="font-headline text-lg font-bold mb-5 relative z-10">
-                    Contact Information
-                  </h2>
-
-                  <div className="space-y-4 relative z-10">
-                    {/* Address */}
-                    <a
-                      href={mapUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Open Cyrotics office location in Google Maps"
-                      className="flex items-start gap-3 group"
-                    >
-                      <div className="p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors shrink-0 mt-0.5">
-                        <MapPin className="h-4 w-4 text-white" />
-                      </div>
-                      <div className="text-sm">
-                        <p className="text-white/70 font-medium text-xs mb-0.5">Corporate Office</p>
-                        <p className="text-white font-semibold leading-snug group-hover:underline decoration-white/30 underline-offset-2">
-                          {companyAddress.name}, {companyAddress.line1}, {companyAddress.line2},{' '}
-                          {companyAddress.cityStateZip}
-                        </p>
-                      </div>
-                    </a>
-
-                    {/* Phone */}
-                    <a 
-                        href="tel:+919999295636" 
-                        aria-label="Call Cyrotics"
-                        className="flex items-center gap-3 group"
-                    >
-                      <div className="p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors shrink-0">
-                        <Phone className="h-4 w-4 text-white" />
-                      </div>
-                      <div className="text-sm">
-                        <p className="text-white/70 font-medium text-xs mb-0.5">Phone</p>
-                        <span className="text-white font-semibold group-hover:underline decoration-white/30 underline-offset-2">
-                          +91 99992 95636
-                        </span>
-                      </div>
-                    </a>
-
-                    {/* Email */}
-                    <a 
-                        href="mailto:info@cyrotics.in?subject=Business%20Inquiry%20-%20Cyrotics" 
-                        aria-label="Email Cyrotics"
-                        className="flex items-center gap-3 group"
-                    >
-                      <div className="p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors shrink-0">
-                        <Mail className="h-4 w-4 text-white" />
-                      </div>
-                      <div className="text-sm">
-                        <p className="text-white/70 font-medium text-xs mb-0.5">Email</p>
-                        <span className="text-white font-semibold group-hover:underline decoration-white/30 underline-offset-2">
-                          info@cyrotics.in
-                        </span>
-                      </div>
-                    </a>
-
-                    {/* Business Hours */}
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-white/10 rounded-lg shrink-0">
-                        <Clock className="h-4 w-4 text-white" />
-                      </div>
-                      <div className="text-sm">
-                        <p className="text-white/70 font-medium text-xs mb-0.5">Business Hours</p>
-                        <span className="text-white font-semibold">
-                          Mon – Sat, 9:00 AM – 6:00 PM
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* MAP */}
-                <div className="overflow-hidden rounded-2xl shadow-md border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900">
-                  <iframe
-                    title="Cyrotics Office Location Map"
-                    width="100%"
-                    height="220"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                    sandbox="allow-scripts allow-same-origin allow-popups"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    src={mapEmbedUrl}
-                  />
-                </div>
-
-                {/* QUICK INFO */}
-                <div className="bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 shadow-sm">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Globe className="h-4 w-4 text-brand" />
-                    <h4 className="font-headline text-sm font-bold text-foreground">
-                      Pan-India Delivery
-                    </h4>
-                  </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    We execute complex IT infrastructure projects across India with consistent
-                    quality and on-time delivery.
-                  </p>
+    <Card className="w-full">
+      <CardHeader>
+        <CardTitle className="text-3xl font-headline">Let's Build Something Remarkable</CardTitle>
+        <CardDescription className="text-base text-muted-foreground pt-4 space-y-4">
+          <p>
+            Great infrastructure doesn't happen by accident. It's the result of strategic 
+            planning, technical precision, and a team that's fully invested in your success.
+          </p>
+          <p>
+            At CYROTICS, we partner with organizations across India to design, deploy, and 
+            optimize infrastructure that powers their most critical operations. From data 
+            center architecture to enterprise-wide network solutions, we bring certified 
+            expertise, proven methodologies, and an unwavering commitment to on-time delivery.
+          </p>
+          <p>
+            Have a project in mind? Questions about our capabilities? Or simply want to 
+            explore what's possible? Our team is ready to listen, advise, and deliver.
+          </p>
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <form ref={formRef} action={dispatch} className="space-y-8">
+          
+          {/* User Information */}
+          <div className="space-y-6 border-b pb-8">
+             <h3 className="text-xl font-semibold flex items-center"><User className="mr-2" /> Schedule a Consultation</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="salutation">Salutation</Label>
+                  <Select name="salutation">
+                    <SelectTrigger id="salutation"><SelectValue placeholder="Select..." /></SelectTrigger>
+                    <SelectContent>
+                      {SALUTATIONS.map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
-            </AnimatedSection>
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="firstName">First Name *</Label>
+                  <Input id="firstName" name="firstName" required />
+                  {state.errors?.firstName && <p className="text-sm text-destructive">{state.errors.firstName[0]}</p>}
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="lastName">Last Name *</Label>
+                  <Input id="lastName" name="lastName" required />
+                   {state.errors?.lastName && <p className="text-sm text-destructive">{state.errors.lastName[0]}</p>}
+                </div>
+             </div>
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email *</Label>
+                  <Input id="email" name="email" type="email" required />
+                  {state.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="phone">Phone Number *</Label>
+                   <div className="flex gap-2">
+                    <Select name="countryCode" required defaultValue="+91">
+                      <SelectTrigger className="w-[120px]">
+                        <SelectValue placeholder="Code" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {COUNTRY_CODES.map(code => <SelectItem key={code} value={code}>{code}</SelectItem>)}
+                      </SelectContent>
+                    </Select>
+                    <Input id="phone" name="phone" required maxLength={10} placeholder="10-digit number" />
+                  </div>
+                  {state.errors?.countryCode && <p className="text-sm text-destructive">{state.errors.countryCode[0]}</p>}
+                   {state.errors?.phone && <p className="text-sm text-destructive">{state.errors.phone[0]}</p>}
+                </div>
+             </div>
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="company">Company Name</Label>
+                  <Input id="company" name="company" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="designation">Designation</Label>
+                  <Input id="designation" name="designation" />
+                </div>
+             </div>
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="country">Country *</Label>
+                  <Input id="country" name="country" required />
+                  {state.errors?.country && <p className="text-sm text-destructive">{state.errors.country[0]}</p>}
+                </div>
+                 <div className="space-y-2">
+                  <Label htmlFor="city">State / City *</Label>
+                  <Input id="city" name="city" required />
+                   {state.errors?.city && <p className="text-sm text-destructive">{state.errors.city[0]}</p>}
+                </div>
+             </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="address">Street / Address</Label>
+                  <Input id="address" name="address" />
+                </div>
+                 <div className="space-y-2">
+                  <Label htmlFor="pincode">Pin Code</Label>
+                  <Input id="pincode" name="pincode" />
+                </div>
+             </div>
           </div>
-        </div>
-      </section>
-    </main>
+
+           {/* Contact Purpose & Routing */}
+          <div className="space-y-6 border-b pb-8">
+             <h3 className="text-xl font-semibold flex items-center"><HelpCircle className="mr-2" /> Inquiry Details</h3>
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="subject">Subject *</Label>
+                  <Select name="subject" onValueChange={setSubject} required>
+                    <SelectTrigger id="subject"><SelectValue placeholder="Select subject..." /></SelectTrigger>
+                    <SelectContent>
+                      {CONTACT_SUBJECTS.map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}
+                    </SelectContent>
+                  </Select>
+                   {state.errors?.subject && <p className="text-sm text-destructive">{state.errors.subject[0]}</p>}
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="department">Contact Department</Label>
+                  <Select name="department">
+                    <SelectTrigger id="department"><SelectValue placeholder="Select department..." /></SelectTrigger>
+                    <SelectContent>
+                       {DEPARTMENTS.map(d => <SelectItem key={d} value={d}>{d}</SelectItem>)}
+                    </SelectContent>
+                  </Select>
+                </div>
+             </div>
+          </div>
+          
+          {/* Project/Service Details (Conditional) */}
+          {showProjectDetails && (
+            <div className="space-y-6 border-b pb-8">
+               <h3 className="text-xl font-semibold flex items-center"><HardHat className="mr-2" /> Project / Service Details</h3>
+                <div className="space-y-2">
+                  <Label>Project Type</Label>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <Button variant="outline" className="w-full justify-between">
+                        Select Project Types <ChevronDown className="ml-2 h-4 w-4" />
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-[--radix-popover-trigger-width] max-h-[--radix-popover-content-available-height] p-0">
+                      <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {PROJECT_TYPES.map(type => (
+                           <div key={type} className="flex items-center space-x-2">
+                            <Checkbox id={`type-${type}`} name="projectType" value={type} />
+                            <Label htmlFor={`type-${type}`} className="font-normal text-sm">{type}</Label>
+                          </div>
+                        ))}
+                      </div>
+                    </PopoverContent>
+                  </Popover>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="projectLocation">Project Location</Label>
+                    <Input id="projectLocation" name="projectLocation" />
+                  </div>
+                   <div className="space-y-2">
+                      <Label htmlFor="projectBudget">Project Budget Range</Label>
+                      <Select name="projectBudget">
+                        <SelectTrigger id="projectBudget"><SelectValue placeholder="Select range..." /></SelectTrigger>
+                        <SelectContent>
+                          {BUDGET_RANGES.map(r => <SelectItem key={r} value={r}>{r}</SelectItem>)}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                </div>
+            </div>
+          )}
+
+           {/* Priority & Preferences */}
+           <div className="space-y-6 border-b pb-8">
+              <h3 className="text-xl font-semibold flex items-center"><List className="mr-2" /> Preferences</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div className="space-y-2">
+                  <Label>Priority</Label>
+                   <RadioGroup name="priority" defaultValue="Normal" className="space-y-2 pt-2">
+                    {PRIORITY_LEVELS.map(level => (
+                       <div key={level} className="flex items-center space-x-2">
+                        <RadioGroupItem value={level} id={`p-${level}`} />
+                        <Label htmlFor={`p-${level}`} className="font-normal">{level}</Label>
+                      </div>
+                    ))}
+                  </RadioGroup>
+                </div>
+                 <div className="space-y-2">
+                    <Label htmlFor="contactMethod">Preferred Contact Method</Label>
+                    <Select name="contactMethod">
+                      <SelectTrigger id="contactMethod"><SelectValue placeholder="Select..." /></SelectTrigger>
+                      <SelectContent>
+                        {CONTACT_METHODS.map(m => <SelectItem key={m} value={m}>{m}</SelectItem>)}
+                      </SelectContent>
+                    </Select>
+                </div>
+                 <div className="space-y-2">
+                    <Label htmlFor="contactTime">Preferred Time to Contact</Label>
+                    <Select name="contactTime">
+                      <SelectTrigger id="contactTime"><SelectValue placeholder="Select..." /></SelectTrigger>
+                      <SelectContent>
+                        {CONTACT_TIMES.map(t => <SelectItem key={t} value={t}>{t}</SelectItem>)}
+                      </SelectContent>
+                    </Select>
+                </div>
+              </div>
+           </div>
+
+          {/* Additional Info */}
+          <div className="space-y-6 border-b pb-8">
+             <h3 className="text-xl font-semibold flex items-center"><Info className="mr-2" /> Additional Information</h3>
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                    <Label htmlFor="howDidYouHear">How Did You Hear About Us?</Label>
+                    <Select name="howDidYouHear">
+                      <SelectTrigger id="howDidYouHear"><SelectValue placeholder="Select..." /></SelectTrigger>
+                      <SelectContent>
+                        {HEAR_ABOUT_US_OPTIONS.map(o => <SelectItem key={o} value={o}>{o}</SelectItem>)}
+                      </SelectContent>
+                    </Select>
+                </div>
+                <div className="space-y-2 pt-6">
+                  <div className="flex items-center space-x-2">
+                      <Checkbox id="nda" name="nda" />
+                      <Label htmlFor="nda" className="font-normal">Request NDA before project discussion</Label>
+                  </div>
+                </div>
+             </div>
+
+             <div className="space-y-2">
+                <Label htmlFor="message">Message / Description *</Label>
+                <Textarea id="message" name="message" required rows={6} placeholder="Please describe your requirements in detail..." />
+                 {state.errors?.message && <p className="text-sm text-destructive">{state.errors.message[0]}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="attachment">Attachments (e.g., BOQ, Drawings, RFP)</Label>
+                <Input id="attachment" name="attachment" type="file" multiple className="pt-2"/>
+                 <p className="text-xs text-muted-foreground">Max 20MB. Allowed formats: PDF, DOCX, XLSX, JPG, PNG, DWG.</p>
+              </div>
+          </div>
+          
+           {/* Security & Compliance */}
+           <div className="space-y-6">
+              <h3 className="text-xl font-semibold flex items-center"><Shield className="mr-2" /> Consent & Security</h3>
+              <div className="space-y-2">
+                  <div className="flex items-start space-x-2">
+                      <Checkbox id="data-processing" name="dataProcessingConsent" required />
+                      <Label htmlFor="data-processing" className="font-normal text-sm">
+                        I agree that my data may be processed for the purpose of establishing contact. *
+                      </Label>
+                  </div>
+                   {state.errors?.dataProcessingConsent && <p className="text-sm text-destructive">{state.errors.dataProcessingConsent[0]}</p>}
+              </div>
+               <div className="flex items-start space-x-2">
+                  <Checkbox id="privacy-policy" name="privacyPolicyConsent" required />
+                  <Label htmlFor="privacy-policy" className="font-normal text-sm">
+                   I have read and understood the <a href="/privacy-policy" target="_blank" className="underline hover:text-primary">Privacy Policy</a>. *
+                  </Label>
+              </div>
+               {state.errors?.privacyPolicyConsent && <p className="text-sm text-destructive">{state.errors.privacyPolicyConsent[0]}</p>}
+              <div className="flex items-center space-x-2">
+                  <Checkbox id="newsletter" name="newsletter" />
+                  <Label htmlFor="newsletter" className="font-normal text-sm">Subscribe to newsletter</Label>
+              </div>
+              {/* Captcha would be implemented here */}
+           </div>
+
+
+          {showMailto && state.mailto ? (
+            <Alert className="mt-6 border-green-500 bg-green-50">
+              <Mail className="h-4 w-4 !text-green-600" />
+              <AlertTitle className="text-green-800">Click to Send Email</AlertTitle>
+              <AlertDescription className="text-green-700">
+                <a href={state.mailto} className="font-semibold underline">
+                  Open your email client to send the message.
+                </a>
+              </AlertDescription>
+            </Alert>
+          ) : (
+            <SubmitButton />
+          )}
+        </form>
+      </CardContent>
+    </Card>
   );
 }
