@@ -1,49 +1,101 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-type AnimatedCounterProps = {
+interface AnimatedCounterProps {
   to: number;
   duration?: number;
-};
+  from?: number;
+  className?: string;
+}
 
 export default function AnimatedCounter({
   to,
-  duration = 1500,
+  duration = 2000,
+  from = 0,
+  className,
 }: AnimatedCounterProps) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
+  const [count, setCount] = useState(from);
+
+  const counterRef = useRef<HTMLSpanElement>(null);
+  const hasAnimated = useRef(false);
+  const animationFrameId = useRef<number | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          let start = 0;
-          const end = to;
-          const increment = end / (duration / 16); // 60fps
+    const element = counterRef.current;
 
-          const animate = () => {
-            start += increment;
-            if (start < end) {
-              setCount(Math.ceil(start));
-              requestAnimationFrame(animate);
-            } else {
-              setCount(end);
-            }
-          };
-          animate();
+    if (!element) return;
+
+    // Respect user's reduced motion preference
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    if (prefersReducedMotion) {
+      setCount(to);
+      return;
+    }
+
+    const startAnimation = () => {
+      if (hasAnimated.current) return;
+
+      hasAnimated.current = true;
+
+      const startTime = performance.now();
+      const range = to - from;
+
+      const animate = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Smooth ease-out cubic animation
+        const eased = 1 - Math.pow(1 - progress, 3);
+
+        const currentValue = Math.round(from + range * eased);
+
+        setCount(currentValue);
+
+        if (progress < 1) {
+          animationFrameId.current = requestAnimationFrame(animate);
+        } else {
+          setCount(to);
+        }
+      };
+
+      animationFrameId.current = requestAnimationFrame(animate);
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          startAnimation();
           observer.disconnect();
         }
       },
-      { threshold: 0.5 }
+      {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px',
+      }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(element);
 
-    return () => observer.disconnect();
-  }, [to, duration]);
+    return () => {
+      observer.disconnect();
 
-  return <span ref={ref}>{Math.floor(count)}</span>;
+      if (animationFrameId.current !== null) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
+    };
+  }, [to, from, duration]);
+
+  return (
+    <span
+      ref={counterRef}
+      className={className}
+      aria-label={`${count}`}
+    >
+      {count}
+    </span>
+  );
 }
