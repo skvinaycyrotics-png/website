@@ -20,13 +20,15 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 });
 
+// Single source of truth for your website URL
+export const SITE_URL = 'https://www.cyrotics.in';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.cyrotics.in'),
+  metadataBase: new URL(SITE_URL),
 
   title: {
     default:
       'Cyrotics — AI Automation, Cybersecurity & Enterprise Technology Solutions',
-
     template: '%s | Cyrotics',
   },
 
@@ -38,74 +40,51 @@ export const metadata: Metadata = {
   authors: [
     {
       name: 'Cyrotics',
-      url: 'https://www.cyrotics.in',
+      url: SITE_URL,
     },
   ],
 
   creator: 'Cyrotics',
-
   publisher: 'Cyrotics',
-
   generator: 'Next.js',
 
   referrer: 'origin-when-cross-origin',
 
+  category: 'technology',
+
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+
   keywords: [
     'Cyrotics',
+    'Enterprise IT Solutions India',
     'AI Automation',
-    'Enterprise AI Solutions',
-    'Cybersecurity',
-    'Cloud Transformation',
-    'IT Infrastructure',
-    'Data Center Solutions',
-    'Networking Solutions',
-    'CCTV Solutions',
-    'Access Control',
-    'Cloud Services',
-    'Fire Alarm Systems',
-    'System Integrator',
-    'BMS Solutions',
-    'PA Systems',
+    'Cybersecurity Solutions',
     'Data Center Infrastructure',
-    'Cloud & Hybrid IT Solutions',
-    'Scalable Storage Architecture',
-    'NextGen Cybersecurity Shield',
-    'Audio-Visual & Communication',
-    'IT Strategy & Advisory',
-    'Unified Communications',
-    'Security & Surveillance',
-    'Managed Services',
-    'Software Development',
-    'AI & ML Solutions',
-    'Smart Factory',
-    'Smart Building',
-    'Smart City Infrastructure',
-    'Renewable Energy',
-    'Next.js Development',
-    'DevOps Solutions',
-    'Enterprise SaaS',
+    'Cloud Transformation',
+    'Networking Solutions',
+    'CCTV Surveillance',
+    'System Integrator Delhi',
+    'IT Infrastructure India',
+    'Cloud Solutions',
     'Digital Transformation',
-    // Targeted Intent Commercial Keywords Added Here:
-    'Data center builders',
-    'Data center modifications',
-    'data center transformations',
-    'Network builders',
-    'Network modifications',
-    'Network transformations',
-    'Audio Visuals center builders',
-    'Audio Visuals modifications',
-    'Audio Visuals transformations',
-    'Software builders',
-    'Software modifications',
-    'Software transformations'
+    'Smart Building Solutions',
+    'DevOps Solutions',
+    'Software Development',
+    'Enterprise AI',
   ],
-
-  category: 'technology',
 
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
     apple: '/favicon.ico',
+  },
+
+  alternates: {
+    canonical: SITE_URL,
   },
 
   openGraph: {
@@ -115,22 +94,22 @@ export const metadata: Metadata = {
     description:
       'Enterprise-grade AI automation, cybersecurity, cloud engineering, networking, surveillance, software development, and digital transformation solutions.',
 
-    url: 'https://www.cyrotics.in',
+    url: SITE_URL,
 
     siteName: 'Cyrotics',
 
+    locale: 'en_IN',
+
+    type: 'website',
+
     images: [
       {
-        url: '/og-image.png',
+        url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: 'Cyrotics Technologies',
       },
     ],
-
-    locale: 'en_US',
-
-    type: 'website',
   },
 
   twitter: {
@@ -142,7 +121,7 @@ export const metadata: Metadata = {
     description:
       'Enterprise-grade AI automation, cybersecurity, cloud engineering, networking, surveillance, software development, and digital transformation solutions.',
 
-    images: ['/og-image.png'],
+    images: [`${SITE_URL}/og-image.png`],
   },
 
   robots: {
@@ -158,12 +137,8 @@ export const metadata: Metadata = {
     },
   },
 
-  alternates: {
-    canonical: 'https://www.cyrotics.in',
-  },
-
   verification: {
-    google: 'ADD_YOUR_GOOGLE_SEARCH_CONSOLE_CODE',
+    google: '-gRx6BHQnvf8ZbgxD1FsGLkVXfzFiVwEqZ3-EVXyjLI',
   },
 };
 
@@ -192,9 +167,7 @@ export default function RootLayout({
 
           <ClientToaster />
         </ThemeProvider>
-        
-        {/* Google Analytics Script Delivery Platform */}
-        {/* Replace G-XXXXXXXXXX with your actual Google tracking token inside your dashboard settings */}
+
         <GoogleAnalytics gaId="G-XXXXXXXXXX" />
       </body>
     </html>
