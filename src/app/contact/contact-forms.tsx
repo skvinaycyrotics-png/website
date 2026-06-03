@@ -19,7 +19,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { submitContactForm } from '@/app/actions';
+import { submitContactForm } from '../actions';
 import { useToast } from '@/hooks/use-toast';
 import { User, Loader2 } from 'lucide-react';
 import {
