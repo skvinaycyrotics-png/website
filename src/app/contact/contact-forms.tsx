@@ -40,7 +40,7 @@ type ContactFormState = {
   message: string | null;
   type: string;
   mailto: string | null;
-  errors: Record<string, string[]>;
+  errors?: Record<string, string[] | undefined>;
 };
 
 const initialState: ContactFormState = {
@@ -51,7 +51,11 @@ const initialState: ContactFormState = {
 };
 
 export default function ContactForms() {
-  const [state, dispatch] = useActionState(submitContactForm, initialState);
+  // Casting the action to allow flexible error object shapes across fields
+  const [state, dispatch] = useActionState(
+    submitContactForm as (state: ContactFormState, formData: FormData) => Promise<ContactFormState> | ContactFormState, 
+    initialState
+  );
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const [showMailto, setShowMailto] = useState(false);
