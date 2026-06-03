@@ -1,7 +1,6 @@
 'use client';
 
-import { useFormStatus } from 'react-dom';
-import { useEffect, useRef, useState, useActionState } from 'react';
+import { useEffect, useRef, useState, useFormStatus } from 'react';
 import {
   Card,
   CardContent,
@@ -19,7 +18,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { submitContactForm } from '../actions';
 import { useToast } from '@/hooks/use-toast';
 import { User, Loader2 } from 'lucide-react';
 import {
@@ -27,60 +25,72 @@ import {
   COUNTRY_CODES,
 } from '@/lib/constants';
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <Button type="submit" disabled={pending} className="w-full text-lg py-6">
-      {pending ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Submitting...</> : 'Schedule a Consultation'}
-    </Button>
-  );
-}
-
-type ContactFormState = {
-  message: string | null;
-  type: string;
-  mailto: string | null;
-  errors?: Record<string, string[] | undefined>;
-};
-
-const initialState: ContactFormState = {
-  message: null,
-  type: '',
-  mailto: null,
-  errors: {},
-};
-
 export default function ContactForms() {
-  // Casting the action to allow flexible error object shapes across fields
-  const [state, dispatch] = useActionState(
-    submitContactForm as (state: ContactFormState, formData: FormData) => Promise<ContactFormState> | ContactFormState, 
-    initialState
-  );
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
-  const [showMailto, setShowMailto] = useState(false);
-  const [subject, setSubject] = useState('');
+  const [isPending, setIsPending] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
-  useEffect(() => {
-    if (state.type === 'success' && state.mailto) {
-      toast({
-        title: 'Ready to Send!',
-        description: state.message,
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsPending(true);
+    setErrors({});
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      countryCode: formData.get('countryCode'),
+      phone: formData.get('phone'),
+      company: formData.get('company'),
+      designation: formData.get('designation'),
+      country: formData.get('country'),
+      city: formData.get('city'),
+    };
+
+    // Client-side validation fallback
+    if (!data.firstName || !data.lastName || !data.email || !data.phone) {
+      setErrors({
+        firstName: !data.firstName ? 'First name is required' : '',
+        lastName: !data.lastName ? 'Last name is required' : '',
+        email: !data.email ? 'Email is required' : '',
+        phone: !data.phone ? 'Phone number is required' : '',
       });
-      setShowMailto(true);
-      formRef.current?.reset();
-      setSubject('');
-    } else if (state.type === 'error' && state.message && !state.errors) {
-       toast({
+      setIsPending(false);
+      return;
+    }
+
+    try {
+      // REPLACE THIS URL with your actual API endpoint (e.g., Formspree, Resend API endpoint, etc.)
+      const response = await fetch('https://web3forms.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: "YOUR_ACCESS_KEY_HERE", // If using Web3Forms / Formspree
+          ...data
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: 'Success!',
+          description: 'Thank you! Your consultation request has been received.',
+        });
+        formRef.current?.reset();
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (err) {
+      toast({
         variant: 'destructive',
         title: 'Error',
-        description: state.message,
+        description: 'Something went wrong. Please try again later.',
       });
-      setShowMailto(false);
-    } else {
-      setShowMailto(false);
+    } finally {
+      setIsPending(false);
     }
-  }, [state, toast]);
+  };
 
   return (
     <Card className="w-full">
@@ -91,22 +101,10 @@ export default function ContactForms() {
             Great infrastructure doesn't happen by accident. It's the result of strategic 
             planning, technical precision, and a team that's fully invested in your success.
           </p>
-          <p>
-            At CYROTICS, we partner with organizations across India to design, deploy, and 
-            optimize infrastructure that powers their most critical operations. From data 
-            center architecture to enterprise-wide network solutions, we bring certified 
-            expertise, proven methodologies, and an unwavering commitment to on-time delivery.
-          </p>
-          <p>
-            Have a project in mind? Questions about our capabilities? Or simply want to 
-            explore what's possible? Our team is ready to listen, advise, and deliver.
-          </p>
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form ref={formRef} action={dispatch} className="space-y-8">
-          
-          {/* User Information */}
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-8">
           <div className="space-y-6 border-b pb-8">
              <h3 className="text-xl font-semibold flex items-center"><User className="mr-2" /> Schedule a Consultation</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -124,19 +122,19 @@ export default function ContactForms() {
                 <div className="space-y-2">
                   <Label htmlFor="firstName">First Name *</Label>
                   <Input id="firstName" name="firstName" required />
-                  {state.errors?.firstName && <p className="text-sm text-destructive">{state.errors.firstName[0]}</p>}
+                  {errors.firstName && <p className="text-sm text-destructive">{errors.firstName}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="lastName">Last Name *</Label>
                   <Input id="lastName" name="lastName" required />
-                   {state.errors?.lastName && <p className="text-sm text-destructive">{state.errors.lastName[0]}</p>}
+                   {errors.lastName && <p className="text-sm text-destructive">{errors.lastName}</p>}
                 </div>
              </div>
              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="email">Email *</Label>
                   <Input id="email" name="email" type="email" required />
-                  {state.errors?.email && <p className="text-sm text-destructive">{state.errors.email[0]}</p>}
+                  {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number *</Label>
@@ -151,8 +149,7 @@ export default function ContactForms() {
                     </Select>
                     <Input id="phone" name="phone" required maxLength={10} placeholder="10-digit number" />
                   </div>
-                  {state.errors?.countryCode && <p className="text-sm text-destructive">{state.errors.countryCode[0]}</p>}
-                   {state.errors?.phone && <p className="text-sm text-destructive">{state.errors.phone[0]}</p>}
+                   {errors.phone && <p className="text-sm text-destructive">{errors.phone}</p>}
                 </div>
              </div>
              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -169,16 +166,16 @@ export default function ContactForms() {
                 <div className="space-y-2">
                   <Label htmlFor="country">Country *</Label>
                   <Input id="country" name="country" required />
-                  {state.errors?.country && <p className="text-sm text-destructive">{state.errors.country[0]}</p>}
                 </div>
                  <div className="space-y-2">
                   <Label htmlFor="city">State / City *</Label>
                   <Input id="city" name="city" required />
-                   {state.errors?.city && <p className="text-sm text-destructive">{state.errors.city[0]}</p>}
                 </div>
              </div>
           </div>
-          <SubmitButton />
+          <Button type="submit" disabled={isPending} className="w-full text-lg py-6">
+            {isPending ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Submitting...</> : 'Schedule a Consultation'}
+          </Button>
         </form>
       </CardContent>
     </Card>
