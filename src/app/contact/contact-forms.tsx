@@ -38,6 +38,7 @@ export default function ContactForms() {
 
     const formData = new FormData(e.currentTarget);
     const data = {
+      salutation: formData.get('salutation'),
       firstName: formData.get('firstName'),
       lastName: formData.get('lastName'),
       email: formData.get('email'),
@@ -49,6 +50,7 @@ export default function ContactForms() {
       city: formData.get('city'),
     };
 
+    // Client-side validation fallback
     if (!data.firstName || !data.lastName || !data.email || !data.phone) {
       setErrors({
         firstName: !data.firstName ? 'First name is required' : '',
@@ -61,30 +63,27 @@ export default function ContactForms() {
     }
 
     try {
-      // Send data to your form processing API endpoint
-      const response = await fetch('https://web3forms.com', {
+      // Send data to your custom live backend endpoint
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: "YOUR_ACCESS_KEY_HERE",
-          ...data
-        }),
+        body: JSON.stringify(data),
       });
 
-      if (response.ok) {
-        toast({
-          title: 'Success!',
-          description: 'Thank you! Your consultation request has been received.',
-        });
-        formRef.current?.reset();
-      } else {
-        throw new Error('Submission failed');
-      }
+      const resData = await response.json();
+      if (!response.ok) throw new Error(resData.message || 'Submission failed');
+
+      toast({
+        title: 'Success!',
+        description: 'Your inquiry has been submitted. We respond within 1-2 business days.',
+      });
+      
+      formRef.current?.reset();
     } catch (err) {
       toast({
         variant: 'destructive',
         title: 'Error',
-        description: 'Something went wrong. Please try again later.',
+        description: err instanceof Error ? err.message : 'Something went wrong. Please try again later.',
       });
     } finally {
       setIsPending(false);
